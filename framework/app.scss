@@ -1,0 +1,134 @@
+@function HEXtoRGB($color) {
+    @return unquote("#{red($color)} #{green($color)} #{blue($color)}");
+}
+
+// CONFIG ///////////////////////////////////////
+$ui:		'.ui';
+@import	'config';
+
+
+// HELPERS ///////////////////////////////////////
+@import	'4-helpers/__import';
+
+
+// PLUGIN ///////////////////////////////////////
+@import	'6-plugin/reset';
+
+// VARIABLES ///////////////////////////////////////
+@import '3-modules/colors/variables';
+@import '2-layout/section/variables';
+@import '2-layout/header/variables';
+@import '2-layout/main-nav/variables';
+@import '3-modules/buttons/variables';
+@import '3-modules/typography/variables';
+@import '3-modules/modals/variables';
+
+
+// BASE ///////////////////////////////////////
+@import '3-modules/mediaquery/mediaqueries'; // Must be first !
+@import '1-base/base';
+@import '1-base/scrollbar';
+
+
+
+// LAYOUT ///////////////////////////////////////
+@import '2-layout/layout/layout';
+
+@import '2-layout/section/section';
+
+@import '2-layout/header/header';
+@import '2-layout/header/header-btn';
+@import '2-layout/header/header-popup';
+
+@import '2-layout/menu-tabs/menu-tabs';
+
+@import '2-layout/main-nav/main-nav';
+@import '2-layout/main-nav/main-nav-phone';
+
+
+// MODULES ///////////////////////////////////////
+@import '3-modules/colors/colors';
+@import '3-modules/selects/selects';
+@import '3-modules/buttons/buttons';
+@import '3-modules/typography/font';
+@import '3-modules/typography/typography';
+@import '3-modules/typography/paragraphe';
+@import '3-modules/grid/grid';
+@import '3-modules/table/table';
+@import '3-modules/pbars/pbars';
+@import '3-modules/list/list';
+@import '3-modules/icons/icons';
+@import '3-modules/modals/modals';
+@import '3-modules/charts/devextreme';
+
+
+// SECTIONS ///////////////////////////////////////
+@import '5-sections/singleline';
+@import '5-sections/wing-panel';
+@import '5-sections/settings';
+@import '5-sections/main-engine';
+@import '5-sections/init-status';
+@import '5-sections/navigation';
+
+// SCHEME ///////////////////////////////////////
+@import '9-schemes/scheme1';
+@import '9-schemes/scheme2';
+@import '9-schemes/scheme3';
+@import '9-schemes/scheme4';
+@import '9-schemes/schemes';
+
+
+
+
+
+.content-disabled{
+	opacity:		0.3;
+	pointer-events:	none;
+}
+
+
+
+
+
+
+
+// PHONE LANDSCAPE //////////////////////////////////////////
+.phone-ld-alert{
+	display:				none;
+	@include				fixed-pos(auto, 0, auto, 0);
+	height:				100%;
+	background:			RGBA(var(--clr-type-primary-dark) / 30%);
+	z-index:				999999;
+
+	> div{
+		@include			fixed-pos(50%, auto, auto, 50%);
+		@include			translate(-50%, -50%);
+
+		i{
+			position:	relative;
+			left:			50%;
+			@include		translate(-50%, 0);
+		}
+
+		h4{
+			margin-top:	20px;
+		}
+	}
+}
+
+ @media (min-width: 400px)
+ 	and (max-width: 1000px)
+	and (orientation: landscape)
+    and (-webkit-min-device-pixel-ratio: 2){
+       
+       .phone-ld-alert{
+       		display:		block;
+       }
+
+};
+
+
+
+
+
+

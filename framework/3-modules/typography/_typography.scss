@@ -1,0 +1,289 @@
+#{$ui}{
+	&.h1,
+	&.h2,
+	&.h3,
+	&.h4,
+	&.h5, 
+	&.h6{
+		display:							block;
+		width:								100%;
+		//@include							transition(color $transition-scheme 0s ease-in-out);
+
+		[class*="ico-"]{
+			position:						relative;
+			float:							left;
+			display:						inline-block;
+			margin-right:					0.5rem;
+			&::before{
+				@include					abs-pos(50%, auto, auto, 0);
+				@include					translate(0, -50%);
+			}
+		}
+
+		&.resp{
+			width:							100%;
+			text-align:						center;
+		}
+
+		&.ellipsis{
+			white-space:					nowrap;
+			overflow:						hidden;
+			text-overflow:					ellipsis;
+		}
+
+		&.align-left{
+			text-align:						left;
+		}
+
+		&.align-center{
+			text-align:						center;
+		}
+
+		&.align-right{
+			text-align:						right;
+		}
+	}
+}
+
+
+
+[class*="text-size-"]{
+	&.align-left{
+		text-align:							left;
+	}
+
+	&.align-center{
+		text-align:							center;
+	}
+
+	&.align-right{
+		text-align:							right;
+	}
+
+}
+
+
+// TITLE SIZES GENERATOR /////////////////////////////////////////////////
+@for $i from 1 through length($typo--name) {
+	#{$ui}.#{nth($typo--name, $i)}{
+		font-size: 							#{nth($typo--font, $i)};
+		line-height: 						#{nth($typo--font, $i)};
+
+		small{
+			font-size: 						#{nth($typo--font, $i) * 0.6};
+			line-height:					#{nth($typo--font, $i) * 0.6};
+		}
+
+		i[class*="ico-"]{
+			display:						inline-block;
+			font-size:						#{nth($typo--icon, $i)};
+			line-height: 					#{nth($typo--font, $i)};
+			width: 							#{nth($typo--icon, $i)};
+			height: 						#{nth($typo--font, $i)};
+		}
+	}
+}
+
+
+
+
+// TEXT SIZES GENERATOR /////////////////////////////////////////////////
+@for $i from 1 through 30 {
+
+	// GLOBAL
+	.text-size-#{$i}{
+		font-size: 							#{($i / 10) + 0.2rem};
+		line-height: 						#{($i / 10) + 0.4rem};
+	}
+
+	// MEDIA QUERIES
+    @each $name, $value1, $value2 in $breakpoints-list {
+        @media screen #{$value1 $value2}{
+			.text-size-#{$name}-#{$i}{
+				font-size: 					#{($i / 10) + 0.2rem}!important;
+				line-height: 				#{($i / 10) + 0.4rem}!important;
+			}
+        }
+    }
+}
+
+
+
+
+
+// TEXT GLOW /////////////////////////////////////////////////////////////
+@each $name, $color in $colors--type-list{
+	.color-text-type-#{$name}{
+		&.glow{
+			text-shadow:					0 0 5px RGBA(var($color) / 50%), 0 0 8px RGBA(var($color) / 80%);
+		}
+	}
+}
+html[data-scheme="scheme2"]{
+	[class*="color-text-type-"]{
+		&.glow{
+			text-shadow:					none;
+		}
+	}
+}
+
+
+
+
+// GLOW ONLY /////////////////////////////////////////////////////////////
+@each $name, $color in $colors--type-list{
+	.color-glow-type-#{$name}-mini{
+		color:							white;
+		text-shadow:					0 0 4px RGBA(var($color) / 50%), 0 0 6px RGBA(var($color) / 80%);
+	}
+	.color-glow-type-#{$name}-sm{
+		color:							white;
+		text-shadow:					0 0 6px RGBA(var($color) / 50%), 0 0 8px RGBA(var($color) / 80%);
+	}
+	.color-glow-type-#{$name}-med{
+		color:							white;
+		text-shadow:					0 0 8px RGBA(var($color) / 50%), 0 0 10px RGBA(var($color) / 80%);
+	}
+	.color-glow-type-#{$name}-lg{
+		color:							white;
+		text-shadow:					0 0 10px RGBA(var($color) / 50%), 0 0 12px RGBA(var($color) / 80%);
+	}
+	.color-glow-type-#{$name}-xl{
+		color:							white;
+		text-shadow:					0 0 12px RGBA(var($color) / 50%), 0 0 14px RGBA(var($color) / 80%);
+	}
+}
+
+
+
+
+
+
+
+
+
+// ALIGN //////////////////////////////////////////////////////
+#{$ui}{
+	&.h1,
+	&.h2,
+	&.h3,
+	&.h4,
+	&.h5, 
+	&.h6{
+		&.align-left{						text-align:	left; }
+		&.align-center{						text-align:	center; }
+		&.align-right{						text-align:	right; }
+	}
+}
+
+
+
+
+// UPPERCASE //////////////////////////////////////////////////////
+#{$ui}{
+	&.h1,
+	&.h2,
+	&.h3,
+	&.h4,
+	&.h5, 
+	&.h6{
+		&.upcase{							text-transform: uppercase; }
+	}
+}
+
+
+
+
+
+// PARAGRAPHE ///////////////////////////////////////////////////////
+p.paragraphe{
+	width:									100%;
+	text-align:								justify;
+
+	strong{
+		//@extend								%font-primary-bold;
+		em{
+			//@extend							%font-primary-bold-italic;
+		}
+	}
+
+	em{
+		//@extend								%font-primary-regular-italic;
+		strong{
+			//@extend							%font-primary-bold-italic;
+		}
+	}
+
+	+ *{
+		margin-top:							15px;
+	}
+}
+
+
+
+
+
+
+// LIST ///////////////////////////////////////////////////////
+ul.list{
+	width:									100%;
+	box-sizing:								border-box;
+	//padding-left:							15px;
+
+	li{
+		list-style:							disc inside none;
+	}
+
+	+ *{
+		margin-top:							15px;
+	}
+
+	strong{
+		//@extend								%font-primary-bold;
+		em{
+			//@extend							%font-primary-bold-italic;
+		}
+	}
+
+	em{
+		//@extend								%font-primary-regular-italic;
+		strong{
+			//@extend							%font-primary-bold-italic;
+		}
+	}
+}
+
+
+
+
+
+
+// SIZES ///////////////////////////////////////////////////////
+p.paragraphe,
+ul.list{
+	
+	&.size-mini{
+		font-size:							10px;
+		line-height:						14px;
+	}
+	
+	&.size-sm{
+		font-size:							11px;
+		line-height:						15px;
+	}
+	
+	&.size-med{
+		font-size:							12px;
+		line-height:						16px;
+	}
+	
+	&.size-lg{
+		font-size:							13px;
+		line-height:						17px;
+	}
+	
+	&.size-xl{
+		font-size:							13px;
+		line-height:						18px;
+	}
+}

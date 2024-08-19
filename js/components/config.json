@@ -1,0 +1,506 @@
+
+[ 
+      
+      { 
+          "name": "deviceListSystemApp",
+          "component": [
+               {
+                  "label": "device-list-system-render",
+                  "file": "deviceListSystem"
+              }
+          ],
+          "mount":"#deviceListSystemApp",
+        "config": {
+          "compilerOptions": {
+            "isCustomElement": "tag => tag.startsWith('font')"
+          }
+        }
+      },
+      {
+        "name": "navSystemApp",
+        "component": [
+          {
+            "label": "basic-text-with-title-render",
+            "file": "basicTextWithTitle"
+          },
+          {
+            "label": "sog-cog-system-render",
+            "file": "sogCog"
+          },
+          {
+            "label": "true-wind-system-render",
+            "file": "trueWind"
+          },
+          {
+            "label": "wind-rose-system-render",
+            "file": "windRose"
+          }
+        ],
+        "mount":"#navSystemApp",
+        "config": {
+        "compilerOptions": {
+          "isCustomElement": "tag => tag.startsWith('font')"
+        }
+        }
+      },
+      {
+           "name": "inhibitListSystemApp",
+           "component":[
+               {
+                  "label": "inhibit-list-system-render",
+                  "file": "inhibitListSystem"
+              }
+          ],
+        "mount":"#inhibitListSystemApp",
+        "config": {
+          "compilerOptions": {
+            "isCustomElement": "tag => tag.startsWith('font')"
+          }
+        }
+      },
+      {
+          "name": "alarmSystemApp",
+          "component": [
+            {
+              "label": "alarm-system-render",
+              "file": "alarmSystem"
+            }
+          ],
+          "mount": "#alarmSystemApp",
+          "config": {
+            "compilerOptions": {
+              "isCustomElement": "tag => tag.startsWith('font')"
+            }
+          }
+      },
+      {
+          "name": "alarmSystemAppHeader",
+          "component": [
+            {
+              "label": "alarm-system-header-render",
+              "file": "alarmSystemHeader"
+            },
+            {
+              "label": "event-system-header-render",
+              "file": "eventSystemHeader"
+            }
+          ],
+          "mount": "#alarmSystemheaderApp",
+          "config": {
+            "compilerOptions": {
+              "isCustomElement": "tag => tag.startsWith('font')"
+            }
+          }
+      },
+      {
+          "name": "singleLineBusBarApp",
+          "component": [
+            {
+              "label": "single-line-bus-bar-render",
+              "file": "singleLineBusBar"
+            }
+          ],
+          "mount": ".singleLineBusBarApp",
+          "config": {
+            "compilerOptions": {
+              "isCustomElement": "tag => tag.startsWith('font')"
+            }
+          }
+      },
+      {
+          "name": "signalListSystemApp",
+          "component": [
+            {
+              "label": "signal-list-system-render",
+              "file": "signalListSystem"
+            }
+          ],
+          "mount": "#signalListSystemApp",
+          "config": {
+            "compilerOptions": {
+              "isCustomElement": "tag => tag.startsWith('font')"
+            }
+          }
+
+      },
+      {
+          "name": "singleLineApp",
+          "component": [
+            {
+              "label": "basic-text",
+              "file": "basicText"
+            },
+            {
+              "label": "basic-text-with-title-render",
+              "file": "basicTextWithTitle"
+            },
+            {
+              "label": "two-options-switch-button-render",
+              "file": "twoOptionsSwitchButton"
+            },
+            {
+              "label": "basic-text-with-digital-line-render",
+              "file": "basicTextWithTitleDigital"
+            },
+            {
+              "label": "timeline-render",
+              "file": "timelineComponent"
+            }
+          ],
+          "mount": ".singleLineApp",
+        "config": {
+          "compilerOptions": {
+            "isCustomElement": "tag => tag.startsWith('font')"
+          }
+        }
+      },
+  {
+    "name": "singleLineHeader",
+    "component": [
+      {
+        "label": "single-line-header-render",
+        "file": "singleLineHeader"
+      }
+    ],
+    "mount": ".singleLineHeader",
+    "config": {
+      "compilerOptions": {
+        "isCustomElement": "tag => tag.startsWith('font')"
+      }
+    }
+  },
+      {
+          "name": "waterTanksApp",
+          "component": [
+            {
+              "label": "bar-render",
+              "file": "bar"
+            }
+          ],
+          "mount": ".waterTanksApp",
+          "config": {
+            "compilerOptions": {
+              "isCustomElement": "tag => tag.startsWith('font')"
+            }
+          }
+      },
+      {
+          "name": "wasteTanksApp",
+          "component": [
+            {
+              "label": "bar-render",
+              "file": "bar"
+            }
+          ],
+          "mount": ".wasteTanksApp",
+          "config": {
+            "compilerOptions": {
+              "isCustomElement": "tag => tag.startsWith('font')"
+            }
+          }
+      },
+      {
+          "name": "fuelTanksApp",
+          "component": [
+            {
+              "label": "bar-render",
+              "file": "bar"
+            }
+          ],
+          "mount": ".fuelTanksApp",
+          "config": {
+            "compilerOptions": {
+              "isCustomElement": "tag => tag.startsWith('font')"
+            }
+          }
+      },
+      {
+          "name": "oilTanksApp",
+          "component": [
+            {
+              "label": "bar-render",
+              "file": "bar"
+            }
+          ],
+          "mount": ".oilTanksApp",
+          "config": {
+            "compilerOptions": {
+              "isCustomElement": "tag => tag.startsWith('font')"
+            }
+          }
+      },
+      {
+          "name": "bilgeApp",
+          "component": [
+            {
+              "label": "icon-text-value-digital-line-render",
+              "file": "iconTextValueDigitalLine"
+            },
+            {
+              "label": "icon-layout-render",
+              "file": "iconLayout"
+            }
+          ],
+          "mount": ".bilgeApp",
+          "config": {
+            "compilerOptions": {
+              "isCustomElement": "tag => tag.startsWith('font')"
+            }
+          }
+      },
+      {
+          "name": "insulationSystemApp",
+          "component": [
+            {
+              "label": "icon-text-value-analogue-line-render",
+              "file": "iconTextValueAnalogueLine"
+            },
+            {
+              "label": "icon-text-value-digital-line-render",
+              "file": "iconTextValueDigitalLine"
+            }
+          ],
+          "mount": ".insulationSystemApp",
+          "config": {
+            "compilerOptions": {
+              "isCustomElement": "tag => tag.startsWith('font')"
+            }
+          }
+      },
+      {
+          "name": "variousSystemsApp",
+          "component": [
+            {
+              "label": "icon-text-value-digital-line-render",
+              "file": "iconTextValueDigitalLine"
+            },
+            {
+              "label": "icon-two-options-digital-line-render",
+              "file": "iconTwoOptionsDigitalLine"
+            }
+          ],
+          "mount": ".variousSystemsApp",
+          "config": {
+            "compilerOptions": {
+              "isCustomElement": "tag => tag.startsWith('font')"
+            }
+          }
+      },
+      {
+          "name": "variousSystemsApp2",
+          "component": [
+            {
+              "label": "icon-text-value-digital-line-render",
+              "file": "iconTextValueDigitalLine"
+            },
+            {
+              "label": "icon-text-value-analogue-line-render",
+              "file": "iconTextValueAnalogueLine"
+            }
+          ],
+          "mount": ".variousSystemsApp2",
+          "config": {
+            "compilerOptions": {
+              "isCustomElement": "tag => tag.startsWith('font')"
+            }
+          }
+      },
+      {
+          "name": "jacuzziApp",
+          "component": [
+            {
+              "label": "icon-text-value-digital-line-render",
+              "file": "iconTextValueDigitalLine"
+            },
+            {
+              "label": "icon-text-value-analogue-line-render",
+              "file": "iconTextValueAnalogueLine"
+            },
+            {
+              "label": "two-options-switch-button-render",
+              "file": "twoOptionsSwitchButton"
+            },
+            {
+              "label": "icon-layout-render",
+              "file": "iconLayout"
+            }
+          ],
+          "mount": ".jacuzziApp",
+          "config": {
+            "compilerOptions": {
+              "isCustomElement": "tag => tag.startsWith('font')"
+            }
+          }
+      },
+      {
+          "name": "watertightListApp",
+          "component": [
+            {
+              "label": "icon-text-value-digital-line-render",
+              "file": "iconTextValueDigitalLine"
+            }
+          ],
+          "mount": ".watertightListApp",
+          "config": {
+            "compilerOptions": {
+              "isCustomElement": "tag => tag.startsWith('font')"
+            }
+          }
+      },
+      {
+          "name": "fireDoorsLayoutApp",
+          "component": [
+            {
+              "label": "door-render",
+              "file": "door"
+            }
+          ],
+          "mount": ".fireDoorsLayoutApp",
+          "config": {
+            "compilerOptions": {
+              "isCustomElement": "tag => tag.startsWith('font')"
+            }
+          }
+      },
+  {
+    "name": "fireApp",
+    "component": [
+      {
+        "label": "icon-two-options-digital-line-render",
+        "file": "iconTwoOptionsDigitalLine"
+      },
+      {
+        "label": "icon-layout-render",
+        "file": "iconLayout"
+      }
+    ],
+    "mount": ".fireApp",
+    "config": {
+      "compilerOptions": {
+        "isCustomElement": "tag => tag.startsWith('font')"
+      }
+    }
+  },
+      {
+          "name": "pumpApp",
+          "component": [
+            {
+              "label": "load-render",
+              "file": "load"
+            }
+          ],
+          "mount": ".pumpApp",
+          "config": {
+            "compilerOptions": {
+              "isCustomElement": "tag => tag.startsWith('font')"
+            }
+          }
+      },
+      {
+          "name": "navLightApp",
+          "component": [
+            {
+              "label": "two-options-switch-button-render",
+              "file": "twoOptionsSwitchButton"
+            },
+            {
+              "label": "icon-layout-render",
+              "file": "iconLayout"
+            },
+            {
+              "label": "basic-text-with-digital-line-render",
+              "file": "basicTextWithTitleDigital"
+            }
+          ],
+          "mount": ".navLightApp",
+          "config": {
+            "compilerOptions": {
+              "isCustomElement": "tag => tag.startsWith('font')"
+            }
+          }
+      },
+      {
+          "name": "SystemLayoutApp",
+          "component": [
+            {
+              "label": "icon-text-digital-line-render",
+              "file": "iconTextDigitalLine"
+            },
+            {
+              "label": "icon-tri-estate-one-signal-digital-line-render",
+              "file": "iconTriEstateOneSignalDigitalLine"
+            },
+            {
+              "label": "cable-system-layout-render",
+              "file": "cableSystemLayout"
+            },
+            {
+              "label": "single-line-header-render",
+              "file": "singleLineHeader"
+            }
+          ],
+          "mount": ".SystemLayoutApp",
+        "config": {
+          "compilerOptions": {
+            "isCustomElement": "tag => tag.startsWith('font')"
+          }
+        }
+      },
+      {
+          "name": "BilgeFireApp",
+          "component": [
+            {
+              "label": "icon-layout-render",
+              "file": "iconLayout"
+            },
+            {
+              "label": "valve-layout-render",
+              "file": "valveLayout"
+            },
+            {
+              "label": "pump-layout-render",
+              "file": "pumpLayout"
+            },
+            {
+              "label": "icon-tri-estate-digital-line-render",
+              "file": "iconTriEstateDigitalLine"
+            }
+          ],
+          "mount": "#BilgeFireApp",
+          "config": {
+            "compilerOptions": {
+              "isCustomElement": "tag => tag.startsWith('font')"
+            }
+          }
+      },
+      {
+          "name": "SettingsApp",
+          "component": [
+            {
+              "label": "two-options-switch-button-render",
+              "file": "twoOptionsSwitchButton"
+            }
+          ],
+          "mount": "#SettingsApp",
+          "config": {
+            "compilerOptions": {
+              "isCustomElement": "tag => tag.startsWith('font')"
+            }
+          }
+      },
+      {
+          "name": "ReportLogApp",
+          "component": [
+            {
+              "label": "report-log-render",
+              "file": "reportLog"
+            }
+          ],
+          "mount": ".ReportLogApp",
+          "config": {
+            "compilerOptions": {
+              "isCustomElement": "tag => tag.startsWith('ion-icon')"
+            }
+          }
+      }
+]

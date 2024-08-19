@@ -1,0 +1,45 @@
+<article>
+    <div class="ui grid type1 cols-1 pad-lg gap-mini">
+        <div class="ui grid cols-1 col sm-1 gap-mini pad-no has-header">
+            <header class="ui col">
+                <font>Signals</font>
+                <span class="gradients">
+		        <span class="gradient-left"></span>
+		        <span class="gradient-right"></span>
+	            </span>
+                
+                
+            </header>
+
+            <div class="ui col sm-1 gap-no pad-no bg-no h-tv-ld-100 h-tv-pt-100">
+                <div class="col-content">
+                    <div class="col-content" >
+                        <ul class="ui table size-sm resp">
+                        <li class="thead">
+                            <div class="col-50-min align-middle-center"><span>Device Name</span></div>
+                            <div class="col-90 align-middle-center"><span>Device IP</span></div>
+                            <div class="col-90 align-middle-center"><span>Slave ID</span></div>
+                            <div class="col-90 align-middle-center"><span>Last</span></div>
+                            <div class="col-90 align-middle-center hidden-tv-pt"><span>Target</span></div>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-content" id="deviceListSystemApp">
+                <device-list-system-render></device-list-system-render>
+            </div>
+
+
+            <div class="ui col sm-1 gap-no pad-no bg-no h-tv-ld-630 h-tv-pt-1350" id="signalListSystemApp">
+
+                <signal-list-system-render></signal-list-system-render>
+
+            </div>
+
+        </div>
+    </div>
+    
+
+</article>

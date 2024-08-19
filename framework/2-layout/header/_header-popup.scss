@@ -1,0 +1,128 @@
+/////////////////////////////////////////////////////////////
+// HEADER popup //
+/////////////////////////////////////////////////////////////
+#{$ui}.header-popup{
+	@include								abs-pos(140%, 0, auto, auto);
+	opacity:								0;
+	min-width:								610px;
+	max-width:								610px;
+	margin-top:								10px;
+	box-shadow:								0 5px 10px 10px rgba(black,0.5);
+	pointer-events:							none;
+	-webkit-overflow-scrolling:				touch;
+	scroll-behavior:						smooth;
+	background:								RGBA(var(--sch-clr-background) / 100% );
+	@include								transition(	top $header-popup-speed 0s ease-in-out,
+														opacity $header-popup-speed 0s ease-in-out);
+
+
+	.has-header{
+		grid-template-rows:					50px auto!important;
+	}
+
+	.max-height-container{
+		overflow:							auto;
+		max-height:							calc(100vh - 300px);
+	}
+
+	@include breakpoint(phone){
+		.max-height-container{
+			max-height:						calc(100vh - 100px);
+		}
+	}
+
+	.table{		
+		> li{			
+			position:						relative;
+			background:						RGBA(var(--sch-clr-grid) / var(--sch-clr-grid-op) );
+			@include						transition(all $transition-scheme 0s ease-in-out);
+			> div{
+				background:					none;
+			}
+
+			+ li{
+				margin-top:					2px!important;
+			}
+		}
+	}
+}
+
+// ACTIVE //
+#{$ui}.header-section{
+	> li.active{
+		#{$ui}.header-popup{
+			top:							100%;
+			opacity:						1;
+			pointer-events:					all;			
+			z-index:						100;
+		}
+	}
+}
+
+
+
+
+
+// PHONE ///////////////////////////////////////////////////////////
+@include breakpoint(phone) {
+
+	#{$ui}.header-section{
+
+		#{$ui}.header-popup{
+			@include						fixed-pos(-200%, 0, auto, 0);
+			min-width:						inherit;
+			max-width:						inherit;
+			height:							100vh;
+			z-index:						99;
+			overflow:						auto;
+			background:						none;
+			box-sizing:						border-box;
+
+			&::after{
+				content:					'';
+				@include					fixed-pos(0, 0, 0, 0);
+				background:					rgba(black,0.8);
+				z-index:					-1;
+				pointer-events:				none;
+			}
+
+			.table{
+				width:						100%;
+				//padding:					0 10px 10px 10px;
+				box-sizing:					border-box;
+
+				> li{
+					> div > span{
+						white-space:		normal!important;
+						text-align:			left;
+					}
+				}
+			}
+		}
+
+		> li.active{
+			#{$ui}.header-popup{
+				top:						0!important;
+				margin-top:					0!important;
+				padding:					10px!important;
+			}
+		}
+	}
+}
+
+
+
+
+
+// HEADER USER //////////////////////////////////////////////
+.header--user{
+
+	// ACCESS CODE //
+	.access-code{
+		display:								none!important;
+
+		&.active{
+			display:							grid!important;
+		}
+	}
+}

@@ -1,0 +1,36 @@
+// DRAGGABLE COLUMN ///////////////////////////////////////////
+.draggable-btn{
+	display:							none;
+}
+
+body[data-devmode="true"]{
+	.draggable{
+
+		$icon:							52px;
+
+		> .draggable-btn{
+			display:					none;
+			@include					abs-pos(0,0,auto,auto);
+			box-sizing:					border-box;
+			border:						2px dashed transparent;
+			width:						$icon;
+			height:						$icon;
+			background-image:			url(../3-modules/icons/duplicate.png);
+			background-repeat:			no-repeat;
+			background-position:		top right;
+			z-index:					999;
+			cursor:						move;
+			opacity:					0.75;			
+		}
+
+		&:hover{
+			> .draggable-btn{
+				display:				block;
+
+				&:hover{
+					opacity:			1;
+				}		
+			}
+		}
+	}	
+}

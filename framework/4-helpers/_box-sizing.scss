@@ -1,0 +1,7 @@
+// BOX SIZING
+// Value (content-box, border-box, inherit)
+// @include box-sizing(xxx);
+@mixin box-sizing($value) {
+	-webkit-box-sizing: $value;
+	   -moz-box-sizing: $value;
+	        box-sizing: $value; }

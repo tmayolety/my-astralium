@@ -1,0 +1,30 @@
+// CIRCLE /////////////////////////////////////////
+#{$ui}.btn{
+	&.circle{
+		padding:								0!important;
+		//background:								lighten($grid--column-bg-dark, 20%);
+
+		@for $i from 1 through 20 {
+			&.size-#{$i}{
+				width:							#{$i * 4}px;
+				height:							#{$i * 4}px;
+			}
+		}
+
+		&.border{
+			$border-gap:						8px;
+			$border-size:						2px;
+
+			margin:								#{$border-gap - $border-size};
+
+			&::after{
+				content:						'';
+				@include						abs-pos(-$border-gap, -$border-gap, -$border-gap, -$border-gap);
+				pointer-events:					none;
+				border-width:					$border-size;
+				border-style:					solid;
+				border-radius:					100%;
+			}
+		}
+	}
+}

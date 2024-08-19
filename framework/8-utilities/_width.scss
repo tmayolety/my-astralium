@@ -1,0 +1,19 @@
+/////////////////////////////////////////////////////////////////////////////
+// ITEM WIDTH //
+/////////////////////////////////////////////////////////////////////////////
+@for $i from 1 through 300 {
+	.w-#{$i * 1}{
+		width: #{$i * 1}px!important;
+	}
+}
+
+
+@each $name, $value1, $value2 in $breakpoints-list {
+	@media screen #{$value1 $value2}{
+		@for $i from 1 through 1920 {		
+			.w-#{$name}-#{$i * 1}{
+				width: #{$i * 1}px!important;
+			}
+		}
+	}
+}

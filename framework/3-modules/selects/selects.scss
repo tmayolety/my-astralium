@@ -1,0 +1,43 @@
+#{$ui}.select{
+	position:					relative;
+	border-style:				solid;
+	border-width:				2px;
+	border-radius:				0.4rem;
+	color:						RGBA(var(--sch-clr-ui-text)/var(--sch-clr-ui-text-op));
+	background-color:			RGBA(var(--sch-clr-grid-border) / var(--sch-clr-grid-op));
+	border-color:				RGBA(255 255 255 / 15%);
+
+	select{
+		color:					RGBA(var(--sch-clr-ui-text)/var(--sch-clr-ui-text-op));
+		@extend					%font-regular;
+		option{
+			color:				black;
+		}
+	}
+	> svg{
+		pointer-events:			none;
+		fill:					RGBA(var(--sch-clr-ui-text)/var(--sch-clr-ui-text-op));
+	}
+
+	select{
+		-webkit-appearance:		none;
+		-moz-appearance:		none;
+		appearance:				none;
+		background:				none;
+		width:					100%;
+		border:					0;
+		padding:				13px;
+		box-sizing:				border-box;
+		outline:				none;
+		font-size:				1rem;
+		line-height: 			1.1rem;
+	}
+
+	> svg{
+		@include				abs-pos(50%, 15px, auto, auto);
+		@include				translate(0, -50%);
+		width:					20px;
+		height:					20px;		
+	}
+
+}

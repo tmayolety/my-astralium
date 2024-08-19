@@ -1,0 +1,17 @@
+// ROUNDED //
+#{$ui}.btn-group{
+	&.switch-2{
+		&.rounded{
+			> .btn{
+				&:first-of-type{
+					border-top-left-radius:		100%!important;
+					border-top-right-radius:	100%!important;
+				}
+				&:last-of-type{
+					border-bottom-left-radius:	100%!important;
+					border-bottom-right-radius:	100%!important;
+				}
+			}
+		}
+	}
+}

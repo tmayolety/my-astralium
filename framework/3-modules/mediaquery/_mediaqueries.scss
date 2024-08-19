@@ -1,0 +1,54 @@
+$breakpoints-list: (
+//  Name        Value 1						Value 2
+    'phone'		'and (min-width:0)'			'and (max-width: 1023px)',
+    'mini'		'and (min-width:1024px)'	'and (max-width: 6000px)',
+    'sm'		'and (min-width:1248px)'	'and (max-width: 6000px)',
+    'med'		'and (min-width:1472px)'	'and (max-width: 6000px)',
+    'lg'		'and (min-width:1696px)'	'and (max-width: 6000px)',
+    'xl'		'and (min-width:1920px)'	'and (max-width: 6000px)',
+    'wingpanel'	'and (width: 1024px)'		'and (height: 768px)'
+); 
+
+
+// BREAKPOINT //
+@mixin breakpoint($breakpoint) {  
+    @each $name, $value1, $value2 in $breakpoints-list {
+        @if $breakpoint == $name {
+            @media screen #{$value1 $value2}{
+                	@content
+            }
+        }
+    }
+}
+
+
+
+
+
+
+// PREVIEW /////////////////////////////////////////////
+body::before{
+    //content:    '';
+    @include		abs-pos(0, auto, auto, 0);
+    background: 	yellow;
+    color:      	black;
+    padding:    	20px;
+    font-size:  	0.8rem;
+    text-transform: uppercase;
+    z-index:    	999;
+
+    @each $name, $value1, $value2 in $breakpoints-list {
+        @media screen #{$value1 $value2}{
+            //content:'#{$name}';
+        }
+    }
+}
+
+
+
+
+
+// PHONE ONLY ////////////////////////////////////////////
+.phone-only{
+    display:        none!important;
+}

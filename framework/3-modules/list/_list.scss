@@ -1,0 +1,59 @@
+// ON-OFF /////////////////////////////////////
+
+// SETTINGS_________Name____Check_______Radius______Font________Gap
+$list-on-off:		mini 	1.5rem 		0.2rem 		1rem		0.2rem,
+					sm  	1.8rem 		0.2rem 		1.1rem		0.3rem,
+					med 	2.2rem 		0.3rem 		1.2rem		0.4rem,
+					lg  	2.6rem 		0.4rem 		1.3rem		0.5rem,
+					xl  	3rem 		0.5rem 		1.4rem		0.6rem;
+
+
+
+
+ul#{$ui}.list{
+
+	$gap:								5px;
+
+	> li{
+		position:						relative;
+		list-style:						none;
+		display:						flex;
+		flex-direction:					row;
+
+		> div:last-child{
+			padding-top:				$gap;
+			padding-bottom:				$gap;
+			align-self:					center;
+		}
+
+		+ li{					
+			padding-top:				5px;	
+		}
+	}
+
+	// SIZES //////////////////////////////////
+	@each $name, $check, $radius, $font, $gap in $list-on-off{
+		&.size-#{$name}{
+			> li{
+				font-size:				$font;
+				line-height:			#{$font * 1.2};
+			}
+		}
+
+		// Overwrite Gap
+		//&.gap-#{$name}{
+		//	> li{
+		//		+ li{
+		//			//margin-top:			$gap!important;
+		//		}
+		//	}
+		//}
+	}
+
+	.btn{
+		margin:							$gap 15px $gap $gap;
+		padding-left:					10px!important;
+		padding-right:					10px!important;
+	}
+}
+

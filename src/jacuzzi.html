@@ -1,0 +1,134 @@
+<article>
+        <div class="ui grid type1 cols-mini-1 hidden-phone">
+
+            <div class="ui grid cols-mini-1 col mini-1 gap-sm pad-no has-header jacuzziApp">
+                <header class="ui col">
+                    <font>Jacuzzi</font>
+                    <span class="gradients">
+                        <span class="gradient-left"></span>
+                        <span class="gradient-right"></span>
+                    </span>
+                </header>
+
+                <div class="ui grid cols-mini-3 bg-no pad-no gap-lg">
+
+                    <div class="ui grid cols-mini-1 mini-1 bg-no pad-no gap-lg align-start">
+
+                        <div class="ui col mini-1 has-col-header-sm radius shadow">
+                            <header class="col-header size-med">Filtration Pump</header>
+                            <div class="col-content overflow">
+                                <ul class="ui table size-mini resp">
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17501, title: 'Filtration Pump Push Button Auto', icon: 'onOff', size: '20', zeroText: 'Off', zeroColor: 'secondary', oneText: 'On', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17502, title: 'Filtration Pump Push Button Manual', icon: 'onOff', size: '20', zeroText: 'Off', zeroColor: 'secondary', oneText: 'On', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17503, title: 'Filtration Pump Status', icon: 'engines', size: '20', zeroText: 'Stop', zeroColor: 'secondary', oneText: 'Running', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ui col mini-1 has-col-header-sm radius shadow">
+                            <header class="col-header size-med">Massage Pump</header>
+                            <div class="col-content overflow">
+                                <ul class="ui table size-mini resp">
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17504, title: 'Massage Pump Push Button Auto', icon: 'onOff', size: '20', zeroText: 'Off', zeroColor: 'secondary', oneText: 'On', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17505, title: 'Massage Pump Push Button Manual', icon: 'engines', size: '20', zeroText: 'Stop', zeroColor: 'secondary', oneText: 'Running', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17506, title: 'Massage Pump Status', icon: 'engines', size: '20', zeroText: 'Stop', zeroColor: 'secondary', oneText: 'Running', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ui col mini-1 has-col-header-sm radius shadow">
+                            <header class="col-header size-med">Blower Pump</header>
+                            <div class="col-content overflow">
+                                <ul class="ui table size-mini resp">
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17507, title: 'Blower Pump Push Button Auto', icon: 'onOff', size: '20', zeroText: 'Off', zeroColor: 'secondary', oneText: 'On', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17508, title: 'Blower Pump Push Button Manual', icon: 'engines', size: '20', zeroText: 'Stop', zeroColor: 'secondary', oneText: 'Running', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17509, title: 'Blower Pump Status', icon: 'engines', size: '20', zeroText: 'Stop', zeroColor: 'secondary', oneText: 'Running', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="ui grid cols-mini-1 mini-1 bg-no pad-no gap-lg align-start">
+
+                        <div class="ui col mini-2 pad-sm has-col-header-sm radius shadow">
+                            <header class="col-header size-med">Discharge Valves (Overboard)</header>
+                            <div class="col-content overflow">
+                                <ul class="ui table size-mini resp">
+                                    <li>
+                                        <div class="col-1/2 align-middle-center">
+                                            <button class="ui btn med primary mg-top-15 mg-bottom-15 dev-writeButton" data-writeSignalId="17536" data-valueToWrite="1" data-writeMode="2">OPEN FEED</button>
+                                        </div>
+                                        <div class="col-1/2 align-middle-center">
+                                            <button class="ui btn med primary mg-top-15 mg-bottom-15 dev-writeButton" data-writeSignalId="17537" data-valueToWrite="1" data-writeMode="2">CLOSE FEED</button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="ui col mini-2 pad-sm has-col-header-sm radius shadow">
+                            <header class="col-header size-med mg-bottom-1">Operation</header>
+                            <div class="col-content overflow">
+                                <ul class="ui table size-mini resp">
+                                    <li>
+                                        <div class="col-1/2 align-middle-center">
+                                            <button class="ui btn med primary mg-top-15 mg-bottom-15 dev-writeButton" data-writeSignalId="17539" data-valueToWrite="1" data-writeMode="2">CLOSE FILL VALVE</button>
+                                        </div>
+                                        <div class="col-1/2 align-middle-center">
+                                            <button class="ui btn med primary mg-top-15 mg-bottom-15 dev-writeButton" data-writeSignalId="17538" data-valueToWrite="1" data-writeMode="2">OPEN FILL VALVE</button>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="ui table size-mini resp mg-top-1">
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17516, title: 'Local Fill Switch', icon: 'onOff', size: '20', zeroText: 'Off', zeroColor: 'secondary', oneText: 'On', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17518, title: 'Local Topping Switch', icon: 'onOff', size: '20', zeroText: 'Off', zeroColor: 'secondary', oneText: 'On', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17520, title: 'Started from AMS', icon: 'onOff', size: '20', zeroText: 'None', zeroColor: 'secondary', oneText: 'From AMS', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17510, title: 'Discharge Valve Open Command', icon: 'onOff', size: '20', zeroText: 'None', zeroColor: 'secondary', oneText: 'Active', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17511, title: 'Discharge Valve Close Command', icon: 'onOff', size: '20', zeroText: 'None', zeroColor: 'secondary', oneText: 'Active', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="ui grid cols-mini-1 mini-1 bg-no pad-med gap-lg align-start">
+
+                        <div class="ui col sm-1 has-col-header-sm radius shadow">
+                            <header class="col-header size-med">General Feeds</header>
+                            <div class="col-content overflow">
+                                <ul class="ui table size-mini resp">
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17500, title: 'Light', icon: 'nav-lights', size: '20', zeroText: 'Off', zeroColor: 'secondary', oneText: 'On', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17512, title: 'Heater', icon: 'heat', size: '20', zeroText: 'Off', zeroColor: 'secondary', oneText: 'On', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17513, title: 'Ballast H', icon: 'tripping', size: '20', zeroText: 'Non Active', zeroColor: 'secondary', oneText: 'Active', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17514, title: 'Ballast HH', icon: 'tripping', size: '20', zeroText: 'Non Active', zeroColor: 'secondary', oneText: 'Active', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17515, title: 'Flow', icon: 'air-quality', size: '20', zeroText: 'Non flow', zeroColor: 'secondary', oneText: 'Flow', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17517, title: 'Fill Valve', icon: 'turbo', size: '20', zeroText: 'Close', zeroColor: 'secondary', oneText: 'Open', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17519, title: 'Topping Valve', icon: 'turbo', size: '20', zeroText: 'Close', zeroColor: 'secondary', oneText: 'Open', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17514, title: 'Ballast HH', icon: 'tripping', size: '20', zeroText: 'Non Active', zeroColor: 'secondary', oneText: 'Active', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17515, title: 'Flow', icon: 'air-quality', size: '20', zeroText: 'Non flow', zeroColor: 'secondary', oneText: 'Flow', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17517, title: 'Fill Valve', icon: 'turbo', size: '20', zeroText: 'Close', zeroColor: 'secondary', oneText: 'Open', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 17519, title: 'Topping Valve', icon: 'turbo', size: '20', zeroText: 'Close', zeroColor: 'secondary', oneText: 'Open', oneColor: 'primary' }"></icon-text-value-digital-line-render>
+                                
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ui col mini-3 gap-med has-col-header-sm hidden-phone radius shadow">                        
+                        <header class="col-header size-med">Jacuzzi Temperature Trends</header>
+                        <div class="ui grid type1 cols-mini-3 gap-lg col mini-1">
+                            <div class="ui col mini-3 gap-lg align-top-center">
+                                <div class="w-mini-1000 w-xl-1800 h-mini-260" style="touch-action: none; overflow: hidden;">
+                                    <canvas id="jacuzziTemp"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+</article>

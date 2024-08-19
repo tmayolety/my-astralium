@@ -1,0 +1,226 @@
+<article>
+        <div class="ui grid type1 cols-sm-1">
+
+            <div class="ui grid cols-sm-1 col sm-1 gap-sm pad-lg has-header dampersLayoutApp">
+
+                <header class="ui col">
+                    <font>Dampers Layout</font>
+                    <span class="gradients">
+                        <span class="gradient-left"></span>
+                        <span class="gradient-right"></span>
+                    </span>
+                   
+                </header>
+
+                <div class="ui grid cols-xs-2 col sm-1 gap-xl pad-lg cols-tv-pt-1 cols-tv-ld-2">
+
+                    <div class="ui col sm-1">
+                        <header class="col-header"><h5 class="ui h4">Sun Deck</h5></header>
+                        <div class="ui col sm-1 middle-center" style="justify-content: normal!important;" >
+                            <link href="src/ga/decks/GO_sunDeck.css" rel="stylesheet">
+                            <door-render v-bind="{ signalId: 116, x: 31, y: 30, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--SD - 4631.1200 Not able to find ID-->
+                            <door-render v-bind="{ signalId: 122, x: 31, y: 70, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--SD - 4631.2300 Not able to find-Id of the closes match!!!!!!!!!!!!!!!!-->
+                            <door-render v-bind="{ signalId: 123, x: 46, y: 30, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--2700 ¿xShutOffDamperPositionOpenPumpRoomExhaustFanE27? not sure if it is that signal!!!!!!1-->
+                            <door-render v-bind="{ signalId: 124, x: 46, y: 70, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--PS Rescue Tender Comp. Overpressure (E-12) FD Position (FD Open FD.4634.0100)-->
+                            <span id="layout_1"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="ui col sm-1">
+                        <header class="col-header"><h5 class="ui h4">Bridge Deck</h5></header>
+                        <div class="ui col sm-1 middle-center"   style="justify-content: normal!important;" >
+                            <link href="src/ga/decks/GO_bridgeDeck.css" rel="stylesheet">
+                            <!--BD Port Deck Locker Exhaust Fan (E-31) Shut Off Damper Position (FD Open SD.4631.4300)-->
+                            <door-render v-bind="{ signalId: 125, x: 30, y: 30, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--BD Port Deck Locker Overpress(E-31) Shutoff Damper Pos(FD Open SD.4631.4400)-->
+                            <door-render v-bind="{ signalId: 126, x: 33, y: 30, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Steam Room Exhaust Fan (E-04) Fire Damper Position (FD Open SD.4631.0300)-->
+                            <door-render v-bind="{ signalId: 118, x: 27, y: 70, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--AC #03 Area Exhaust Fan (E-11) Shut Off Damper Postion (FD OPEN SD.4631.0200)-->
+                            <door-render v-bind="{ signalId: 117, x: 48, y: 60, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <span id="layout_2"></span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="ui col sm-1">
+                        <header class="col-header"><h5 class="ui h4">Owners Deck</h5></header>
+                        <div class="ui col sm-1 middle-center"   style="justify-content: normal!important;" >
+                            <link href="src/ga/decks/GO_bridgeDeck.css" rel="stylesheet">
+                            <!--OD PS AFT Deck Locker Overpressure(E -32) Shut-off Damper Position (FD OPEN SD.4631.4600)-->
+                            <door-render v-bind="{ signalId: 113, x: 17, y: 33, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--OD PS AFT Deck Locker Exhaust Fan ( E-32) Shut Off Damper Position (FD Closed SD.4631.4500)-->
+                            <door-render v-bind="{ signalId: 127, x: 20, y: 33, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--AC #01 Area Exhaust Fan (E-03) Shut Off Damper Position (FD Open SD.4631.4000)-->
+                            <door-render v-bind="{ signalId: 115, x: 28, y: 31, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--OD PS Deck Locker Exhaust fan(E - 29) Shu-toff Damper Position(FD Closed SD.4631.3900)-->
+                            <door-render v-bind="{ signalId: 114, x: 31, y: 31, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--AC #01 Area Exhaust Fan (E-03) Shut Off Damper Position (FD Open SD.4631.0400)-->
+                            <door-render v-bind="{ signalId: 119, x: 35, y: 31, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--MD PS Deck Locker Exhaust Fan (E-05) Shut Off Damper Position (FD Open SD.4631.1100)-->
+                            <door-render v-bind="{ signalId: 128, x: 38, y: 31, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--E-18 Fan Room Overpressure Shut Off Damper Position (FD Open SD.4631.3200)-->
+                            <door-render v-bind="{ signalId: 121, x: 43, y: 31, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--AC #03 Supply Shut Off Damper Position (FD Open SD.4631.0600)-->
+                            <door-render v-bind="{ signalId: 120, x: 46, y: 31, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--OD STBD Deck Locker Exhaust Fan (E-08) Shut Off Damper Position(FD Open SD.4631.1900)-->
+                            <door-render v-bind="{ signalId: 241, x: 24, y: 74, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--OD STBD Deck Locker Overpressure(E-08) Shut Off Damper Position (FD Open SD.4631.1800)-->
+                            <door-render v-bind="{ signalId: 240, x: 28, y: 74, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <span id="layout_3"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="ui col sm-1">
+                        <header class="col-header"><h5 class="ui h4">Main Deck</h5></header>
+                        <div class="ui col sm-1 middle-center" style="justify-content: normal!important;" >
+                            <link href="src/ga/decks/GO_mainDeck.css" rel="stylesheet">
+                            <!--Workshop&Divestore Exhaust Fan (E-9b) Shut Off Damper Position (FD Open SD.4631.0900)-->
+                            <door-render v-bind="{ signalId: 231, x: 15, y: 33, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Shore Power Transformer Room Exhaust Fan (E-22) Shut Off Damper Pos(FD Closed SD.4631.0700)-->
+                            <door-render v-bind="{ signalId: 229, x: 18, y: 33, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--HI-Fog Room Exhaust Fan (E-23) Shut Off Damper Position (FD Closed SD.4631.0800)-->
+                            <door-render v-bind="{ signalId: 230, x: 21, y: 33, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--MD PS Deck Locker Overpressure (E-05) Shut Off Damper Position (FD Open SD.4631.1000)-->
+                            <door-render v-bind="{ signalId: 232, x: 27, y: 31, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--OD E-03 Extractor Romm Overpressure (E-05) Shut Off Damper Position (FD Closed SD.4631.0500)-->
+                            <door-render v-bind="{ signalId: 228, x: 30, y: 31, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+
+                            <!--Garage Exhaust Fan(E-16) Fire Damper Position (FD Open FD.4634.0500)-->
+                            <door-render v-bind="{ signalId: 225, x: 48, y: 30, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Galley Hood Exhaust Outlet (E-15) Fire D. Open(FD Open FD.4634.2400)-->
+                            <door-render v-bind="{ signalId: 221, x: 51, y: 27, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Galley/Pantry Exhaust Fan (E-10) Shut Off Damper Position (FD Closed SD.4631.1400)-->
+                            <door-render v-bind="{ signalId: 235, x: 54, y: 27, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--AC #02 Area Exhaust Fan ( E-18) Shut Off Damper Position (FD Closed SD.4631.1500)-->
+                            <door-render v-bind="{ signalId: 236, x: 57, y: 27, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Hospital Cabin Exhaust Fan(E-17) Shut Off Damper Position (FD Closed SD.4631.1600)-->
+                            <door-render v-bind="{ signalId: 237, x: 60, y: 27, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--SD - 4634.4200 Not able to find-->
+                            <door-render v-bind="{ signalId: 169, x: 86, y: 42, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Paint Locker Exhaust fan(E-34) Shut Off Daper Position(FD Open SD.4631.4700)-->
+                            <door-render v-bind="{ signalId: 173, x: 89, y: 47, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--LSA Store Exhaust Fan(E-06) Shut-Off Damper Position (FD Open SD.4631.2200)-->
+                            <door-render v-bind="{ signalId: 223, x: 12, y: 73, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Beach club Exhaust Fan(E-9a) Shut Off Damper Position (FD Open SD.4631.3100)-->
+                            <door-render v-bind="{ signalId: 224, x: 15, y: 73, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Garage Overpressure (E-16) Fire Damper Position (FD Closed FD.4634.0800)-->
+                            <door-render v-bind="{ signalId: 222, x: 27, y: 73, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--MD PS FWD Deck Locker Exhaust fan(E-07) ShutOff Damper Position (FD Open SD.4631.1300)-->
+                            <door-render v-bind="{ signalId: 234, x: 35, y: 30, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--MD Fire Station Exhaust Fan(E-14) Fire Damper Position (FD Open FD.4634.0700)-->
+                            <door-render v-bind="{ signalId: 227, x: 38, y: 37, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--MD Fire Station Overpressure(E-14) Fire Damper Position (FD Open FD.4634.0600)-->
+                            <door-render v-bind="{ signalId: 226, x: 41, y: 33, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--AC #02 Supply Shut Off Damper Position (FD Open SD.4631.1700)-->
+                            <door-render v-bind="{ signalId: 174, x: 77, y: 52, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--STBD Jej Ski Comp. Exhaust Fan (E-13) Fire Damper Position (FD Open FD.4634.0400)-->
+                            <door-render v-bind="{ signalId: 172, x: 84, y: 64, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--STBD Jet Ski Camop. Overpressure (E-13) Fire Damper Position (FD Open FD.4634.0300)-->
+                            <door-render v-bind="{ signalId: 171, x: 86, y: 62, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Bosun Store Overpressure ( E-19) Shut Off Damper Position (FD Open SD.4631.2400)-->
+                            <door-render v-bind="{ signalId: 176, x: 89, y: 58, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <span id="layout_4"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="ui col sm-1">
+                        <header class="col-header"><h5 class="ui h4">Lower Deck</h5></header>
+                        <div class="ui col sm-1 middle-center"   style="justify-content: normal!important;" >
+                            <link href="src/ga/decks/GO_lowerDeck.css" rel="stylesheet">
+                            <!--Engine Room PS Supply Fan (S-01) Fire Damper Position (FD-4634.0900)-->
+                            <door-render v-bind="{ signalId: 544, x: 30, y: 33, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Engine Room PS Overpressure(S-01) Fire Damper Position (FD-4634.1000)-->
+                            <door-render v-bind="{ signalId: 545, x: 35, y: 33, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Galley Hood Natural Inlet(E-15) Fire Damper Position(FD-4634.1100)-->
+                            <door-render v-bind="{ signalId: 549, x: 43, y: 28, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Steam Oven Hood Exhaust Fan Fire Damper Position(FD-4634.2500)-->
+                            <door-render v-bind="{ signalId: 554, x: 45, y: 38, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Galley Hood Exhaust(E-15) Fire Damper Position(FD-4634.1200)-->
+                            <door-render v-bind="{ signalId: 550, x: 47, y: 45, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Galley Fresh Air Inlet Fire Damper Position (FD-4634.1300)-->
+                            <door-render v-bind="{ signalId: 551, x: 49, y: 38, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Galley Hood Exhaust(E-15) Fire Damper #2 Position (FD-4634.1400)-->
+                            <door-render v-bind="{ signalId: 552, x: 51, y: 28, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Galley Exhaust Fan(E-10) Fire Damper Position(FD-4634.1500)-->
+                            <door-render v-bind="{ signalId: 553, x: 53, y: 22, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--AC # 01 Return Air #2 Fire Damper Position (FD Open FD.4634.2000)-->
+                            <door-render v-bind="{ signalId: 365, x: 16, y: 55, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--AC # 01 Return Air #1 Fire Damper Position (FD Open FD.4634.1900)-->
+                            <door-render v-bind="{ signalId: 364, x: 16, y: 67.5, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--AC # 01 Fresh Air Inlet Fire Damper Position (FD Open FD.4634.1800)-->
+                            <door-render v-bind="{ signalId: 363, x: 16, y: 80, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--AC # 01 Supple Air Fire Damper Position (FD Open FD.4634.2100)-->
+                            <door-render v-bind="{ signalId: 366, x: 20, y: 61.25, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Engine Room Stbd Supply Fan(S-02) Fire Damper Position(FD-4634.1700)-->
+                            <door-render v-bind="{ signalId: 547, x: 30, y: 71, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Engine Room Stbd Overpressure(S-02) Fire Damper Position(FD-4634.1600)-->
+                            <door-render v-bind="{ signalId: 546, x: 35, y: 71, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <span id="layout_5"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="ui col sm-1">
+                        <header class="col-header"><h5 class="ui h4">Bilge Deck</h5></header>
+                        <div class="ui col sm-1 middle-center"   style="justify-content: normal!important;" >
+                            <!--Stbd Steering Gear Comp. Overpressure(E-21) Shut Off Damper Position(FD Closed SD.4631.2900)-->
+                            <door-render v-bind="{ signalId: 361, x: 5, y: 40, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--PS Steering Gea Comp. Overpressure(E-20) Shut Off Damper Position (FD Open SD.4631.2600)-->
+                            <door-render v-bind="{ signalId: 360, x: 9, y: 40, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Hi-Fog Room OverPressure(E - 23) Shut Off Damper Position(FD Open SD.4631.2100)-->
+                            <door-render v-bind="{ signalId: 358, x: 16, y: 52, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Pipe Tunne Under pressure(E-24) Shut Off Damper Position(FD Open SD.4631.3600)-->
+                            <door-render v-bind="{ signalId: 290, x: 45, y: 27, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Ps Stabilizer comp. Underpressure (E-25) Shut Off Damper Pressure Damper Pos(FD Open SD.4631.3700)-->
+                            <door-render v-bind="{ signalId: 292, x: 48, y: 27, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Pipe Tinnel Exhaust Fan(E-24) Shut Off Damper Position(FD Open SD.4631.3300)-->
+                            <door-render v-bind="{ signalId: 289, x: 52, y: 25, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Ps Stabilizer comp. Exhaust Fan(E-25) Shut Off Damper Position (FD Open SD.4631.3400)-->
+                            <door-render v-bind="{ signalId: 291, x: 55, y: 25, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Laundry Exhaust Fan(E-28) Fire Damper Position(FD Open FD.4634.2200)-->
+                            <door-render v-bind="{ signalId: 287, x: 70, y: 40, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Fore Peak Natural Vent. Shut Off Damper Position (FD Closed SD.4631.4900)-->
+                            <door-render v-bind="{ signalId: 177, x: 88, y: 48, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+
+
+                            <!--Stbd Steering Gear Comp. Exhaust Fan(E-21) Shut Off Damper Position(FD Open SD.4631.3000)-->
+                            <door-render v-bind="{ signalId: 362, x: 5, y: 65, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--PS Steering Gear Comp. Exhaust Fan(E-20) Shut Off Damper Postion(FD Open SD.4631.2500)-->
+                            <door-render v-bind="{ signalId: 359, x: 9, y: 65, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Shore Power Transformer Room Overpressure(E -22) Shut Off Damper Pos(FD Closed SD.4631.2000)-->
+                            <door-render v-bind="{ signalId: 357, x: 14, y: 60, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Stbd Stabilizer Comp. Underpressure(E-26) Shut Off Damper Position(FD Open SD.4631.3800)-->
+                            <door-render v-bind="{ signalId: 294, x: 49, y: 83, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Stbd Stabilizer Comp. Exhaust Fan(E-26) Shut Off Damper Position(FD Open SD.4631.3500)-->
+                            <door-render v-bind="{ signalId: 293, x: 53, y: 82, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Laundry Underpressure(E-28) Fire Damper Position (FD Open FD.4634.2300)-->
+                            <door-render v-bind="{ signalId: 288, x: 68, y: 68, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Pump Room Exhaust Fan (E-27) Shut Off Damper Position (FD Open SD.4631.2800)-->
+                            <door-render v-bind="{ signalId: 285, x: 80, y: 55, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <!--Fore Peak Natural Vent. Shut Off Damper Position (FD Closed SD.4631.5000)-->
+                            <door-render v-bind="{ signalId: 178, x: 88, y: 55, size: 15, height:15, width:25, zeroColor: 'success', oneColor: 'danger'}"></door-render>
+                            <span id="layout_6"></span>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+</article>
+
+
+
+
+

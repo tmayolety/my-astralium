@@ -1,0 +1,11 @@
+// BUTTON SIZES /////////////////////////////////////////////
+@mixin modals--sizes{
+	@each $modals--size in $modals--size-list{
+
+		&.size-#{nth($modals--size, 1)}{
+			.modal-container{
+				width:        	#{nth($modals--size, 2)};
+			}			
+		}
+	}
+}

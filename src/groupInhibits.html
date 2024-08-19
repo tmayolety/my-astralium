@@ -1,0 +1,80 @@
+<article id="inhibitListSystemApp">
+    <div class="ui grid type1 cols-mini-1">
+        <div class="ui grid type1 cols-mini-1 col sm-1 gap-sm pad-lg has-header">
+            <inhibit-list-system-render></inhibit-list-system-render>
+        </div>
+    </div>
+</article>
+
+
+<div id="editDelayWindow" class="ui modal size-med">
+    <div class="modal-container">
+        <div class="ui grid type1 cols-1 pad-no gap-mini">
+            <div class="ui grid cols-1 col sm-1 gap-mini pad-no has-header has-footer">
+                <header class="ui col">
+                    <font id="editDelayAlarmName" style="font-size: 20px;"></font>
+                    <span class="gradients">
+						<span class="gradient-left"></span>
+						<span class="gradient-right"></span>
+					</span>
+                    <button class="ui btn sm icon primary colored icon-only active" onclick="$('.ui.modal').removeClass('open')">
+                        <svg class="ui icon" id="close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M98.74,81.26q2.52,2.14,0,4.47l-13,13q-2.33,2.33-4.47,0L50,67.67,18.74,98.74q-2.14,2.52-4.47,0l-13-13q-2.33-2.33,0-4.47L32.33,50,1.26,18.93q-2.33-2.33,0-4.47l13-13.2q2.32-2.33,4.47,0L50,32.33,81.26,1.26c1.56-1.68,3-1.68,4.47,0l13,13q2.33,2.32,0,4.47L67.67,50Z"></path></svg>					</button>
+                </header>
+                <div class="ui col sm-1 pad-no">
+                    <div class="col-content overflow modal-content">
+                        <div class="ui col sm-1 pad-no gap-no bg-no">
+                            <div class="col-content overflow">
+                                <ul class="ui table size-med resp singleline">
+                                    <li class="thead">
+                                        <div class="col-150"><span>Alarm</span></div>
+                                        <div class="col-180-min"><span>Delay (s)</span></div>
+                                    </li>
+                                    <li>
+                                        <div class="col-150">
+                                            <span>Time Delay</span>
+                                        </div>
+                                        <div class="col-180-min">
+                                        <span style="width: 120px;"><h1 id="delay" class="ui h1 font-lcd" style="margin: 5px 15px 5px 15px;"></h1></span>
+
+                                        <ul>
+
+                                            <li>
+                                            <button class="ui btn sm gutter-mini" style="padding: 5px!important; width: 120px; margin:1em; " onclick="inhibits.editTimeDelay( 1, 1000)" >+1000</button>
+                                            <button class="ui btn sm gutter-mini" style="padding: 5px!important; width: 120px; margin:1em " onclick="inhibits.editTimeDelay( 0, 1000)" >-1000</button>
+                                            <button class="ui btn sm gutter-mini" style="padding: 5px!important; width: 120px; margin:1em; " onclick="inhibits.editTimeDelay( 1, 100)" >+100</button>
+                                            <button class="ui btn sm gutter-mini" style="padding: 5px!important; width: 120px; margin:1em " onclick="inhibits.editTimeDelay( 0, 100)" >-100</button>
+                                            </li>
+
+                                            <li>
+
+                                            <button class="ui btn sm gutter-mini" style="padding: 5px!important; width: 120px; margin:1em; " onclick="inhibits.editTimeDelay( 1, 10)">+10</button>
+                                            <button class="ui btn sm gutter-mini" style="padding: 5px!important; width: 120px; margin:1em " onclick="inhibits.editTimeDelay( 0, 10)" >-10</button>
+                                            <button class="ui btn sm gutter-mini" style="padding: 5px!important; width: 120px; margin:1em; " onclick="inhibits.editTimeDelay( 1, 0.5)">+0.5</button>
+                                            <button class="ui btn sm gutter-mini" style="padding: 5px!important; width: 120px; margin:1em " onclick="inhibits.editTimeDelay( 0, 0.5)" >-0.5</button>
+
+                                            </li>
+
+                                        </ul>
+
+
+
+                                      
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer>
+                    <div class="btn-group">
+                        <button id="editAlarmButton" class="ui btn lg success active gutter-med" onclick="inhibits.editDelaySave();">Save</button>
+                    </div>
+                </footer>
+                <input type="hidden" id="editDelayAlarmId">
+                <input type="hidden" id="editDelayDeviceId">
+            </div>
+        </div>
+    </div>
+</div>

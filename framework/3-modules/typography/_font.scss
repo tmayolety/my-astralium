@@ -1,0 +1,100 @@
+$font-list:         light,
+					lightitalic,
+					regular,
+					regularitalic,
+					semibold,
+					semibolditalic,
+					'bold',
+					bolditalic,
+					'black',
+					blackitalic;
+
+
+
+
+
+///////////////////////////////////////////////////////
+// SCHEME 1 //
+///////////////////////////////////////////////////////
+$font-path-polar:			'../3-modules/typography/polar/';
+$font-name-polar:         	polar;	
+
+// GENERATE FONTFACE //
+@each $name in $font-list{
+	@font-face {
+		font-family: '#{$font-name-polar}_#{$name}';
+		src: url('#{$font-path-polar}#{$font-name-polar}_#{$name}/#{$font-name-polar}_#{$name}');
+		src: //url('#{$font-path-polar}#{$font-name-polar}_#{$name}/#{$font-name-polar}_#{$name}.eot?#iefix') format('embedded-opentype'),
+			 url('#{$font-path-polar}#{$font-name-polar}_#{$name}/#{$font-name-polar}_#{$name}.woff2') format('woff2'),
+			 url('#{$font-path-polar}#{$font-name-polar}_#{$name}/#{$font-name-polar}_#{$name}.woff') format('woff'),
+			 url('#{$font-path-polar}#{$font-name-polar}_#{$name}/#{$font-name-polar}_#{$name}.ttf') format('truetype'),
+			 url('#{$font-path-polar}#{$font-name-polar}_#{$name}/#{$font-name-polar}_#{$name}.svg##{$name}') format('svg');
+	}
+}
+
+html[data-scheme="scheme1"]{
+	&:root{
+		@each $name in $font-list{
+			--font-#{$name}:		"#{$font-name-polar}_#{$name}";
+		}
+	}
+}
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////
+// SCHEME 2 //
+///////////////////////////////////////////////////////
+$font-path-urbanist:			'../3-modules/typography/urbanist/';
+$font-name-urbanist:         	urbanist;	
+
+// GENERATE FONTFACE //
+@each $name in $font-list{
+	@font-face {
+		font-family: '#{$font-name-urbanist}_#{$name}';
+		src: url('#{$font-path-urbanist}#{$font-name-urbanist}_#{$name}/#{$font-name-urbanist}_#{$name}');
+		src: //url('#{$font-path-urbanist}#{$font-name-urbanist}_#{$name}/#{$font-name-urbanist}_#{$name}.eot?#iefix') format('embedded-opentype'),
+			 url('#{$font-path-urbanist}#{$font-name-urbanist}_#{$name}/#{$font-name-urbanist}_#{$name}.woff2') format('woff2'),
+			 url('#{$font-path-urbanist}#{$font-name-urbanist}_#{$name}/#{$font-name-urbanist}_#{$name}.woff') format('woff'),
+			 url('#{$font-path-urbanist}#{$font-name-urbanist}_#{$name}/#{$font-name-urbanist}_#{$name}.ttf') format('truetype'),
+			 url('#{$font-path-urbanist}#{$font-name-urbanist}_#{$name}/#{$font-name-urbanist}_#{$name}.svg##{$name}') format('svg');
+	}
+}
+
+html[data-scheme="scheme2"]{
+	&:root{
+		@each $name in $font-list{
+			--font-#{$name}:		"#{$font-name-urbanist}_#{$name}";
+		}
+	}
+}
+
+
+
+
+
+
+
+@each $name in $font-list{
+	%font-#{$name}{
+		font-family: var(--font-#{$name})!important;
+	}
+	.font-#{$name}{
+		font-family: var(--font-#{$name})!important;
+	}
+}
+
+
+
+
+// LCD FONT //////////////////////////////////////////////
+@import url('../3-modules/typography/seven_segment/stylesheet.css');
+
+
+
+
+

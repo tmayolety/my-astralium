@@ -1,0 +1,112 @@
+nav.main-nav > ul > li i {
+  background-size: cover;
+  filter: invert(100%);
+  opacity: 0.4;
+}
+
+nav.main-nav > ul > li i::before {
+  opacity: 0;
+}
+
+nav.main-nav > ul > li.active i {
+  opacity: 1;
+  filter: invert(0);
+}
+
+i.air-quality {
+  background-image: url("../temp/icons/main-nav/img/air-quality.png");
+}
+
+i.alarms {
+  background-image: url("../temp/icons/main-nav/img/alarms.png");
+}
+
+i.batteries {
+  background-image: url("../temp/icons/main-nav/img/batteries.png");
+}
+
+i.bilges {
+  background-image: url("../temp/icons/main-nav/img/bilges.png");
+}
+
+i.camera {
+  background-image: url("../temp/icons/main-nav/img/camera.png");
+}
+
+i.engines {
+  background-image: url("../temp/icons/main-nav/img/engines.png");
+}
+
+i.fire {
+  background-image: url("../temp/icons/main-nav/img/fire.png");
+}
+
+i.generators {
+  background-image: url("../temp/icons/main-nav/img/generators.png");
+}
+
+i.hatches {
+  background-image: url("../temp/icons/main-nav/img/hatches.png");
+}
+
+i.inclinometer {
+  background-image: url("../temp/icons/main-nav/img/inclinometer.png");
+}
+
+i.inhibits {
+  background-image: url("../temp/icons/main-nav/img/inhibits.png");
+}
+
+i.loads {
+  background-image: url("../temp/icons/main-nav/img/loads.png");
+}
+
+i.navigation {
+  background-image: url("../temp/icons/main-nav/img/navigation.png");
+}
+
+i.nav-lights {
+  background-image: url("../temp/icons/main-nav/img/nav-lights.png");
+}
+
+i.settings {
+  background-image: url("../temp/icons/main-nav/img/settings.png");
+}
+
+i.shore {
+  background-image: url("../temp/icons/main-nav/img/shore.png");
+}
+
+i.singles-line {
+  background-image: url("../temp/icons/main-nav/img/singles-line.png");
+}
+
+i.tanks {
+  background-image: url("../temp/icons/main-nav/img/tanks.png");
+}
+
+i.temps {
+  background-image: url("../temp/icons/main-nav/img/temps.png");
+}
+
+i.various {
+  background-image: url("../temp/icons/main-nav/img/various.png");
+}
+
+i.vibrations {
+  background-image: url("../temp/icons/main-nav/img/vibrations.png");
+}
+
+.singleline-icon[class*="ico-ui-"] {
+  background-size: cover;
+  filter: invert(100%);
+  opacity: 0.6;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+}
+
+.singleline-icon[class*="ico-ui-"]::before {
+  opacity: 0;
+}

@@ -1,0 +1,96 @@
+/* MODALS */
+
+// Load functions for Modals
+@import	'functions';
+
+$modal-radius:				10px;
+$modal-margin:				40px;
+
+
+#{$ui}.modal{
+	@include				fixed-pos(-200vh, auto, auto, auto);	
+	z-index:				999;
+	@include				modals--sizes;
+
+	// OPEN //
+	&.open,
+	&.open.background::after{
+		@include			fixed-pos(0, 0, 0, 0);
+	}
+
+	.modal-container{
+		@include			abs-pos(50%, auto, auto, 50%);
+		@include			translate(-50%, -50%);
+		//display:			flex;
+		//flex-direction:		column;
+		box-sizing:			border-box;		
+		width:				300px;
+		max-width:			calc(100vw - #{$modal-margin * 2});		
+		min-height:			100px;
+		max-height:			calc(100vh - #{$modal-margin * 2});
+		//border-radius:		10px;
+	}
+
+	// BACKGROUND //
+	&.background{
+		&::after{
+			content:		'';
+			@include		fixed-pos(-200vh, auto, auto, auto);
+			background:		rgba(black,0.9);
+			z-index:		-1;
+		}
+	}
+
+	.modal-content{
+		max-height:			calc(100vh - #{$modal-margin * 2});
+		padding:			20px;
+		box-sizing:			border-box;
+	}
+
+	header,
+	footer{
+		display:			none!important;
+	}
+
+	// HAS FOOTER //
+	.has-header{
+		header{
+			display:		grid!important;
+		}
+		.modal-content{
+			max-height:		calc((100vh - #{$modal-margin * 2}) - #{$grid--header-height});
+		}
+	}
+
+	// HAS FOOTER //
+	.has-footer{
+		footer{
+			display:		block!important;
+		}
+		.modal-content{
+			max-height:		calc((100vh - #{$modal-margin * 2}) - 100px);
+		}
+	}
+
+	.has-header.has-footer{
+		.modal-content{
+			max-height:		calc((100vh - #{$modal-margin * 2}) - #{$grid--header-height} - 100px);
+		}
+	}
+}
+
+
+
+
+// FOOTER //
+#{$ui}.modal{
+	footer{
+		display:			none!important;
+		padding-top:		20px;
+
+		> .btn-group{
+			width:			fit-content;
+			margin:			0 auto;
+		}
+	}
+}

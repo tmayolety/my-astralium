@@ -1,0 +1,114 @@
+// SCROLLBAR CHROME ////////////////////////////////////////////
+
+html[data-scheme="scheme1"]{
+	@media (min-width: 1023px){
+
+		$cl-scrollbar-1-dark:			#434a4d;
+		$cl-scrollbar-2-dark:			#0c1519;
+		$cl-scrollbar-3-dark:			white;
+
+		$cl-scrollbar-1-light:			#929292;
+		$cl-scrollbar-2-light:			#c5c7c7;
+		$cl-scrollbar-3-light:			white;
+
+		::-webkit-scrollbar {
+			width:						7px;
+			height:						7px;
+		}
+		::-webkit-scrollbar-button {
+			width:						0px;
+			height:						0px;
+		}
+		::-webkit-scrollbar-thumb {
+			border-radius:				50px;
+			background:					RGBA(var(--sch-clr-text-default) / 20% );
+			border:						30px none $cl-scrollbar-3-dark;
+			@include					transition(background, $transition-scheme 0s ease-in-out); 
+		}
+
+		::-webkit-scrollbar-thumb:hover {
+			background:					RGBA(var(--sch-clr-ui-text) / 50% );
+		}
+
+		::-webkit-scrollbar-thumb:active {
+			background:					RGBA(var(--sch-clr-ui-text) / 50% );
+		}
+
+		::-webkit-scrollbar-track {
+			border-radius:				100px;
+			background:					RGBA(var(--sch-clr-ui-text) / 10% );
+			border:						0px none $cl-scrollbar-3-dark;
+			@include					transition(background, $transition-scheme 0s ease-in-out); 
+		}
+
+		::-webkit-scrollbar-track:hover {
+			background:					RGBA(var(--sch-clr-ui-text) / 10% );
+		}
+
+		::-webkit-scrollbar-track:active {
+			background:					RGBA(var(--sch-clr-ui-text) / 10% );
+		}
+
+		::-webkit-scrollbar-corner {
+			background:					transparent;
+		}
+
+	}
+}
+
+
+html[data-scheme="scheme2"]{
+	@media (min-width: 1023px){
+
+		$cl-scrollbar-1-dark:			#434a4d;
+		$cl-scrollbar-2-dark:			#0c1519;
+		$cl-scrollbar-3-dark:			white;
+
+		$cl-scrollbar-1-light:			#929292;
+		$cl-scrollbar-2-light:			#c5c7c7;
+		$cl-scrollbar-3-light:			white;
+
+		::-webkit-scrollbar {
+			width:						7px;
+			height:						7px;
+		}
+		::-webkit-scrollbar-button {
+			width:						0px;
+			height:						0px;
+		}
+		::-webkit-scrollbar-thumb {
+			border-radius:				50px;
+			background:					white;
+			border:						30px none $cl-scrollbar-3-dark;
+			@include					transition(background, $transition-scheme 0s ease-in-out); 
+		}
+
+		::-webkit-scrollbar-thumb:hover {
+			background:					RGBA(var(--sch-clr-ui-text) / 50% );
+		}
+
+		::-webkit-scrollbar-thumb:active {
+			background:					RGBA(var(--sch-clr-ui-text) / 50% );
+		}
+
+		::-webkit-scrollbar-track {
+			border-radius:				100px;
+			background:					RGBA(255 255 255 / 50%);
+			border:						0px none $cl-scrollbar-3-dark;
+			@include					transition(background, $transition-scheme 0s ease-in-out); 
+		}
+
+		::-webkit-scrollbar-track:hover {
+			background:					RGBA(var(--sch-clr-ui-text) / 10% );
+		}
+
+		::-webkit-scrollbar-track:active {
+			background:					RGBA(var(--sch-clr-ui-text) / 10% );
+		}
+
+		::-webkit-scrollbar-corner {
+			background:					transparent;
+		}
+
+	}
+}

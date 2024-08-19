@@ -1,0 +1,7 @@
+// BACKGROUND SIZE
+// Value (length, percentage, cover, contain)
+// @include background-size(100%, 100%);
+@mixin background-size($value) {
+     -moz-background-size: $value;
+  -webkit-background-size: $value;
+          background-size: $value; }

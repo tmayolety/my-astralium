@@ -1,0 +1,328 @@
+// Load functions for Button
+@import	'functions';
+
+%btn{
+	position:				relative;
+	cursor:					pointer;
+	display:				inline-flex;
+	align-items:			center;
+	justify-content:		center;
+	margin:					0;
+	outline:				none;
+	border-style:			solid;
+	border-width:			2px;
+	@include				transition(	color $transition-scheme 0s ease-in-out,
+										background-color $transition-scheme 0s ease-in-out,
+										border-color $transition-scheme 0s ease-in-out,
+										box-shadow $transition-scheme 0s ease-in-out,
+										z-index 0s $transition-scheme ease-in-out);
+	text-decoration:		none;
+	@extend					%font-regular;
+
+	color:					RGBA(var(--sch-clr-ui-text)/var(--sch-clr-ui-text-op));
+	background-color:		RGBA(var(--sch-clr-grid-border) / var(--sch-clr-grid-op));
+	border-color:			RGBA(255 255 255 / 15%);
+	box-shadow:				0px 0px 6px 2px RGBA(var(--sch-clr-grid-border) / 0%),
+							inset 0px 0px 10px 2px RGBA(var(--sch-clr-grid-border) / 20%);
+
+	&::last-child{
+		margin:				0;
+	}
+
+	&.fit-content{
+		width:				min-content;
+	}
+
+	&.inactive{
+		pointer-events:		none;
+	}
+
+	&.pad-h-no{
+		padding-left:		0!important;
+		padding-right:		0!important;
+	}
+
+	&.icon{
+		> svg{
+			fill:			RGBA(var(--sch-clr-ui-text)/var(--sch-clr-ui-text-op));
+			@include		abs-pos(50%, auto, auto, 0);
+			@include		translate(0, -50%);
+			@include		transition(	all 0.2s ease-in-out);
+		}
+		&.icon-only::after{
+			content:		'.';
+			pointer-events: none;
+			opacity:		0;
+		}
+		&.vertical{
+			> svg{
+				left:		50%!important;
+				@include	translate(-50%, 0);
+				margin-right:0;
+			}
+		}
+	}
+
+	&.inactive{
+		pointer-events:		none!important;
+	}
+
+	&.active,
+	&:active{
+		z-index:			9;
+		color:				white!important;
+		@include			transition(	color $transition-scheme 0s ease-in-out,
+										background-color $transition-scheme 0s ease-in-out,
+										border-color $transition-scheme 0s ease-in-out,
+										box-shadow $transition-scheme 0s ease-in-out,
+										z-index 0s $transition-scheme ease-in-out);
+
+		> svg{
+			fill:			white!important;
+		}
+	}
+
+	&.colored{
+		z-index:			8;
+	}
+
+	&.radius-no{
+		border-radius: 		0!important;
+	}
+
+	&.rounded{
+		border-radius: 		100px!important;
+	}
+
+	&.link{
+		box-shadow:			none!important;
+		background:			none!important;
+		border:				0!important;
+	}
+}
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////
+// Generate Button //
+///////////////////////////////////////////////////////////////////////////
+#{$ui}.btn{
+	@extend				%btn;
+	//@include			btn--colors;
+	@include			btn--sizes;
+	@include			btn--gutters;
+
+	// light
+	&.light{
+		color:			black;
+	}
+}
+
+
+
+
+@import	'button-circle';
+@import	'button-collapse';
+@import	'button-toggle';
+@import	'button-switch';
+@import	'button-switch2';
+@import	'button-rounded';
+@import	'button-multi';
+
+
+
+
+
+
+
+
+
+// CENTRED ////////////////////////////
+#{$ui}.btn.centred,
+#{$ui}.btn-group.centred{
+	margin:		0 auto;
+}
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+// NO BACKGROUND //
+/////////////////////////////////////////////////////////////////////////////
+#{$ui}.grid{
+
+	.col.bg-no,
+	&.bg-no > .col{
+		background:					none!important;
+		border:						0!important;
+	}
+
+	&.gap-no.bg-no{
+		border:						0!important;
+	}
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+// LOADING //
+//////////////////////////////////////////////////////////////////////////
+#{$ui}.btn{
+
+	&.loading{
+		//background-color:			RGBA(var(--sch-clr-grid-border) / var(--sch-clr-grid-border-op))!important;
+		pointer-events: 			none;
+		z-index:					1;
+		svg{
+			opacity:				0.5;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////
+// BTN ICON //
+///////////////////////////////////////////////////////////////////////////
+#{$ui}.btn{
+	&.icon-only{
+		padding-left:	1rem;
+		padding-right:	1rem;
+		> svg{
+			margin:		0;
+		}		
+	}
+}
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////
+// BTN RESPONSIVE //
+///////////////////////////////////////////////////////////////////////////
+#{$ui}.btn,
+#{$ui}.btn-group{
+	&.resp{
+		width:		100%;
+		height:		100%;
+	}
+}
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////
+// BTN ALERT //
+///////////////////////////////////////////////////////////////////////////
+#{$ui}.btn{
+
+	&.alert{
+		&::before{
+			content:		'';
+			border:			3px solid var(--value-red);
+			pointer-events: none;
+			box-sizing:		border-box;			
+			@include		abs-pos(-7px, -7px, -7px, -7px);
+		}
+	}
+}
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////
+// BTN GROUP //
+///////////////////////////////////////////////////////////////////////////
+#{$ui}.btn-group{
+	display:						flex;
+	width:							fit-content;
+	flex-wrap:						nowrap;
+	box-sizing:						border-box;
+
+	// RESPONSIVE //
+	&.resp-horz{
+		width:						100%;
+		> .btn{
+			flex-grow:				1;
+		}
+	}
+	&.resp-vert{
+		height:						100%;
+		> .btn{
+			flex-grow:				1;
+		}
+	}
+
+	// HORIZONTAL //
+	&.horizontal{
+		flex-direction:				row;
+	}
+
+	// VERTICAL //
+	&.vertical{
+		flex-direction:				column;
+	}
+
+
+	&.vertical-phone{
+		@include breakpoint(phone){
+			flex-direction:			column;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+// NUM PAD /////////////////////////////////////////
+.user-select{
+	> .col{
+		display:								flex;
+
+		.btn{
+			width:								100%;
+			font-size:							1rem;
+			line-height: 						1rem;
+		}
+	}
+}
+
+
+
+
+
+// BTN LCD /////////////////////////////////////////
+#{$ui}.btn{
+	&.font-lcd{
+		color:				RGBA(var(--sch-clr-text-default)/var(--sch-clr-text-default-op));
+		pointer-events:		none;
+	}
+}

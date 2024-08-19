@@ -1,0 +1,191 @@
+$scheme-clr-black-hex:					#000000;
+$scheme-clr-black-rgb:					HEXtoRGB($scheme-clr-black-hex);
+
+$scheme-clr-white-hex:					#FFFFFF;
+$scheme-clr-white-rgb:					HEXtoRGB($scheme-clr-white-hex);
+
+
+
+// BACKGROUND //
+$scheme1-clr-background-hex:			$scheme-clr-black-hex;
+$scheme1-clr-background-rgb:			HEXtoRGB($scheme1-clr-background-hex);
+
+// UI //
+$scheme1-clr-ui-hex:					#479bd4;
+$scheme1-clr-ui-rgb:					HEXtoRGB($scheme1-clr-ui-hex);
+
+$scheme1-clr-ui-glow-hex:				lighten($scheme1-clr-ui-hex, 30%);
+$scheme1-clr-ui-glow-rgb:				HEXtoRGB($scheme1-clr-ui-glow-hex);
+
+$scheme1-clr-ui-text-hex:				lighten($scheme1-clr-ui-hex, 15%);
+$scheme1-clr-ui-text-rgb:				HEXtoRGB($scheme1-clr-ui-text-hex);
+
+$scheme1-clr-ui-border-hex:				darken($scheme1-clr-ui-hex, 25%);
+$scheme1-clr-ui-border-rgb:				HEXtoRGB($scheme1-clr-ui-border-hex);
+
+
+// ACTIVE //
+$scheme1-clr-active-hex:				#3498db;
+$scheme1-clr-active-rgb:				HEXtoRGB($scheme1-clr-active-hex);
+
+$scheme1-clr-active-glow-hex:			lighten($scheme1-clr-ui-hex, 20%);
+$scheme1-clr-active-glow-rgb:			HEXtoRGB($scheme1-clr-active-glow-hex);
+
+$scheme1-clr-active-text-hex:			$scheme-clr-white-hex;
+$scheme1-clr-active-text-rgb:			HEXtoRGB($scheme1-clr-active-text-hex);
+
+
+// GRID //
+$scheme1-clr-grid-hex:					darken($scheme1-clr-ui-hex, 45%);
+$scheme1-clr-grid-rgb:					HEXtoRGB($scheme1-clr-grid-hex);
+
+$scheme1-clr-grid-border-hex:			darken($scheme1-clr-ui-hex, 37%);
+$scheme1-clr-grid-border-rgb:			HEXtoRGB($scheme1-clr-grid-border-hex);
+
+
+
+$scheme1-list: (
+	scheme1 (
+		background			$scheme1-clr-background-rgb			100%,
+		text-default		$scheme-clr-white-rgb				100%,
+
+		ui-bg				$scheme1-clr-ui-rgb					15%,
+		ui-border			$scheme1-clr-ui-border-rgb			100%,
+		ui-glow				$scheme1-clr-ui-rgb					100%,
+		ui-icon				$scheme1-clr-ui-text-rgb			60%,
+		ui-text				$scheme1-clr-ui-text-rgb			60%,
+
+		active				$scheme1-clr-active-rgb				100%,		
+		active-glow-in		$scheme1-clr-active-glow-rgb		100%,		
+		active-glow-out		$scheme1-clr-ui-rgb					90%,
+		active-text			$scheme1-clr-active-text-rgb		100%,
+		
+		grid				$scheme1-clr-grid-rgb				100%,
+		grid-border			$scheme1-clr-grid-border-rgb		100%,
+
+		glow				$scheme1-clr-active-rgb				100%,
+	),
+);
+
+
+
+
+
+
+html[data-scheme="scheme1"]{
+
+	&:root{
+
+		--clr-scheme-neg:			255 255 255;
+
+		// COLORS VARIABLES //////////////////////////////
+		--clr-type-primary:			52 152 219;
+		--clr-type-primary-light:	117 185 231;
+		--clr-type-primary-dark:	29 111 165;
+
+		--clr-type-secondary:		127 140 141;
+		--clr-type-secondary-light:	167 176 177;
+		--clr-type-secondary-dark:	90 100 101;
+
+		--clr-type-success:			39 174 96;
+		--clr-type-success-light:	75 215 134;
+		--clr-type-success-dark:	25 112 62;
+
+		--clr-type-warning:			202 187 12;
+		--clr-type-warning-light:	243 227 48;
+		--clr-type-warning-dark:	130 120 8;
+
+		--clr-type-warning2:		230 126 34;
+		--clr-type-warning2-light:	238 166 103;
+		--clr-type-warning2-dark:	168 89 19;
+
+		--clr-type-danger:			179 0 0;
+		--clr-type-danger-light:	255 0 0;
+		--clr-type-danger-dark:		102 0 0;
+
+		--clr-type-info:			155 89 182;
+		--clr-type-info-light:		187 142 205;
+		--clr-type-info-dark:		113 59 135;
+
+		--clr-type-light:			163 163 163;
+		--clr-type-dark:			100 100 100;
+
+		// FLUID COLORS /////////////////////////////////
+		--clr-fl-yellow:			207 160 33;
+		--clr-fl-yellow-light:		232 199 110;
+
+		--clr-fl-blue:				27 92 194;
+		--clr-fl-blue-light:		91 146 232;
+
+		--clr-fl-brown:				127 70 27;
+		--clr-fl-brown-light:		210 116 46;
+
+		--clr-fl-dark:				0 0 0;
+		--clr-fl-dark-light:		51 51 51;
+
+		--clr-fl-gray:				125 125 125;
+		--clr-fl-gray-light:		176 176 176;
+
+		--clr-fl-red:				158 14 14;
+		--clr-fl-red-light:			236 38 38;
+
+		--clr-fl-green:				43 165 29;
+		--clr-fl-green-light:		88 223 73;
+
+		// VALUE COLORS //////////////////////////////////
+		--value-red:				red;
+		--value-yellow:				yellow;
+
+		--grid-border:				1px;
+
+		--clr-bg-op:				30%;
+		--grid-radius:				0;
+		--grid-shadow:				none;
+
+		$--clr-suvalue-ui:			$scheme1-clr-active-glow-rgb;
+		--clr-subvalue-ui:			$--clr-suvalue-ui;
+	}
+
+
+	.clr-subvalue-ui{
+		color: 						RGBA(var(--clr-subvalue-ui) / 40%)!important;
+	}
+}
+
+svg{
+	.tank,
+	.water,
+	.lowerDeck0,
+	.bilgeTank,
+	.forepeak,
+	.bridgeDeck,
+	.ownerDeck,
+	.mainDeck,
+	.frame,
+	.sideView{
+		stroke: 					RGBA(var(--clr-subvalue-ui) / 50%)!important;
+	}
+	.water{
+		stroke: 					RGBA(var(--clr-subvalue-ui) / 50%)!important;
+		fill:						RGBA(var(--clr-subvalue-ui) / 25%)!important;;
+	}
+}
+
+
+
+html[data-scheme="scheme1"]{
+
+	ul#{$ui}.table{
+		> li{
+			> div{
+				> i[class*="icon-size-"]{
+					> svg{
+						fill:		rgba(white, 0.6);
+					}
+				}
+			}
+		}
+	}
+
+}
+

@@ -1,0 +1,52 @@
+<article>
+        <div class="ui grid type1 cols-mini-1 hidden-phone">
+
+            <div class="ui grid cols-mini-1 col mini-1 gap-sm pad-lg has-header insulationSystemApp">
+
+                <header class="ui col">
+                    <font>Earth Leakage Monitoring</font>
+                    <span class="gradients">
+                <span class="gradient-left"></span>
+                <span class="gradient-right"></span>
+                </span>
+                </header>
+
+                <div class="ui grid type1 cols-mini-1 cols-xl-2 pad-no gap-xl">
+
+                    <div class="ui col mini-1 xl-2 gap-no pad-no align-start has-col-header-sm hidden-phon radius shadow">
+                        <header class="col-header size-med">Earth Insulation Level Trends</header>
+                        <div class="ui grid type1 cols-mini-3 gap-lg col mini-1">
+                            <div class="ui col mini-3 gap-lg align-top-center">
+                                <div class="w-mini-1000 w-xl-1800 h-mini-340" style="touch-action: none; overflow: hidden;">
+                                    <canvas id="insulationLevels"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ui col mini-1 xl-1 has-col-header-sm align-start radius shadow">
+                        <header class="col-header size-med">Earth Insulation Value</header>
+                        <div class="col-content overflow">
+                            <ul class="ui table size-mini resp">
+                                <icon-text-value-analogue-line-render v-bind="{  signalId: 710, unit: 'KOhm',valueMode: 'filtered',title: 'Service Battery Insulation Level', icon: 'shore', size: '20', timeDelay: 3000 }"></icon-text-value-analogue-line-render>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ui col mini-1 xl-1 has-col-header-sm align-start radius shadow">
+                        <header class="col-header size-med">Earth Leakage Alarm</header>
+                        <div class="col-content overflow">
+                            <ul class="ui table size-mini resp">
+                                <icon-text-value-digital-line-render v-bind="{  signalId: 29, title: 'GMDSS 24 V DC Distribution SWBD Leakage Alarm', icon: 'shore', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Fault', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{  signalId: 30, title: 'WheelHouse 24V DC Distribution SWBD Leackage Alarm', icon: 'shore', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Fault', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{  signalId: 31, title: 'Acc. Emergency Lighting 24V DC Dist. SWBD Leakage Alarm',  icon: 'shore', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'Fault', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+</article>

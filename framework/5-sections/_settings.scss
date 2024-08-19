@@ -1,0 +1,107 @@
+.section-settings{
+
+	.screen-bright-toggle{
+		position:				relative;
+		left:					50%;
+		@include				translate(-50%, 0);
+	}
+}
+
+
+
+
+// SYSTEM LAYOUT CABLES //////////////////////////////////////////////////////////////
+.section-settings{
+	$cable-weight:							10px;
+	$cable-height:							50px;
+	$cable-size:							48%;
+	$cable-gap:								10px;
+
+	$cable-color-inactive:					lighten($grid--column-bg-dark, 10%);
+	$cable-color-active:					RGBA(var(--clr-type-primary) / 100%);
+
+	.section-settings-cables{
+		margin-top:							$cable-height;
+		@include breakpoint(phone){
+			margin-top:						5px;
+		}	
+
+		[class*="cable-"]{
+			position:						absolute;
+			top:							-$cable-height;
+			width:							$cable-size;
+			height:							$cable-height;
+			border-width:					$cable-weight;
+			border-style:					solid;
+			border-bottom-width:			0;	
+			box-sizing:						border-box;
+			border-color:					$cable-color-inactive;
+
+			&.active{
+				border-color:				$cable-color-active;
+			}
+
+			@include breakpoint(phone){
+				display:					none;
+			}
+		}
+
+		.cable-in{
+			left:							-#{$cable-gap / 2};
+			border-left-width:				0;
+		}
+
+		.cable-out{
+			right:							-#{$cable-gap / 2};
+			border-right-width:				0;	
+		}
+
+		.cable-single{
+			left:							-6px;
+			width:							calc(100% + 12px);
+			border-left-width:				0;
+			border-right-width:				0;
+			&::before{
+				content:					'';
+				@include					abs-pos(0, auto, auto, 50%);
+				height:						100%;
+				width:						$cable-weight;
+				background:					$cable-color-inactive;
+			}
+			&.active::before{
+				background:					$cable-color-active;
+			}
+		}
+
+		.cable-plc{
+			left:							50%;
+			width:							50%;
+			border-right-width:				0;
+			margin-top:						0px;
+			height:							52px;
+			border-color:					$cable-color-inactive;
+		}
+
+		&:first-child{
+			.cable-in{
+				width:						60%;
+				left:						-#{$cable-gap / 2 + 17px};
+			}
+			.cable-single{
+				left:						-20px;
+				width:						calc(100% + 22px);
+			}
+		}
+
+		&:last-child{	
+			.cable-single{
+				left:						-20px;
+				width:						calc(50% + 22px + #{$cable-weight});
+				&::before{
+					left:					100%;
+					@include				translate(-100%, 0);
+				}
+			}		
+		}
+	}
+}

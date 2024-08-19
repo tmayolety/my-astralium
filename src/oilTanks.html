@@ -1,0 +1,84 @@
+
+<article>
+
+
+        <div class="ui grid type1 cols-mini-1 cols-xl-2 gap-xl hidden-phone pad-lg oilTanksApp">
+
+            <div class="ui col mini-1 xl-2 gap-sm pad-lg has-header
+                        grid type1 cols-mini-1">
+
+                <header class="ui col">
+                    <font>Oil Tanks</font>
+                    <span class="gradients">
+                    <span class="gradient-left"></span>
+                    <span class="gradient-right"></span>
+                </span>
+                    
+                    
+                </header>
+
+                <div class="ui col mini-1 gap-no pad-mini radius shadow
+                            grid type1 cols-mini-3" style="height: 390px;" id="oilTanks">
+                    <div class="ui col mini-1">
+                        <bar-render v-bind="{ signalId: 518, orientation: 'vertical', size: 'regular', unit: 'L', title:'Bilge', displayScale: true, displayCapacity: true, color: 'color-fl-yellow', scaleBottom: 0, scaleTop: 3300, scaleStep: 330, scaleSegments: 10,  showLimits: true, valueMode: 'filtered' }"></bar-render>
+                    </div>
+                    <div class="ui col mini-1">
+                        <bar-render v-bind="{ signalId: 433, orientation: 'vertical', size: 'regular', unit: 'L', title:'Dirty Oil', displayScale: true, displayCapacity: true, color: 'color-fl-yellow', scaleBottom: 0, scaleTop: 2700, scaleStep: 270, scaleSegments: 10,  showLimits: true, valueMode: 'filtered' }"></bar-render>
+                    </div>
+                    <div class="ui col mini-1">
+                        <bar-render v-bind="{ signalId: 523, orientation: 'vertical', size: 'regular', unit: 'L', title:'Clean Oil', displayScale: true, displayCapacity: true, color: 'color-fl-yellow', scaleBottom: 0, scaleTop: 2700, scaleStep: 270, scaleSegments: 10,  showLimits: true, valueMode: 'filtered' }"></bar-render>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="ui col mini-1 xl-1 gap-sm pad-lg has-header hidden-phone
+                        grid type1 cols-mini-1">
+                <header class="ui col">
+                    <font>Total Oil</font>
+                    <span class="gradients">
+                        <span class="gradient-left"></span>
+                        <span class="gradient-right"></span>
+                    </span>
+                    
+                    
+                </header>
+                <div class="ui col sm-1 gap-no pad-lg h-mini-300 radius shadow type1 timelineBackground">
+                    <canvas id="totalOil" style="height: 270px!important; margin-top: 29px!important;"></canvas>
+                </div>
+
+                
+                <div style="display: flex; justify-content: center; padding: 0.1em; gap: .5em; position: absolute; top: 63px; right: 5px;">
+                    <button class="ui btn mini colored primary timeLineButtonOilTanks" id="btn1OilTanks" style=" width: 50px;">12H</button>
+                    <button class="ui btn mini colored primary timeLineButtonOilTanks" id="btn2OilTanks" style=" width: 50px;">24H</button>
+                    <button class="ui btn mini colored primary timeLineButtonOilTanks active" id="btn3OilTanks" style=" width: 50px;">2D</button>
+                    <button class="ui btn mini colored primary timeLineButtonOilTanks" id="btn4OilTanks" style=" width: 50px;">3D</button>
+                </div>
+                
+            </div>
+
+            <div class="ui col mini-1 xl-1 gap-sm pad-lg has-header hidden-phone
+                        grid type1 cols-mini-1">
+                <header class="ui col">
+                    <font>Tank Distribution</font>
+                    <span class="gradients">
+                        <span class="gradient-left"></span>
+                        <span class="gradient-right"></span>
+                    </span>
+                    
+                    
+                </header>
+                <div class="ui col mini-1 middle-center h-mini-300 radius shadow">
+                    <link href="src/ga/tanks/GO_tankLayout.css" rel="stylesheet">
+                    <span id="OilTanks_layout"></span>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+</article>
+
+

@@ -1,0 +1,92 @@
+
+<article>
+
+
+    <div class="ui grid type1 cols-mini-1 cols-xl-2 gap-xl hidden-phone pad-lg fuelTanksApp">
+
+        <div class="ui col mini-1 xl-2 gap-sm pad-lg has-header
+                    grid type1 cols-mini-1">
+
+            <header class="ui col">
+                <font>Fuel Tanks</font>
+                <span class="gradients">
+                    <span class="gradient-left"></span>
+                    <span class="gradient-right"></span>
+                </span>
+            </header>
+
+            <div class="ui col mini-1 gap-no pad-mini radius shadow grid type1 cols-mini-5 cols-xl-9" style="height: 390px;" id="fuelTank">
+
+                <div class="ui col mini-1">
+                    <bar-render v-bind="{ signalId: 202, orientation: 'vertical', size: 'regular', unit: 'L', title:'Center Port', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 54800, scaleStep: 5480, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1, timeDelay: 1000 }"></bar-render>
+                </div>
+                <div class="ui col mini-1">
+                    <bar-render v-bind="{ signalId: 91, orientation: 'vertical', size: 'regular', unit: 'L', title:'Port Wing', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 19100, scaleStep: 1910, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
+                </div>
+                <div class="ui col mini-1">
+                    <bar-render v-bind="{ signalId: 90, orientation: 'vertical', size: 'regular', unit: 'L', title:'Center Stbd', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 54800, scaleStep: 5480, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
+                </div>
+                <div class="ui col mini-1">
+                    <bar-render v-bind="{ signalId: 92, orientation: 'vertical', size: 'regular', unit: 'L', title:'Stbd Wing', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 19200, scaleStep: 1920, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
+                </div>
+                <div class="ui col mini-1">
+                    <bar-render v-bind="{ signalId: 433, orientation: 'vertical', size: 'regular', unit: 'L', title:'Emerg. Gen.', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 760, scaleStep: 76, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
+                </div>
+                <div class="ui col mini-1">
+                    <bar-render v-bind="{ signalId: 6023, orientation: 'vertical', size: 'regular', unit: 'L', title:'Day Tank Port', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 7300, scaleStep: 730, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
+                </div>
+                <div class="ui col mini-1">
+                    <bar-render v-bind="{ signalId: 6111, orientation: 'vertical', size: 'regular', unit: 'L', title:'Day Tank Stbd', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 7300	, scaleStep: 730, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
+                </div>
+                <div class="ui col mini-1">
+                    <bar-render v-bind="{ signalId: 524, orientation: 'vertical', size: 'regular', unit: 'L', title:'Overflow', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 1400, scaleStep: 140, scaleSegments: 10, showLimits: true, valueMode: 'filtered' }"></bar-render>
+                </div>
+                <div class="ui col mini-1">
+                    <bar-render v-bind="{ signalId: 311, orientation: 'vertical', size: 'regular', unit: 'L', title:'Total Fuel', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 1400, scaleStep: 140, scaleSegments: 10, showLimits: true, valueMode: 'filtered' }"></bar-render>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="ui col mini-1 xl-1 gap-sm pad-lg has-header hidden-phone
+                    grid type1 cols-mini-1">
+            <header class="ui col">
+                <font>Total Fuel</font>
+                <span class="gradients">
+                    <span class="gradient-left"></span>
+                    <span class="gradient-right"></span>
+                </span>
+            </header>
+
+            <div class="ui col sm-1 gap-no pad-lg h-mini-300 radius shadow type1 cols-sm-2 timelineBackground" >
+                <canvas id="totalFuel" style="height: 270px!important; margin-top: 29px!important;"></canvas>
+            </div>
+            
+            <div style="display: flex; justify-content: center; padding: 0.1em; gap: .5em; position: absolute; top: 63px; right: 5px;">
+                <button class="ui btn mini colored primary timeLineButtonFuel" id="btn1Fuel" style=" width: 50px;">12H</button>
+                <button class="ui btn mini colored primary timeLineButtonFuel" id="btn2Fuel" style=" width: 50px;">24H</button>
+                <button class="ui btn mini colored primary timeLineButtonFuel active" id="btn3Fuel" style=" width: 50px;">2D</button>
+                <button class="ui btn mini colored primary timeLineButtonFuel" id="btn4Fuel" style=" width: 50px;">3D</button>
+            </div>
+            
+        </div>
+
+        <div class="ui col mini-1 xl-1 gap-sm pad-lg has-header hidden-phone
+                    grid type1 cols-mini-1">
+            <header class="ui col">
+                <font>Tank Distribution</font>
+                <span class="gradients">
+                    <span class="gradient-left"></span>
+                    <span class="gradient-right"></span>
+                </span>
+            </header>
+            <div class="ui col mini-1 middle-center h-mini-300 radius shadow">
+                <link href="src/ga/tanks/GO_tankLayout.css" rel="stylesheet">
+                <span id="FuelTanks_layout"></span>
+            </div>
+        </div>
+
+    </div>
+    
+</article>

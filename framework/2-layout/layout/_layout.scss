@@ -1,0 +1,22 @@
+// LAYOUT GLOBAL //
+main{
+	height:							100%;
+	display:						grid;
+	grid-template-columns:			1fr;
+	grid-template-rows:				$header-height 1fr auto;
+	grid-template-areas:			"header"
+									"section"
+									"menu-tabs"
+									"aside";
+}
+
+// LAYOUT PHONE //
+@include breakpoint(phone){
+	main{
+		grid-template-rows:			$header-height-phone auto 1fr $main-nav--phone-height!important;
+		grid-template-areas:		"header"
+									"menu-tabs"
+									"section"
+									"aside"!important;
+	}
+}

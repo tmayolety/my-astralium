@@ -1,0 +1,297 @@
+//AJOUTER ECHELLE D OPACITE DE O A 100% POUR NOIR / BLANC / ACTIVE (EN POURCENTAGE)
+
+
+//////////////////////////////////////////////////////////////////////////
+// SCHEME 1 //
+//////////////////////////////////////////////////////////////////////////
+
+// GENERATE ROOT //
+@each $name in $scheme1-list{
+	$scheme:								nth($name, 1);
+	$clr-list:								nth($name, 2);
+
+	html[data-scheme="#{$scheme}"]{
+
+		&:root{
+			@each $x in $clr-list {
+				$clr-name:					nth($x, 1);
+				$clr-rgb:					nth($x, 2);
+				$clr-opacity:				nth($x, 3);
+				--sch-clr-#{$clr-name}:		#{$clr-rgb};
+				--sch-clr-#{$clr-name}-op:	#{$clr-opacity};
+			}
+		}
+	}
+}
+
+// GENERATE CLASS FOR DEMO MANUAL //
+@each $name in $scheme1-list{
+	$scheme:								nth($name, 1);
+	$clr-list:								nth($name, 2);
+
+	@each $x in $clr-list {
+		$clr-name:							nth($x, 1);
+		$clr-rgb:							nth($x, 2);
+		$clr-opacity:						nth($x, 3);
+
+		.sch-clr-#{$clr-name}{
+			background:						RGBA(var(--sch-clr-#{$clr-name}) / var(--sch-clr-#{$clr-name}-op))!important;	
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+// SCHEME 2 //
+//////////////////////////////////////////////////////////////////////////
+
+// GENERATE ROOT //
+@each $name in $scheme2-list{
+	$scheme:								nth($name, 1);
+	$clr-list:								nth($name, 2);
+
+	html[data-scheme="#{$scheme}"]{
+
+		&:root{
+			@each $x in $clr-list {
+				$clr-name:					nth($x, 1);
+				$clr-rgb:					nth($x, 2);
+				$clr-opacity:				nth($x, 3);
+				--sch-clr-#{$clr-name}:		#{$clr-rgb};
+				--sch-clr-#{$clr-name}-op:	#{$clr-opacity};
+			}
+		}
+	}
+}
+
+// GENERATE CLASS FOR DEMO MANUAL //
+@each $name in $scheme2-list{
+	$scheme:							nth($name, 1);
+	$clr-list:							nth($name, 2);
+
+	.#{$scheme}{
+
+		@each $x in $clr-list {
+			$clr-name:					nth($x, 1);
+			$clr-rgb:					nth($x, 2);
+			$clr-opacity:				nth($x, 3);
+
+			.sch-clr-#{$clr-name}{
+				background:				RGBA(#{$clr-rgb} / #{$clr-opacity})!important;	
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+// SCHEME 3 //
+//////////////////////////////////////////////////////////////////////////
+
+// GENERATE ROOT //
+@each $name in $scheme3-list{
+	$scheme:								nth($name, 1);
+	$clr-list:								nth($name, 2);
+
+	html[data-scheme="#{$scheme}"]{
+
+		&:root{
+			@each $x in $clr-list {
+				$clr-name:					nth($x, 1);
+				$clr-rgb:					nth($x, 2);
+				$clr-opacity:				nth($x, 3);
+				--sch-clr-#{$clr-name}:		#{$clr-rgb};
+				--sch-clr-#{$clr-name}-op:	#{$clr-opacity};
+			}
+		}
+	}
+}
+
+// GENERATE CLASS FOR DEMO MANUAL //
+@each $name in $scheme2-list{
+	$scheme:							nth($name, 1);
+	$clr-list:							nth($name, 2);
+
+	.#{$scheme}{
+
+		@each $x in $clr-list {
+			$clr-name:					nth($x, 1);
+			$clr-rgb:					nth($x, 2);
+			$clr-opacity:				nth($x, 3);
+
+			.sch-clr-#{$clr-name}{
+				background:				RGBA(#{$clr-rgb} / #{$clr-opacity})!important;	
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+// SCHEME 4 //
+//////////////////////////////////////////////////////////////////////////
+
+// GENERATE ROOT //
+@each $name in $scheme4-list{
+	$scheme:								nth($name, 1);
+	$clr-list:								nth($name, 2);
+
+	html[data-scheme="#{$scheme}"]{
+
+		&:root{
+			@each $x in $clr-list {
+				$clr-name:					nth($x, 1);
+				$clr-rgb:					nth($x, 2);
+				$clr-opacity:				nth($x, 3);
+				--sch-clr-#{$clr-name}:		#{$clr-rgb};
+				--sch-clr-#{$clr-name}-op:	#{$clr-opacity};
+			}
+		}
+	}
+}
+
+// GENERATE CLASS FOR DEMO MANUAL //
+@each $name in $scheme4-list{
+	$scheme:								nth($name, 1);
+	$clr-list:								nth($name, 2);
+
+	@each $x in $clr-list {
+		$clr-name:							nth($x, 1);
+		$clr-rgb:							nth($x, 2);
+		$clr-opacity:						nth($x, 3);
+
+		.sch-clr-#{$clr-name}{
+			background:						RGBA(var(--sch-clr-#{$clr-name}) / var(--sch-clr-#{$clr-name}-op))!important;	
+		}
+	}
+
+}
+
+
+
+////////////////////////////////////////////////////////
+// SCHEME DEMO //
+////////////////////////////////////////////////////////
+.scheme-layout-demo{
+
+	$header-height:					3rem;
+
+	display:						grid;
+	grid-template-columns:			1fr;
+	grid-template-rows:				$header-height 1fr $header-height $header-height;
+	grid-template-areas:			"header"
+									"section"
+									"menu-tabs"
+									"aside";
+	background:						RGBA(var(--sch-clr-background) / var(--sch-clr-background-op));
+	color:							RGBA(var(--sch-clr-text-default) / var(--sch-clr-text-default-op));
+	@include						transition(	color $transition-scheme 0s ease-in-out,
+												background $transition-scheme 0s ease-in-out);
+
+	// HEADER //
+	.header{
+		grid-area:					header;
+		height:						50px;
+		background:					RGBA(var(--sch-clr-ui-bg) / var(--sch-clr-ui-bg-op) );
+		box-shadow:					inset 0px 0px 32px 0px RGBA(var(--sch-clr-ui-glow) / var(--sch-clr-ui-glow-op));
+		color:						RGBA(var(--sch-clr-ui-text) / var(--sch-clr-ui-text-op) );
+		border-width:				2px;
+		border-style:				solid;
+		border-color:				RGBA(var(--sch-clr-ui-border)/var(--sch-clr-ui-border-op));
+		box-sizing:					border-box;
+		@include					transition(	background $transition-scheme 0s ease-in-out,
+												border $transition-scheme 0s ease-in-out,
+												box-shadow $transition-scheme 0s ease-in-out);
+	}
+
+	// SECTION //
+	.section{
+		grid-area:					section;
+		padding:					0.7rem;
+	}
+
+	// MENU TABS //
+	.manu-tabs{
+		grid-area:					menu-tabs;
+		height:						50px;
+	}
+
+	// ASIDE //
+	.aside{
+		grid-area:					aside;
+		display:					flex;
+		flex-direction:				row;
+		justify-content:			center;
+		height:						50px;
+		background:					RGBA(var(--sch-clr-ui-bg) / var(--sch-clr-ui-bg-op) );
+		box-shadow:					inset 0px 0px 32px 0px RGBA(var(--sch-clr-ui-glow) / var(--sch-clr-ui-glow-op));
+		color:						RGBA(var(--sch-clr-ui-text) / var(--sch-clr-ui-text-op) );
+		border-width:				2px;
+		border-style:				solid;
+		border-color:				RGBA(var(--sch-clr-ui-border)/var(--sch-clr-ui-border-op));
+		box-sizing:					border-box;
+		@include					transition(	background $transition-scheme 0s ease-in-out,
+												border $transition-scheme 0s ease-in-out,
+												box-shadow $transition-scheme 0s ease-in-out);
+
+		> div{
+			display:				flex;
+			flex-direction:			column;
+			justify-content:		center;
+			align-items:			center;
+			width:					70px;
+			height:					100%;
+			border-left-width:		1px;			
+			border-style:			solid;
+			border-color:			RGBA(var(--sch-clr-ui-border) / var(--sch-clr-ui-border-op) );
+			color:					RGBA(var(--sch-clr-ui-text) / var(--sch-clr-ui-text-op) );
+			z-index:				1;
+
+			&:last-child{
+				border-right-width:	1px;
+			}
+
+			svg{
+				width:				20px;
+				aspect-ratio:		1;
+				@include			transition(all $transition-scheme 0s ease-in-out);
+				fill:				RGBA(var(--sch-clr-ui-icon) / var(--sch-clr-ui-icon-op) );
+				margin-bottom:		5px;
+			}
+
+			// ACTIVE //
+			&.active{
+				z-index:			2;
+				color:				RGBA(var(--sch-clr-active-text) / var(--sch-clr-active-text-op));
+				background:			RGBA(var(--sch-clr-active) / var(--sch-clr-active-op));
+				border-color:		RGBA(var(--sch-clr-active) / var(--sch-clr-active-op));
+				box-shadow:			0px 0px 6px 2px RGBA(var(--sch-clr-active-glow-out) / var(--sch-clr-active-glow-out-op)),
+									inset 0px 0px 15px 0px RGBA(var(--sch-clr-active-glow-in) / var(--sch-clr-active-glow-in-op));	
+
+				svg{
+					fill:			RGBA(var(--sch-clr-active-text) / var(--sch-clr-active-text-op));
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,18 @@
+/////////////////////////////////////////////////////////////////////////////
+// ITEM HEIGHT //
+/////////////////////////////////////////////////////////////////////////////
+@for $i from 1 through 300 {
+	.h-#{$i}{
+		height: #{$i}px!important;
+	}
+}
+
+@each $name, $value1, $value2 in $breakpoints-list {
+	@media screen #{$value1 $value2}{
+		@for $i from 1 through 1920 {		
+			.h-#{$name}-#{$i}{
+				height: #{$i}px!important;
+			}
+		}
+	}
+}

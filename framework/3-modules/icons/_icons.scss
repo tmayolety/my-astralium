@@ -1,0 +1,225 @@
+.ui[class*="icon-size-"]{
+	display:						block;
+	text-align:						center;
+	@include						transition(all $transition-scheme 0s ease-in-out);
+
+	> svg{
+		@include					transition(all $transition-scheme 0s ease-in-out);
+		fill:						RGBA(var(--clr-subvalue-ui) / 100%);
+	}
+}
+
+.icon{
+	.door-text{
+		font-family:				"polar_semibold";
+		font-size:					1.5rem;
+	}
+}
+
+
+
+
+// CENTER ICON ////////////////////////////////////
+.ui[class*="icon-"]{	
+
+	&[class*="abs-pos-"]{
+		position:					absolute;
+		top:						50%;
+		@include					translate(0, -50%);
+	}
+	&.abs-pos-left{
+		left:						10px;
+	}
+	&.abs-pos-center{
+		left:						50%;
+		@include					translate(-50%, -50%);
+	}
+	&.abs-pos-right{
+		right:						10px;
+	}
+}
+
+
+
+
+
+
+// WINDROSE ////////////////////////////////////////////////////////////
+.windrose-bg{
+	transform:						translate(-50%, -50%);
+	position:						absolute;
+	top:							50%;
+	left:							50%;
+	svg{
+		opacity:					0.6;
+		@include					abs-pos(50%, auto, auto, 50%);
+		transform-origin:			0 0;
+	}
+}
+
+.windrose-dir,
+.sog-cog-dir{
+	@include						abs-pos(50%, auto, auto, 50%);
+	@include						translate(-50%, -50%);
+
+	> svg{
+		filter:						drop-shadow(0px 0px 5px RGBA(var(--clr-type-primary-light) / 60%))
+									drop-shadow(0px 0px 20px RGBA(var(--clr-type-primary-light) / 40%));
+		#front{
+			z-index:				2;
+		}
+		#back{
+			z-index:				1;
+		}
+	}
+}
+
+svg.windrose{
+	.text1{							font-size:5px; font-family:"polar_black"; }
+	.text2{							font-size:4px; font-family:"polar_bold"; }
+	.text3{							font-size:3px; font-family:"polar_regular"; }
+	.text4{							font-size:3px; font-family:"polar_black"; }
+}
+
+
+html[data-scheme="scheme1"]{
+	svg.windrose{
+		fill:						RGBA(var(--clr-type-primary-light) / 30%)!important;
+	}
+	#back{
+		fill:						RGBA(var(--sch-clr-grid) / 100%);
+	}
+}
+
+html[data-scheme="scheme2"]{
+	svg.windrose{
+		fill:						RGBA(var(--clr-type-secondary) / 100%)!important;
+	}
+	#back{
+		fill:						RGBA(var(--sch-clr-grid) / 100%);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// SOG COG ////////////////////////////////////////////////////////////
+.sog-cog{
+	.text1{							font-size:5px;	font-family:"polar_black";}
+	.text2{							font-size:4px;	font-family:"polar_semibold";}
+}
+
+.sog-cog-info{
+	@include						abs-pos(50%, auto, auto, 50%);
+	@include						translate(-50%, -50%);
+}
+
+
+
+html[data-scheme="scheme1"]{
+	.sog-cog{
+		fill:						RGBA(var(--clr-type-primary-light) / 50%)!important;
+		#circle-3{
+			fill:					RGBA(var(--clr-type-primary-light) / 20%)!important;
+		}
+	}
+
+}
+
+html[data-scheme="scheme2"]{
+	.sog-cog{
+		fill:						RGBA(var(--clr-type-secondary-dark) / 100%)!important;
+		#circle-3{
+			fill:					RGBA(var(--clr-type-secondary-dark) / 15%)!important;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+// WIND GAUGE ////////////////////////////////////////////////////////////
+.wind-gauge-bg{
+	transform:						translate(-50%, -50%);
+	position:						absolute;
+	top:							50%;
+	left:							50%;
+	svg{
+		opacity:					0.6;
+	}
+}
+
+.wind-gauge{
+	font-size:5px;
+	font-family:Polar-Black, Polar;
+	font-weight:800;
+}
+
+html[data-scheme="scheme1"]{
+	.wind-gauge{
+		fill:						RGBA(var(--clr-type-primary-light) / 50%)!important;
+		.circle-center{
+			fill:					RGBA(var(--clr-type-primary-light) / 20%)!important;
+		}
+		#left{
+			fill:					RGBA(var(--clr-type-success-dark) / 50%)!important;
+		}
+		#right{
+			fill:					RGBA(var(--clr-type-danger-dark) / 50%)!important;
+		}
+	}
+}
+
+html[data-scheme="scheme2"]{
+	.wind-gauge{
+		fill:						RGBA(var(--clr-type-secondary-dark) / 100%)!important;
+		.circle-center{
+			fill:					RGBA(var(--clr-type-secondary-dark) / 15%)!important;
+		}
+		#left{
+			fill:					RGBA(var(--clr-type-success-dark) / 25%)!important;
+		}
+		#right{
+			fill:					RGBA(var(--clr-type-danger-dark) / 25%)!important;
+		}
+	}
+}
+
+.wind-gauge-dir{
+	@include						abs-pos(50%, auto, auto, 50%);
+	@include						translate(-50%, -50%);
+
+	> svg{
+		filter:						drop-shadow(0px 0px 5px RGBA(var(--clr-type-primary-light) / 60%))
+									drop-shadow(0px 0px 20px RGBA(var(--clr-type-primary-light) / 40%));
+		#front{
+			z-index:				2;
+		}
+		#back{
+			fill:					$grid--column-bg-dark;;
+			z-index:				1;
+		}
+	}
+ }
+
+
+
+
+
+.rotate-anim{	
+	transition:						all 0.4s 0s ease-in-out!important;
+}

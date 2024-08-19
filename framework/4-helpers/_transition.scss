@@ -1,0 +1,10 @@
+// TRANSITION
+// Value property ( http://www.w3.org/TR/css3-transitions/#animatable-css )
+// Value timing-function (linear, ease, ease-in, ease-out, ease-in-out, cubic-bezier(n, n, n, n) )
+// @include transition(property 0.2s 0.2s timing-function);
+@mixin transition($transition-property...) {
+    -webkit-transition: $transition-property;
+       -moz-transition: $transition-property;
+        -ms-transition: $transition-property;
+         -o-transition: $transition-property;
+            transition: $transition-property; }

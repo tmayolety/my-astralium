@@ -1,0 +1,129 @@
+/////////////////////////////////////////////////////////////////////////////
+// COLUMN HEADER //
+/////////////////////////////////////////////////////////////////////////////
+
+#{$ui}.grid{
+
+	#{$ui}.col{
+
+		&.has-col-header-mini{		grid-template-rows: 1.4rem auto; }
+		&.has-col-header-sm{		grid-template-rows: 1.8rem auto; }
+		&.has-col-header-med{		grid-template-rows: 2.2rem auto; }
+		&.has-col-header-lg{		grid-template-rows: 2.6rem auto; }
+		&.has-col-header-xl{		grid-template-rows: 3rem auto; }
+
+		&[class*="has-col-header"]{
+			grid-template-areas:	"header"
+			    					"content";
+			border:					0!important;
+			padding:				0!important;
+			//background:				none!important;
+
+			> header{
+				grid-area:			header;
+				display:			grid;
+				align-items:		center;
+				text-align:			center;
+				padding:			0 0.6rem!important;				
+				box-sizing:			border-box;
+				background:			RGBA(var(--sch-clr-grid-border)/var(--sch-clr-grid-border-op));				
+				@include			transition( all $transition-scheme 0s ease-in-out);
+				line-height:		inherit!important;
+
+				border-left:		1px solid RGBA(var(--sch-clr-grid-border)/var(--sch-clr-grid-border-op));	
+				border-right:		1px solid RGBA(var(--sch-clr-grid-border)/var(--sch-clr-grid-border-op));	
+
+				// ALIGN //
+				&.align-txt-right{
+					text-align:		right!important;
+				}
+				&.align-txt-left{
+					text-align:		left!important;
+				}
+			}
+
+			&.grid.type1{
+				&.gap-no{
+					border-width:	1px!important;
+				}
+			}
+
+			//> div{
+			//	border:				0!important;
+			//	&::after{			// remove nesting border
+			//		display:		none!important;
+			//	}
+			//}
+
+		}
+
+		// TOOLS /
+		.col-header--tools{
+			@include			abs-pos(0, 0, 0, 0);
+			padding-right:		5px;
+			> .btn{
+				float:			right;
+				height:			100%;
+			}
+		}
+	}
+}
+
+
+#{$ui}.grid.gap-no > [class*="has-col-header"] > .grid.gap-no{
+	border-width:0px!important;
+}
+
+
+// BUTTON OPTIONS ////////////////////////////////////
+.btn{
+	$pad:						5px;
+
+	&[class*="col-options"]{
+		display:				none;
+
+		// Size
+		padding:				0.1rem 0rem!important;
+		> svg{
+			width:				0.8rem!important;
+			height:				0.8rem!important;
+		}
+
+		&.visible{
+			display:			inline-flex;
+		}
+	}
+
+	&.col-options-top-left{
+		@include				abs-pos($pad, auto, auto, $pad);
+		&.has-header{
+			top:				33px;
+		}
+	}
+
+	&.col-options-top-right{
+		@include				abs-pos($pad, $pad, auto, auto);
+		&.has-header{
+			top:				33px;
+		}
+	}
+
+	&.col-options-bottom-left{
+		@include				abs-pos(auto, auto, $pad, $pad);
+	}
+
+	&.col-options-bottom-right{
+		@include				abs-pos(auto, $pad, $pad, auto);
+	}
+}
+
+
+
+// BUTTONS TOOLS //
+.ui.col-button-tools{
+	@include					abs-pos(5px, 5px, auto, auto);
+	z-index:					1000;
+    display:					flex;
+    flex-direction:				column;
+
+}

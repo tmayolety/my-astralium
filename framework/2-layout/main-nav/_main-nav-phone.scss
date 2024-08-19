@@ -1,0 +1,103 @@
+// PHONE ////////////////////////////////////////////////
+@include breakpoint(phone){
+
+	nav.main-nav{
+		@include								fixed-pos(auto, 0, calc(-100% - #{$main-nav--phone-height}), 0);
+		height:									100%;
+		background:								RGBA(var(--sch-clr-grid) / var(--sch-clr-grid-op));
+		overflow:								hidden!important;			
+		z-index:								99;
+		padding-bottom:							$main-nav--phone-height;
+		@include								transition(	bottom 0.4s 0s ease-in-out,
+															z-index 0s 0.4s ease-in-out);
+
+
+
+		> h2{
+			display:							block;
+			text-align:							left;
+			padding:							0 20px;
+			box-sizing:							border-box;
+			font-family:						"polar_regular"!important;
+
+			> .btn{
+				@include						abs-pos(50%, 20px, auto, auto);
+				@include						translate(0, -50%);
+			}
+		}
+
+		> ul{
+			@include							abs-pos(3rem, 0, auto, 0);			
+			overflow:							auto;
+			max-height:							calc(100vh - #{$main-nav--phone-height});
+
+			&::after{
+				display:						none;
+			}
+
+			li{
+
+				@for $i from 1 through 20 {
+					@media (min-width: #{$main-nav--phone-item-width * $i} ){
+						width:					#{100% / $i}!important;
+					}
+				}
+
+				a{
+					font-size:					$main-nav--phone-font!important;
+					svg.ui.icon{
+						width:					$main-nav--phone-icon!important;
+						height:					$main-nav--phone-icon!important;
+					}
+				}
+			}
+		}
+	}
+
+	// MENU ACTIVE //
+	aside{
+		&[data-main-nav-phone="active"]{
+			nav.main-nav{
+				z-index:						999;
+				bottom:							0;
+				@include						transition(	bottom 0.4s 0s ease-in-out,
+															z-index 0s 0s ease-in-out);
+			}
+		}
+	}
+
+	.phone-menu-btn{
+		display:								block!important;
+	}
+}
+
+
+
+
+
+.phone-menu-btn{
+	display:									none;
+	background:									RGBA(var(--sch-clr-grid) / var(--sch-clr-grid-op));
+	@include									abs-pos(auto, 0, 0, 0);
+	height:										$main-nav--phone-height;
+	z-index:									100;
+	box-shadow:									0 0 10px 10px RGBA(0 0 0 / 50%);
+
+	> div{
+		@include								abs-pos(-25px, auto, auto, 50%);
+		@include								translate(-50%, 0);
+		background:								RGBA(var(--clr-type-primary) / 100%);
+		border-color:							RGBA(var(--clr-type-primary-light) / 100%);
+		z-index:								4;
+		box-shadow:								0px 0px 6px 2px RGBA(var(--clr-type-primary) / 80%),
+												inset 0px 0px 10px 0 RGBA(var(--clr-type-primary-light) / 70%);
+		padding:								0.7rem;
+		box-sizing:								border-box;
+		border-radius:							100%;
+		> svg{
+			width:								2.4rem;
+			height:								2.4rem;
+			fill:								white;
+		}
+	}
+}

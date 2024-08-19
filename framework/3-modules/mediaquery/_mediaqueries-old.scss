@@ -1,0 +1,180 @@
+////////////////////////////////////////////////////////
+// SETTINGS //
+////////////////////////////////////////////////////////
+$bp--list:              1023px,      // 1-phone
+                        960px,      // 2-tablet-port
+                        1366px,     // 3-tablet-land
+                        1920px,     // 4-tv-port
+                        1080px,     // 5-tv-land
+                        1024px,     // 6-desktop-sm
+                        1280px,     // 7-desktop-med
+                        1600px,     // 8-desktop-lg
+                        1920px,     // 9-desktop-xl
+                        1024px,     // 10-1024 width
+                        900px;      // 11-900 height
+
+
+
+$bp--id:                'desktop-xs'        'xs',
+                        'desktop-sm'        'sm',
+                        'desktop-med'       'med',
+                        'desktop-lg'        'lg',   
+                        'desktop-xl'        'xl',
+                        'tv-ld'             'tv-ld',
+                        'tv-pt'             'tv-pt',
+                        'tablet-ld'         'tablet-ld',
+                        'tablet-pt'         'tablet-pt',
+                        'phone'             'phone',
+                        'wingpanel'          'wingpanel';
+
+
+
+
+@mixin breakpoint($breakpoint) {
+
+    // TABLET ///////////////////////////////////////////
+    @if $breakpoint == tablet-pt {
+         @media (min-width: #{nth($bp--list, 1) + 1})
+                and (max-width: #{nth($bp--list, 3)})
+                and (-webkit-min-device-pixel-ratio: 2)
+                and (orientation: portrait) {
+                    @content
+                };
+    }
+    @if $breakpoint == tablet-ld {
+         @media (min-width: #{nth($bp--list, 2)})
+                and (max-width: #{nth($bp--list, 3)})
+                and (-webkit-min-device-pixel-ratio: 2)
+                and (orientation: landscape){
+                    @content
+                };
+    }
+    @if $breakpoint == tablet {
+         @media (min-width: #{nth($bp--list, 2)})
+                and (max-width: #{nth($bp--list, 3)})
+                and (-webkit-min-device-pixel-ratio: 2)
+                and (orientation: landscape),
+                (min-width: #{nth($bp--list, 1) + 1})
+                and (max-width: #{nth($bp--list, 3)})
+                and (-webkit-min-device-pixel-ratio: 2)
+                and (orientation: portrait) {
+                    @content
+                };
+    }
+
+    // TV ///////////////////////////////////////////
+    @if $breakpoint == tv-ld {
+         @media (min-height: #{nth($bp--list, 1) + 1})
+            and (max-height: 2000px)
+                and (orientation: landscape){
+                    @content
+                };
+    }
+    @if $breakpoint == tv-pt {
+         @media (min-height: #{nth($bp--list, 2) + 1})
+            and (max-width: 2000px)
+                and (orientation: portrait){
+                    @content
+                };
+    }
+    @if $breakpoint == tv {
+         @media (min-width: #{nth($bp--list, 1) + 1})
+            and (max-width: 2000px)
+                and (orientation: portrait),
+                (width: #{nth($bp--list, 4)})
+                and (min-height: #{nth($bp--list, 2)}) and (max-height: 2000px)
+                and (orientation: landscape){
+                    @content
+                };
+    }
+
+    // DESKTOP ///////////////////////////////////////////
+    @if $breakpoint == desktop-xs {
+         @media (max-width: #{nth($bp--list, 6) - 1}){
+            @content
+        };
+    }
+    @if $breakpoint == desktop-sm {
+         @media (min-width: #{nth($bp--list, 6)}){
+            @content
+        };
+    }
+    @if $breakpoint == desktop-med {
+         @media (min-width: #{nth($bp--list, 7)}){
+            @content
+        };
+    }
+    @if $breakpoint == desktop-lg {
+         @media (min-width: #{nth($bp--list, 8)}){
+            @content
+        };
+    }
+    @if $breakpoint == desktop-xl {
+         @media (min-width: #{nth($bp--list, 9)}){
+            @content
+        };
+    }
+
+    // PHONE ///////////////////////////////////////////
+    @if $breakpoint == phone {
+         @media (max-width: #{nth($bp--list, 1)})
+            and (min-width: 1px)
+            and (-webkit-min-device-pixel-ratio: 2){
+                @content
+            };
+    }
+
+    // TV WINGPANEL //////////////////////////////////////
+    @if $breakpoint == wingpanel {
+         @media (width: 1600px)
+            and (height: 900px){
+            @content
+        };
+    }
+}
+
+
+
+
+
+
+
+// PHONE ONLY ////////////////////////////////////////////
+.phone-only{
+    display:        none!important;
+
+    @include breakpoint(phone) {
+        display:    grid!important;
+    }
+}
+
+
+
+
+// PREVIEW /////////////////////////////////////////////
+body{
+
+    &::before{
+        content:    '';
+        @include    abs-pos(0, auto, auto, 50%);
+        @include    translate(-50%, 0);
+        background: yellow;
+        color:      black;
+        padding:    5px;
+        font-size:  0.8rem;
+        z-index:    999;
+
+        @include breakpoint(desktop-xs) {   content:'Desktop XS';}
+        @include breakpoint(desktop-sm) {   content:'Desktop Small';}
+        @include breakpoint(desktop-med) {  content:'Desktop Medium';}
+        @include breakpoint(desktop-lg) {   content:'Desktop Large';}
+        @include breakpoint(desktop-xl) {   content:'Desktop X-Large';}
+
+        @include breakpoint(phone) {        content:'Phone';}
+        @include breakpoint(tablet-pt) {  content:'Tablet Portrait';}
+        @include breakpoint(tablet-ld) {  content:'Tablet Landscape';}
+
+        @include breakpoint(tv-ld) {      content:'TV Landscape';}
+        @include breakpoint(tv-pt) {      content:'TV Portrait';}
+    }
+}

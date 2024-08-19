@@ -1,0 +1,11 @@
+%ellipsis{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+%no-ellipsis{
+	white-space: initial!important;
+	overflow: inherit!important;
+	text-overflow: initial!important;
+}

@@ -1,0 +1,13 @@
+/////////////////////////////////////////////////////////////////////////////
+// HIDDEN & MEDIAQUERIES //
+/////////////////////////////////////////////////////////////////////////////
+@each $name, $value1, $value2 in $breakpoints-list {
+	@media screen #{$value1 $value2}{
+		.hidden-#{$name}{
+			display: none!important;
+		}
+	}
+}
+
+.d-none{		display: none; }
+.display-none{	display: none!important; }

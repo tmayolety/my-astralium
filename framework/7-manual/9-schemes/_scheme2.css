@@ -1,0 +1,152 @@
+html[data-scheme="scheme2"] .aside--manual {
+  background: RGBA(var(--sch-clr-ui-bg)/var(--sch-clr-ui-bg-op));
+  box-shadow: none;
+}
+
+html[data-scheme="scheme2"] .aside--manual-header {
+  background: RGBA(var(--sch-clr-active)/var(--sch-clr-active-op));
+}
+
+html[data-scheme="scheme2"] .aside--manual-header::before {
+  box-shadow: 0px 0px 6px 2px RGBA(var(--sch-clr-active-glow-out)/var(--sch-clr-active-glow-out-op)), inset 0px 0px 35px 0px RGBA(var(--sch-clr-active-glow-in)/var(--sch-clr-active-glow-in-op));
+}
+
+html[data-scheme="scheme2"] .aside--manual-header .header-logo {
+  fill: white !important;
+}
+
+html[data-scheme="scheme2"] .aside--manual-header .ui.h6 {
+  color: white;
+}
+
+html[data-scheme="scheme2"] article + article {
+  border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+html[data-scheme="scheme2"] .main-nav--manual > ul > li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+html[data-scheme="scheme2"] .main-nav--manual > ul > li > a {
+  color: RGBA(var(--sch-clr-ui-text)/var(--sch-clr-ui-text-op));
+}
+
+html[data-scheme="scheme2"] .main-nav--manual > ul > li > a.active {
+  color: RGBA(var(--sch-clr-active)/var(--sch-clr-active-op)) !important;
+}
+
+html[data-scheme="scheme2"] .main-nav--manual > ul > li > a.active svg {
+  fill: RGBA(var(--sch-clr-active)/var(--sch-clr-active-op)) !important;
+}
+
+html[data-scheme="scheme2"] .main-nav--manual > ul > li svg.ui.icon {
+  fill: RGBA(var(--sch-clr-ui-text)/var(--sch-clr-ui-text-op));
+}
+
+html[data-scheme="scheme2"] .main-nav--manual > ul > li > ul li a {
+  color: RGBA(var(--sch-clr-ui-text)/var(--sch-clr-ui-text-op));
+}
+
+html[data-scheme="scheme2"] .main-nav--manual > ul > li > ul li a.active {
+  color: RGBA(var(--sch-clr-active)/var(--sch-clr-active-op)) !important;
+}
+
+html[data-scheme="scheme2"] .main-nav--manual > ul > li > ul li[data-submenu="false"]:hover > a {
+  color: RGBA(var(--sch-clr-ui-text)/var(--sch-clr-ui-text-op));
+}
+
+html[data-scheme="scheme2"] .main-nav--manual > ul > li > ul li[data-submenu="false"]:hover svg.ui.icon {
+  fill: RGBA(var(--sch-clr-ui-text)/var(--sch-clr-ui-text-op));
+}
+
+html[data-scheme="scheme2"] .main-nav--manual > ul > li > ul li > ul a {
+  color: RGBA(var(--sch-clr-ui-text)/var(--sch-clr-ui-text-op));
+}
+
+html[data-scheme="scheme2"] .main-nav--manual > ul > li > ul li > ul a:hover {
+  color: RGBA(var(--sch-clr-ui-text)/var(--sch-clr-ui-text-op));
+}
+
+html[data-scheme="scheme2"] .main-nav--manual > ul > li > ul li > ul a.active {
+  color: RGBA(var(--sch-clr-active)/var(--sch-clr-active-op)) !important;
+}
+
+html[data-scheme="scheme2"] .section-header {
+  background: RGBA(var(--sch-clr-ui-bg)/var(--sch-clr-ui-bg-op));
+}
+
+html[data-scheme="scheme2"] .section-header .title svg {
+  fill: RGBA(var(--sch-clr-ui-text)/var(--sch-clr-ui-text-op));
+}
+
+html[data-scheme="scheme2"] .section-header .title h1 {
+  color: RGBA(var(--sch-clr-ui-text)/var(--sch-clr-ui-text-op));
+}
+
+html[data-scheme="scheme2"] .section-header nav ul li a {
+  color: RGBA(var(--sch-clr-ui-text)/var(--sch-clr-ui-text-op));
+}
+
+html[data-scheme="scheme2"] .section-header nav ul li a.active {
+  color: RGBA(var(--sch-clr-active)/var(--sch-clr-active-op)) !important;
+}
+
+html[data-scheme="scheme2"] .section-header nav ul li a.active::before {
+  background: RGBA(var(--sch-clr-active)/var(--sch-clr-active-op));
+  box-shadow: 0px 0px 6px 2px RGBA(var(--sch-clr-active-glow-out)/var(--sch-clr-active-glow-out-op));
+}
+
+html[data-scheme="scheme2"] .section-header nav ul li:hover {
+  color: white;
+}
+
+html[data-scheme="scheme2"] .section-header nav ul li:hover a {
+  color: white;
+}
+
+html[data-scheme="scheme2"] body .ui.grid label {
+  background: RGBA(var(--sch-clr-active)/var(--sch-clr-active-op));
+  color: RGBA(var(--sch-clr-text-default)/var(--sch-clr-text-default-op));
+}
+
+html[data-scheme="scheme2"] .table-manual label {
+  background: RGBA(var(--sch-clr-active)/var(--sch-clr-active-op));
+  color: RGBA(var(--sch-clr-text-default)/var(--sch-clr-text-default-op));
+}
+
+html[data-scheme="scheme2"] .manual-label {
+  background: RGBA(var(--sch-clr-active)/var(--sch-clr-active-op));
+  color: RGBA(var(--sch-clr-text-default)/var(--sch-clr-text-default-op));
+}
+
+html[data-scheme="scheme2"] .paragraphe-manual,
+html[data-scheme="scheme2"] .list-manual {
+  color: RGBA(var(--sch-clr-text-default)/var(--sch-clr-text-default));
+}
+
+html[data-scheme="scheme2"] .paragraphe-manual label,
+html[data-scheme="scheme2"] .list-manual label {
+  background: RGBA(var(--sch-clr-active)/var(--sch-clr-active-op));
+  color: RGBA(var(--sch-clr-text-default)/var(--sch-clr-text-default-op));
+}
+
+html[data-scheme="scheme2"] a.link-manual {
+  color: RGBA(var(--sch-clr-active)/var(--sch-clr-active-op));
+}
+
+html[data-scheme="scheme2"] pre.language-html {
+  color: RGBA(var(--sch-clr-text-default)/var(--sch-clr-text-default-op)) !important;
+  background: RGBA(var(--sch-clr-grid)/var(--sch-clr-grid-op));
+}
+
+html[data-scheme="scheme2"] pre.language-html .token.function-name {
+  color: RGBA(var(--sch-clr-active)/var(--sch-clr-active-op));
+}
+
+html[data-scheme="scheme2"] pre.language-html .token.attr-name,
+html[data-scheme="scheme2"] pre.language-html .token.punctuation,
+html[data-scheme="scheme2"] pre.language-html .token.deleted,
+html[data-scheme="scheme2"] pre.language-html .token.namespace,
+html[data-scheme="scheme2"] pre.language-html .token.tag {
+  color: RGBA(var(--sch-clr-text-default)/var(--sch-clr-text-default-op));
+}

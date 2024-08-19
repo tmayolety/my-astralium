@@ -1,0 +1,8 @@
+// OPACITY
+// @include opacity(0.5);
+@mixin opacity($value) {
+	filter: alpha(opactiy=($value * 100));
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$value * 100})";
+	-moz-opacity: $value;
+	-khtml-opacity: $value;
+	opacity: $value; }

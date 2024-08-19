@@ -1,0 +1,477 @@
+// PRIMARY ////////////////////////////////////////////////////////////////////////////////////
+$btn-clr-primary-hex:				#3db1ff;
+$btn-clr-primary-rgb:				HEXtoRGB($btn-clr-primary-hex);
+
+$btn-clr-primary-bg-hex:			$btn-clr-primary-hex;
+$btn-clr-primary-bg-rgb:			HEXtoRGB($btn-clr-primary-bg-hex);
+
+$btn-clr-primary-border-hex:		lighten($btn-clr-primary-hex, 10%);
+$btn-clr-primary-border-rgb:		HEXtoRGB($btn-clr-primary-border-hex);
+
+$btn-clr-primary-shadow-hex:		lighten($btn-clr-primary-hex, 10%);
+$btn-clr-primary-shadow-rgb:		HEXtoRGB($btn-clr-primary-shadow-hex);
+
+
+// SECONDARY ////////////////////////////////////////////////////////////////////////////////////
+$btn-clr-secondary-hex:				#7f8c8d;
+$btn-clr-secondary-rgb:				HEXtoRGB($btn-clr-secondary-hex);
+
+$btn-clr-secondary-bg-hex:			$btn-clr-secondary-hex;
+$btn-clr-secondary-bg-rgb:			HEXtoRGB($btn-clr-secondary-bg-hex);
+
+$btn-clr-secondary-border-hex:		lighten($btn-clr-secondary-hex, 10%);
+$btn-clr-secondary-border-rgb:		HEXtoRGB($btn-clr-secondary-border-hex);
+
+$btn-clr-secondary-shadow-hex:		lighten($btn-clr-secondary-hex, 10%);
+$btn-clr-secondary-shadow-rgb:		HEXtoRGB($btn-clr-secondary-shadow-hex);
+
+
+// SUCCESS ////////////////////////////////////////////////////////////////////////////////////
+$btn-clr-success-hex:				#27ae60;
+$btn-clr-success-rgb:				HEXtoRGB($btn-clr-success-hex);
+
+$btn-clr-success-bg-hex:			$btn-clr-success-hex;
+$btn-clr-success-bg-rgb:			HEXtoRGB($btn-clr-success-bg-hex);
+
+$btn-clr-success-border-hex:		lighten($btn-clr-success-hex, 10%);
+$btn-clr-success-border-rgb:		HEXtoRGB($btn-clr-success-border-hex);
+
+$btn-clr-success-shadow-hex:		lighten($btn-clr-success-hex, 10%);
+$btn-clr-success-shadow-rgb:		HEXtoRGB($btn-clr-success-shadow-hex);
+
+
+// WARNING ////////////////////////////////////////////////////////////////////////////////////
+$btn-clr-warning-hex:				#cabb0c;
+$btn-clr-warning-rgb:				HEXtoRGB($btn-clr-warning-hex);
+
+$btn-clr-warning-bg-hex:			$btn-clr-warning-hex;
+$btn-clr-warning-bg-rgb:			HEXtoRGB($btn-clr-warning-bg-hex);
+
+$btn-clr-warning-border-hex:		lighten($btn-clr-warning-hex, 10%);
+$btn-clr-warning-border-rgb:		HEXtoRGB($btn-clr-warning-border-hex);
+
+$btn-clr-warning-shadow-hex:		lighten($btn-clr-warning-hex, 10%);
+$btn-clr-warning-shadow-rgb:		HEXtoRGB($btn-clr-warning-shadow-hex);
+
+
+// WARNING 2 ////////////////////////////////////////////////////////////////////////////////////
+$btn-clr-warning2-hex:				#e67e22;
+$btn-clr-warning2-rgb:				HEXtoRGB($btn-clr-warning2-hex);
+
+$btn-clr-warning2-bg-hex:			$btn-clr-warning2-hex;
+$btn-clr-warning2-bg-rgb:			HEXtoRGB($btn-clr-warning2-bg-hex);
+
+$btn-clr-warning2-border-hex:		lighten($btn-clr-warning2-hex, 10%);
+$btn-clr-warning2-border-rgb:		HEXtoRGB($btn-clr-warning2-border-hex);
+
+$btn-clr-warning2-shadow-hex:		lighten($btn-clr-warning2-hex, 10%);
+$btn-clr-warning2-shadow-rgb:		HEXtoRGB($btn-clr-warning2-shadow-hex);
+
+
+// DANGER ////////////////////////////////////////////////////////////////////////////////////
+$btn-clr-danger-hex:				#b30000;
+$btn-clr-danger-rgb:				HEXtoRGB($btn-clr-danger-hex);
+
+$btn-clr-danger-bg-hex:				$btn-clr-danger-hex;
+$btn-clr-danger-bg-rgb:				HEXtoRGB($btn-clr-danger-bg-hex);
+
+$btn-clr-danger-border-hex:			lighten($btn-clr-danger-hex, 10%);
+$btn-clr-danger-border-rgb:			HEXtoRGB($btn-clr-danger-border-hex);
+
+$btn-clr-danger-shadow-hex:			lighten($btn-clr-danger-hex, 10%);
+$btn-clr-danger-shadow-rgb:			HEXtoRGB($btn-clr-danger-shadow-hex);
+
+
+// INFO ////////////////////////////////////////////////////////////////////////////////////
+$btn-clr-info-hex:					#9b59b6;
+$btn-clr-info-rgb:					HEXtoRGB($btn-clr-info-hex);
+
+$btn-clr-info-bg-hex:				$btn-clr-info-hex;
+$btn-clr-info-bg-rgb:				HEXtoRGB($btn-clr-info-bg-hex);
+
+$btn-clr-info-border-hex:			lighten($btn-clr-info-hex, 10%);
+$btn-clr-info-border-rgb:			HEXtoRGB($btn-clr-info-border-hex);
+
+$btn-clr-info-shadow-hex:			lighten($btn-clr-info-hex, 10%);
+$btn-clr-info-shadow-rgb:			HEXtoRGB($btn-clr-info-shadow-hex);
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// PRIMARY //
+///////////////////////////////////////////////////////////////////////////////////////////////
+#{$ui}.btn.primary{
+	&.colored{
+		color:				RGBA(var(--clr-type-primary) / 100%);
+		background-color:	RGBA(var(--clr-type-primary) / 20%);
+		border-color:		RGBA(var(--clr-type-primary-light) / 100%);
+		box-shadow:			0px 0px 6px 2px RGBA(var(--clr-type-primary) / 40%),
+							inset 0px 0px 10px 0 RGBA(var(--clr-type-primary-light) / 70%);
+		> svg{
+			fill:			RGBA(var(--clr-type-primary) / 100%);
+		}
+	}
+	&.active,
+	&:active{
+		color:				RGBA(255 255 255 / 100%);
+		background-color:	RGBA(var(--clr-type-primary)/ 100%);
+		border-color:		RGBA(var(--clr-type-primary-light) / 100%);
+		box-shadow:			0px 0px 6px 2px RGBA(var(--clr-type-primary) / 80%),
+							inset 0px 0px 10px 0 RGBA(var(--clr-type-primary-light) / 70%);
+	}
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// SECONDARY //
+///////////////////////////////////////////////////////////////////////////////////////////////
+#{$ui}.btn.secondary{
+	&.colored{
+		color:				RGBA(var(--clr-type-secondary) / 100%);
+		background-color:	RGBA(var(--clr-type-secondary) / 20%);
+		border-color:		RGBA(var(--clr-type-secondary-light) / 100%);
+		box-shadow:			0px 0px 6px 2px RGBA(var(--clr-type-secondary) / 40%),
+							inset 0px 0px 10px 0 RGBA(var(--clr-type-secondary-light)/ 70%);
+		> svg{
+			fill:			RGBA(var(--clr-type-secondary) / 100%);
+		}
+	}
+	&.active,
+	&:active{
+		color:				RGBA(255 255 255 / 100%);
+		background-color:	RGBA(var(--clr-type-secondary) / 100%);
+		border-color:		RGBA(var(--clr-type-secondary-light) / 100%);
+		box-shadow:			0px 0px 6px 2px RGBA(var(--clr-type-secondary) / 80%),
+							inset 0px 0px 10px 0 RGBA(var(--clr-type-secondary-light) / 70%);
+	}
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// SUCCESS //
+///////////////////////////////////////////////////////////////////////////////////////////////
+#{$ui}.btn.success{
+	&.colored{
+		color:				RGBA(var(--clr-type-success) / 100%);
+		background-color:	RGBA(var(--clr-type-success) / 20%);
+		border-color:		RGBA(var(--clr-type-success-light) / 100%);
+		box-shadow:			0px 0px 6px 2px RGBA(var(--clr-type-success) / 40%),
+							inset 0px 0px 10px 0 RGBA(var(--clr-type-success-light) / 70%);
+		> svg{
+			fill:			RGBA(var(--clr-type-success) / 100%);
+		}
+	}
+	&.active,
+	&:active{
+		color:				RGBA(255 255 255 / 100%);
+		background-color:	RGBA(var(--clr-type-success) / 100%);
+		border-color:		RGBA(var(--clr-type-success) / 100%);
+		box-shadow:			0px 0px 6px 2px RGBA(var(--clr-type-success) / 80%),
+							inset 0px 0px 10px 0 RGBA(var(--clr-type-success-light) / 70%);
+	}
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// WARNING //
+///////////////////////////////////////////////////////////////////////////////////////////////
+#{$ui}.btn.warning{
+	&.colored{
+		color:				RGBA(var(--clr-type-warning) / 100%);
+		background-color:	RGBA(var(--clr-type-warning) / 20%);
+		border-color:		RGBA(var(--clr-type-warning-light) / 100%);
+		box-shadow:			0px 0px 6px 2px RGBA(var(--clr-type-warning) / 40%),
+							inset 0px 0px 10px 0 RGBA(var(--clr-type-warning-light) / 70%);
+		> svg{
+			fill:			RGBA(var(--clr-type-warning) / 100%);
+		}
+	}
+	&.active,
+	&:active{
+		color:				RGBA(255 255 255 / 100%);
+		background-color:	RGBA(var(--clr-type-warning) / 100%);
+		border-color:		RGBA(var(--clr-type-warning) / 100%);
+		box-shadow:			0px 0px 6px 2px RGBA(var(--clr-type-warning) / 80%),
+							inset 0px 0px 10px 0 RGBA(var(--clr-type-warning-light) / 70%);
+	}
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// WARNING 2 //
+///////////////////////////////////////////////////////////////////////////////////////////////
+#{$ui}.btn.warning2{
+	&.colored{
+		color:				RGBA(var(--clr-type-warning2) / 100%);
+		background-color:	RGBA(var(--clr-type-warning2) / 20%);
+		border-color:		RGBA(var(--clr-type-warning2-light) / 100%);
+		box-shadow:			0px 0px 6px 2px RGBA(var(--clr-type-warning2) / 40%),
+							inset 0px 0px 10px 0 RGBA(var(--clr-type-warning2-light) / 70%);
+		> svg{
+			fill:			RGBA(var(--clr-type-warning2) / 100%);
+		}
+	}
+	&.active,
+	&:active{
+		color:				RGBA(255 255 255 / 100%);
+		background-color:	RGBA(var(--clr-type-warning2) / 100%);
+		border-color:		RGBA(var(--clr-type-warning2) / 100%);
+		box-shadow:			0px 0px 6px 2px RGBA(var(--clr-type-warning2) / 80%),
+							inset 0px 0px 10px 0 RGBA(var(--clr-type-warning2-light) / 70%);
+	}
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// DANGER //
+///////////////////////////////////////////////////////////////////////////////////////////////
+#{$ui}.btn.danger{
+	&.colored{
+		color:				RGBA(var(--clr-type-danger) / 100%);
+		background-color:	RGBA(var(--clr-type-danger) / 20%);
+		border-color:		RGBA(var(--clr-type-danger-light) / 100%);
+		box-shadow:			0px 0px 6px 2px RGBA(var(--clr-type-danger) / 40%),
+							inset 0px 0px 10px 0 RGBA(var(--clr-type-danger-light) / 70%);
+		> svg{
+			fill:			RGBA(var(--clr-type-danger) / 100%);
+		}
+	}
+	&.active,
+	&:active{
+		color:				RGBA(255 255 255 / 100%);
+		background-color:	RGBA(var(--clr-type-danger) / 100%);
+		border-color:		RGBA(var(--clr-type-danger) / 100%);
+		box-shadow:			0px 0px 6px 2px RGBA(var(--clr-type-danger) / 80%),
+							inset 0px 0px 10px 0 RGBA(var(--clr-type-danger-light) / 70%);
+	}
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// INFO //
+///////////////////////////////////////////////////////////////////////////////////////////////
+#{$ui}.btn.info{
+	&.colored{
+		color:				RGBA(var(--clr-type-info) / 100%);
+		background-color:	RGBA(var(--clr-type-info) / 20%);
+		border-color:		RGBA(var(--clr-type-info-light) / 100%);
+		box-shadow:			0px 0px 6px 2px RGBA(var(--clr-type-info) / 40%),
+							inset 0px 0px 10px 0 RGBA(var(--clr-type-info-light) / 70%);
+		> svg{
+			fill:			RGBA(var(--clr-type-info) / 100%);
+		}
+	}
+	&.active,
+	&:active{
+		color:				RGBA(255 255 255 / 100%);
+		background-color:	RGBA(var(--clr-type-info) / 100%);
+		border-color:		RGBA(var(--clr-type-info) / 100%);
+		box-shadow:			0px 0px 6px 2px RGBA(var(--clr-type-info) / 80%),
+							inset 0px 0px 10px 0 RGBA(var(--clr-type-info-light) / 70%);
+	}
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// LINK //
+///////////////////////////////////////////////////////////////////////////////////////////////
+#{$ui}.btn.link{
+	border-color:			transparent!important;
+	background-color:		transparent!important;
+	&.active{
+		color:				white;
+		background-color:	gray;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// BUTTON SIZES /////////////////////////////////////////////
+@mixin btn--sizes{
+	@each $btn--size in $btn--size-list{
+
+		&.#{nth($btn--size, 1)}{
+			font-size:						#{$btn--sizes-font * nth($btn--size, 2)};
+			//line-height:					#{$btn--sizes-font * nth($btn--size, 2)};
+			padding:						#{$btn--sizes-pad * nth($btn--size, 2) / 3} #{$btn--sizes-pad * nth($btn--size, 2)};
+			border-radius:					#{$btn--sizes-radius * nth($btn--size, 2)};
+
+			// ICON
+			&.icon{
+				padding-left:				#{$btn--sizes-pad * nth($btn--size, 2) / 4};
+
+				&.icon-only{
+					padding-right:			#{$btn--sizes-pad * nth($btn--size, 2) / 4};
+				}
+
+				&.vertical{
+					padding:				#{$btn--sizes-pad * nth($btn--size, 2) / 3} #{$btn--sizes-pad * nth($btn--size, 2)}!important;
+					padding-top:			#{ ($btn--sizes-pad * nth($btn--size, 2) / 3) + ($btn--sizes-font * nth($btn--size, 2) * 2.5) + 0.3rem}!important;
+					> svg{
+						top:				#{$btn--sizes-pad * nth($btn--size, 2) / 3};
+						transform:			translate(-50%, 0);
+						width:				#{$btn--sizes-font * nth($btn--size, 2) * 2.5};
+						height:				#{$btn--sizes-font * nth($btn--size, 2) * 2.5};
+					}
+				}
+				
+				&:not(.icon-only){
+					padding-left:			#{$btn--sizes-font * nth($btn--size, 2) * 1.4 + (($btn--sizes-pad * nth($btn--size, 2)))};
+					> svg{
+						left:				#{$btn--sizes-pad * nth($btn--size, 2)};
+					}
+				}
+				> svg{
+					left:					50%;
+					transform:				translate(-50%, -50%);
+					width:					#{$btn--sizes-font * nth($btn--size, 2) * 1.4};
+					height:					#{$btn--sizes-font * nth($btn--size, 2) * 1.4};
+				}
+				&::after{
+					width:					#{$btn--sizes-font * nth($btn--size, 2) * 1.4};
+				}
+			}
+
+			// FONT LCD
+			&.font-lcd{
+				padding:					#{$btn--sizes-pad * nth($btn--size, 2) / 4} #{$btn--sizes-pad * nth($btn--size, 2) / 2};
+				//font-size:					#{ ($btn--sizes-font * nth($btn--size, 2)) * 2};
+				//line-height:				#{ ($btn--sizes-font * nth($btn--size, 2)) * 2};
+			}
+
+			// ALERT
+			&.alert::before{				
+				border-radius:				#{$btn--sizes-radius * nth($btn--size, 2) + 0.3};
+			}
+
+			// MULTI
+			&.multi{
+				padding:					#{$btn--sizes-pad * nth($btn--size, 2)};
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+// BUTTON SIZES GROUP /////////////////////////////////////////////
+@mixin btn--sizes-group{
+	@each $btn--size in $btn--size-list{
+		&.#{nth($btn--size, 1)}{
+
+			> .btn{
+				font-size:        						#{$btn--sizes-font * nth($btn--size, 2)};
+				padding:          						#{$btn--sizes-pad * nth($btn--size, 2) / 3} #{$btn--sizes-pad * nth($btn--size, 2)};
+				border-radius:  						#{$btn--sizes-radius * nth($btn--size, 2)};
+			}
+
+			&.collapse{
+				> .btn{
+					&:first-child{
+						border-top-left-radius:  		#{$btn--sizes-radius * nth($btn--size, 2)};
+					}				
+					&:last-child{
+						border-bottom-right-radius:		#{$btn--sizes-radius * nth($btn--size, 2)};
+					}
+				}
+				&.horizontal{
+					> .btn{
+						&:first-child{
+							border-bottom-left-radius:  #{$btn--sizes-radius * nth($btn--size, 2)};
+						}				
+						&:last-child{
+							border-top-right-radius:	#{$btn--sizes-radius * nth($btn--size, 2)};
+						}
+					}
+				}
+				&.vertical{
+					> .btn{
+						&:first-child{
+							border-top-right-radius:  	#{$btn--sizes-radius * nth($btn--size, 2)};
+						}				
+						&:last-child{
+							border-bottom-left-radius:	#{$btn--sizes-radius * nth($btn--size, 2)};
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+// BUTTON SWITCH /////////////////////////////////////////////
+@mixin btn--sizes-switch{
+	@each $btn--size in $btn--switch-list{
+
+		&.#{nth($btn--size, 1)}{
+			font-size:      			nth($btn--size, 2);
+			height:						#{nth($btn--size, 3) + (nth($btn--size, 4) * 2)};
+			padding:       				nth($btn--size, 4);
+
+			> div{
+				line-height:			nth($btn--size, 2);
+				&.inactive{
+					padding-left:		#{nth($btn--size, 3) + nth($btn--size, 4)};
+					padding-right:		nth($btn--size, 4);
+				}
+				&.active{
+					padding-left:		nth($btn--size, 4);
+					padding-right:		#{nth($btn--size, 3) + nth($btn--size, 4)};
+				}
+			}
+
+			&::after{
+				width:					nth($btn--size, 3);
+				height:					nth($btn--size, 3);
+				left:					nth($btn--size, 4);				
+			}
+
+			&.active{
+				&::after{
+					left:				calc(100% - #{nth($btn--size, 3) + (nth($btn--size, 4))});
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+// BUTTON GUTTER ///////////////////////////////////
+@mixin btn--gutters{
+	@each $btn--gutter in $btn--gutter-list{
+		&.gutter-#{nth($btn--gutter, 1)}{
+			margin-right:		#{nth($btn--gutter, 2)};
+		}	
+	}
+}

@@ -1,0 +1,105 @@
+// COLORS BASE ////////////////////////////////////////////
+// TO REMOVE !!!!!!
+$color-background-dark:     black;
+$color-background-light:    #dbdbdb;
+
+
+// GRID ////////////////////////////////////////////
+$grid--column-bg-dark:		#0c1519;
+$grid--column-bg-light:		#f5f5f5;
+
+
+// HEADER ////////////////////////////////////////////
+$color-bg--header-dark:    	lighten($grid--column-bg-dark,3%);
+$color-bg--header-light:   	white;
+
+
+// ASIDE ////////////////////////////////////////////
+$color-bg--aside-dark:   	lighten($grid--column-bg-dark,3%);
+$color-bg--aside-light:   	darken($grid--column-bg-light,10%);
+
+
+
+
+
+
+// COLORS STATUS ////////////////////////////////////////////
+
+$color-light:				#bdc3c7;
+$color-light-rgb:			HEXtoRGB($color-light);
+
+$color-dark:				#7f8c8d;
+$color-dark-rgb:			HEXtoRGB($color-dark);
+
+$color-white:				white;
+$color-white-rgb:			HEXtoRGB($color-white);
+
+// LIGHT  to remove !!!
+$color-danger:				#b30000;
+$color-danger-light:		lighten($color-danger,15%);
+$color-danger-dark:			darken($color-danger,15%);
+
+
+
+
+
+//______________________Name________________Color_____________
+$colors--type-list:		'primary'			--clr-type-primary,
+						'primary-light'		--clr-type-primary-light,
+						'primary-dark'		--clr-type-primary-dark,
+
+						'secondary'			--clr-type-secondary,
+						'secondary-light'	--clr-type-secondary-light,
+						'secondary-dark'	--clr-type-secondary-dark,
+
+						'success'			--clr-type-success,
+						'success-light'		--clr-type-success-light,
+						'success-dark'		--clr-type-success-dark,
+
+						'warning'			--clr-type-warning,
+						'warning-light'		--clr-type-warning-light,
+						'warning-dark'		--clr-type-warning-dark,
+
+						'warning2'			--clr-type-warning2,
+						'warning2-light'	--clr-type-warning2-light,
+						'warning2-dark'		--clr-type-warning2-dark,
+						
+						'danger'      		--clr-type-danger,
+						'danger-light'		--clr-type-danger-light,
+						'danger-dark'		--clr-type-danger-dark,
+
+						'info'        		--clr-type-info,
+						'info-light'		--clr-type-info-light,
+						'info-dark'			--clr-type-info-dark,
+
+						'light'       		--clr-type-light,
+						'dark'		        --clr-type-dark,
+						'white'				--clr-scheme-neg;
+
+//______________________Name_________:______Color_____________
+$colors--fluid-list:	'blue'				--clr-fl-blue,
+						'yellow'			--clr-fl-yellow,
+						'brown'				--clr-fl-brown,
+						'dark'				--clr-fl-dark,
+						'gray'				--clr-fl-gray,
+						'red'				--clr-fl-red,
+						'green'				--clr-fl-green;
+
+
+
+// ROOT TYPE AND FLUID //////////////////////////////////////////
+//:root {
+//	@each $name, $color in $colors--type-list{ 		
+//		--clr-type2-#{$name}: $color;
+//	}
+//}
+
+
+
+
+
+
+
+
+
+

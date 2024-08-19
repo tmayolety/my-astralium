@@ -1,0 +1,261 @@
+:root{
+	--clr-neutralgray:	128 128 128;
+	--ticks-clr-grid:	0 0 0;
+}
+
+.circularGauge-wrapper{
+	position:			absolute;
+	top:				50%!important;
+	left:				50%!important;
+	transform:			translate(-50%, -50%);
+}
+
+
+.circularGauge {
+	position:			relative;
+	margin:				0 auto;
+	width:				100%;
+	height:				100%;
+	z-index:			2;
+
+	> svg{
+		overflow:		visible!important;
+	}
+}
+
+
+
+// INFOS CONTAINER ////////////////////////////////////////////
+.infos-container{
+	display:			none;
+	flex-direction:		column;
+	position:			absolute;
+	top:				50%;
+	left:				50%;
+	transform:			translate(-50%, -50%);
+	height:				auto;
+	text-align:			center;
+	z-index:			1;
+
+	&.relative-pos{
+		position:		relative;
+		top:			0;
+		left:			0;
+		transform:		none;
+	}
+
+	> div{
+		display:		none!important;
+		justify-content:center;
+		@include		transition(all $transition-scheme 0s ease-in-out);
+		&:not(:empty){
+			display:	flex!important;
+		}
+	}
+
+	> i{
+		display:		none!important;
+	}
+
+	> i.visible{
+		display:		flex!important;
+		justify-content:center;
+	}
+
+	small{
+		font-size:		70%;
+	}
+
+	&.visible{
+		display:		flex;
+	}
+}
+
+
+
+
+// TICKS FONT //////////////////////////////////////////////////
+.dxg-circular-gauge{
+	.dxg-elements,
+	.dxg-subvalue-indicator{
+		> text{
+			font-family: "polar_semibold"!important;
+		}
+	}
+}
+
+
+// GAUGE BAR //
+.dxg-main-bar,
+.dxg-subvalue-indicator,
+.dxg-back-bar{
+	@include			transition(	fill $transition-scheme 0s ease-in-out,
+									filter $transition-scheme 0s ease-in-out);
+}
+
+
+
+.dxg-subvalue-indicator,
+.dxg-value-indicator > path{
+	stroke-width:		0!important;
+}
+
+.dxg-elements{  		// PLOT TEXT
+	> text{
+		fill:			RGBA(var(--clr-subvalue-ui) / 40% )!important;
+	}
+}
+
+.dxg-subvalue-indicator{   // ARROW MIN MAX
+	> path{
+		stroke:			transparent!important;		
+	}
+}
+
+.dxg-space-bar{
+	fill:				transparent!important;
+}
+
+
+
+// TRANSITION //
+.circularGauge-wrapper {
+	.status-text{
+		@include		transition(	color $transition-scheme 0s ease-in-out,
+									filter $transition-scheme 0s ease-in-out,
+									text-shadow $transition-scheme 0s ease-in-out);
+	}
+}
+
+
+
+
+.circularGauge-wrapper {
+
+	// GENERATE COLORS TYPES ///////////////////////////////////
+	@each $name, $color in $colors--type-list{
+
+		&.status-type-#{$name}{
+
+			.status-icon{				// STATUS ICON
+				& > svg{
+					fill:				RGBA(var($color) / 100%);
+				}				
+				&.glow > svg{
+					filter:				drop-shadow(0 0 6px RGBA(var($color) / var(--sch-clr-active-glow-out-op)) );
+				}
+			}
+
+			.status-text{				// STATUS TEXT
+				color:					RGBA(var($color) / 100%);
+				&.glow{
+					filter:				drop-shadow(0 0 10px RGBA(var($color) / var(--sch-clr-active-glow-out-op)));
+					text-shadow:		0 0 4px RGBA(var($color) / var(--sch-clr-active-glow-out-op));
+				}
+			}				
+
+			.dxg-value-indicator{
+				> path:not(.dxg-back-bar){ 				// GAUGE STATUS COLOR
+					filter:				drop-shadow(0 0 6px RGBA(var($color) / var(--sch-clr-active-glow-out-op)))!important;					
+				}
+				//path.dxg-back-bar,{
+				//	fill:				RGBA($color / 100%);
+				//	opacity:			0.15;
+				//}
+			}
+
+			.dxg-spindle-border,
+			.dxg-part{
+				fill:					RGBA(var($color) / 100%);
+				filter:					drop-shadow(0 0 6px RGBA(var($color) / var(--sch-clr-active-glow-out-op)));
+			}
+
+			//.dxg-background-range{
+			//	fill:					RGBA($color / 100%);
+			//	opacity:				0.15;
+			//}
+
+			.dxg-value-indicator{		// GAUGE STATUS GLOW
+				fill:					RGBA(var($color) / 100%);
+			}
+		}
+	}
+
+	// GENERATE COLORS FLUIDS ///////////////////////////////////
+	@each $name, $color in $colors--fluid-list{
+		&.status-fluid-#{$name}{
+
+			.status-icon{				// STATUS ICON
+				& > svg{
+					fill:				RGBA(var($color) / 100%);
+				}				
+				&.glow > svg{
+					filter:				drop-shadow(0 0 6px RGBA(var($color) / var(--sch-clr-active-glow-out-op)) );
+				}
+			}
+
+			.status-text{				// STATUS TEXT
+				color:					RGBA(var($color) / 100%);
+				&.glow{
+					filter:				drop-shadow(0 0 6px RGBA(var($color) / var(--sch-clr-active-glow-out-op)) );
+					text-shadow:		0 0 4px RGBA(var($color) / 100%);
+				}
+			}				
+
+			.dxg-value-indicator{
+				> path:not(.dxg-back-bar){ 				// GAUGE STATUS COLOR
+					filter:				drop-shadow(0 0 6px RGBA(var($color) / var(--sch-clr-active-glow-out-op)) );				
+				}
+				path.dxg-back-bar,{
+					fill:				RGBA(var($color) / 100%);
+					opacity:			0.15;
+				}
+			}
+
+			.dxg-spindle-border{
+				fill:					RGBA(var($color) / 100%);
+				filter:					drop-shadow(0 0 6px RGBA(var($color) / var(--sch-clr-active-glow-out-op)) );
+			}
+
+			.dxg-background-range{
+				fill:					RGBA(var($color) / 100%);
+				opacity:				0.15;
+			}
+
+			.dxg-value-indicator{		// GAUGE STATUS GLOW
+				fill:					RGBA(var($color) / 100%);
+			}
+		}
+	}
+
+	// DEFAULT GAUGE BACKGROUND /////////////////////
+	//&.value-bg-default{
+	//	.dxg-back-bar{
+	//		fill:					RGB(var(--clr-neutralgray))!important;
+	//		filter:					none!important;
+	//	}
+	//}
+
+	// HIDDEN GAUGE BACKGROUND /////////////////////
+	&.value-bg-hidden{
+		.dxg-back-bar{
+			fill:					transparent!important;
+			filter:					none!important;
+		}
+	}
+
+	// TRANSPARENT RANGES /////////////////////////
+	&.range-bg-default{
+		.dxg-background-range{
+			fill:					RGBA(var(--clr-neutralgray) / 20%)!important;
+			filter:					none!important;
+		}
+	}
+}
+
+.dxg-spindle-hole,
+.dxg-hole{
+	fill:							RGB(var(--sch-clr-grid))!important;
+	@include						transition(	fill $transition-scheme 0s ease-in-out,
+												filter $transition-scheme 0s ease-in-out);
+}

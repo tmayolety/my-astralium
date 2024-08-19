@@ -1,0 +1,29 @@
+// SECTION /////////////////////////////////
+main > section{
+	grid-area:							section;
+	overflow:							auto;
+	-webkit-overflow-scrolling:			touch;
+	scroll-behavior:					smooth;
+
+    @include breakpoint(phone){
+        padding-bottom:                 30px;
+    }
+
+}
+
+
+
+// ARTICLE ////////////////////////////////////
+main > section > article{
+    display:                            inline-block;
+    width:                              100%;
+    box-sizing:                         border-box;    
+    padding:                            $article-pad;
+    @include breakpoint(phone){
+        padding:                        10px;
+    }
+
+    &.pad-no{
+    	padding:						0;
+    }
+}

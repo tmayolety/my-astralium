@@ -1,0 +1,179 @@
+/////////////////////////////////////////////////////////////////////////////
+// GRID HEADER //
+/////////////////////////////////////////////////////////////////////////////
+.ui.grid{
+
+	> .ui.col.has-header{
+
+		$font-size:					30px;
+		$border:					2px;
+
+		border:						0!important;	
+		overflow:					visible!important;
+
+		> header{		
+			vertical-align:			middle;
+			justify-content:		center;
+			align-items:			center;
+			text-align:				center;
+			padding:				0 1rem;
+			font-size:				$font-size; 
+			box-sizing:				border-box;
+			overflow:				visible;
+			border-radius:			0;
+			box-shadow:				0px 10px 40px RGBA(0, 0, 0, 0);
+			@extend					%font-regular;
+			background:				RGBA(var(--sch-clr-grid) / var(--sch-clr-grid-op));
+			color:					RGBA(var(--sch-clr-text-default) / 100%);
+			border:					$border solid RGBA(var(--sch-clr-grid-border) / var(--sch-clr-grid-border-op));
+			@include				transition( background $transition-scheme 0s ease-in-out,
+												border $transition-scheme 0s ease-in-out,
+												color $transition-scheme 0s ease-in-out);
+
+			> span{
+				opacity:			1;
+			}
+
+			// GRADIENT //
+			.gradients{
+				@include			abs-pos(0, 0, 0, 0);
+				pointer-events: 	none;
+				box-shadow:			inset 0px 0px 40px 0px RGBA(var(--sch-clr-ui-glow) / var(--sch-clr-ui-glow-op) );
+				@include			transition(	box-shadow $transition-scheme 0s ease-in-out,
+												opacity $transition-scheme 0s ease-in-out);
+
+				.gradient-left,
+				.gradient-right{
+					content:		'';
+					@include		abs-pos(0, auto, auto, auto);
+					height:			100%;
+					width:			50%;
+					min-width:		100px;
+					max-width:		220px;
+					opacity:		1;
+
+					&::before,
+					&::after{
+						content:	'';
+						@include	abs-pos(auto, auto, auto, auto);
+						display:	block;
+						width:		100%;
+						height:		$border;
+					}
+
+					&::before{
+						top:		-2px;						
+					}
+
+					&::after{
+						bottom:		-2px;						
+					}
+				}
+
+				.gradient-left{
+					left:			0;
+					background:		linear-gradient(	90deg,
+														RGBA(var(--sch-clr-active) / 50%) 0%,
+														RGBA(var(--sch-clr-active) / 0%) 100%);
+					&::before,
+					&::after{
+						left:		0;
+						background:	linear-gradient(	90deg,
+														RGBA(var(--sch-clr-active) / 100%) 0%,
+														RGBA(var(--sch-clr-active) / 0%) 100%);
+					}
+				}
+
+				.gradient-right{
+					right:			0;
+					background:		linear-gradient(	90deg,
+														RGBA(var(--sch-clr-active) / 0%) 0%,
+														RGBA(var(--sch-clr-active) / 50%) 100%);
+					&::before,
+					&::after{
+						right:		0;
+						background:	linear-gradient(	90deg,
+														RGBA(var(--sch-clr-active) / 0%) 0%,
+														RGBA(var(--sch-clr-active) / 100%) 100%);
+					}
+				}				
+			}
+
+			// DOTS //
+			.dots-left,
+			.dots-right{
+				height:				calc(100% + 4px);
+				width:				$border;
+				background:			RGBA(var(--sch-clr-active) / var(--sch-clr-active-op));
+				@include			transition( background $transition-scheme 0s ease-in-out,
+												box-shadow $transition-scheme 0s ease-in-out);
+
+				&::before,
+				&::after{
+					content:		'';
+					width:			4px;
+					height:			4px;
+					border-radius:	100%;
+					background:		RGBA(var(--sch-clr-active-glow-in) / var(--sch-clr-active-glow-in-op));
+					box-shadow:		0px 0px 15px 8px RGBA(var(--sch-clr-active-glow-out) / var(--sch-clr-active-glow-out-op));
+				}
+
+				&::before{					
+					@include		abs-pos(-1px, auto, auto, -1px);					
+				}
+				&::after{
+					@include		abs-pos(auto, auto, -1px, -1px);
+				}
+			}
+
+			.dots-left{
+				@include			abs-pos(-$border, auto, auto, -$border);
+			}
+
+			.dots-right{
+				@include			abs-pos(-$border, -$border, auto, auto);
+			}
+
+			&.ellipsis{
+				white-space:		nowrap;
+				overflow:			hidden;
+				text-overflow:		ellipsis;
+			}
+
+			> .btn{
+				@include			abs-pos(50%, 1rem, auto, auto);
+				@include			translate(0, -50%);
+			}
+		}
+
+		font{
+			z-index:				2;
+		}
+
+		.align-left{
+			justify-content:		flex-start;
+		}
+
+		.align-right{
+			justify-content:		flex-end;
+		}
+
+		// TOOLS
+		.header-tools{
+			@include				abs-pos(50%, 1rem, auto, auto);
+			@include				translate(0, -50%);
+
+			> .btn{
+				float:				left;
+				+ .btn{
+					margin-left:	10px;
+				}
+			}
+			@include breakpoint(phone){
+				@include			abs-pos(calc(150% + 10px), 0, auto, auto);
+				@include			translate(0, -50%);
+			}
+		}		
+	}
+}
+

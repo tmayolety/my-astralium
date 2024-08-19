@@ -1,0 +1,101 @@
+// MENU TABS /////////////////////////////////
+
+main > #{$ui}.main-tabs{
+	position:							relative;
+	grid-area:							menu-tabs;
+	box-sizing:							border-box;
+	font-size:							0.9rem;
+	padding:							0.8rem 1rem;
+	background:							transparent;	
+	@include							transition(background $transition-scheme 0s ease-in-out);
+
+	> ul{
+		display:						inline-flex;
+		flex-wrap:						wrap;
+		justify-content:				center;
+		width:							100%;
+
+		> li{
+			position:					relative;
+			margin:						3px;
+			border-style:				solid;
+			border-width:				1px;
+			border-radius:				0;
+			box-shadow:					0px 0 0 RGBA(0, 0, 0, 0);
+			background-color:			RGBA(var(--sch-clr-ui-bg) / var(--sch-clr-ui-bg-op) );
+			border-color:				RGBA(var(--sch-clr-ui-border) / var(--sch-clr-ui-border-op) );
+			@include					transition(all $transition-scheme 0s ease-in-out);
+			cursor:						pointer;
+
+			> a{
+				position:				relative;
+				display:				block;
+				padding:				0.5rem 0.8rem;
+				text-decoration:		none;
+				color:					RGBA(var(--sch-clr-ui-text) / var(--sch-clr-ui-text-op) );
+				@include				transition(color $transition-scheme 0s ease-in-out);
+			}
+
+			// ACTIVE
+			&.active{
+				z-index:				4;
+				background:				RGBA(var(--sch-clr-active) / var(--sch-clr-active-op));
+				border-color:			RGBA(var(--sch-clr-active) / var(--sch-clr-active-op));
+				box-shadow:				0px 0px 6px 2px RGBA(var(--sch-clr-active-glow-out) / var(--sch-clr-active-glow-out-op)),
+										inset 0px 0px 8px 0px RGBA(var(--sch-clr-active-glow-in) / var(--sch-clr-active-glow-in-op));
+				@include				transition( background $transition-scheme 0s ease-in-out,
+													border $transition-scheme 0s ease-in-out,
+													box-shadow $transition-scheme 0s ease-in-out);
+				> a{
+					color:				RGBA(var(--sch-clr-active-text) / var(--sch-clr-active-text-op));
+				}
+			}
+
+			// ALERT INACTIVE
+			&[data-alert=""]{
+				> a > svg{
+					display:			none;
+				}
+			}
+
+			// ALERT ACTIVE
+			&:not([data-alert=""]){
+				> a{
+					$size:				14px;
+					padding-right:		35px!important;
+
+					> svg{
+						position:		relative;
+						display:		block;
+						width:			$size;
+						height:			$size;
+						@include		abs-pos(50%, 10px, auto, auto);
+						@include		translate(0, -50%);
+						z-index:		2;
+						fill:			$color-danger;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+@include breakpoint(phone){
+	main{
+		#{$ui}.main-tabs{
+			overflow:					auto;
+			padding:					$article-pad-phone;
+			scroll-behavior:			smooth;
+			> ul{
+				flex-wrap:				nowrap;
+				grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+				justify-content:		left;
+				> li{
+					white-space:		nowrap;
+				}
+			}
+		}
+	}
+}

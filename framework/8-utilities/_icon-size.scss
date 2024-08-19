@@ -1,0 +1,24 @@
+@for $i from 1 through 200 {
+	#{$ui}.icon-size-#{$i * 5}{
+		height:						#{$i * 5}px;
+		> svg#{$ui}.icon{
+			min-width:				#{$i * 5}px!important;
+			max-width:				#{$i * 5}px;
+		}
+	}
+}
+
+// MEADIA QUERIES //
+@each $name, $value1, $value2 in $breakpoints-list {
+	@media screen #{$value1 $value2}{
+		@for $i from 1 through 200 {
+			#{$ui}.icon-size-#{$name}-#{$i * 5}{
+				height:				#{$i * 5}px;
+				> svg#{$ui}.icon{
+					min-width:		#{$i * 5}px!important;
+					max-width:		#{$i * 5}px;
+				}
+			}
+		}
+	}
+}

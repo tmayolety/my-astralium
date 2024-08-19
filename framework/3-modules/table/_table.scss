@@ -1,0 +1,407 @@
+// TABLE */////////////////////////////////////////
+ul#{$ui}.table{
+	min-width:							0;
+	max-width:							100%;
+	overflow:							auto;
+	display:							flex;
+	flex-direction:						column;
+	overflow:							visible;
+	align-self:							baseline;
+	//padding-bottom:						1px;
+
+	&.fit-content{
+		width:							fit-content;
+	}
+
+	+ #{$ui}.table{
+		margin-top:						1px;
+	}
+
+	> li{
+		display:						flex;
+		flex-direction:					row;
+		align-items:					stretch;
+
+		> div{
+			position:					relative;
+			display:					flex;
+			align-items:				center;
+			flex-grow:					1;
+			box-sizing:					border-box;
+			min-width:					0;
+			background:					RGBA(var(--sch-clr-grid) / var(--sch-clr-grid-op) );	
+			color:						RGBA(var(--sch-clr-text-default) / var(--sch-clr-text-default-op) );
+			@include					transition(	background $transition-scheme 0s ease-in-out,
+													color $transition-scheme 0s ease-in-out);
+
+			+ div{
+				margin-left:			1px;
+			}
+
+			// NO PADDING //
+			&.pad-no{
+				padding:				0!important;
+			}
+			
+			// ICON //
+			> i[class*="icon-size-"]{
+				&.no-mg{
+					margin-right:		0!important;
+				}
+				> svg{
+					fill:				rgba(white, 0.6);
+					@include			transition(fill $transition-scheme 0s ease-in-out);
+				}
+
+				+ span{
+					margin-left:		8px;
+				}
+
+				&.abs-center{
+					position:			absolute;
+					top:				50%;
+					left:				50%;
+					transform:			translate(-50%, -50%);
+				}
+			}
+
+			> span + span::before{
+				content:				'\00a0';
+			}
+
+			.color-white{
+				color:					white;
+			}
+
+			// NO BACKGROUND //
+			&.bg-no{
+				background:				none!important;
+			}
+		}
+
+		// THEAD / TFOOT
+		&.thead,
+		&.tfoot{
+			> div{
+				color:					RGBA(var(--sch-clr-text-default) / var(--sch-clr-text-default-op) );
+				background:				RGBA(var(--sch-clr-grid-border) / 80% );
+				@extend					%font-bold;
+			}
+		}
+	}
+}
+
+
+
+// IN COLUMN /////////////////////////////////////
+ul#{$ui}.table{
+	&.in-column{
+		background:						RGBA(var(--sch-clr-grid-border)/var(--sch-clr-grid-border-op));
+		@include						transition(background $transition-scheme 0s ease-in-out);
+	}
+}
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+// COLOR & GLOW ROW //
+////////////////////////////////////////////////////////////////////////////////////////////
+ul#{$ui}.table{
+	> li{
+		&[class*="color-bg-"]{
+			> div{
+				background:				none!important;
+			}
+		}
+		&.glow,
+		.glow{
+			z-index:					1;
+			svg{
+				//fill:					white;
+			}
+		}
+	}
+}
+
+
+
+ul#{$ui}.table{
+	> li{
+		&[class*="color-bg-"]{
+			> div{
+				color:				white!important;
+			}
+		}
+		[class*="color-bg-"]{
+			color:					white!important;
+		}
+
+		&[class*="color-bg-op"]{
+			> div{
+				color:				RGBA(var(--clr-scheme-neg) / 100%)!important;
+			}
+		}
+		[class*="color-bg-op"]{
+			color:					RGBA(var(--clr-scheme-neg) / 100%)!important;
+		}
+	}
+}
+ul#{$ui}.table{	// TYPE //
+	@each $name, $color in $colors--type-list{
+		.color-bg-type-#{$name}{
+			&.glow{
+				box-shadow:			0px 0px 6px 2px RGBA($color / 80%),
+									inset 0px 0px 10px 0 RGBA($color / 70%);
+			}
+		}
+	}
+}
+ul#{$ui}.table{	// FLUID //
+	@each $name, $color in $colors--fluid-list{ 	
+		.color-bg-fl-#{$name}{
+			&.glow{
+				box-shadow:			0px 0px 6px 2px RGBA($color / 80%),
+									inset 0px 0px 10px 0 RGBA($color / 70%);
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// COLUMNS NO GAP //////////////////////////////////
+ul#{$ui}.table.gap-no{
+	> li{
+		gap:							0;
+	}
+}
+
+
+
+
+
+
+
+// COLS WIDTH PIXEL //////////////////////////////////////////
+@for $i from 1 through 60 {
+	ul#{$ui}.table .col-#{$i * 10}{
+		min-width:						#{$i * 10}px!important;
+		max-width:						#{$i * 10}px;
+	}
+}
+
+
+// COLS MIN WIDTH PIXEL //////////////////////////////////////////
+@for $i from 1 through 60 {
+	ul#{$ui}.table .col-#{$i * 10}-min{
+		min-width:						#{$i * 10}px!important;
+	}
+}
+
+
+// COLS WIDTH PERCENTAGE //////////////////////////////////////////
+@for $n from 1 through 12 {    	
+	@for $c from 1 through $n {
+		.col-#{$c}\/#{$n}{
+			//min-width:					#{ (100% / $n) * $c}!important;
+			max-width:					#{ (100% / $n) * $c};
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+// SINGLELINE (Ellipsis) //////////////////////////////////
+// On Table Row & Col
+ul#{$ui}.table.singleline > li > div > span,
+ul#{$ui}.table > li.singleline > div > span,
+ul#{$ui}.table > li > div.singleline > span{
+	@extend %ellipsis;	
+}
+
+
+
+
+
+
+
+// RESPONSIVE //
+ul#{$ui}.table.resp{
+	width:					100%;
+}
+
+
+
+
+
+// COLUMN JOIN ///////
+ul#{$ui}.table{
+	.join-left{
+		margin-left:		0;
+	}
+}
+
+
+
+
+
+// as-list /////////////////////////////////////
+ul#{$ui}.table{
+	&.type-list{
+		> li{
+			flex-wrap:		wrap;
+			> div{
+				+ div{
+					margin:	0;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// TABLE SIZES //////////////////////////////////////////
+
+// SETTINGS_________(1)Name____(2)Gap___(3)Pad-v____(4)Pad-h___(5)Font______(6)Icon_____(7)Height
+$table--setting:	xmini 		1px 	0.2rem 		0.4rem		0.75rem		1rem		1rem,
+					mini 		1px 	0.3rem 		0.4rem		0.9rem		1rem		1rem,
+					sm  		1px 	0.4rem 		0.5rem		1rem		1.2rem		2rem,
+					med 		1px 	0.5rem 		0.6rem		1.2rem		1.6rem		3rem,
+					lg  		1px 	0.6rem 		0.7rem		1.3rem		1.8rem		4rem,
+					xl  		1px 	0.7rem 		0.7rem		1.4rem		2rem		5rem;
+
+
+
+@each $table--size in $table--setting {
+
+    ul#{$ui}.table.size-#{nth($table--size, 1)} {    		
+
+    	> li{
+    		
+    		+ li,
+    		+ span + li,
+    		+ span + span + li,
+    		+ span + span+ span + li,
+    		+ span + span+ span + span + li{
+    			margin-top:				#{nth($table--size, 2)};
+    		}
+
+    		> div{
+    			font-size:				#{nth($table--size, 5)};
+    			line-height:			#{nth($table--size, 5) + 0.2};
+    			padding:				#{nth($table--size, 3)} #{nth($table--size, 4)};
+
+    			> svg{
+					width:				#{nth($table--size, 6)};
+					height:				#{nth($table--size, 5)};
+    			}
+    		}
+    	}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+// Disabled /////////////////////////////
+ul#{$ui}.table{
+	> li.disabled,
+	> li > div.disabled{
+		opacity:				0.5;
+		pointer-events:			none;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+// not finish !!!!
+// ALIGN ////////////////////////////////////////////////
+
+// on Table //
+ul#{$ui}.table,
+ul#{$ui}.table[class*="align-"]{
+
+	&[class*="top"] > li{		@extend %align-content-flex-start; }
+	&[class*="middle"] > li{	@extend %align-content-center; }
+	&[class*="bottom"] > li{	@extend %align-content-flex-end; }
+	&[class*="left"] > li{		@extend %justify-content-flex-start;	text-align:left; }
+	&[class*="center"] > li{	@extend %justify-content-center;		text-align:center; }
+	&[class*="right"] > li{		@extend %justify-content-flex-end;		text-align:right; }
+}
+
+
+
+// on Row //
+ul#{$ui}.table > li,
+ul#{$ui}.table[class*="align-"] > li[class*="align-"]{
+
+	&[class*="top"] > div:not([class*="align-"]){		@extend %align-items-flex-start; }
+	&[class*="middle"] > div:not([class*="align-"]){	@extend %align-items-center; }
+	&[class*="bottom"] > div:not([class*="align-"]){	@extend %align-items-flex-end; }
+	&[class*="left"] > div:not([class*="align-"]){		@extend %justify-content-flex-start;	text-align:left; }
+	&[class*="center"] > div:not([class*="align-"]){	@extend %justify-content-center;		text-align:center; }
+	&[class*="right"] > div:not([class*="align-"]){		@extend %justify-content-flex-end;		text-align:right; }
+}
+
+
+
+// on Col //
+ul#{$ui}.table > li > div[class*="align-"],
+ul#{$ui}.table > li[class*="align-"] > div[class*="align-"],
+ul#{$ui}.table[class*="align-"] > li[class*="align-"] > div[class*="align-"]{
+
+	&[class*="top"]{		@extend %align-items-flex-start; }
+	&[class*="middle"]{		@extend %align-items-center; }
+	&[class*="bottom"]{		@extend %align-items-flex-end; }
+	&[class*="left"]{		@extend %justify-content-flex-start;	text-align:left; }
+	&[class*="center"]{		@extend %justify-content-center;		text-align:center; }
+	&[class*="right"]{		@extend %justify-content-flex-end;		text-align:right; }
+}

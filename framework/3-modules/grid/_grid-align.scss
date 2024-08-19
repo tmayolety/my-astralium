@@ -1,0 +1,43 @@
+/////////////////////////////////////////////////////////////////////////////
+// ALIGN //
+/////////////////////////////////////////////////////////////////////////////
+#{$ui}.grid{
+
+	&[class*="-left"] > .col{		justify-content: flex-start;}
+	.col[class*="-left"]{			justify-content: flex-start!important;}
+
+	&[class*="-center"] > .col{		justify-content: center; }
+	.col[class*="-center"]{			justify-content: center!important; }
+
+	&[class*="-right"] > .col{		justify-content: flex-end;}
+	.col[class*="-right"]{			justify-content: flex-end!important;}
+
+	&[class*="top-"] > .col{		align-items: flex-start;}
+	.col[class*="top-"]{			align-items: flex-start!important;}
+
+	&[class*="middle-"] > .col{		align-items: center;}
+	.col[class*="middle-"]{			align-items: center!important;}
+
+	&[class*="bottom-"] > .col{		align-items: flex-end;}
+	.col[class*="bottom-"]{			align-items: flex-end!important;}
+
+	&.stretch{						align-items: stretch!important; }
+	&.align-start{					align-content: flex-start!important; }
+	&.align-end{					align-content: flex-end!important; }
+}
+
+.col[class*="-left"]{				justify-content: flex-start!important;}
+.col[class*="-center"]{				justify-content: center!important; }
+.col[class*="-right"]{				justify-content: flex-end!important; }
+.col[class*="top-"]{				align-items: flex-start!important; }
+.col[class*="middle-"]{				align-items: center!important; }
+.col[class*="bottom-"]{				align-items: flex-end!important; }
+
+// RESET FOR COL-CONTENT /////////////////////////////////////////////////////
+#{$ui}.grid{
+	#{$ui}.col{
+		&.reset-w-align{
+			justify-content:		inherit!important;
+		}
+	}
+}

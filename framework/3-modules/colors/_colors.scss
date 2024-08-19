@@ -1,0 +1,106 @@
+// Generate CSS Variables colors /////////////////////////////
+
+
+[class*="color-bg-"]{
+	color:							white;
+	@include						transition(all $transition-scheme 0s ease-in-out);
+}
+
+[class*="color-text-"]{
+	@include						transition(all $transition-scheme 0s ease-in-out);
+}	
+
+[class*="color-fill-"]{
+	@include						transition(all $transition-scheme 0s ease-in-out);
+	> svg{
+		@include					transition(all $transition-scheme 0s ease-in-out);
+	}
+}
+
+
+
+///////////////////////////////////////////////////////////////
+// TYPES //
+///////////////////////////////////////////////////////////////
+@each $name, $color in $colors--type-list{ 
+
+	.color-bg-type-#{$name}{
+		background:					RGBA(var($color) / 100%)!important;
+		color:						white;
+		@include					transition(all $transition-scheme 0s ease-in-out);
+	}
+
+	header.color-bg-type-#{$name}{
+		border-left-color:			RGBA(var($color) / 100%)!important;
+		border-right-color:			RGBA(var($color) / 100%)!important;
+	}
+
+	.color-text-type-#{$name}{
+		color:						RGBA(var($color) / 100%)!important;
+		@include					transition(all $transition-scheme 0s ease-in-out);
+	}	
+
+	.color-fill-type-#{$name}{
+		fill:						RGBA(var($color) / 100%)!important;
+		@include					transition(all $transition-scheme 0s ease-in-out);
+		> svg{
+			fill:					RGBA(var($color) / 100%)!important;
+			@include				transition(all $transition-scheme 0s ease-in-out);
+		}
+
+		&.glow > svg#{$ui}.icon{
+			filter: 				drop-shadow( 0px 0px 2px  RGBA(var($color) / 50%))
+									drop-shadow( 0px 0px 5px  RGBA(var($color) / 40%));
+		}
+	}
+
+	.color-bg-op-type-#{$name}{
+		background:					RGBA(var($color) / var(--clr-bg-op))!important;
+	}
+
+	.color-stroke-type-#{$name}{
+		stroke:						RGBA(var($color) / 100%);
+	}
+}
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////
+// FLUID //
+///////////////////////////////////////////////////////////////
+@each $name, $color in $colors--fluid-list{ 
+	.color-bg-fl-#{$name}{			background: RGBA(var($color) / 100%)!important; }	
+	.color-bg-op-fl-#{$name}{		background: RGBA(var($color) / 30%)!important; }	
+	.color-text-fl-#{$name}{		color: RGBA(var($color) / 100%)!important; }	
+	.color-fill-fl-#{$name}{		fill: RGBA(var($color)/ 100%); }	
+	.color-stroke-fl-#{$name}{		stroke: RGBA(var($color) / 100%); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ALARMS RED COLORS //////////////////////////////////////
+.alarms-red-bg{
+	> div{
+		background:					$color-danger!important;
+		color:						white!important;
+		> i > svg{
+			fill:					white!important;
+		}
+	}
+}

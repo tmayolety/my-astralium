@@ -1,0 +1,19 @@
+// SETTINGS_____________Name________Font Size_________
+$paragraphe--setting:	size1 		0.8,
+						size2 		1,
+						size3 		1.2,
+						size4 		1.4,
+						size5 		1.6,
+						size6 		1.8,
+						size7 		2;
+
+/* TEST */
+@each $name, $size in $paragraphe--setting{
+	.text-#{$name}{
+		font-size:		#{$size}rem!important;
+	}
+	.paragraphe-#{$name}{
+		font-size:		#{$size}rem!important;
+		line-height:	#{$size + 0.2}rem!important;
+	}
+}

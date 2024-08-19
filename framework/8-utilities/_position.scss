@@ -1,0 +1,18 @@
+/////////////////////////////////////////////////////////////////////////////
+// POSITION MEDIA QUERIES //
+/////////////////////////////////////////////////////////////////////////////
+@each $name, $value1, $value2 in $breakpoints-list {
+	@media screen #{$value1 $value2}{
+		@for $i from 1 through 300 {
+			.pos-top-#{$name}-#{$i}{			top: #{$i}px!important;	}
+			.pos-right-#{$name}-#{$i}{			right: #{$i}px!important; }
+			.pos-bottom-#{$name}-#{$i}{			bottom: #{$i}px!important }
+			.pos-left-#{$name}-#{$i}{			left: #{$i}px!important; }
+
+			.pos-top-#{$name}-#{$i}-neg{		top: -#{$i}px!important }
+			.pos-right-#{$name}-#{$i}-neg{		right: -#{$i}px!important; }
+			.pos-bottom-#{$name}-#{$i}-neg{		bottom: -#{$i}px!important }
+			.pos-left-#{$name}-#{$i}-neg{		left: -#{$i}px!important; }
+		}
+	}
+}

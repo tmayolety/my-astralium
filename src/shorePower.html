@@ -1,0 +1,670 @@
+<article>
+
+
+    <div class="ui grid type1 cols-mini-1 gap-lg pad-no hidden-phone shorePowerApp">
+
+        <div class="ui col gap-xl pad-lg has-header
+                    grid type1 cols-mini-1 cols-xl-2">
+
+            <header class="ui col" >
+                <font>Shore Power</font>
+                <span class="gradients">
+                <span class="gradient-left"></span>
+                <span class="gradient-right"></span>
+            </span>
+                
+                
+            </header>
+
+            <!-- INPUT -->
+            <div class="ui col mini-1 gap-med pad-no has-col-header-med radius shadow
+        				 grid type1 cols-mini-1" style="height:470px;">
+
+                <header class="text-size-8 font-bold">Converter Input</header>
+
+                <div class="ui col mini-1 gap-med pad-no
+                            grid type1 cols-mini-4"> 
+
+                    <div class="ui col mini-3 gap-no pad-no order-mini-1
+        				        grid type1 cols-mini-3"> 
+                                                               
+                        <div class="ui col mini-1 ">
+                 
+                                <gauge-render v-bind="{
+                                    title: 'Voltage L1-L2',
+                                    signalId: 90,
+                                    unit: 'V',
+                                    icon: 'shore',
+                                    iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                                    text1: 'text-size-8 color-text-type-secondary-dark',
+                                    text2: 'text-size-14 font-bold',
+                                    height: 'h-mini-190',
+                                    width: 0,
+                                    scaleVisible: true,
+                                    type: 1,
+                                    scaleInterval: 40,
+                                    valueMode: 'raw',
+                                    textSize: 20,
+                                    unitTextSize: 10,
+                                    marginTopValue: 'mg-top-mini-35',
+                                    valueDecimals: 0,
+                                    limitsEditable: 1,
+                                    timeDelay: 3000,
+                                }"></gauge-render>
+                           
+                        </div>
+                        <div class="ui col mini-1">
+
+                                <gauge-render v-bind="{
+                                    title: 'Voltage L2-L3',
+                                    signalId: 4002,
+                                    unit: 'V',
+                                    icon: 'shore',
+                                    iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                                    text1: 'text-size-8 color-text-type-secondary-dark',
+                                    text2: 'text-size-14 font-bold',
+                                    height: 'h-mini-190',
+                                    width: 0,
+                                    scaleVisible: true,
+                                    type: 1,
+                                    scaleInterval: 40,
+                                    valueMode: 'filtered',
+                                    textSize: 20,
+                                    unitTextSize: 10,
+                                    marginTopValue: 'mg-top-mini-35',
+                                    limitsEditable: 1,
+                                    timeDelay: 3000,
+                                    valueDecimals: 0}"></gauge-render>
+                       
+                        </div>
+                        <div class="ui col mini-1">
+
+                                <gauge-render v-bind="{
+                                    title: 'Voltage L3-L1',
+                                    signalId: 4003,
+                                    unit: 'V',
+                                    icon: 'shore',
+                                    iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                                    text1: 'text-size-8 color-text-type-secondary-dark',
+                                    text2: 'text-size-14 font-bold',
+                                    height: 'h-mini-190',
+                                    width: 0,
+                                    scaleVisible: true,
+                                    type: 1,
+                                    scaleInterval: 40,
+                                    valueMode: 'filtered',
+                                    textSize: 20,
+                                    unitTextSize: 10,
+                                    marginTopValue: 'mg-top-mini-35',
+                                    limitsEditable: 1,
+                                    timeDelay: 3000,
+                                    valueDecimals: 0}"></gauge-render>
+                        
+                        </div>
+                        <div class="ui col mini-1 ">
+     
+                                <gauge-render v-bind="{
+                                    title: 'Current La',
+                                    signalId: 4004,
+                                    unit: 'A',
+                                    icon: 'shore',
+                                    iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                                    text1: 'text-size-8 color-text-type-secondary-dark',
+                                    text2: 'text-size-14 font-bold',
+                                    height: 'h-mini-190',
+                                    width: 0,
+                                    scaleVisible: true,
+                                    type: 1,
+                                    scaleInterval: 40,
+                                    valueMode: 'filtered',
+                                    textSize: 20,
+                                    unitTextSize: 10,
+                                    marginTopValue: 'mg-top-mini-35',
+                                    limitsEditable: 1,
+                                    timeDelay: 3000,
+                                    valueDecimals: 0}"></gauge-render>
+                         
+                        </div>
+                        <div class="ui col mini-1 ">
+                     
+                                <gauge-render v-bind="{
+                                    title: 'Current Lb',
+                                    signalId: 4005,
+                                    unit: 'A',
+                                    icon: 'shore',
+                                    iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                                    text1: 'text-size-8 color-text-type-secondary-dark',
+                                    text2: 'text-size-14 font-bold',
+                                    height: 'h-mini-190',
+                                    width: 0,
+                                    scaleVisible: true,
+                                    type: 1,
+                                    scaleInterval: 40,
+                                    valueMode: 'filtered',
+                                    textSize: 20,
+                                    unitTextSize: 10,
+                                    marginTopValue: 'mg-top-mini-35',
+                                    limitsEditable: 1,
+                                    timeDelay: 3000,
+                                    valueDecimals: 0}"></gauge-render>
+                               
+                        </div>
+                        <div class="ui col mini-1">
+                          
+                                <gauge-render v-bind="{
+                                    title: 'Current Lc',
+                                    signalId: 4006,
+                                    unit: 'A',
+                                    icon: 'shore',
+                                    iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                                    text1: 'text-size-8 color-text-type-secondary-dark',
+                                    text2: 'text-size-14 font-bold',
+                                    height: 'h-mini-190',
+                                    width: 0,
+                                    scaleVisible: true,
+                                    type: 1,
+                                    scaleInterval: 40,
+                                    valueMode: 'filtered',
+                                    textSize: 20,
+                                    unitTextSize: 10,
+                                    marginTopValue: 'mg-top-mini-35',
+                                    limitsEditable: 1,
+                                    timeDelay: 3000,
+                                    valueDecimals: 0}"></gauge-render>
+                          
+                        </div>
+                    </div>
+
+
+                    <div class="ui col mini-1 pad-sm gap-med order-mini-1
+                                grid type1 cols-mini-1">
+                        <div class="ui col mini-1">
+                       
+                                <basic-horizontal-bar-render v-bind="{
+                                    signalId: 4010,
+                                    orientation: 'horizontal',
+                                    size: 'size-mini',
+                                    unit: 'kW',
+                                    title:'Active Power',
+                                    displayScale: true,
+                                    displayCapacity: false,
+                                    color: 'color-fl-blue',
+                                    scaleBottom: 0,
+                                    scaleTop: 500,
+                                    totalCapacityDisplay: false,
+                                    scaleStep: 100,
+                                    scaleSegments: 6,
+                                    limitFlag: 'onBar',
+                                    showLimits: false,
+                                    valueMode: 'filtered',
+                                    textSize: 20,
+                                    unitTextSize: 10,
+                                    marginTopValue: 'mg-top-mini-35',
+                                    valueDecimals: 0,
+                                    timeDelay: 3000,}"></basic-horizontal-bar-render>
+                  
+                        </div>
+                        <div class="ui col mini-1 ">
+                                <basic-horizontal-bar-render v-bind="{
+                                    signalId: 4018,
+                                    orientation: 'horizontal',
+                                    size: 'size-mini',
+                                    unit: 'kVAr',
+                                    title:'Reactive Power',
+                                    displayScale: true,
+                                    displayCapacity: false,
+                                    color: 'color-fl-blue',
+                                    scaleBottom: 0,
+                                    scaleTop: 500,
+                                    totalCapacityDisplay: false,
+                                    scaleStep: 100,
+                                    scaleSegments: 6,
+                                    limitFlag: 'onBar',
+                                    showLimits: false,
+                                    valueMode: 'filtered',
+                                    textSize: 20,
+                                    unitTextSize: 10,
+                                    marginTopValue: 'mg-top-mini-35',
+                                    valueDecimals: 0,
+                                    timeDelay: 3000,}"></basic-horizontal-bar-render>
+                         
+                        </div>
+                        <div class="ui col mini-1 ">
+                           
+                                <basic-horizontal-bar-render v-bind="{
+                                    signalId: 4011,
+                                    orientation: 'horizontal',
+                                    size: 'size-mini',
+                                    unit: 'Hz',
+                                    title:'Frequency',
+                                    displayScale: true,
+                                    displayCapacity: false,
+                                    color: 'color-fl-blue',
+                                    scaleBottom: 0,
+                                    scaleTop: 500,
+                                    totalCapacityDisplay: false,
+                                    scaleStep: 100,
+                                    scaleSegments: 6,
+                                    limitFlag: 'onBar',
+                                    showLimits: false,
+                                    valueMode: 'filtered',
+                                    textSize: 20,
+                                    unitTextSize: 10,
+                                    marginTopValue: 'mg-top-mini-35',
+                                    valueDecimals: 0,
+                                    timeDelay: 3000,}"></basic-horizontal-bar-render>
+                         
+                        </div>
+                        <div class="ui col mini-1">
+                     
+                                <basic-horizontal-bar-render v-bind="{
+                                    signalId: 4034,
+                                    orientation: 'horizontal',
+                                    size: 'size-mini',
+                                    unit: 'ºC',
+                                    title:'Magnetics Temperature',
+                                    displayScale: true,
+                                    displayCapacity: false,
+                                    color: 'color-fl-blue',
+                                    scaleBottom: 0,
+                                    scaleTop: 500,
+                                    totalCapacityDisplay: false,
+                                    scaleStep: 100,
+                                    scaleSegments: 6,
+                                    limitFlag: 'onBar',
+                                    showLimits: false,
+                                    valueMode: 'filtered',
+                                    textSize: 20,
+                                    unitTextSize: 10,
+                                    marginTopValue: 'mg-top-mini-35',
+                                    valueDecimals: 0,
+                                    timeDelay: 3000,}"></basic-horizontal-bar-render>
+                        
+                        </div>
+                        <div class="ui col mini-1">
+                            
+                                <basic-horizontal-bar-render v-bind="{
+                                    signalId: 4031,
+                                    orientation: 'horizontal',
+                                    size: 'size-mini',
+                                    unit: 'ºC',
+                                    title:'Heat Sink Temperature',
+                                    displayScale: true,
+                                    displayCapacity: false,
+                                    color: 'color-fl-blue',
+                                    scaleBottom: 0,
+                                    scaleTop: 500,
+                                    totalCapacityDisplay: false,
+                                    scaleStep: 100,
+                                    scaleSegments: 6,
+                                    limitFlag: 'onBar',
+                                    showLimits: false,
+                                    valueMode: 'filtered',
+                                    textSize: 20,
+                                    unitTextSize: 10,
+                                    marginTopValue: 'mg-top-mini-35',
+                                    valueDecimals: 0,
+                                    timeDelay: 3000,}"></basic-horizontal-bar-render>
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <!-- OUTPUT -->
+            <div class="ui col mini-1 gap-med pad-no has-col-header-med radius shadow
+                         grid type1 cols-mini-1" style="height: 470px;">
+
+                <header class="text-size-8 font-bold">Converter Output</header>
+
+                <div class="ui col mini-1 gap-med pad-no
+                            grid type1 cols-mini-4"> 
+
+                    <div class="ui col mini-3 gap-no pad-no order-mini-1 order-xl-2
+                                grid type1 cols-mini-3"> 
+                                                               
+                        <div class="ui col mini-1 ">
+                          
+                                <gauge-render v-bind="{
+                                    title: 'Voltage L1-L2',
+                                    signalId: 4012,
+                                    unit: 'V',
+                                    icon: 'shore',
+                                    iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                                    text1: 'text-size-8 color-text-type-secondary-dark',
+                                    text2: 'text-size-14 font-bold',
+                                    height: 'h-mini-190',
+                                    width: 0,
+                                    scaleVisible: true,
+                                    type: 1,
+                                    scaleInterval: 40,
+                                    valueMode: 'filtered',
+                                    textSize: 20,
+                                    unitTextSize: 10,
+                                    marginTopValue: 'mg-top-mini-35',
+                                    limitsEditable: 1,
+                                    valueDecimals: 0}"></gauge-render>
+                         
+                        </div>
+                        <div class="ui col mini-1">
+                    
+                                <gauge-render v-bind="{
+                                    title: 'Voltage L2-L3',
+                                    signalId: 4013,
+                                    unit: 'V',
+                                    icon: 'shore',
+                                    iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                                    text1: 'text-size-8 color-text-type-secondary-dark',
+                                    text2: 'text-size-14 font-bold',
+                                    height: 'h-mini-190',
+                                    width: 0,
+                                    scaleVisible: true,
+                                    type: 1,
+                                    scaleInterval: 40,
+                                    valueMode: 'filtered',
+                                    textSize: 20,
+                                    unitTextSize: 10,
+                                    marginTopValue: 'mg-top-mini-35',
+                                    limitsEditable: 1,
+                                    valueDecimals: 0}"></gauge-render>
+                         
+                        </div>
+                        <div class="ui col mini-1">
+                         
+                                <gauge-render v-bind="{
+                                    title: 'Voltage L3-L1',
+                                    signalId: 4014,
+                                    unit: 'V',
+                                    icon: 'shore',
+                                    iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                                    text1: 'text-size-8 color-text-type-secondary-dark',
+                                    text2: 'text-size-14 font-bold',
+                                    height: 'h-mini-190',
+                                    width: 0,
+                                    scaleVisible: true,
+                                    type: 1,
+                                    scaleInterval: 40,
+                                    valueMode: 'filtered',
+                                    textSize: 20,
+                                    unitTextSize: 10,
+                                    marginTopValue: 'mg-top-mini-35',
+                                    limitsEditable: 1,
+                                    valueDecimals: 0}"></gauge-render>
+                         
+                        </div>
+                        <div class="ui col mini-1">
+                           
+                                <gauge-render v-bind="{
+                                    title: 'Current La',
+                                    signalId: 10504,
+                                    unit: 'A',
+                                    icon: 'shore',
+                                    iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                                    text1: 'text-size-8 color-text-type-secondary-dark',
+                                    text2: 'text-size-14 font-bold',
+                                    height: 'h-mini-190',
+                                    width: 0,
+                                    scaleVisible: true,
+                                    type: 1,
+                                    scaleInterval: 40,
+                                    valueMode: 'filtered',
+                                    textSize: 20,
+                                    unitTextSize: 10,
+                                    marginTopValue: 'mg-top-mini-35',
+                                    limitsEditable: 1,
+                                    valueDecimals: 0}"></gauge-render>
+                        
+                        </div>
+                        <div class="ui col mini-1">
+                          
+                                <gauge-render v-bind="{
+                                    title: 'Current Lb',
+                                    signalId: 10505,
+                                    unit: 'A',
+                                    icon: 'shore',
+                                    iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                                    text1: 'text-size-8 color-text-type-secondary-dark',
+                                    text2: 'text-size-14 font-bold',
+                                    height: 'h-mini-190',
+                                    width: 0,
+                                    scaleVisible: true,
+                                    type: 1,
+                                    scaleInterval: 40,
+                                    valueMode: 'filtered',
+                                    textSize: 20,
+                                    unitTextSize: 10,
+                                    marginTopValue: 'mg-top-mini-35',
+                                    limitsEditable: 1,
+                                    valueDecimals: 0}"></gauge-render>
+                            
+                        </div>
+                        <div class="ui col mini-1">
+                         
+                                <gauge-render v-bind="{
+                                    title: 'Current Lc',
+                                    signalId: 10506,
+                                    unit: 'A',
+                                    icon: 'shore',
+                                    iconClass: 'icon-size-mini-40 mg-bottom-mini-8',
+                                    text1: 'text-size-8 color-text-type-secondary-dark',
+                                    text2: 'text-size-14 font-bold',
+                                    height: 'h-mini-190',
+                                    width: 0,
+                                    scaleVisible: true,
+                                    type: 1,
+                                    scaleInterval: 40,
+                                    valueMode: 'filtered',
+                                    textSize: 20,
+                                    unitTextSize: 10,
+                                    marginTopValue: 'mg-top-mini-35',
+                                    limitsEditable: 1,
+                                    valueDecimals: 0}"></gauge-render>
+                         
+                        </div>
+                    </div>
+
+                    <div class="ui col mini-1 pad-sm gap-med order-mini-2 order-xl-1
+                                grid type1 cols-mini-1">
+                        <div class="ui col mini-1">
+                            
+                                <basic-horizontal-bar-render v-bind="{
+                                    signalId: 10473,
+                                    orientation: 'horizontal',
+                                    size: 'size-mini',
+                                    unit: 'kW',
+                                    title:'Active Power',
+                                    displayScale: true,
+                                    displayCapacity: false,
+                                    color: 'color-fl-blue',
+                                    scaleBottom: 0,
+                                    scaleTop: 500,
+                                    totalCapacityDisplay: false,
+                                    scaleStep: 100,
+                                    scaleSegments: 6,
+                                    limitFlag: 'onBar',
+                                    showLimits: false,
+                                    valueMode: 'filtered',
+                                    headerSize: 'header-mini-x2',
+                                    footerSize: 'footer-med-x1',
+                                    timeDelay: 3000, }"></basic-horizontal-bar-render>
+                          
+                        </div>
+                        <div class="ui col mini-1 ">
+                           
+                                <basic-horizontal-bar-render v-bind="{
+                                    signalId: 10503,
+                                    orientation: 'horizontal',
+                                    size: 'size-mini',
+                                    unit: 'kW',
+                                    title:'Reactive Power',
+                                    displayScale: true,
+                                    displayCapacity: false,
+                                    color: 'color-fl-blue',
+                                    scaleBottom: 0,
+                                    scaleTop: 500,
+                                    totalCapacityDisplay: false,
+                                    scaleStep: 100,
+                                    scaleSegments: 6,
+                                    limitFlag: 'onBar',
+                                    showLimits: false,
+                                    valueMode: 'filtered',
+                                    headerSize: 'header-mini-x2',
+                                    footerSize: 'footer-med-x1',
+                                    timeDelay: 3000, }"></basic-horizontal-bar-render>
+                        
+                        </div>
+                        <div class="ui col mini-1 " >
+                      
+                                <basic-horizontal-bar-render v-bind="{
+                                    signalId: 4024,
+                                    orientation: 'horizontal',
+                                    size: 'size-mini',
+                                    unit: 'Hz',
+                                    title:'Frequency',
+                                    displayScale: true,
+                                    displayCapacity: false,
+                                    color: 'color-fl-blue',
+                                    scaleBottom: 0,
+                                    scaleTop: 500,
+                                    totalCapacityDisplay: false,
+                                    scaleStep: 100,
+                                    scaleSegments: 6,
+                                    limitFlag: 'onBar',
+                                    showLimits: false,
+                                    valueMode: 'filtered',
+                                    headerSize: 'header-mini-x2',
+                                    footerSize: 'footer-med-x1',
+                                    timeDelay: 3000, }"></basic-horizontal-bar-render>
+                         
+                        </div>
+                        <div class="ui col mini-1" >
+                           
+                                <basic-horizontal-bar-render v-bind="{
+                                    signalId: 4030,
+                                    orientation: 'horizontal',
+                                    size: 'size-mini',
+                                    unit: 'ºC',
+                                    title:'Magnetics Temperature',
+                                    displayScale: true,
+                                    displayCapacity: false,
+                                    color: 'color-fl-blue',
+                                    scaleBottom: 0,
+                                    scaleTop: 500,
+                                    totalCapacityDisplay: false,
+                                    scaleStep: 100,
+                                    scaleSegments: 6,
+                                    limitFlag: 'onBar',
+                                    showLimits: false,
+                                    valueMode: 'filtered',
+                                    headerSize: 'header-mini-x2',
+                                    footerSize: 'footer-med-x1',
+                                    timeDelay: 3000, }"></basic-horizontal-bar-render>
+                      
+                        </div>
+                        <div class="ui col mini-1 ">
+                       
+                                <basic-horizontal-bar-render v-bind="{
+                                    signalId: 4032,
+                                    orientation: 'horizontal',
+                                    size: 'size-mini',
+                                    unit: 'ºC',
+                                    title:'Heat Sink Temperature',
+                                    displayScale: true,
+                                    displayCapacity: false,
+                                    color: 'color-fl-blue',
+                                    scaleBottom: 0,
+                                    scaleTop: 500,
+                                    totalCapacityDisplay: false,
+                                    scaleStep: 100,
+                                    scaleSegments: 6,
+                                    limitFlag: 'onBar',
+                                    showLimits: false,
+                                    valueMode: 'filtered',
+                                    headerSize: 'header-mini-x2',
+                                    footerSize: 'footer-med-x1',
+                                    timeDelay: 3000, }"></basic-horizontal-bar-render>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="ui col mini-1 xl-2 gap-med pad-no has-col-header-med radius shadow
+                         grid type1 cols-mini-1">
+
+                <header class="text-size-8 font-bold">Converter Status & Alarms</header>
+
+                <div class="ui grid cols-mini-2 cols-xl-3 sm-1 bg-no pad-no gap-med">
+
+                    <div class="ui col mini-1">
+                        <div class="col-content overflow">
+                            <ul class="ui table size-mini resp">
+                                <icon-text-value-analogue-line-render v-bind="{ signalId: 2029, size: '15', unit: 'h', title: 'Operating Time', icon: 'settings', timeDelay: 3000,}"></icon-text-value-analogue-line-render>
+                                <icon-text-value-analogue-line-render v-bind="{ signalId: 2030, size: '15', unit: 'ºC', valueMode: 'filtered' , title: 'Transformer Temperature', icon: 'temps', timeDelay: 3000,}"></icon-text-value-analogue-line-render>
+                                <icon-text-value-analogue-line-render v-bind="{ signalId: 2031, size: '15', unit: 'ºC', valueMode: 'filtered', title: 'Shore Power Location Temperature', icon: 'temps', timeDelay: 3000,}"></icon-text-value-analogue-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4048, size: '15', title: 'Converter Online', icon: 'shore', zeroText: 'Offline', oneText: 'Online', zeroColor: 'grey', oneColor: 'success'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4049, size: '15', title: 'Ready for Closing Output Contactor', icon: 'settings', zeroText: 'Not Ready', oneText: 'Ready', zeroColor: 'grey', oneColor: 'success', sizeWidthTitle: 'large'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4050, size: '15', title: 'Converter Overload', icon: 'alarms', zeroText: 'OK', oneText: 'Overload', zeroColor: 'success', oneColor: 'danger'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4051, size: '15', title: 'Converter Error', icon: 'alarms', zeroText: 'OK', oneText: 'Fault', zeroColor: 'success', oneColor: 'danger'}"></icon-text-value-digital-line-render>
+                                <!-- I don't understand that signal-->
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4052, size: '15', title: 'Wait For NTC', icon: 'temps', zeroText: 'OK', oneText: 'Fault', zeroColor: 'success', oneColor: 'danger'}"></icon-text-value-digital-line-render>
+                                <!-- I don't understand that signal-->
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4053, size: '15', title: 'Pre-Charging in process', icon: 'shore', zeroText: 'OK', oneText: 'Fault', zeroColor: 'success', oneColor: 'danger'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4054, size: '15', title: 'Input Contactor is Closed', icon: 'settings', zeroText: 'Open', oneText: 'Closed', zeroColor: 'grey', oneColor: 'success'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4055, size: '15', title: 'Master of the CAN bus', icon: 'settings', zeroText: 'Non Master', oneText: 'Master', zeroColor: 'grey', oneColor: 'success'}"></icon-text-value-digital-line-render>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ui col mini-1">
+                        <div class="col-content overflow">
+                            <ul class="ui table size-mini resp">
+                                <!--No idea-->
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4056, size: '15', title: 'Power limiting will be activated soon', icon: 'shore', zeroText: 'Not Activated', oneText: 'Activated', zeroColor: 'success', oneColor: 'danger', sizeWidthTitle: 'large'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4057, size: '15', title: 'Output power limiting activated', icon: 'shore', zeroText: 'Not Activated', oneText: 'Activated', zeroColor: 'success', oneColor: 'danger', sizeWidthTitle: 'large'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4058, size: '15', title: 'Input power limiting activated', icon: 'shore', zeroText: 'Not Activated', oneText: 'Activated', zeroColor: 'success', oneColor: 'danger', sizeWidthTitle: 'large'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4059, size: '15', title: 'Generator voltage not acceptable', icon: 'shore', zeroText: 'Ok', oneText: 'Fault', zeroColor: 'success', oneColor: 'danger', sizeWidthTitle: 'large'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4060, size: '15', title: 'Generator frequency not acceptable', icon: 'settings', zeroText: 'Ok', oneText: 'Fault', zeroColor: 'success', oneColor: 'danger', sizeWidthTitle: 'large'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4061, size: '15', title: 'Input fuse current limit exceeded', icon: 'shore', zeroText: 'OK', oneText: 'Overcurrent', zeroColor: 'success', oneColor: 'danger', sizeWidthTitle: 'large'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4062, size: '15', title: 'Input voltage and frequency in acceptable range', icon: 'shore', zeroText: 'Fault', oneText: 'Ok', zeroColor: 'danger', oneColor: 'success', sizeWidthTitle: 'large'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4063, size: '15', title: 'Passive mode status', icon: 'alarms', zeroText: 'Non Passive Mode', oneText: 'Passive Mode', zeroColor: 'success', oneColor: 'grey', sizeWidthTitle: 'large'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4064, size: '15', title: 'Input choke temperature high warning', icon: 'temps', zeroText: 'OK', oneText: 'Fault', zeroColor: 'success', oneColor: 'warning', sizeWidthTitle: 'large'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4065, size: '15', title: 'Output choke temperature high warning', icon: 'temps', zeroText: 'OK', oneText: 'Fault', zeroColor: 'success', oneColor: 'warning', sizeWidthTitle: 'large'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4066, size: '15', title: 'Transformer temperature high warning', icon: 'temps', zeroText: 'OK', oneText: 'Fault', zeroColor: 'success', oneColor: 'warning', sizeWidthTitle: 'large'}"></icon-text-value-digital-line-render>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ui col mini-1">
+                        <div class="col-content overflow">
+                            <ul class="ui table size-mini resp">
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4067, size: '15', title: 'Output choke N temperature high warning', icon: 'temps', zeroText: 'OK', oneText: 'Fault', zeroColor: 'success', oneColor: 'warning', sizeWidthTitle: 'large'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4068, size: '15', title: 'Ambient temperature high warning', icon: 'temps', zeroText: 'OK', oneText: 'Fault', zeroColor: 'success', oneColor: 'warning', sizeWidthTitle: 'large'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4069, size: '15', title: 'Input heatsink temperature high warning', icon: 'temps', zeroText: 'OK', oneText: 'Fault', zeroColor: 'success', oneColor: 'warning', sizeWidthTitle: 'large'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4070, size: '15', title: 'Output heatsink temperature', icon: 'temps', zeroText: 'Ok', oneText: 'Fault', zeroColor: 'success', oneColor: 'danger', sizeWidthTitle: 'large'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4071, size: '15', title: 'Error history not valid data', icon: 'settings', zeroText: 'Ok', oneText: 'Fault', zeroColor: 'success', oneColor: 'danger', sizeWidthTitle: 'large'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4072, size: '15', title: 'Shore under voltage warning', icon: 'shore', zeroText: 'OK', oneText: 'Fault', zeroColor: 'success', oneColor: 'warning', sizeWidthTitle: 'large'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4073, size: '15', title: 'Local Control', icon: 'settings', zeroText: 'Local', oneText: 'Remote', zeroColor: 'success', oneColor: 'grey', sizeWidthTitle: 'large'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4074, size: '15', title: 'IGBT temperature high warning', icon: 'temps', zeroText: 'OK', oneText: 'Fault', zeroColor: 'success', oneColor: 'warning', sizeWidthTitle: 'large'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4075, size: '15', title: 'Running in 1 phase input mode', icon: 'settings', zeroText: 'Normal Mode', oneText: '1 Phase Input Mode', zeroColor: 'success', oneColor: 'primary', sizeWidthTitle: 'large'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4076, size: '15', title: 'UserPumpStart', icon: 'engines', zeroText: 'Not Running', oneText: 'Running', zeroColor: 'primary', oneColor: 'success', sizeWidthTitle: 'large'}"></icon-text-value-digital-line-render>
+                                <icon-text-value-digital-line-render v-bind="{ signalId: 4077, size: '15', title: 'Harmonic compensation running', icon: 'shore', zeroText: 'Not Running', oneText: 'Running', zeroColor: 'success', oneColor: 'primary', sizeWidthTitle: 'large'}"></icon-text-value-digital-line-render>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+
+    </div>
+
+
+
+</article>

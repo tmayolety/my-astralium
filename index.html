@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml' data-scheme="scheme1" id="schemeSelector">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<head>
+	<title>MY Solution</title>
+
+    <link href="js/quasar/materials.css" rel="stylesheet" type="text/css">
+    <link href="js/quasar/animate.css" rel="stylesheet" type="text/css">
+    <link href="js/quasar/quasar.css" rel="stylesheet" type="text/css">
+
+    <!-- VUE COMPONENTS -->
+    <script src="js/vue/vue.js"></script>
+    <script src="js/components/init.js"></script>
+    <script src="js/components/initialize.js"></script>
+    <script src="js/components/basicText.js"></script>
+    <script src="js/components/basicTextWithTitle.js"></script>
+    <script src="js/components/basicTextWithTitleDigital.js"></script>
+    <script src="js/components/twoOptionsSwitchButton.js"></script>
+    <script src="js/components/singleLineBusBar.js"></script>
+    <script src="js/components/iconTextValueAnalogueLine.js"></script>
+    <script src="js/components/iconTextValueDigitalLine.js"></script>
+    <script src="js/components/iconTriEstateDigitalLine.js"></script>
+    <script src="js/components/iconTextDigitalLine.js"></script>
+    <script src="js/components/iconLayout.js"></script>
+    <script src="js/components/valveLayout.js"></script>
+    <script src="js/components/pumpLayout.js"></script>
+    <script src="js/components/basicHorizontalBar.js"></script>
+    <script src="js/components/bar.js"></script>
+    <script src="js/components/gauge.js"></script>
+    <script src="js/components/multiGauge.js"></script>
+    <script src="js/components/load.js"></script>
+    <script src="js/components/door.js"></script>
+    <script src="js/components/iconTwoOptionsDigitalLine.js"></script>
+    <script src="js/components/twoOptionsPushButton.js"></script>
+    <script src="js/components/signalList.js"></script>
+    <script src="js/components/alarmSystem.js"></script>
+    <script src="js/components/alarmSystemHeader.js"></script>
+    <script src="js/components/inhibitListSystem.js"></script>
+    <script src="js/components/signalListSystem.js"></script>
+    <script src="js/components/deviceListSystem.js"></script>
+    <script src="js/components/trueWind.js"></script>
+    <script src="js/components/windRose.js"></script>
+    <script src="js/components/sogCog.js"></script>
+    <script src="js/components/singleLineHeader.js"></script>
+    <script src="js/components/eventSystemHeader.js"></script>
+    <script src="js/components/cableSystemLayout.js"></script>
+    <script src="js/components/iconTriEstateOneSignalDigitalLine.js"></script>
+    <script src="js/components/timelineComponent.js" ></script>
+    <script src="js/components/reportLog.js" ></script>
+    <script src="js/components/slider.js"></script>
+    <script src="js/components/loader.js"></script>
+    <!-- VUE COMPONENTS -->
+
+	<script src="js/jquery/jquery.js"></script>
+    <script src="js/jsonh/jsonh.js"></script>
+    <script src="js/helpers.js"></script>
+    <script src="js/dataCache.js"></script>
+    <script src="js/iconRegistry.js"></script>
+    <script src="js/home.js"></script>
+    
+    <!-- REDIS SOCKET-->
+    <script src="../controlpanel/node_modules/socket.io-client/dist/socket.io.js"></script>
+    <script src="../configuration/configuration.js"></script>
+    <!--REDIS SOCKET-->
+
+    <script src="js/status.js"></script>
+
+    <!-- ALARM SYSTEM-->
+    <script src="js/alarms/alarms.js"></script>
+    <!-- ALARM SYSTEM -->
+
+    <!-- INHIBIT SYSTEM -->
+    <script src="js/inhibits/inhibits.js"></script>
+    <!-- INHIBIT SYSTEM -->
+
+    <!-- EVENT SYSTEM -->
+    <script src="js/events.js"></script>
+    <!-- EVENT SYSTEM -->
+
+    <!-- NOTIFICATIONS -->
+    <script src="js/notifications/notifications.js"></script>
+    <!-- NOTIFICATIONS -->
+
+    <!-- TIMELINES -->
+    <script src="js/timeline/charts_v2.js"></script>
+    <script src="js/timeline/date-fns.js"></script>
+    <!-- TIMELINES -->
+
+    <!-- GAUGES -->
+    <script src="js/gauge/gauge.js"></script>
+    <!-- GAUGES -->
+
+    <!--KEYBOARD-->
+    <script src="js/keyboard/keyboard.js"></script>
+    <!--KEYBOARD-->
+
+    <script type="text/javascript">
+
+        var ENABLE_FLOATING_NOTIFICATIONS = true;
+
+        var FLOATING_NOTIFICATIONS = false;
+        window.oncontextmenu = function() { return false; }
+        $(function(){
+
+            //LOAD SECTIONS & STRUCTURES
+
+            $("#mainNav").load("structure/main-nav.html");
+            $("#mainHeader").load("structure/header.html");
+            $("#singleNav").load("src/singleLine4Gens.html");
+            $("#emergencyGeneratorsNav").load("src/emergencyGenerators.html");
+            $("#generators4Nav").load("src/generators4.html");
+            $("#generators12Nav").load("src/generators12.html");
+            $("#BilgeFireApp").load("src/valvesBilgeFire.html");
+            $("#ShorePowerNav").load("src/shorePower.html");
+            $("#BilgeNav").load("src/bilges.html");
+            $("#Engines1Nav").load("src/enginesPage1.html");
+            $("#Engines2Nav").load("src/enginesPage2.html");
+            $("#FuelTanksNav").load("src/fuelTanks.html");
+            $("#OilTanksNav").load("src/oilTanks.html");
+            $("#WasteTanksNav").load("src/wasteTanks.html");
+            $("#WaterTanksNav").load("src/waterTanks.html");
+            $("#BatteriesNav").load("src/batteries.html");
+            $("#LoadsNav").load("src/loads.html");
+            $("#FireDoorsNav").load("src/fireDoorsLayout.html");
+            $("#WaterTightsNav").load("src/watertightList.html");
+            $("#Various1Nav").load("src/variousSystems.html");
+            $("#Various2Nav").load("src/variousSystems2.html");
+            $("#JacuzziNav").load("src/jacuzzi.html");
+            $("#InsulationNav").load("src/insulation.html");
+            $("#NavLightsNav").load("src/navLights.html");
+            $("#NavEquipmentNav").load("src/navEquipment.html");
+            $("#ActiveAlarmsNav").load("src/activeAlarms.html");
+            $("#SignalsNav").load("src/signals.html");
+            $("#EventsNav").load("src/events.html");
+            $("#SettingsNav").load("src/settings1.html");
+            $("#SystemLayoutNav").load("src/systemLayOut.html");
+            $("#UMSSettingsNav").load("src/umsSettings.html");
+            $("#inhibitsGroup").load("src/groupInhibits.html");
+            $("#FireSystemNav").load("src/fire.html");
+            $("#ReportLogNav").load("src/reportLog.html")
+            $("#HomeSystem").load("src/home.html");
+
+            $.ajax({ url:"structure/sub-nav.html",
+                type:'GET',
+                success: function(data){
+                    $("#mainContent").append(data);
+                }
+            });
+        });
+    </script>
+
+    <link href="framework/css/app.css" rel="stylesheet">
+    <link href="framework/css/utilities.css" rel="stylesheet">
+    <link rel="stylesheet" href="js/keyboard/keyboard.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+
+</head>
+
+<body>
+<div id="q-app"></div>
+<main data-nav-open="true" id="mainContent"  style="display:none;">
+
+    <aside class="aside" data-main-nav-phone="" id="mainNav">
+    </aside>
+    <header id="mainHeader">
+    </header>
+
+    <section class="dev-sectionContent dev-menuNavigation-single" style="display:none;" id="singleNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-generators4" id="generators4Nav" style="display:none; overflow: hidden;"></section>
+    <section class="dev-sectionContent dev-menuNavigation-generators12" id="generators12Nav" style="display:none;"></section>
+    <section class="dev-sectionContent dev-menuNavigation-valvesBilgeFire" style="display:none;overflow: auto;" id="BilgeFireApp"></section>
+    <section class="dev-sectionContent dev-menuNavigation-shorePower shorePowerApp" style="display:none;overflow: hidden;" id="ShorePowerNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-bilges" style="display:none;" id="BilgeNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-enginesPage1" style="display:none; overflow:hidden;" id="Engines1Nav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-enginesPage2" style="display:none;overflow:hidden;" id="Engines2Nav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-fuelTanks" style="display:none; overflow: hidden;" id="FuelTanksNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-oilTanks" style="display:none; overflow: hidden;" id="OilTanksNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-wasteTanks" style="display:none; overflow: hidden;" id="WasteTanksNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-waterTanks" style="display:none; overflow: hidden;" id="WaterTanksNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-battery" style="display:none;" id="BatteriesNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-loads" style="display:none; " id="LoadsNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-fireDoorsLayout" id="FireDoorsNav" style="display:none;" ></section>
+    <section class="dev-sectionContent dev-menuNavigation-fireDoorsTable"  style="display:none;" id="WaterTightsNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-variousSystems" style="display:none; overflow: auto;" id="Various1Nav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-variousSystems2" style="display:none; overflow: auto;" id="Various2Nav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-jacuzzi" style="display:none; overflow: auto;" id="JacuzziNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-insulation" style="display:none;" id="InsulationNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-navLights" style="display:none;" id="NavLightsNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-navEquipment" style="display:none;" id="NavEquipmentNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-activeAlarms"  style="display:none; overflow: hidden;" id="ActiveAlarmsNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-signals"  style="display:none;overflow: hidden;" id="SignalsNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-events" style="display:none;" id="EventsNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-settings1" style="display:none;" id="SettingsNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-reportLog" style="display:none; overflow: hidden;" id="ReportLogNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-systemLayOut" style="display:none; overflow: hidden;" id="SystemLayoutNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-ums" style="display:none;" id="UMSSettingsNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-inhibitsGroup" style="display:none;" id="inhibitsGroup"></section>
+    <section class="dev-sectionContent dev-menuNavigation-fire" style="display:none; overflow: hidden;" id="FireSystemNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-splash" id="HomeSystem">
+       
+<script language="JavaScript">
+
+    let vueComponents;
+    let ISPHONE = false;
+
+    if(window.innerWidth < 1280 && window.innerHeight < 1024){
+        ISPHONE = true;
+        document.body.classList.add('no-overscroll');
+    }
+
+    if (ISPHONE) {
+    document.body.classList.add('no-overscroll');
+        } else {
+    document.body.classList.remove('no-overscroll');
+    }
+
+    function initComponents(){
+
+        if (vueComponents.length > 0) {
+
+
+            let removeFirst = vueComponents.shift()
+
+            code = "const " + removeFirst.name + " = Vue.createApp({mounted() {console.log('" + removeFirst.name + "'); componentLoadingText.value = 'Component " + removeFirst.name + " initialized!';  setTimeout( initComponents, 50); }});"
+            if( "config" in removeFirst){
+                    code += removeFirst.name + ".config.compilerOptions.isCustomElement = tag => tag.startsWith('font') || tag === 'ion-icon';"
+                }
+                for (let i = 0; i < removeFirst.component.length; i++) {
+                code += removeFirst.name + ".component('" + removeFirst.component[i].label + "', components." + removeFirst.component[i].file + ");";
+                }
+                code += removeFirst.name + ".mount('"+removeFirst.mount +"');"
+
+            eval(code)
+
+        } else {
+
+            FLOATING_NOTIFICATIONS = ENABLE_FLOATING_NOTIFICATIONS;
+            status.subscribeChannels();
+            $('#loadingResult').parent().addClass('color-bg-type-success glow');
+            $('#loadingResult').html('OK');
+                $("body").fadeOut(400, function(){
+                    $('#statusTable').hide();
+                    $("body").fadeIn(400);
+                    $('#mainContent').show();
+                });
+
+        }
+    }
+    </script>
+        <!--QUASAR-->
+        <script src="js/quasar/quasar.js"></script>
+
+        <script>
+
+            const quasar = Vue.createApp({
+                setup () {
+                    return {}
+                }
+            })
+
+            quasar.use(Quasar, {
+                config: {
+                    notify: {position: 'top'}
+                }
+            })
+            quasar.mount('#q-app')
+
+        </script>
+        <!--QUASAR-->
+    </section>
+</main>
+
+<!-- INIT STATUS CHECK -->
+<section class="init-status" id="statusTable" >
+    <initialize-render v-bind="{ projectTitle: 'My Solution', projectVersion: '1.1' }"></initialize-render>
+</section>
+<!-- INIT STATUS CHECK -->
+<section id="absoluteRenderComponentApp">
+  <timeline-render></timeline-render>
+  <slider-render></slider-render>
+  <loader-render></loader-render>
+</section>
+
+<script>
+    const InitializeApp = Vue.createApp({})
+    InitializeApp.config.compilerOptions.isCustomElement = tag => tag.startsWith('font')
+    InitializeApp.component('initialize-render', components.initializeApp)
+    InitializeApp.mount('#statusTable')
+
+    const absoluteRenderComponentApp = Vue.createApp({})
+    absoluteRenderComponentApp.config.compilerOptions.isCustomElement = tag => tag.startsWith('font')
+    absoluteRenderComponentApp.component('timeline-render', components.timelineComponent)
+    absoluteRenderComponentApp.component('slider-render', components.slider)
+    absoluteRenderComponentApp.component('loader-render', components.loader)
+    absoluteRenderComponentApp.mount('#absoluteRenderComponentApp')
+</script>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
+
+
+<!-- SESSION SETTINGS -->
+<input type="hidden" id="ScreenLocationId" value="">
+<input type="hidden" id="ScreenBrightLevel" value="100">
+<input type="hidden" id="activeProfile" value="0">
+<input type="hidden" id="timeZone" value="0">
+<!-- SESSION SETTINGS -->
+
+<!--PLC ALARM -->
+<div id="alarmPLC" class="ui modal fullscreen size-sm" style="z-index: 9999">
+    <div class="modal-container">
+        <div class="ui grid type1 cols-1 pad-xl gap-mini">
+            <div class="ui grid cols-1 col sm-1 gap-mini pad-xl has-header has-footer">
+                <header class="ui col">
+                    <font id="popUpAlarmTitle"> ALARM PLC CONNECTION LOST </font>
+                    <span class="gradients">
+						<span class="gradient-left"></span>
+						<span class="gradient-right"></span>
+					</span>
+                    
+                </header>
+                <div class="ui col middle-center sm-1 pad-xl">
+                    <div class="col-content overflow modal-content" style="text-align:center;">
+                        <i class="ui icon-size-150 color-fill-type-danger glow" id="popUpAlarmIcon">
+                            <svg class="ui icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g><path d="M99.22,85.06,54.81,9.68a5.37,5.37,0,0,0-9.35,0L1.05,85.06a4.06,4.06,0,0,0,0,5.26,5.06,5.06,0,0,0,4.68,2.73H94.55a5.06,5.06,0,0,0,4.67-2.73A4.82,4.82,0,0,0,99.22,85.06ZM55.59,77.27c0,.91-.52,1.36-1.56,1.36h-8a1.21,1.21,0,0,1-1.37-1.36v-8a1.21,1.21,0,0,1,1.37-1.36h8c1,0,1.56.46,1.56,1.36Zm0-29.61a11.46,11.46,0,0,1-.39,2.73L52.86,62.86c-.26.91-.77,1.36-1.55,1.36H49.16c-1,0-1.55-.45-1.55-1.36L45.07,50.58a12,12,0,0,1-.39-2.92V40.85c0-1.17.65-1.76,2-1.76h7c1.3,0,2,.59,2,1.76Z"/></g></svg>
+                       	</i>
+                        <h3 id="popUpAlarmMessage" class="ui h3" style="text-align:center;margin-top:20px;line-height:1.8rem;">The connection between the server and the PLC has been lost.</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--PLC ALARM -->
+<!-- EDIT SIGNALS POP UP-->
+
+<div id="editSignal" class="ui modal size-xl">
+
+    <div class="modal-container">
+
+        <div class="ui grid type1 cols-1 pad-no gap-mini">
+
+            <div class="ui grid cols-1 col sm-1 gap-mini pad-no has-header has-footer">
+
+                <header class="ui col">
+                    <font id="editSignalSignalName"></font>
+                    <span class="gradients">
+						<span class="gradient-left"></span>
+						<span class="gradient-right"></span>
+					</span>
+                    
+                    <button class="ui btn sm icon primary colored icon-only active" onclick="signalList.closeEditLimits()">
+                        <svg class="ui icon" id="close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M98.74,81.26q2.52,2.14,0,4.47l-13,13q-2.33,2.33-4.47,0L50,67.67,18.74,98.74q-2.14,2.52-4.47,0l-13-13q-2.33-2.33,0-4.47L32.33,50,1.26,18.93q-2.33-2.33,0-4.47l13-13.2q2.32-2.33,4.47,0L50,32.33,81.26,1.26c1.56-1.68,3-1.68,4.47,0l13,13q2.33,2.32,0,4.47L67.67,50Z"></path></svg></button>
+                </header>
+
+                <div class="ui col sm-1 pad-no singleline ">
+                    <div class="col-content overflow modal-content">
+                        <div class="ui col sm-1 pad-no gap-no bg-no">
+                            <div class="col-content overflow">
+                                <ul class="ui table size-med  resp  ">
+                                    <li class="thead">
+                                        <div class="col-110 align-middle-center"><span>Limit</span></div>
+                                        <div class="col-200 align-middle-center"><span>Value</span></div>
+                                        <div class="col-120 align-middle-center"><span>Status</span></div>
+                                        <div class="col-350-min align-middle-center"><span>Alarm</span></div>
+                                        <div class="col-150 align-middle-center"><span>Alarm Inhibit</span></div>
+                                    </li>
+                                    <li>
+                                        <div class="col-110">
+                                            <span>High High</span>
+                                        </div>
+                                        <div class="col-200">
+                                            <h1 id="editSignalHH" onclick="signalList.selectInterval(this, 'HH')" class="ui h1 font-lcd limitSelected" style="margin: 5px 15px 5px 15px;"></h1>
+                                         </div>
+                                        <div class="col-120">
+                                            <button id="disableLimitHH" class="ui btn switch mini" style="width:90px" onclick="signalList.disableLimit('HH', this);">
+                                                <div class="inactive">Disabled</div>
+                                                <div class="active">Enabled</div>
+                                            </button>
+                                        </div>
+                                        <div class="col-350-min">
+                                            <h1 id="linkedAlarm_HH" class="ui text-size-8"></h1>
+                                        </div>
+                                        <div class="col-150 align-middle-center dev-inhibitButton" id="limitInhibit_HH" data-alarmId="">
+                                            <button   class="ui btn mini pad-h-no bold active " style="width:35px;">OFF</button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="col-110">
+                                            <span>High</span>
+                                        </div>
+                                        <div class="col-200">
+                                          <h1 id="editSignalH" onclick="signalList.selectInterval(this, 'H')"  class="ui h1 font-lcd limitSelected" style="margin: 5px 15px 5px 15px;"></h1>
+                                        </div>
+                                        <div class="col-120">
+                                            <button id="disableLimitH" class="ui btn switch mini" style="width:90px" onclick="signalList.disableLimit('H', this);">
+                                                <div class="inactive">Disabled</div>
+                                                <div class="active">Enabled</div>
+                                            </button>
+                                        </div>
+                                        <div class="col-350-min">
+                                            <h1 id="linkedAlarm_H" class="ui text-size-8"></h1>
+                                        </div>
+                                        <div class="col-150 align-middle-center dev-inhibitButton" id="limitInhibit_H" data-alarmId="">
+                                            <button   class="ui btn mini pad-h-no bold active success " style="width:35px;">OFF</button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="col-110">
+                                            <span>Low</span>
+                                        </div>
+                                        <div class="col-200">
+                                           <h1 id="editSignalL" onclick="signalList.selectInterval(this, 'L')" class="ui h1 font-lcd limitSelected" style="margin: 5px 15px 5px 15px;"></h1>
+                                        </div>
+                                        <div class="col-120">
+                                            <button id="disableLimitL" class="ui btn switch mini" style="width:90px" onclick="signalList.disableLimit('L', this);">
+                                                <div class="inactive">Disabled</div>
+                                                <div class="active">Enabled</div>
+                                            </button>
+                                        </div>
+                                        <div class="col-350-min">
+                                            <h1 id="linkedAlarm_L" class="ui text-size-8"></h1>
+                                        </div>
+                                        <div class="col-150 align-middle-center dev-inhibitButton" id="limitInhibit_L" data-alarmId="">
+                                            <button class="ui btn mini pad-h-no bold active success" style="width:35px;">OFF</button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="col-110">
+                                            <span>Low Low</span>
+                                        </div>
+                                        <div class="col-200">
+                                           <h1 id="editSignalLL" onclick="signalList.selectInterval(this, 'LL')" class="ui h1 font-lcd limitSelected" style="margin: 5px 15px 5px 15px;"></h1>
+                                         </div>
+                                        <div class="col-120">
+                                            <button id="disableLimitLL" class="ui btn switch mini" style="width:90px" onclick="signalList.disableLimit('LL', this);">
+                                                <div class="inactive">Disabled</div>
+                                                <div class="active">Enabled</div>
+                                            </button>
+                                        </div>
+                                        <div class="col-350-min">
+                                            <h1 id="linkedAlarm_LL" class="ui text-size-8"></h1>
+                                        </div>
+                                        <div class="col-150 align-middle-center dev-inhibitButton" id="limitInhibit_LL" data-alarmId="">
+                                            <button  class="ui btn mini pad-h-no bold active success " style="width:35px;">OFF</button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="sm-1 col overflow middle-center gap-mini">
+                            <br><br><br>
+                            <ul class="ui table size-med resp " >
+                                <li class="thead has-col-header">
+                                    <div class=" middle-center align-top-center" id="intervalForModification"></div>
+                                </li>
+                            </ul>
+                            <ul class="ui table size-med resp align-top-center">
+                                <li>
+
+                                        <button class="ui btn sm gutter-mini" style="padding: 5px!important; width: 120px; margin:1em; " onclick="signalList.editSignalLimitModify( 1, 10000)">+10000</button>
+                                        <button class="ui btn sm gutter-mini" style="padding: 5px!important; width: 120px; margin:1em; " onclick="signalList.editSignalLimitModify( 1, 1000)" >+1000</button>
+                                        <button class="ui btn sm gutter-mini" style="padding: 5px!important; width: 120px; margin:1em; " onclick="signalList.editSignalLimitModify( 1, 100)" >+100</button>
+                                        <button class="ui btn sm gutter-mini" style="padding: 5px!important; width: 120px; margin:1em; " onclick="signalList.editSignalLimitModify( 1, 10)">+10</button>
+                                        <button class="ui btn sm gutter-mini" style="padding: 5px!important; width: 120px; margin:1em; " onclick="signalList.editSignalLimitModify( 1, 1)">+1</button>
+
+                                </li>
+                                <li>
+
+                                        <button class="ui btn sm gutter-mini" style="padding: 5px!important; width: 120px; margin:1em " onclick="signalList.editSignalLimitModify( 0, 10000)">-10000</button>
+                                        <button class="ui btn sm gutter-mini" style="padding: 5px!important; width: 120px; margin:1em " onclick="signalList.editSignalLimitModify( 0, 1000)" >-1000</button>
+                                        <button class="ui btn sm gutter-mini" style="padding: 5px!important; width: 120px; margin:1em " onclick="signalList.editSignalLimitModify( 0, 100)" >-100</button>
+                                        <button class="ui btn sm gutter-mini" style="padding: 5px!important; width: 120px; margin:1em " onclick="signalList.editSignalLimitModify( 0, 10)" >-10</button>
+                                        <button class="ui btn sm gutter-mini" style="padding: 5px!important; width: 120px; margin:1em " onclick="signalList.editSignalLimitModify( 0, 1)" >-1</button>
+
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <footer>
+                    <div class="btn-group">
+                        <button id="editSignalButton" class="ui btn lg success colored gutter-med content-disabled" onclick="signalList.editSignalSave();">Save new limits</button>
+                    </div>
+                </footer>
+                <input type="hidden" id="editSignalAlarmId">
+                <input type="hidden" id="editSignalDeviceName" value="PLC_MAIN">
+                <input type="hidden" id="editSignalMirrorTo">
+                <input type="hidden" id="listBuild">
+                <input type="hidden" id="intervalLimitsValue">
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- EDIT SIGNALS POP UP-->
+
+
+

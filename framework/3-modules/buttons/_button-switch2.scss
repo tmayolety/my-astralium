@@ -1,0 +1,135 @@
+// TYPE SWITCH 2 ///////////////////////////////////////////////////////////////
+#{$ui}.btn-group{
+
+	&.switch-2{
+		position:							relative;
+		flex-direction:						column;
+		float:								left;
+
+		> .btn{
+			flex-grow:						1;
+			@extend							%font-bold;
+			text-transform:					uppercase;
+			padding-left:					0!important;
+			padding-right:					0!important;			
+
+			&:not(.active){
+				&:not(:hover){
+					//background:				transparent;
+					//border-color:			transparent;
+				}
+			}	
+
+			&:first-of-type{
+				border-bottom-left-radius:	0!important;
+				border-bottom-right-radius:	0!important;
+			}
+
+			&:last-of-type{
+				border-top-left-radius:		0!important;
+				border-top-right-radius:	0!important;
+			}
+		}
+
+		>  div{
+			width:							100%;
+			display:						flex;
+			justify-items:					center;
+			justify-content:				center;
+			align-items:					center;
+			//text-transform:					uppercase;
+			overflow:						hidden;			
+			z-index:						10;
+			box-sizing:						border-box;
+			margin:							2px 0;
+			@extend							%font-regular;
+			background:						lighten($grid--column-bg-dark, 30%);
+
+			&.yellow{
+				color:						black;
+				border:						2px solid var(--value-yellow);
+				background:					var(--value-yellow)!important;
+			}
+
+			&.red{
+				color:						white;
+				border:						2px solid var(--value-red);
+				background:					var(--value-red)!important;			
+			}
+
+			> span{
+				@extend						%ellipsis;
+				text-align:					center;
+				padding:					0 5px;
+				box-sizing:					border-box;
+			}			
+		}
+
+		+ .switch-2{
+			margin-left:					10px;
+		}
+	}
+}
+
+
+
+
+/////////////////////////////////////////////////////////////
+// SWICTH 2 //
+/////////////////////////////////////////////////////////////
+//__________________________________________Name____Size____Btn_Font____Alarm_Font______Alarm_Pad___Border
+$btn-switch-2--sizes:						mini	50px	12px		10px			8px			2px,
+											sm		70px	16px		14px			9px			2px,
+											med		90px	22px		17px			10px		3px,
+											lg		110px	26px		22px			11px		3px,
+											xl		120px	30px		26px			12px		3px;
+
+
+// SIZE //
+#{$ui}.btn-group{
+	
+	&.switch-2{
+		@each $name, $size, $font, $alarm, $alarm-pad, $border in $btn-switch-2--sizes{
+
+			&.#{$name}{
+				border-radius:						#{$size / 5};
+
+				> .btn{
+					height:							$size;
+					width:							$size;
+					font-size:						$font;
+					border-width:					$border;
+
+					&:first-of-type{
+						margin-bottom:				$border;
+						border-top-left-radius:		#{$size / 5};
+						border-top-right-radius:	#{$size / 5};
+					}
+
+					&:last-of-type{
+						margin-top:					$border;
+						border-bottom-left-radius:	#{$size / 5};
+						border-bottom-right-radius:	#{$size / 5};
+					}
+
+					> svg{
+						width:						50%;
+						height:						50%;
+						@include					abs-pos(50%, auto, auto, 50%);
+						@include					translate(-50%, -50%);
+					}
+				}
+
+				>  div{
+					width:							$size;
+					font-size:						$alarm;
+					height:							#{$alarm + ($alarm-pad * 2)};
+				}
+
+				&.rounded{
+					border-radius:					#{$size * 2}!important;	
+				}	
+			}		
+		}
+	}
+}

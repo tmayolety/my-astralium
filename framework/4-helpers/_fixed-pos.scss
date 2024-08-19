@@ -1,0 +1,8 @@
+// POSITION FIXED
+// @include fixed-pos(10px, 10px, 5px, 15px);
+@mixin fixed-pos ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  position: fixed; }

@@ -1,0 +1,149 @@
+/////////////////////////////////////////////////////////////////////////////
+// COLUMNS BASE //
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+// COLUNMS OPTIONS //
+.ui.col{
+	&.align-baseline{
+		align-content:				baseline;
+	}
+
+	&.align-center{
+		align-content:				center;
+	}
+
+	&.align-end{
+		align-content:				end;
+	}
+
+	&.overflow{
+		//overflow:					auto!important;
+	}
+
+	&.reset-w-align{
+		justify-content:			inherit!important;
+	}
+
+	&.align-self-top{
+		align-self:					self-start;
+	}
+
+	&:hover{
+		//z-index:					2;
+	}
+}
+
+// GRID OPTIONS //
+.ui.grid{
+	&.align-baseline{
+		align-items:				baseline;
+	}
+
+	&.align-center{
+		align-items:				center;
+	}
+
+	&.align-end{
+		align-items:				end;
+	}
+}
+
+
+
+
+// COL CONTENT //
+.ui.col{
+	> .col-content{
+
+		&.w-resp{
+			width:					100%;
+		}
+		
+		&.h-resp{
+			height:					100%;
+		}
+
+		&.overflow{
+			overflow:				auto!important;
+		}
+
+		.horz-align{
+			position:				relative;
+			left:					50%;
+			@include				translate(-50%, 0);
+		}
+	}
+}
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+// GRID COLS GENERATE //
+/////////////////////////////////////////////////////////////////////////////
+.ui.grid{
+	@each $name, $value1, $value2 in $breakpoints-list {
+		@media screen #{$value1 $value2}{
+			@for $i from 1 through $grid--columns {			
+				&.cols-#{$name}-#{$i}{
+					grid-template-columns:	repeat($i, 1fr);
+					> .col{
+						grid-column:		span (1 * $i);
+					}
+					> .col{
+						grid-column:		span (1 * $i);
+					}
+				}
+				> .col.#{$name}-#{$i}{
+					grid-column:			span (1 * $i)!important;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+// COLUMN COLOR GLOW //
+/////////////////////////////////////////////////////////////////////////////
+.ui.grid{
+	.ui.col{
+
+		// TYPE //
+		@each $name, $color in $colors--type-list{
+			&.color-bg-type-#{$name}{
+				&.glow{
+					box-shadow:				0px 0px 6px 2px RGBA($color / 80%),
+											inset 0px 0px 10px 0 RGBA($color / 70%);
+				}
+			}
+		}
+
+		// FLUID //
+		@each $name, $color in $colors--fluid-list{ 	
+			&.color-bg-fl-#{$name}{
+				&.glow{
+					box-shadow:				0px 0px 6px 2px RGBA($color / 80%),
+											inset 0px 0px 10px 0 RGBA($color / 70%);
+				}
+			}
+		}
+	}
+}
+
+
+/////////////////////////////////////////////////////////////////////////////
+// If Background color apply, it's remove the border //
+/////////////////////////////////////////////////////////////////////////////
+.ui.grid{
+	.ui.col{
+		&[class*="color-"]{
+			border-width:				0!important;
+		}
+	}
+}

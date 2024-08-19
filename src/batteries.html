@@ -1,0 +1,120 @@
+<article>
+    <div class="ui grid type1 cols-mini-1 pad-lg gap-xl hidden-phone batteryApp">
+        <div class="ui grid type1 cols-mini-1 col sm-1 gap-med pad-lg has-header">
+            <header class="ui col">
+                <font>Batteries</font>
+                <span class="gradients">
+                    <span class="gradient-left"></span>
+                    <span class="gradient-right"></span>
+                </span>
+                
+            </header>
+
+            <div class="ui grid type1 cols-mini-3 cols-xl-6 pad-no gap-med">
+
+                <div class="ui col mini-2 " style="height: 310px;">
+                  
+                        <gauge-render v-bind="{
+                            title:'Bridge Service Battery Voltage',
+                            signalId: 169,
+                            unit: 'Vdc',
+                            icon: 'batteries',
+                            iconClass: 'icon-size-mini-80 mg-top-mini-80 mg-bottom-mini-10',
+                            height: 'h-mini-280 pad-xl',
+                            textSize: 30,
+                            unitTextSize: 10,
+                            marginTopValue: 'mg-top-mini-10',
+                            valueMode: 'filtered',
+                            valueDecimals: 1,
+                            limitsEditable:1,
+                            scaleInterval:4,
+                            timeDelay: 5000,}"></gauge-render>
+            
+                </div>
+
+                <div class="ui col mini-2 ">
+                   
+                        <gauge-render v-bind="{
+                            title:'Engine Room Service Battery Voltage',
+                            signalId: 577,
+                            unit: 'Vdc',
+                            icon: 'batteries',
+                            iconClass: 'icon-size-mini-80 mg-top-mini-80 mg-bottom-mini-10',
+                            height: 'h-mini-280 pad-xl',
+                            textSize: 30,
+                            unitTextSize: 10,
+                            marginTopValue: 'mg-top-mini-10',
+                            valueMode: 'filtered',
+                            valueDecimals: 1,
+                            limitsEditable:1,
+                            scaleInterval:4,
+                            timeDelay: 5000,}"></gauge-render>
+                                  
+                </div>
+
+                 <div class="ui col mini-2 ">
+                
+                        <gauge-render v-bind="{
+                            title:'GMDSS Battery Voltage',
+                            signalId: 537,
+                            unit: 'Vdc',
+                            icon: 'batteries',
+                            iconClass: 'icon-size-mini-80 mg-top-mini-80 mg-bottom-mini-10',
+                            height: 'h-mini-280 pad-xl',
+                            textSize: 30,
+                            unitTextSize: 10,
+                            marginTopValue: 'mg-top-mini-10',
+                            valueMode: 'filtered',
+                            valueDecimals: 1,
+                            limitsEditable:1,
+                            scaleInterval:4,
+                            timeDelay: 5000,
+                        }"></gauge-render>
+                 
+                </div>
+
+               <div class="ui col mini-2 " style="height: 310px;">
+
+                        <gauge-render v-bind="{
+                            title:'Emergency Lighting Battery Voltage',
+                            signalId: 578,
+                            unit: 'Vdc',
+                            icon: 'batteries',
+                            iconClass: 'icon-size-mini-80 mg-top-mini-80 mg-bottom-mini-10',
+                            height: 'h-mini-280 pad-xl',
+                            textSize: 30,
+                            unitTextSize: 10,
+                            marginTopValue: 'mg-top-mini-10',
+                            valueMode: 'filtered',
+                            valueDecimals: 1,
+                            limitsEditable:1,
+                            scaleInterval:4,
+                            timeDelay: 3000
+                        }"></gauge-render>
+                      
+                </div>
+
+                <div class="ui col mini-2 ">
+            
+                        <gauge-render v-bind="{
+                            title:'Emergency Generator Start Battery Voltage',
+                            signalId: 201,
+                            unit: 'Vdc',
+                            icon: 'batteries',
+                            iconClass: 'icon-size-mini-80 mg-top-mini-80 mg-bottom-mini-10',
+                            height: 'h-mini-280 pad-xl',
+                            textSize: 30,
+                            unitTextSize: 10,
+                            marginTopValue: 'mg-top-mini-10',
+                            valueMode: 'filtered',
+                            valueDecimals: 1,
+                            limitsEditable:1,
+                            scaleInterval:4,
+                            timeDelay: 5000,
+                        }"></gauge-render>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</article>

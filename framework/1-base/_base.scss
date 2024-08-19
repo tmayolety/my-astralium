@@ -1,0 +1,71 @@
+html{
+	width:			100%;
+	height:			100%;
+}
+
+body{
+	font-size:		100%;
+	@extend			%font-regular; 
+	
+	width:			100%;
+	height:			100%;
+	margin:			0;
+	padding:		0;
+	overflow:		hidden;
+	background:		RGBA(var(--sch-clr-background) / var(--sch-clr-background-op));
+	color:			RGBA(var(--sch-clr-text-default) / var(--sch-clr-text-default-op));
+	@include		transition(	background $transition-scheme 0s ease-in-out,
+								color $transition-scheme 0s ease-in-out);
+
+	// Remove text selection
+    //-moz-user-select: none;
+    //-webkit-user-select: none;
+    //-ms-user-select: none;
+    //user-select: none;
+}
+
+
+button:focus {outline:0;}
+
+
+
+
+
+
+
+// IMAGE FADE IN OUT//////////////////////////////////
+.img-fade{
+	width:					100%;
+	position:				relative;
+
+	img{		
+		@include			abs-pos(0, auto, auto, 0);
+		width:				100%;
+
+		@keyframes img-fade {
+			0% {			opacity: 0; }
+			40% {			opacity: 0; }
+			50% {			opacity: 1; }
+			90% {			opacity: 1; }
+			100% {			opacity: 0; }
+		}
+
+		&:first-child{
+			z-index:		2;
+			animation-name: 			img-fade;
+			animation-duration:			8s;
+			animation-timing-function:	ease-in-out;
+			animation-iteration-count:	infinite;
+			//animation-direction:		alternate;
+		}
+		&:last-child{
+			z-index:		1;
+		}
+	}
+}
+
+
+// CANVAS BACKGROUND //
+canvas{
+	background:				RGBA(var(--sch-clr-grid) / var(--sch-clr-grid-op));
+}

@@ -1,0 +1,96 @@
+//////////////////////////////////////////////////////////////////////////
+// TYPE SWITCH //
+//////////////////////////////////////////////////////////////////////////
+#{$ui}.btn{
+
+	&.switch{
+		$transition:				0.3s;
+
+		background:					RGBA(var(--sch-clr-ui-bg) / 30%);
+		color:						RGBA(var(--sch-clr-text-default) / 50%);
+		@include					btn--sizes-switch;
+		position:					relative;
+		color:						white;
+		border-radius:				100px;
+		display:					flex;
+		flex-direction:				row;
+		@include					transition(	background $transition 0s ease-in-out,
+												border $transition 0s ease-in-out);
+
+		.active{
+			color:					RGBA(var(--sch-clr-active-text) / 0%);
+		}
+
+		// ACTIVE
+		&.active{
+			color:					RGBA(var(--sch-clr-active-text) / var(--sch-clr-active-text-op));
+			.inactive{
+				color:				RGBA(var(--sch-clr-text-default) / 0%);
+			}
+			.active{
+				color:				RGBA(var(--sch-clr-active-text) / var(--sch-clr-active-text-op));
+			}
+
+			&::after{
+				background:			RGBA(var(--sch-clr-active-text) / var(--sch-clr-active-text-op))!important;
+			}
+		}
+
+		&::after{
+			content:				'';
+			@include				abs-pos(50%, auto, auto, 0);
+			@include				translate(0, -50%);
+			border-radius:			100%;			
+			order:					1;
+			background:				RGBA(var(--sch-clr-text-default) / 50%);
+			@include				transition(all $transition 0s ease-in-out);
+		}
+
+		> div{
+			@include				abs-pos(50%, auto, auto, 0);
+			@include				translate(0, -50%);
+			width:					100%;
+			box-sizing:				border-box;
+			@extend					%font-bold;
+			text-transform:			uppercase;
+			text-align:				center;
+			color:					RGBA(var(--sch-clr-text-default) / 0);
+			@include				transition(color $transition 0s ease-in-out);
+		}
+	}
+
+	// 1 COLOR
+	&.switch-1clr{
+
+		&:not(.active){
+			background:				RGBA(var(--sch-clr-grid-border)/var(--sch-clr-grid-op))!important;
+		}
+
+		.inactive{
+			color:					RGBA(var(--sch-clr-text-default) / 50%);
+		}
+	}
+
+	// 2 COLORS
+	&.switch-2clr{
+
+		.inactive{
+			color:					RGBA(var(--sch-clr-text-default) / 100%);
+		}
+
+		&::after{
+			background:				RGBA(var(--sch-clr-active-text) / 100%)!important;
+		}
+
+		// ACTIVE
+		&.active{
+			color:					RGBA(var(--sch-clr-active-text) / var(--sch-clr-active-text-op));
+			.inactive{
+				color:				RGBA(var(--sch-clr-text-default) / 0%);
+			}
+			.active{
+				color:				RGBA(var(--sch-clr-active-text) / var(--sch-clr-active-text-op));
+			}
+		}
+	}
+}

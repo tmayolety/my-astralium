@@ -1,0 +1,80 @@
+/////////////////////////////////////////////////////////////////////////////
+// GAP //
+/////////////////////////////////////////////////////////////////////////////
+@mixin grid-gap{
+	@each $grid--gap in $grid--setting{
+		&.gap-#{nth($grid--gap, 1)}{
+			grid-gap: #{nth($grid--gap, 2)};
+
+			&.col.has-header{
+				grid-template-rows:				#{$grid--header-height + 10px - nth($grid--gap, 2)} auto;
+
+				> header{
+					height:						$grid--header-height;
+				}
+
+				@include breakpoint(phone){
+					&.has-header-tools{
+						grid-template-rows:		#{$grid--header-height + 60px - nth($grid--gap, 2)} auto;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+// PADDING //
+/////////////////////////////////////////////////////////////////////////////
+// For grid
+@mixin grid-pad{	
+	@each $grid--pad in $grid--setting{
+		&.pad-#{nth($grid--pad, 1)}{
+			> #{$ui}.col{
+				padding: #{nth($grid--pad, 4)} #{nth($grid--pad, 3)};	
+			}
+		}
+	}
+}
+
+// For Column
+@mixin col-pad{	
+	@each $grid--pad in $grid--setting{
+		&.pad-#{nth($grid--pad, 1)}{
+			padding: #{nth($grid--pad, 4)} #{nth($grid--pad, 3)}!important;
+		}
+	}
+}
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+// RADIUS //
+/////////////////////////////////////////////////////////////////////////////
+// For grid
+@mixin cols-radius{	
+	@each $cols-radius in $grid--setting{
+		&#{$ui}.radius-#{nth($cols-radius, 1)}{
+			> #{$ui}.col,
+			> #{$ui}.grid{
+				border-radius:	#{nth($cols-radius, 5)}!important;
+				overflow:		hidden;
+			}
+		}
+	}
+}
+
+// For column
+@mixin col-radius{
+	@each $col-radius in $grid--setting{
+		#{$ui}.col-radius-#{nth($col-radius, 1)}.col,
+		#{$ui}.col-radius-#{nth($col-radius, 1)} #{$ui}.col{
+		  border-radius: #{nth($col-radius, 5)}!important;
+		}
+	}
+}
+// Probleme dans le nesting, ne prend pas la priorité

@@ -1,0 +1,4 @@
+%extend .center-abs{
+	@include abs-pos(50%!important, 0, 0, 50%!important);
+	@include transform(translate(-50%, -50%));
+}

@@ -1,0 +1,58 @@
+// Padding top ///////////////////////////////////////////////////////
+@each $name, $value1, $value2 in $breakpoints-list {
+	@media screen #{$value1 $value2}{
+		@for $i from 1 through 300 {
+			.pad-top-#{$name}-#{$i}{
+				padding-top:	#{$i}px!important;			
+			}
+			.pad-top-#{$name}-#{$i}-neg{
+				padding-top:	-#{$i}px!important;			
+			}
+		}
+	}
+}
+
+
+// Padding Bottom ///////////////////////////////////////////////////////
+@each $name, $value1, $value2 in $breakpoints-list {
+	@media screen #{$value1 $value2}{
+		@for $i from 1 through 300 {
+			.pad-bottom-#{$name}-#{$i}{
+				padding-bottom:	#{$i}px!important;			
+			}
+			.pad-bottom-#{$name}-#{$i}-neg{
+				padding-bottom:	-#{$i}px!important;			
+			}
+		}
+	}
+}
+
+
+// Padding Left ///////////////////////////////////////////////////////
+@each $name, $value1, $value2 in $breakpoints-list {
+	@media screen #{$value1 $value2}{
+		@for $i from 1 through 300 {
+			.pad-left-#{$name}-#{$i}{
+				padding-left:	#{$i}px!important;			
+			}
+			.pad-left-#{$name}-#{$i}-neg{
+				padding-left:	-#{$i}px!important;			
+			}
+		}
+	}
+}
+
+
+// Padding Right ///////////////////////////////////////////////////////
+@each $name, $value1, $value2 in $breakpoints-list {
+	@media screen #{$value1 $value2}{
+		@for $i from 1 through 300 {
+			.pad-right-#{$name}-#{$i}{
+				padding-right:	#{$i}px!important;			
+			}
+			.pad-right-#{$name}-#{$i}-neg{
+				padding-right:	-#{$i}px!important;			
+			}
+		}
+	}
+}

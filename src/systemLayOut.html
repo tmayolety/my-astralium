@@ -1,0 +1,296 @@
+<article class="section-settings">
+
+    <div class="ui grid type1 cols-mini-1 gap-xl SystemLayoutApp">
+
+        <div class="ui grid cols-mini-6 col gap-xl pad-med
+                    col mini-1">
+
+            <div class="ui col mini-1 grid cols-mini-1 gap-xl pad-no">
+
+                <div class="ui col mini-1 pad-no gap-no section-settings-cables has-col-header-med">
+                    <cable-system-layout-render v-bind="{signalId: 90, cableClass: 'cable-plc', NC: 1}" ></cable-system-layout-render>
+                    <single-line-header-render v-bind="{componentTitle:'Managed Ethernet Switch Wheelhouse', signalIdBox:20006, NC:1, icon:'',size: '', oneColor:'color-fill-type-secondary-dark', zeroColor:'color-fill-type-white', headerSize:'extraSmall', textHeaderSize: 'small', heightHeader: 'regular'}" ></single-line-header-render>
+                    <div class="ui grid type1 cols-mini-1 pad-no gap-no">
+                        <div class="ui col mini-1">
+                            <ul class="ui table size-sm in-column">
+                                <li><icon-text-digital-line-render v-bind="{  signalId: 20006, title: '192.168.11.253',  icon:'circle' ,size: '20', zeroColor: 'danger', oneColor: 'success', elementSize: 'mid' }"></icon-text-digital-line-render></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Row 1 -->
+            <div class="ui grid cols-mini-1
+            			col mini-4 gap-no pad-no">
+
+                <div class="ui grid cols-mini-4
+	            			col mini-1 gap-med pad-no">
+
+                    <div class="ui col mini-1 bg-no pad-no section-settings-cables align-baseline has-col-header-med">
+                        <cable-system-layout-render v-bind="{signalId: 20022, cableClass: 'cable-in'}" ></cable-system-layout-render>
+                        <cable-system-layout-render v-bind="{signalId: 20022, cableClass: 'cable-out'}" ></cable-system-layout-render>
+                        
+                       
+                        <single-line-header-render v-bind="{componentTitle:'PLC Wheelhouse', signalIdBox:20022, NC:1, icon:'',size: '',
+                             oneColor:'color-fill-type-secondary-dark', zeroColor:'color-fill-type-white', headerSize:'extraSmall', textHeaderSize: 'small', heightHeader: 'regular'}" ></single-line-header-render>
+                    
+                        <div class="ui grid type1 cols-mini-1 pad-no gap-no">
+                            <div class="ui col mini-1">
+                                <ul class="ui table size-sm in-column">
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 20022, title: '192.168.100',  icon:'circle' ,size: '20', zeroColor: 'danger', oneColor: 'success', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <icon-tri-estate-one-signal-digital-line-render v-bind="{
+                                    signalId: 80,
+                                    title: 'PLC Status',
+                                    icon:'circle' ,
+                                    size: '20',
+                                    oneOptionValue: 2,
+                                    twoOptionValue: 3,
+                                    threeOptionValue: 1,
+                                    OptionOneText: 'StandAlone',
+                                    OptionTwoText: 'Standby',
+                                    OptionThreeText: 'Master',
+                                    OptionOneColor: 'danger',
+                                    OptionTwoColor: 'primary',
+                                    OptionThreeColor: 'success' }"></icon-tri-estate-one-signal-digital-line-render>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="ui col mini-1 bg-no pad-no section-settings-cables align-baseline has-col-header-med">
+                        <cable-system-layout-render v-bind="{signalId: 30004, cableClass: 'cable-in', NC: 0}" ></cable-system-layout-render>
+                        <cable-system-layout-render v-bind="{signalId: 30004, cableClass: 'cable-out', NC: 0}" ></cable-system-layout-render>
+
+                        <single-line-header-render v-bind="{componentTitle:'SmartCoupler Wheelhouse', signalIdBox:30004, NC:0, icon:'',size: '', oneColor:'color-fill-type-secondary-dark',
+                             zeroColor:'color-fill-type-white', headerSize:'extraSmall', textHeaderSize: 'small', heightHeader: 'regular'}" ></single-line-header-render>
+                    
+                        <div class="ui grid type1 cols-mini-1 pad-no gap-no">
+                            <div class="ui col mini-1">
+                                <ul class="ui table size-sm in-column">
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30004, title: 'AI 1',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30004, title: 'AI 2',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30004, title: 'DO 1',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30004, title: 'DO 2',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30004, title: 'DO 3',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30004, title: 'DO 4',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30004, title: 'DO 5',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30004, title: 'DO 6',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30004, title: 'DI 1',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30004, title: 'DI 2',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30004, title: 'DI 3',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30004, title: 'DI 4',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30004, title: 'DI 5',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30004, title: 'DI 6',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="ui col mini-1 bg-no pad-no section-settings-cables align-baseline has-col-header-med">
+                        <cable-system-layout-render v-bind="{signalId: 30005, cableClass: 'cable-in', NC: 0}" ></cable-system-layout-render>
+                        <cable-system-layout-render v-bind="{signalId: 30005, cableClass: 'cable-out', NC: 0}" ></cable-system-layout-render>
+
+                        <single-line-header-render v-bind="{componentTitle:'SmartCoupler Engine Room', signalIdBox:30005, NC:0, icon:'',size: '',
+                             oneColor:'color-fill-type-secondary-dark', zeroColor:'color-fill-type-white', headerSize:'extraSmall', textHeaderSize: 'small', heightHeader: 'regular'}" ></single-line-header-render>
+                    
+                        <div class="ui grid type1 cols-mini-1 pad-no gap-no">
+                            <div class="ui col mini-1">
+                                <ul class="ui table size-sm in-column">
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30005, title: 'AI 1',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30005, title: 'AI 2',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30005, title: 'AI 3',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30005, title: 'DO 1',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30005, title: 'DO 2',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30005, title: 'DO 3',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30005, title: 'DO 4',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30005, title: 'DO 5',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30005, title: 'DI 1',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30005, title: 'DI 2',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30005, title: 'DI 3',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30005, title: 'DI 4',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30005, title: 'DI 5',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30005, title: 'DI 6',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 30005, title: 'DI 7',  icon:'circle' ,size: '20', zeroColor: 'success', oneColor: 'danger', elementSize: 'large' }"></icon-text-digital-line-render></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ui col mini-1 bg-no pad-no section-settings-cables align-baseline has-col-header-med">
+                        <cable-system-layout-render v-bind="{signalId: 20023, cableClass: 'cable-in'}" ></cable-system-layout-render>
+                        <cable-system-layout-render v-bind="{signalId: 20023, cableClass: 'cable-out'}" ></cable-system-layout-render>
+
+                        <single-line-header-render v-bind="{componentTitle:'PLC Engine Room', signalIdBox:20023, NC:1, icon:'',size: '', oneColor:'color-fill-type-secondary-dark',
+                             zeroColor:'color-fill-type-white', headerSize:'extraSmall', textHeaderSize: 'small', heightHeader: 'regular'}" ></single-line-header-render>
+                    
+                        <div class="ui grid type1 cols-mini-1 pad-no gap-no">
+                            <div class="ui col mini-1">
+                                <ul class="ui table size-sm in-column">
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 20023, title: '192.168.11.101',  icon:'circle' ,size: '20', zeroColor: 'danger', oneColor: 'success', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                    <icon-tri-estate-one-signal-digital-line-render v-bind="{
+                                    signalId: 20011,
+                                    title: 'PLC Status',
+                                    icon:'circle' ,
+                                    size: '20',
+                                    oneOptionValue: 2,
+                                    twoOptionValue: 3,
+                                    threeOptionValue: 4,
+                                    OptionOneText: 'StandAlone',
+                                    OptionTwoText: 'Standby',
+                                    OptionThreeText: 'Master',
+                                    OptionOneColor: 'danger',
+                                    OptionTwoColor: 'primary',
+                                    OptionThreeColor: 'success' }"></icon-tri-estate-one-signal-digital-line-render>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+
+
+                <!-- Row 2 -->
+                <div class="ui grid cols-sm-8
+	            			col sm-1 gap-med pad-no">
+                    <div class="ui col mini-2 bg-no pad-no section-settings-cables align-baseline has-col-header-med">
+                        <cable-system-layout-render v-bind="{signalId: 20004, cableClass: 'cable-in'}" ></cable-system-layout-render>
+
+                        <single-line-header-render v-bind="{componentTitle:'BWCU Server Wheelhouse', signalIdBox:20024, NC:0, icon:'',size: '', oneColor:'color-fill-type-secondary-dark',
+                             zeroColor:'color-fill-type-white', headerSize:'extraSmall', textHeaderSize: 'small', heightHeader: 'regular'}" ></single-line-header-render>
+                    
+                        <div class="ui grid type1 cols-mini-1 pad-no gap-no">
+                            <div class="ui col mini-1">
+                                <ul class="ui table size-sm in-column">
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 20004, title: '192.168.11.98',  icon:'circle' ,size: '20', zeroColor: 'danger', oneColor: 'success', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui col mini-4 bg-no pad-no section-settings-cables align-baseline has-col-header-med">
+
+
+                    </div>
+
+                    <div class="ui col mini-2 bg-no pad-no section-settings-cables align-baseline has-col-header-med">
+                        <cable-system-layout-render v-bind="{signalId: 20003, cableClass: 'cable-out'}" style="right: -20px;"></cable-system-layout-render>
+
+                        <single-line-header-render v-bind="{componentTitle:'BWCU Server Engine Room', signalIdBox:20003, NC:1, icon:'',size: '', oneColor:'color-fill-type-secondary-dark',
+                             zeroColor:'color-fill-type-white', headerSize:'extraSmall', textHeaderSize: 'small', heightHeader: 'regular'}" ></single-line-header-render>
+                    
+                        <div class="ui grid type1 cols-mini-1 pad-no gap-no">
+                            <div class="ui col mini-1">
+                                <ul class="ui table size-sm in-column">
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 20003, title: '192.168.11.99',  icon:'circle' ,size: '20', zeroColor: 'danger', oneColor: 'success', elementSize: 'large' }"></icon-text-digital-line-render></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+                <div class="ui grid cols-sm-8
+	            			col sm-1 gap-med pad-no">
+
+
+                    <div class="ui col sm-1 bg-no pad-no section-settings-cables align-baseline has-col-header-med">
+                        <cable-system-layout-render v-bind="{signalId: 20006, cableClass: 'cable-single'}" ></cable-system-layout-render>
+
+                        <single-line-header-render v-bind="{componentTitle:'Nav Com & ME Gateway', signalIdBox:20019, NC:1, icon:'',size: '', oneColor:'color-fill-type-secondary-dark', 
+                            zeroColor:'color-fill-type-white', headerSize:'extraSmall', textHeaderSize: 'small', heightHeader: 'regular'}" ></single-line-header-render>
+                    
+                        <div class="ui grid type1 cols-mini-1 pad-no gap-no">
+                            <div class="ui col mini-1">
+                                <ul class="ui table size-sm in-column">
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 20019, title: '192.168.11.112',  icon:'circle' ,size: '20', zeroColor: 'danger', oneColor: 'success' }"></icon-text-digital-line-render></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui col sm-1 bg-no pad-no section-settings-cables align-baseline has-col-header-med">
+                        <cable-system-layout-render v-bind="{signalId: 20006, cableClass: 'cable-single'}" ></cable-system-layout-render>
+
+                       
+                        <single-line-header-render v-bind="{componentTitle:'Fire System Gateway', signalIdBox:20018, NC:1, icon:'',size: '', oneColor:'color-fill-type-secondary-dark',
+                             zeroColor:'color-fill-type-white', headerSize:'extraSmall', textHeaderSize: 'small', heightHeader: 'regular'}" ></single-line-header-render>
+                    
+                        <div class="ui grid type1 cols-mini-1 pad-no gap-no">
+                            <div class="ui col mini-1">
+                                <ul class="ui table size-sm in-column">
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 20018, title: '192.168.11.67',  icon:'circle' ,size: '20', zeroColor: 'danger', oneColor: 'success' }"></icon-text-digital-line-render></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui col sm-1 bg-no pad-no section-settings-cables align-baseline has-col-header-med">
+
+                        <cable-system-layout-render v-bind="{signalId: 20006, cableClass: 'cable-single'}" ></cable-system-layout-render>
+
+                        <single-line-header-render v-bind="{componentTitle:'Port Gen Set Gateway', signalIdBox:20001, NC:1, icon:'',size: '', oneColor:'color-fill-type-secondary-dark',
+                             zeroColor:'color-fill-type-white', headerSize:'extraSmall', textHeaderSize: 'small', heightHeader: 'regular'}" ></single-line-header-render>
+                    
+                        <div class="ui grid type1 cols-mini-1 pad-no gap-no">
+                            <div class="ui col mini-1">
+                                <ul class="ui table size-sm in-column">
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 20001, title: '192.168.11.114',  icon:'circle' ,size: '20', zeroColor: 'danger', oneColor: 'success' }"></icon-text-digital-line-render></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui col sm-1 bg-no pad-no section-settings-cables align-baseline has-col-header-med">
+                        <cable-system-layout-render v-bind="{signalId: 20006, cableClass: 'cable-single'}" ></cable-system-layout-render>
+
+                        <single-line-header-render v-bind="{componentTitle:'Stbd Gen Set Gateway', signalIdBox:20002, NC:1, icon:'',size: '', oneColor:'color-fill-type-secondary-dark',
+                             zeroColor:'color-fill-type-white', headerSize:'extraSmall', textHeaderSize: 'small', heightHeader: 'regular'}" ></single-line-header-render>
+                    
+                        <div class="ui grid type1 cols-mini-1 pad-no gap-no">
+                            <div class="ui col mini-1">
+                                <ul class="ui table size-sm in-column">
+                                    <li><icon-text-digital-line-render v-bind="{  signalId: 20002, title: '192.168.11.115',  icon:'circle' ,size: '20', zeroColor: 'danger', oneColor: 'success' }"></icon-text-digital-line-render></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="ui col mini-1 grid cols-mini-1 gap-xl pad-no">
+
+                <div class="ui col mini-1 pad-no gap-no section-settings-cables has-col-header-med">
+                  
+                    <cable-system-layout-render v-bind="{signalId: 20005, cableClass: 'cable-in', NC: 1}" ></cable-system-layout-render>
+                    <single-line-header-render v-bind="{componentTitle:'Managed Ethernet Switch Engine Room', signalIdBox:20005, NC:1, icon:'',size: '', oneColor:'color-fill-type-secondary-dark',
+                         zeroColor:'color-fill-type-white', headerSize:'extraSmall', textHeaderSize: 'small', heightHeader: 'regular'}" ></single-line-header-render>
+                    
+                    <div class="ui grid type1 cols-mini-1 pad-no gap-no">
+                        <div class="ui col mini-1">
+                            <ul class="ui table size-sm in-column">
+                                <li><icon-text-digital-line-render v-bind="{  signalId: 20005, title: '192.168.11.254',  icon:'circle' ,size: '20', zeroColor: 'danger', oneColor: 'success', elementSize: 'large' }"></icon-text-digital-line-render></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+

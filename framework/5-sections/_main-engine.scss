@@ -1,0 +1,5 @@
+.main-engine--pbar-pos{
+	width:				50%;
+	@include			abs-pos(135px, auto, auto, 50%);
+	@include			translate(-50%, 0);
+}

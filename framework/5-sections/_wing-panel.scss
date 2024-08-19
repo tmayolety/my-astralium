@@ -1,0 +1,134 @@
+// WING PANEL //
+body[data-wingpanel="true"]{
+
+	main#wingContent{
+		display:						grid!important;
+	}
+
+	main#mainContent,
+	#statusTable{
+		display:						none!important;
+	}
+}
+
+
+main#wingContent{
+	
+	display:							none;
+	grid-template-columns:				1fr!important;
+	grid-template-rows:					1fr!important;	
+	grid-template-areas:				"wing-panel";
+
+	> section{
+		grid-area:						wing-panel;
+	}
+
+	.wingpanel-TextBig{
+		font-size:						75px;
+		line-height:					75px;
+	}
+
+	.wingpanel-pbar-value{
+		margin-left:					50%;
+		width:							fit-content;
+		font-size:						50px;
+		margin-top:						20px;
+		@include						translate(-50%, 0);
+
+		small{
+			font-size:					24px;
+		}
+	}	
+}
+
+
+
+// TV 1024 x 600 //////////////////////////////////////////////
+body[data-wingpanel="true"]{
+	@include breakpoint(wingpanel) {
+
+		main > section{
+			overflow:					hidden!important;
+		}
+
+		.grid.gap-xl {
+			grid-gap:					10px;
+		}
+
+		.grid.gap-med {
+			grid-gap:					3px;
+		}
+
+		article{
+			padding:					10px;
+		}
+
+		.grid.has-header{
+			grid-template-rows:			40px auto!important;
+			grid-gap:					3px!important;
+		}
+		header.col{
+			font-size:					22px!important;
+			height:						40px!important;
+		}
+
+		.btn.circle{
+			width: 						24px!important;
+			height: 					24px!important;
+			margin:						5px 0!important;
+		}
+
+		h1{
+			font-size:					50px!important;
+			line-height:				55px!important;
+		}
+
+		.chart-container{
+			margin-top:					27px;
+		}
+
+		header.col-header{
+			font-size:					16px!important;
+			padding-top:				8px!important;
+			padding-bottom:				8px!important;
+		}
+
+		.pbar{
+			margin-bottom:				0!important;
+		}
+
+		.wingpanel-pbar-title{
+			font-size:					30px!important;
+			height:						30px;
+		}
+
+		.wingpanel-pbar-value{
+			font-size:					40px!important;
+			margin-top:					5px!important;
+			small{
+				font-size:				18px!important;
+			}
+		}
+	}
+}
+
+
+
+
+// LIGHT MODE ////////////////////////////////////////////////////
+body[data-wingpanel="true"][data-scheme="light"]{
+	background:							lightgray;
+
+	.ui.btn{
+		box-shadow:						none!important;
+		border:							0!important;
+	}
+
+	h1.glow{
+		text-shadow:					none!important;
+	}
+
+	.h5{
+		color:							black!important;
+	}
+}

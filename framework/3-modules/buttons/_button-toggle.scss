@@ -1,0 +1,37 @@
+//////////////////////////////////////////////////////////////////////////
+// TYPE TOOGLE //
+//////////////////////////////////////////////////////////////////////////
+#{$ui}.btn-group{
+	&.toggle{		
+		background:					RGBA(var(--sch-clr-grid-border) / var(--sch-clr-grid-border-op));
+		@include					transition(background $transition-scheme 0s ease-in-out);
+		padding:					5px;
+		border-radius:				10px;
+
+		> .btn{
+			flex-grow:				1;
+			@extend					%font-bold;
+			text-transform:			uppercase;
+
+			&:not(.active):not(.loading){
+				background:			none;
+				box-shadow:			none;
+				border-color:		transparent;
+			}
+		}
+
+		// HORIZONTAL //
+		&.horizontal{
+			.btn + .btn{
+				margin-left:		5px;
+			}
+		}
+
+		// VERTICAL //
+		&.vertical{
+			.btn + .btn{
+				margin-top:			5px;
+			}
+		}
+	}
+}

@@ -1,0 +1,53 @@
+/* GRID */
+$grid--columns:						12;
+$grid--header-height:				50px;
+
+
+// Load functions for Grid
+@import	'functions';
+
+
+
+
+// SETTINGS_________Name____Gap_________Pad-v_______Pad-h_______Radius
+$grid--setting:		no 		0 			0			0			0rem,
+					mini 	1px 		0.5rem 		0.5rem		0.1rem,
+					sm  	2px 		0.7rem 		0.7rem		0.2rem,
+					med 	6px 		0.9rem 		0.9rem		0.3rem,
+					lg  	10px 		1.1rem 		1.1rem		0.4rem,
+					xl  	20px 		1.3rem 		1.3rem		0.5rem;
+
+
+
+
+
+
+// GRID COMPONENTS IMPORT //////////////////////////////////////////////////
+@import '3-modules/grid/grid-base';
+@import '3-modules/grid/grid-col';
+@import '3-modules/grid/grid-types';
+@import '3-modules/grid/grid-header';
+@import '3-modules/grid/grid-align';
+@import '3-modules/grid/grid-col-header';
+@import '3-modules/grid/grid-fullscreen';
+@import '3-modules/grid/grid-draggable';
+@import '3-modules/grid/grid-flip-col';
+@import '3-modules/grid/grid-misc';
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+// GENERATE GRID //
+/////////////////////////////////////////////////////////////////////////////
+#{$ui}.grid{
+	@include						grid-gap;
+	@include						grid-pad;
+	@include						cols-radius;
+	@include						col-radius;
+}
+
+#{$ui}.col{
+	@include						col-pad;
+}
