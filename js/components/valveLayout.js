@@ -34,11 +34,6 @@ components.valveLayout = {
             <span style="display: none;">{{valueClosing}}</span>
             <span style="display: none;">{{valueOpening}}</span>
 
-            <span style="display: none"> {{valueRewindModeOpen}}</span>
-            <span style="display: none"> {{valueRewindModeClose}}</span>
-            <span style="display: none"> {{valueRewindModeOvertime}}</span>
-            <span style="display: none"> {{valueRewindModeClosing}}</span>
-            <span style="display: none"> {{valueRewindModeOpening}}</span>
     </div>
 `,
     data() {
@@ -64,31 +59,10 @@ components.valveLayout = {
         },
         statusOpen: null,
         statusClose: null,
-        valueRewindModeOpen: null, 
-        valueRewindModeClose: null, 
-        valueRewindModeOvertime: null, 
-        valueRewindModeClosing: null, 
-        valueRewindModeOpening: null, 
-        rewindMode : rewindValuesMode,
-        globalRewind : globalRewindUpdate
+   
         }
     },
-    created() {
-        eventBus.subscribe('rewindValuesModeChanged', (newVal) => {
-          this.rewindMode = newVal;
-        });
-        eventBus.subscribe('globalRewindUpdateChanged', (newVal) => {
-           this.globalRewind = newVal;
-        });
-      },
-    watch: {
-        rewindMode(newVal, oldVal) {
-            this.rewindCheck()
-        },
-        globalRewind(newVal, oldVal) {
-            this.rewindCheck()
-        },
-    },
+  
     mounted(){
         if (this.valueOpen == null || this.valueClose == null || this.valueOvertime == null || this.valueClosing == null || this.valueOpening == null){
             this.iconColor = 'color-fill-type-dark'
@@ -99,63 +73,37 @@ components.valveLayout = {
         $("#" + this.svgId).html(svgContent);
         this.iconSize = 'icon-size-' + this.size;
 
-        this.rewindCheck()
+        const updateValue = (signalId, valueProperty) => {
+            if (!isNaN(this[valueProperty])) {
+                this[valueProperty] = valueRaw[signalId];
+            }
+        };
 
-        
-         //Observer for push id to global array
-         const valveLayoutElement = this.$refs.valveLayoutElement;
-         if (valveLayoutElement) {  
-             let observer = new IntersectionObserver((entries) => {  
-                 entries.forEach(entry => {
-                     if (entry.isIntersecting) {
+            updateValue(this.openSignalId, 'valueOpen');
+            updateValue(this.closeSignalId, 'valueClose');
+            updateValue(this.overTimeSignalId, 'valueOvertime');
+            updateValue(this.closingSignalId, 'valueClosing');
+            updateValue(this.openingSignalId, 'valueOpening');
 
-                        if (!visibleHistoricalValue.includes(this.openSignalId)){
-                             visibleHistoricalValue.push(this.openSignalId);
-                        }
-                        if (!visibleHistoricalValue.includes(this.closeSignalId)){
-                            visibleHistoricalValue.push(this.closeSignalId);
-                        }
-                        if (!visibleHistoricalValue.includes(this.openingSignalId)){
-                            visibleHistoricalValue.push(this.openingSignalId);
-                        }
-                        if (!visibleHistoricalValue.includes(this.closingSignalId)){
-                            visibleHistoricalValue.push(this.closingSignalId);
-                        }
-                        if (!visibleHistoricalValue.includes(this.overTimeSignalId)){
-                            visibleHistoricalValue.push(this.overTimeSignalId);
-                        }
-                     } else {
-                         const index1 = visibleHistoricalValue.indexOf(this.openSignalId);
-                         if (index1 > -1) {
-                             visibleHistoricalValue.splice(index1, 1);
-                         }
-                         const index2 = visibleHistoricalValue.indexOf(this.closeSignalId);
-                         if (index2 > -1) {
-                             visibleHistoricalValue.splice(index2, 1);
-                         }
-                         const index3 = visibleHistoricalValue.indexOf(this.openingSignalId);
-                         if (index3 > -1) {
-                             visibleHistoricalValue.splice(index3, 1);
-                         }
-                         const index4 = visibleHistoricalValue.indexOf(this.closingSignalId);
-                         if (index4 > -1) {
-                             visibleHistoricalValue.splice(index4, 1);
-                         }
-                         const index5 = visibleHistoricalValue.indexOf(this.overTimeSignalId);
-                         if (index5 > -1) {
-                             visibleHistoricalValue.splice(index5, 1);
-                         }
-                     }
-                 });
-             });
-             observer.observe(valveLayoutElement);
-         } else {
-             console.error('Ref element is not available.');
-         }
+            this.updateStatus(this.valueOpen, this.valueClose, this.valueOvertime, this.valueClosing, this.valueOpening);
+      
 
     },
     updated() {
-        this.rewindCheck()
+        const updateValue = (signalId, valueProperty) => {
+            if (!isNaN(this[valueProperty])) {
+                this[valueProperty] = valueRaw[signalId];
+            }
+        };
+
+            updateValue(this.openSignalId, 'valueOpen');
+            updateValue(this.closeSignalId, 'valueClose');
+            updateValue(this.overTimeSignalId, 'valueOvertime');
+            updateValue(this.closingSignalId, 'valueClosing');
+            updateValue(this.openingSignalId, 'valueOpening');
+
+            this.updateStatus(this.valueOpen, this.valueClose, this.valueOvertime, this.valueClosing, this.valueOpening);
+      
     },
     methods: {
         openPopUp: function () {
@@ -243,44 +191,7 @@ components.valveLayout = {
            
         },
         
-        rewindCheck() {
-            const updateValue = (signalId, valueProperty) => {
-                if (!isNaN(this[valueProperty])) {
-                    this[valueProperty] = valueRaw[signalId];
-                }
-            };
-        
-            const updateValueRewindMode = (signalId, valueProperty) => {
-                if (visibleHistoricalValue.includes(signalId)) {
-                    setTimeout(() => {
-                        if (signalId in valueHistorical) {
-                            this[valueProperty] = parseFloat(valueHistorical[signalId][0].Value).toFixed(this.decimals);
-                        } else {
-                            this[valueProperty] = null;
-                        }
-                        this.updateStatus(this.valueRewindModeOpen, this.valueRewindModeClose, this.valueRewindModeOvertime, this.valueRewindModeClosing, this.valueRewindModeOpening);
 
-                    }, 500);
-                }
-            };
-        
-            if (!this.rewindMode) {
-
-                updateValue(this.openSignalId, 'valueOpen');
-                updateValue(this.closeSignalId, 'valueClose');
-                updateValue(this.overTimeSignalId, 'valueOvertime');
-                updateValue(this.closingSignalId, 'valueClosing');
-                updateValue(this.openingSignalId, 'valueOpening');
-
-                this.updateStatus(this.valueOpen, this.valueClose, this.valueOvertime, this.valueClosing, this.valueOpening);
-            } else {
-                updateValueRewindMode(this.openSignalId, 'valueRewindModeOpen');
-                updateValueRewindMode(this.closeSignalId, 'valueRewindModeClose');
-                updateValueRewindMode(this.overTimeSignalId, 'valueRewindModeOvertime');
-                updateValueRewindMode(this.closingSignalId, 'valueRewindModeClosing');
-                updateValueRewindMode(this.openingSignalId, 'valueRewindModeOpening');
-            }
-        },
     }
 };
 

@@ -231,28 +231,9 @@ components.bar = {
             rawToShow: null,
             signalData: signalsData[this.signalId],
             deviceName: null,
-            rewindMode : rewindValuesMode,
-            globalRewind : globalRewindUpdate
 
         }
     },
-  created() {
-      eventBus.subscribe('rewindValuesModeChanged', (newVal) => {
-        this.rewindMode = newVal;
-      });
-      eventBus.subscribe('globalRewindUpdateChanged', (newVal) => {
-         this.globalRewind = newVal;
-      });
-
-    },
-  watch: {
-      rewindMode(newVal, oldVal) {
-          this.rewindCheck()
-      },
-      globalRewind(newVal, oldVal) {
-          this.rewindCheck()
-      },
-  },
     mounted()
     {
 
@@ -302,31 +283,13 @@ components.bar = {
             this.decimals = this.valueDecimals
         }
         this.drawLimits();
-
-         // Observer for push id to global array
-         const tankElement = this.$refs.tankElement;
-         if (tankElement) {
-             let observer = new IntersectionObserver((entries) => {
-                 entries.forEach(entry => {
-                     if (entry.isIntersecting) {
-                         if (!visibleHistoricalValue.includes(this.signalId)) {
-                             visibleHistoricalValue.push(this.signalId);
-                         }
-                     } else {
-                         const index = visibleHistoricalValue.indexOf(this.signalId);
-                         if (index > -1) {
-                             visibleHistoricalValue.splice(index, 1);
-                         }
-                     }
-                 });
-             });
-             observer.observe(tankElement);
-         } else {
-             console.error('Ref element is not available.');
-         }
         
     }, updated() {
-        this.rewindCheck()
+
+        if (!isNaN(this.value)) {
+            this.valueToShow = parseFloat(this.value).toFixed(this.decimals)
+            this.rawToShow = this.raw
+        }
 
         if (this.hasLimits && this.limitFlag == 'onTitle') {
             if (this.value  >= this.HH && this.HH != null) { $('#' + this.rndIDTitle).removeClass('color-text-type-warning '); $('#' + this.rndIDTitle).addClass('color-text-type-danger glow'); this.iconColor = 'color-fill-type-danger'; } else
@@ -390,29 +353,7 @@ components.bar = {
         }
 
     }, methods: {
-        rewindCheck(){
-            if (!isNaN(this.value) && !this.rewindMode == true) {
-                this.valueToShow = parseFloat(this.value).toFixed(this.decimals)
-                this.rawToShow = this.raw
-            }
-            else{
-                if(visibleHistoricalValue.includes(this.signalId)){
-                    setTimeout(() => {
-                        if (this.signalId in valueHistorical) {
-                          
-                            this.valueToShow = parseFloat(valueHistorical[this.signalId][0].Value).toFixed(this.decimals)
-                            this.barStyles(this.valueToShow)
-                        
-                        } else {
-                            this.valueToShow = 'N/A';
-                        }
-                    }, 500);   
-                }else{
-                    return;
-                }
-      
-            }
-        },
+
         callTimeline(signal, title, delay){
             window.signalGlobalTimelineVariable = signal;
             window.globalTimelineTitle = title;

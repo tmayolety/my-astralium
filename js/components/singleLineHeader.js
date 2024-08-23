@@ -41,8 +41,6 @@ components.singleLineHeader = {
 
                 <span style="display: none;">{{valueBox}}</span>
                 <span style="display: none;">{{valueIcon}}</span>
-                <span style="display: none;">{{valueRewindMode}}</span>
-                <span style="display: none;">{{valueRewindModeTwo}}</span>    
     `,
     data() {
         return {
@@ -68,31 +66,11 @@ components.singleLineHeader = {
             L: null,
             H: null,
             HH: null,
-            valueRewindMode: null,
-            valueRewindModeTwo: null,
-            rewindMode: rewindValuesMode,
-            globalRewind: globalRewindUpdate,
+ 
             containerColorClass: '',
             iconColorClass: ''
 
         }
-    },
-    created() {
-        eventBus.subscribe('rewindValuesModeChanged', (newVal) => {
-            this.rewindMode = newVal;
-        });
-        eventBus.subscribe('globalRewindUpdateChanged', (newVal) => {
-            this.globalRewind = newVal;
-        });
-    },
-
-    watch: {
-        rewindMode(newVal, oldVal) {
-            this.rewindCheck();
-        },
-        globalRewind(newVal, oldVal) {
-            this.rewindCheck();
-        },
     },
 
     mounted(){
@@ -152,7 +130,12 @@ components.singleLineHeader = {
             this.containerHeaderSize = 'h-mini-40'
         }
 
-        this.rewindCheck()
+        if(!isNaN(this.valueIcon)){
+            this.iconColor(this.valueIcon)
+        }
+        if(!isNaN(this.valueBox)){
+            this.containerColor(this.valueBox)
+        }
 
     },
     updated(){
@@ -178,7 +161,12 @@ components.singleLineHeader = {
         if (result.H || result.L ) {  this.valueTextColor = 'color-text-type-white'; } else
         if (!result.H || !result.L || !result.HH || !result.LL) {  this.valueTextColor = null; }
 
-        this.rewindCheck()
+        if(!isNaN(this.valueIcon)){
+            this.iconColor(this.valueIcon)
+        }
+        if(!isNaN(this.valueBox)){
+            this.containerColor(this.valueBox)
+        }
     },
     methods: {
         iconColor(value){
@@ -224,34 +212,6 @@ components.singleLineHeader = {
             }
         },
 
-        rewindCheck() {
-            if (!this.rewindMode) {
-                if(!isNaN(this.valueIcon)){
-                    this.iconColor(this.valueIcon)
-                }
-                if(!isNaN(this.valueBox)){
-                    this.containerColor(this.valueBox)
-                }
-                
-               
-            } else {
-                if(visibleHistoricalValue.includes(this.signalIdIcon) || visibleHistoricalValue.includes(this.signalIdBox)){
-                setTimeout(() => {
-                    if (this.signalIdIcon in valueHistorical) {
-                        this.valueRewindMode = parseFloat(valueHistorical[this.signalIdIcon][0].Value).toFixed(this.decimals);
-                        this.iconColor(this.valueRewindMode)
-                    }
-                    if (this.signalIdBox in valueHistorical) {
-                        this.valueRewindModeTwo = parseFloat(valueHistorical[this.signalIdBox][0].Value).toFixed(this.decimals);
-                        this.containerColor(this.valueRewindModeTwo)
-                    }
-
-                }, 500);
-            }else{
-                return;
-            }
-            }
-        },
 
     }
 };

@@ -66,27 +66,7 @@ components.iconTextValueAnalogueLine = {
       rawToShow: null,
       signalData: signalsData[this.signalId],
       deviceName: null,
-      rewindMode: rewindValuesMode,
-      globalRewind: globalRewindUpdate,
     };
-  },
-
-  created() {
-    eventBus.subscribe("rewindValuesModeChanged", (newVal) => {
-      this.rewindMode = newVal;
-    });
-    eventBus.subscribe("globalRewindUpdateChanged", (newVal) => {
-      this.globalRewind = newVal;
-    });
-  },
-
-  watch: {
-    rewindMode(newVal, oldVal) {
-      this.rewindCheck();
-    },
-    globalRewind(newVal, oldVal) {
-      this.rewindCheck();
-    },
   },
 
   mounted() {
@@ -153,51 +133,17 @@ components.iconTextValueAnalogueLine = {
       this.titleDisplay = true;
     }
 
-    // Observer for push id to global array
-    const iconTextValueAnalogueElement =
-      this.$refs.iconTextValueAnalogueElement;
-    if (iconTextValueAnalogueElement) {
-      let observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            if (!visibleHistoricalValue.includes(this.signalId)) {
-              visibleHistoricalValue.push(this.signalId);
-            }
-          } else {
-            const index = visibleHistoricalValue.indexOf(this.signalId);
-            if (index > -1) {
-              visibleHistoricalValue.splice(index, 1);
-            }
-          }
-        });
-      });
-      observer.observe(iconTextValueAnalogueElement);
-    } else {
-      console.error("Ref element is not available.");
-    }
+
   },
   updated() {
-    this.rewindCheck();
+    if (!isNaN(this.value)) {
+      this.getLimitColors(this.value);
+      this.valueToShow = parseFloat(this.value).toFixed(this.decimals);
+      this.rawToShow = this.raw;
+    } 
   },
   methods: {
-    rewindCheck() {
-      if (!isNaN(this.value) && !this.rewindMode) {
-        this.getLimitColors(this.value);
-        this.valueToShow = parseFloat(this.value).toFixed(this.decimals);
-        this.rawToShow = this.raw;
-      } else {
-        if (visibleHistoricalValue.includes(this.signalId)){
-          setTimeout(() => {
-            if (this.signalId in valueHistorical) {
-              this.valueToShow = parseFloat(valueHistorical[this.signalId][0].Value).toFixed(this.decimals);
-              this.getLimitColors(this.valueToShow);
-            }
-          }, 500);
-        } else {
-          return;
-        }
-      }
-    },
+
     getLimitColors(value) {
       let result = {};
       result.HH = false;

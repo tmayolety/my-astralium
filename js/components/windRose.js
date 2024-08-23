@@ -553,35 +553,16 @@ SSE
 <i class="ui color-fill-type-primary windrose-dir icon-size-mini-400 icon-size-xl-440"><svg class="ui icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path id="front" d="M50,11.52,43.07,50,50,88.48,56.93,50ZM45,50H55L50,77.78Z"></path><polygon id="back" points="44.67 49.56 50 78.22 55.33 49.56 44.67 49.56"></polygon></svg></i>
 </div>
 <span style="display:none;" > {{value}} </span>
-<span style="display:none;" > {{valueRewindMode}} </span>
 </div>
     `,
     data() {
         return {
             value:null,
             valueToShow:null,
-            valueRewindMode: null, 
-            rewindMode : rewindValuesMode,
-            globalRewind : globalRewindUpdate
+           
         }
     },
-    created() {
-        eventBus.subscribe('rewindValuesModeChanged', (newVal) => {
-          this.rewindMode = newVal;
-        });
-        eventBus.subscribe('globalRewindUpdateChanged', (newVal) => {
-           this.globalRewind = newVal;
-        });
 
-      },
-    watch: {
-        rewindMode(newVal, oldVal) {
-            this.rewindCheck()
-        },
-        globalRewind(newVal, oldVal) {
-            this.rewindCheck()
-        },
-    },
     mounted() {
         switch (this.valueMode) {
             case "filtered":
@@ -596,56 +577,14 @@ SSE
                 break;
         }
 
-        // Observer for push id to global array
-        const windRoseElement = this.$refs.windRoseElement;
-        if (windRoseElement) {
-            let observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (!visibleHistoricalValue.includes(this.signalId)) {
-                            visibleHistoricalValue.push(this.signalId);
-                        }
-                    
-                    } else {
-                        const index = visibleHistoricalValue.indexOf(this.signalId);
-                        if (index > -1) {
-                            visibleHistoricalValue.splice(index, 1);
-                        }
-                       
-                    }
-                });
-            });
-            observer.observe(windRoseElement);
-        } else {
-            console.error('Ref element is not available.');
-        }
     },
     updated () {
-        this.rewindCheck()
+        if (!isNaN(this.value)) {
+            this.valueToShow = parseFloat(this.value)
+        }
     },
     methods:{
-        rewindCheck(){
-            if (!this.rewindMode == true) {
-                if (!isNaN(this.value)) {
-                    this.valueToShow = parseFloat(this.value)
-                }
-            }
-            else{
-                if(visibleHistoricalValue.includes(this.signalId)){
-                setTimeout(() => {
-                    if (this.signalId in valueHistorical) {
-                        this.valueRewindMode = parseFloat(valueHistorical[this.signalId][0].Value)
-                        this.valueToShow = this.valueRewindMode
-                    } else {
-                        this.valueRewindMode = null
-                        this.valueToShow = this.valueRewindMode
-                    }
-                }, 500);    
-                }else{
-                    return;
-                }
-            }
-        }
+
     }
 };
 

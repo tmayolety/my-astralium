@@ -37,7 +37,7 @@ components.load = {
         </div>
            
         <span style="display: none;">{{value}}{{feedbackStart}}{{feedbackStop}}{{feedbackFail}}{{feedbackText}}</span> 
-        <span style="display: none;">{{valueRewindMode}} {{valueRewindFail}} </span> 
+
     </div>    
 `
     ,
@@ -61,61 +61,39 @@ components.load = {
             tripped: false,
             fontSize: null,
             btnPulsed: '',
-            btnPulsed2: '',
-            valueRewindMode: null, 
-            valueRewindFail: null,
-            rewindMode : rewindValuesMode,
-            globalRewind : globalRewindUpdate
+            btnPulsed2: ''
 
             }
-    },
-    created() {
-        eventBus.subscribe('rewindValuesModeChanged', (newVal) => {
-          this.rewindMode = newVal;
-        });
-        eventBus.subscribe('globalRewindUpdateChanged', (newVal) => {
-           this.globalRewind = newVal;
-        });
-
-      },
-    watch: {
-        rewindMode(newVal, oldVal) {
-            this.rewindCheck()
-        },
-        globalRewind(newVal, oldVal) {
-            this.rewindCheck()
-        },
     },
     mounted(){
 
         if (this.size == 'xl') { this.fontSize = 25 }
         this.signalMode = 1
-        this.rewindCheck()
-
-        // Observer for push id to global array
-        const loadElement = this.$refs.loadElement;
-        if (loadElement) {
-            let observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (!visibleHistoricalValue.includes(this.signalId)) {
-                            visibleHistoricalValue.push(this.signalId);
-                        }
-                    } else {
-                        const index = visibleHistoricalValue.indexOf(this.signalId);
-                        if (index > -1) {
-                            visibleHistoricalValue.splice(index, 1);
-                        }
-                    }
-                });
-            });
-            observer.observe(loadElement);
-        } else {
-            console.error('Ref element is not available.');
+        
+        if (!isNaN(this.value)) {
+       
+            this.value = valueRaw[this.signalId]
+            this.countingHours = valueRaw[this.countingHoursSignalId]
+            this.feedbackStart = valueRaw[this.feedbackStartSignalId]
+            this.feedbackStop = valueRaw[this.feedbackStopSignalId]
+            this.feedbackFail = valueRaw[this.feedbackFailSignalId]
+          
+            this.renderActiveButton(this.value, this.feedbackStart, this.feedbackStop, this.feedbackFail)
         }
+
+
     },
     updated(){
-        this.rewindCheck()
+        if (!isNaN(this.value)) {
+       
+            this.value = valueRaw[this.signalId]
+            this.countingHours = valueRaw[this.countingHoursSignalId]
+            this.feedbackStart = valueRaw[this.feedbackStartSignalId]
+            this.feedbackStop = valueRaw[this.feedbackStopSignalId]
+            this.feedbackFail = valueRaw[this.feedbackFailSignalId]
+          
+            this.renderActiveButton(this.value, this.feedbackStart, this.feedbackStop, this.feedbackFail)
+        }
     },
     methods: {
         renderActiveButton(value, feedbackStart, feedbackStop, feedbackFail) {
@@ -262,42 +240,7 @@ components.load = {
                 console.log('writeMode not defined. Write cancelled!');
             }
         },
-        rewindCheck(){
-            if (!isNaN(this.value) && !this.rewindMode == true) {
-       
-                this.value = valueRaw[this.signalId]
-                this.countingHours = valueRaw[this.countingHoursSignalId]
-                this.feedbackStart = valueRaw[this.feedbackStartSignalId]
-                this.feedbackStop = valueRaw[this.feedbackStopSignalId]
-                this.feedbackFail = valueRaw[this.feedbackFailSignalId]
-              
-                this.renderActiveButton(this.value, this.feedbackStart, this.feedbackStop, this.feedbackFail)
-            }
-            else{
-             
-                if(visibleHistoricalValue.includes(this.signalId) && visibleHistoricalValue.includes(this.feedbackFailSignalId)){
-              
-                setTimeout(() => {
-                    if((this.signalId in valueHistorical) && (this.feedbackFailSignalId in valueHistorical)) {
-               
-                        this.valueRewindMode = parseFloat(valueHistorical[this.signalId][0].Value).toFixed(this.decimals)
 
-                        this.valueRewindFail = parseFloat(valueHistorical[this.feedbackFailSignalId][0].Value).toFixed(this.decimals)
-                        
-                        this.renderActiveButton(this.valueRewindMode, this.valueRewindMode, this.valueRewindMode, this.valueRewindFail)
-                   
-                    }else {
-                        this.valueRewindMode = null;
-                        this.valueRewindFail = null;
-                    }
-    
-                }, 500);    
-
-                }else{
-                    return;
-                }
-            }
-        },
     }
 };
 

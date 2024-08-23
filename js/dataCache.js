@@ -9,15 +9,6 @@ let valueEscalated = [];
 let valueFiltered = [];
 let updateComponent = [];
 let groupList;
-//REWIND MODE START
-let token;
-let visibleHistoricalValue = [];
-let rewindValuesMode = false;
-let valueHistorical = {}
-let globalRewindUpdate = false;
-let loading = false
-let toogleFromMenu = false
-//REWIND MODE END
 
 window.signalGlobalTimelineVariable = null;
 window.globalTimelineTitle = ''
@@ -191,92 +182,3 @@ const dataCache = {
         }
     }
 };
-
-const rewindMode = {
-    
-    getToken: function (){
-        var data = JSON.stringify({
-          	"username": "MyMirage",
-	        "password": "UMiIje4fWIebY7z9p7z4"
-        });
-       
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "https://etybluewave.com:3000/auth/login",
-            "method": "POST",
-            "headers": {
-                "content-type": "application/json"
-            },
-            "processData": false,
-            "data": data
-        }
-        
-        $.ajax(settings).done((response) => {
-         token = response.token
-        });
-    },
-
-    getHistoricalValues: async function(time) {
-        
-        loading = true
-        eventBus.emit("loadingEventChanged", loading);
-        const data = JSON.stringify({
-            "SignalId": visibleHistoricalValue,
-            "Time": time,
-            "Rate": "1m"
-        });
-    
-        const settings = {
-            method: "POST",
-            headers: {
-                "content-type": "application/json",
-                "Authorization": "Bearer " + token
-            },
-            body: data
-        };
-    
-        try {
-            const response = await fetch("https://etybluewave.com:3000/das/valuesByPeriodAndSignalId", settings);
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            const rawData = await response.json();
-        
-            for (const key in rawData) {
-                if (rawData.hasOwnProperty(key) && rawData[key].length > 0) {
-                    valueHistorical[key] = [rawData[key][0]];
-                }
-            }
-            //console.log(valueHistorical)
-        } catch (error) {
-            console.error('Error fetching historical values:', error);
-        } finally{
-            loading = false
-            eventBus.emit("loadingEventChanged", loading);
-        }
-    },
-
-    toogleRewindMode : function(){
-
-       rewindValuesMode = !rewindValuesMode
-       eventBus.emit('rewindValuesModeChanged', rewindValuesMode);
-
-       if(toogleFromMenu == false){
-        const button = document.getElementById('rewindButton');
-        if (rewindValuesMode) {
-            button.classList.add('active');
-            button.classList.add('blinking-element');
- 
-            rewindMode.getToken()
-        } else {
-            button.classList.remove('active');
-            button.classList.remove('blinking-element');
-        }
-       }
-
-    }
-}
-
-rewindMode.getToken()
-

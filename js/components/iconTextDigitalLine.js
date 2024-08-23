@@ -5,7 +5,6 @@ components.iconTextDigitalLine = {
         <div class="col-30 align-top-center"  ref="iconTextDigitalElement">
             <i class="ui" :class= '[iconSize, iconColor]' v-bind="{ id: rndID}"></i>
             <span style="display: none;">{{value}}</span>
-            <span style="display: none;">{{valueRewindMode}}</span>
         </div>
 
         <div v-if="showTitle"><span :class= '[valueTextColor]'> {{title}}</span></div>
@@ -22,27 +21,8 @@ components.iconTextDigitalLine = {
             valueTextColor: null,
             elementSizeClass: null,
             showTitle: false,
-            valueRewindMode: null,
-            rewindMode: rewindValuesMode,
-            globalRewind: globalRewindUpdate,
-        }
-    },
-    created() {
-        eventBus.subscribe('rewindValuesModeChanged', (newVal) => {
-            this.rewindMode = newVal;
-        });
-        eventBus.subscribe('globalRewindUpdateChanged', (newVal) => {
-            this.globalRewind = newVal;
-        });
-    },
 
-    watch: {
-        rewindMode(newVal, oldVal) {
-            this.rewindCheck();
-        },
-        globalRewind(newVal, oldVal) {
-            this.rewindCheck();
-        },
+        }
     },
     mounted(){
 
@@ -61,29 +41,12 @@ components.iconTextDigitalLine = {
                 this.elementSizeClass = "";
         }
 
-      this.rewindCheck()
-
-        // Observer for push id to global array
-        const iconTextDigitalElement = this.$refs.iconTextDigitalElement;
-        if (iconTextDigitalElement) {
-            let observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (!visibleHistoricalValue.includes(this.signalId)) {
-                            visibleHistoricalValue.push(this.signalId);
-                        }
-                    } else {
-                        const index = visibleHistoricalValue.indexOf(this.signalId);
-                        if (index > -1) {
-                            visibleHistoricalValue.splice(index, 1);
-                        }
-                    }
-                });
-            });
-            observer.observe(iconTextDigitalElement);
-        } else {
-            console.error('Ref element is not available.');
+        if (!isNaN(this.value)) {
+            this.iconColor = this.getIconColor(this.value)
+            this.valueTextColor = this.getTextColor(this.value)
         }
+
+
 
     },
     updated(){
@@ -91,7 +54,10 @@ components.iconTextDigitalLine = {
         const svgContent = iconRegistry[this.icon];
         $("#" + this.rndID).html(svgContent);
         
-        this.rewindCheck()
+        if (!isNaN(this.value)) {
+            this.iconColor = this.getIconColor(this.value)
+            this.valueTextColor = this.getTextColor(this.value)
+        }
     },
 
     methods:{
@@ -115,25 +81,6 @@ components.iconTextDigitalLine = {
             }
             return color
         },
-        rewindCheck() {
-            if (!isNaN(this.value) && !this.rewindMode) {
-                this.iconColor = this.getIconColor(this.value)
-                this.valueTextColor = this.getTextColor(this.value)
-            } else {
-                if(visibleHistoricalValue.includes(this.signalId)){
-                setTimeout(() => {
-                    if (this.signalId in valueHistorical) {
-                        this.valueRewindMode = parseFloat(valueHistorical[this.signalId][0].Value);
-                        this.iconColor = this.getIconColor(this.valueRewindMode)
-                        this.valueTextColor = this.getTextColor(this.valueRewindMode)
-                    }
-                }, 500);
-            }else{
-                return;
-            }
-            }
-        },
-
     }
 };
 
