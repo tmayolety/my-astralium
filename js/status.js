@@ -323,7 +323,10 @@ const status = {
                             var notificationIcon = "volume_off"
                             var notificationColor = "grey-5"
                         }
-
+                        let locationName = "Unknown Location"
+                        if (item.ScreenId > 0) {
+                            locationName = locationsData[parseInt(item.ScreenId)].Name;
+                        }
                         Quasar.Notify.create({
                             html: true,
                             icon: notificationIcon,
@@ -331,7 +334,7 @@ const status = {
                             group: false,
                             color: notificationColor,
                             textColor: 'white',
-                            caption:  split[0] + ' alarms by ' + locationsData[parseInt(split[1])].Name ,
+                            caption:  split[0] + ' alarms by ' + locationName ,
                             message: notificationMessage
                         })
 
