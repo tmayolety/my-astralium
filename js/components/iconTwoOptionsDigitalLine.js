@@ -36,9 +36,7 @@ components.iconTwoOptionsDigitalLine = {
                 <div class="col-60 align-middle-center " :class= '[valueTextColor, valueCellColor]' ><span class="font-bold glow">{{valueText}}</span></div>
                 <div class="col-60 align-middle-center " :class= '[valueTextColor2, valueCellColor2]'><span class="font-bold glow">{{valueText2}}</span></div>
                 <span style="display: none;">{{value1}}</span> 
-                <span style="display: none;">{{value2}}</span> 
-                <span style="display: none;">{{valueRewindMode1}}</span> 
-                <span style="display: none;">{{valueRewindMode2}}</span> 
+                <span style="display: none;">{{value2}}</span>
 
             </li>
 
@@ -69,30 +67,10 @@ components.iconTwoOptionsDigitalLine = {
             deviceNameTwo: null,
             sizeWidth: null,
             isFlipped: false,
-            valueRewindMode1: null, 
-            valueRewindMode2: null,
-            rewindMode : rewindValuesMode,
-            globalRewind : globalRewindUpdate
 
         }
     },
-    created() {
-        eventBus.subscribe('rewindValuesModeChanged', (newVal) => {
-          this.rewindMode = newVal;
-        });
-        eventBus.subscribe('globalRewindUpdateChanged', (newVal) => {
-           this.globalRewind = newVal;
-        });
 
-      },
-    watch: {
-        rewindMode(newVal, oldVal) {
-            this.rewindCheck()
-        },
-        globalRewind(newVal, oldVal) {
-            this.rewindCheck()
-        },
-    },
     mounted(){
 
         this.getSize()
@@ -113,38 +91,29 @@ components.iconTwoOptionsDigitalLine = {
             this.deviceNameTwo = deviceData[rawDataTwo.Device].Name
         }
 
-        this.rewindCheck();
+        if (!isNaN(this.value1) && !isNaN(this.value2)) {
+
+            this.value1 = valueRaw[this.signalIdOptionOne]
+            this.value2 = valueRaw[this.signalIdOptionTwo]
+         
+            this.evaluate(this.value1, this.value2)
+        }
+
         const svgContent = iconRegistry[this.icon]
         $( "#"+this.svgId).html(svgContent)
 
-
-        // Observer for push id to global array
-        const iconTwoOptionsDigitalLineElement = this.$refs.iconTwoOptionsDigitalLineElement;
-        if (iconTwoOptionsDigitalLineElement) {
-            let observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (!visibleHistoricalValue.includes(this.signalId)) {
-                            visibleHistoricalValue.push(this.signalId);
-                        }
-                    } else {
-                        const index = visibleHistoricalValue.indexOf(this.signalId);
-                        if (index > -1) {
-                            visibleHistoricalValue.splice(index, 1);
-                        }
-                    }
-                });
-            });
-            observer.observe(iconTwoOptionsDigitalLineElement);
-        } else {
-            console.error('Ref element is not available.');
-        }
 
 
     },
     updated(){
         
-        this.rewindCheck();
+        if (!isNaN(this.value1) && !isNaN(this.value2)) {
+
+            this.value1 = valueRaw[this.signalIdOptionOne]
+            this.value2 = valueRaw[this.signalIdOptionTwo]
+         
+            this.evaluate(this.value1, this.value2)
+        }
         
         if (!isNaN(this.value1)) {
 
@@ -177,35 +146,6 @@ components.iconTwoOptionsDigitalLine = {
                 this.iconColor = 'color-fill-type-' + this.zeroOptionTwoColor;
             }else{
                 this.valueText2 = 'N/A'
-            }
-        },
-        rewindCheck(){
-            if (!isNaN(this.value1) && !isNaN(this.value2) && !this.rewindMode == true) {
-
-                this.value1 = valueRaw[this.signalIdOptionOne]
-                this.value2 = valueRaw[this.signalIdOptionTwo]
-             
-                this.evaluate(this.value1, this.value2)
-            }
-            else{
-                if(visibleHistoricalValue.includes(this.signalIdOptionOne) && visibleHistoricalValue.includes(this.signalIdOptionTwo)){
-                setTimeout(() => {
-                    if ((this.signalIdOptionOne in valueHistorical) && (this.signalIdOptionTwo in valueHistorical) ) {
-                        
-                        this.valueRewindMode1 = parseFloat(valueHistorical[this.signalIdOptionOne][0].Value).toFixed(this.decimals)
-                        this.valueRewindMode2 = parseFloat(valueHistorical[this.signalIdOptionTwo][0].Value).toFixed(this.decimals)
-                        
-                        this.evaluate(this.valueRewindMode1, this.valueRewindMode2)
-                    
-                    } else {
-                        this.valueRewindMode1 = null;
-                        this.valueRewindMode2 = null;
-                    }
-    
-                }, 500);    
-            }else{
-                return;
-            }
             }
         },
         getSize(){

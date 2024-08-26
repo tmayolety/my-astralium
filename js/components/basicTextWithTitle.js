@@ -83,31 +83,15 @@ components.basicTextWithTitle = {
             rawToShow: null,
             signalData: signalsData[this.signalId],
             deviceName: null,
-            rewindMode : rewindValuesMode,
-            globalRewind : globalRewindUpdate
-
         }
     },
-    created() {
-        eventBus.subscribe('rewindValuesModeChanged', (newVal) => {
-          this.rewindMode = newVal;
-        });
-        eventBus.subscribe('globalRewindUpdateChanged', (newVal) => {
-           this.globalRewind = newVal;
-        });
 
-      },
-      watch: {
-        rewindMode(newVal, oldVal) {
-            this.rewindCheck()
-        },
-        globalRewind(newVal, oldVal) {
-            this.rewindCheck()
-            },
-      },
     updated(){
 
-        this.rewindCheck()
+        if (!isNaN(this.value)) {
+            this.valueToShow = parseFloat(this.value).toFixed(this.decimals)
+            this.rawToShow = this.raw
+        }
 
         if ( this.hasLimitFlag === true && typeof valueRaw[parseInt(this.limitFlagSignalId)] !== 'undefined' && valueRaw[parseInt(this.limitFlagSignalId)].value < 1)
         {
@@ -139,23 +123,6 @@ components.basicTextWithTitle = {
 
     },
     mounted(){
-        // Observer for push id to global array
-
-        let observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    if (!visibleHistoricalValue.includes(this.signalId)) {
-                        visibleHistoricalValue.push(this.signalId);
-                    }
-                } else {
-                    const index = visibleHistoricalValue.indexOf(this.signalId);
-                    if (index > -1) {
-                        visibleHistoricalValue.splice(index, 1);
-                    }
-                }
-            });
-        });
-        observer.observe(this.$el);
 
         let rawData;
         if (Vue.isProxy(this.signalData)){
@@ -233,27 +200,6 @@ components.basicTextWithTitle = {
         },
         unFlipComponent() {
             this.flipClass = 'event-click';
-        },
-        rewindCheck(){
-            if (!isNaN(this.value) && !this.rewindMode == true) {
-                this.valueToShow = parseFloat(this.value).toFixed(this.decimals)
-                this.rawToShow = this.raw
-            }
-            else{
-                if(visibleHistoricalValue.includes(this.signalId)){
-                setTimeout(() => {
-                    if (this.signalId in valueHistorical){
-                        this.valueToShow = parseFloat(valueHistorical[this.signalId][0].Value).toFixed(this.decimals)
-                    } else {
-                        this.valueToShow = 'N/A';
-                    }
-                }, 700);
-            }else{
-                return;
-            }
-          
-            }
-
-        },
+        }
     }
 };

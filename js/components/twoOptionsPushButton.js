@@ -35,9 +35,6 @@ components.twoOptionsPushButton = {
                 <span style="display: none;">{{value2}}</span>    
                 <span style="display: none;">{{feedback}}</span>   
 
-                <span style="display: none;">{{valueRewindMode1}}</span>    
-                <span style="display: none;">{{valueRewindMode2}}</span>    
-                <span style="display: none;">{{feedbackRewindMode}}</span>   
 
             </div>`,
   data() {
@@ -56,31 +53,11 @@ components.twoOptionsPushButton = {
         Date.now() +
         "_" +
         this.signalId,
-      valueRewindMode1: null, 
-      valueRewindMode2: null, 
-      feedbackRewindMode: null, 
-      rewindMode : rewindValuesMode,
-      globalRewind : globalRewindUpdate
+   
     };
 
   },
-  created() {
-    eventBus.subscribe('rewindValuesModeChanged', (newVal) => {
-      this.rewindMode = newVal;
-    });
-    eventBus.subscribe('globalRewindUpdateChanged', (newVal) => {
-       this.globalRewind = newVal;
-    });
 
-  },
-  watch: {
-    rewindMode(newVal, oldVal) {
-        this.rewindCheck()
-    },
-    globalRewind(newVal, oldVal) {
-        this.rewindCheck()
-    },
-  },
   mounted(){
     $("#" + this.Id).parent().css("width", this.buttonWidth + "px");
 
@@ -96,33 +73,32 @@ components.twoOptionsPushButton = {
       this.signalMode = 2;
     }
 
-    this.rewindCheck();
+    if(!isNaN(this.value)){
+      this.value = valueRaw[this.signalId]
+  }
+  if(!isNaN(this.value2)){
+      this.value2 = valueRaw[this.signalId2]
+  }
+  if(!isNaN(this.feedback)){
+      this.feedback = valueRaw[this.feedbackSignalId]
+  }
+ 
+  this.renderActiveButton(this.value, this.value2, this.feedback)
 
-    // Observer for push id to global array
-    const twoOptionsPushButtonElement = this.$refs.twoOptionsPushButtonElement;
-    if (twoOptionsPushButtonElement) {
-        let observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    if (!visibleHistoricalValue.includes(this.signalId)) {
-                        visibleHistoricalValue.push(this.signalId);
-                    }
-                } else {
-                    const index = visibleHistoricalValue.indexOf(this.signalId);
-                    if (index > -1) {
-                        visibleHistoricalValue.splice(index, 1);
-                    }
-                }
-            });
-        });
-        observer.observe(twoOptionsPushButtonElement);
-    } else {
-        console.error('Ref element is not available.');
-    }
 
   },
   updated() {
-    this.rewindCheck();
+    if(!isNaN(this.value)){
+      this.value = valueRaw[this.signalId]
+  }
+  if(!isNaN(this.value2)){
+      this.value2 = valueRaw[this.signalId2]
+  }
+  if(!isNaN(this.feedback)){
+      this.feedback = valueRaw[this.feedbackSignalId]
+  }
+ 
+  this.renderActiveButton(this.value, this.value2, this.feedback)
   },
   methods: {
     renderActiveButton(value, value2, feedback) {
@@ -222,47 +198,7 @@ components.twoOptionsPushButton = {
       } else {
         console.log("writeMode not defined. Write cancelled!");
       }
-    },
-    rewindCheck(){
-
-        if (!this.rewindMode == true) {
-            if(!isNaN(this.value)){
-                this.value = valueRaw[this.signalId]
-            }
-            if(!isNaN(this.value2)){
-                this.value2 = valueRaw[this.signalId2]
-            }
-            if(!isNaN(this.feedback)){
-                this.feedback = valueRaw[this.feedbackSignalId]
-            }
-           
-            this.renderActiveButton(this.value, this.value2, this.feedback)
-        } else{
-
-            if(visibleHistoricalValue.includes(this.signalId) && visibleHistoricalValue.includes(this.signalId2) && visibleHistoricalValue.includes(this.feedbackSignalId) ){
-          
-                setTimeout(() => {
-                    if((this.signalId in valueHistorical) && (this.signalId2 in valueHistorical) && (this.feedbackSignalId in valueHistorical)) {
-
-                        this.valueRewindMode1 = parseFloat(valueHistorical[this.signalId][0].Value).toFixed(this.decimals)
-                        this.valueRewindMode2 = parseFloat(valueHistorical[this.signalId2][0].Value).toFixed(this.decimals)
-                        this.feedbackRewindMode = parseFloat(valueHistorical[this.feedbackSignalId][0].Value).toFixed(this.decimals)
-
-                        this.renderActiveButton(this.valueRewindMode1, this.valueRewindMode2, this.feedbackRewindMode)
-                    
-                    }else {
-                        this.valueRewindMode1 = null;
-                        this.valueRewindMode2 = null;
-                        this.feedbackRewindMode = null;
-                    }
-
-                }, 500);
-            
-            }else{
-                return;
-            }
-        }
-    },
+    }
 
   },
 };

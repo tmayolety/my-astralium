@@ -22,8 +22,6 @@ components.trueWind = {
         </div>
         <span style="display: none"> {{value}} </span>
         <span style="display: none"> {{value2}} </span>
-        <span style="display: none"> {{valueRewindMode}} </span>
-        <span style="display: none"> {{valueRewindMode2}} </span>
     </div>
 </div>
     `,
@@ -33,29 +31,10 @@ components.trueWind = {
             value2:null,
             valueToShow: null,
             value2ToShow: null,
-            valueRewindMode: null, 
-            valueRewindMode2: null, 
-            rewindMode : rewindValuesMode,
-            globalRewind : globalRewindUpdate
+
         }
     },
-    created() {
-        eventBus.subscribe('rewindValuesModeChanged', (newVal) => {
-          this.rewindMode = newVal;
-        });
-        eventBus.subscribe('globalRewindUpdateChanged', (newVal) => {
-           this.globalRewind = newVal;
-        });
 
-      },
-    watch: {
-        rewindMode(newVal, oldVal) {
-            this.rewindCheck()
-        },
-        globalRewind(newVal, oldVal) {
-            this.rewindCheck()
-        },
-    },
     mounted() {
         switch (this.valueMode) {
             case "filtered":
@@ -79,81 +58,25 @@ components.trueWind = {
             this.decimals = this.valueDecimals
         }
 
-        this.rewindCheck()
-
-        // Observer for push id to global array
-        const trueWindElement = this.$refs.trueWindElement;
-        if (trueWindElement) {
-            let observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (!visibleHistoricalValue.includes(this.signalIdOptionOne)) {
-                            visibleHistoricalValue.push(this.signalIdOptionOne);
-                        }
-                        if (!visibleHistoricalValue.includes(this.signalIdOptionTwo)) {
-                            visibleHistoricalValue.push(this.signalIdOptionTwo);
-                        }
-                    } else {
-                        const index = visibleHistoricalValue.indexOf(this.signalIdOptionOne);
-                        if (index > -1) {
-                            visibleHistoricalValue.splice(index, 1);
-                        }
-                        const index2 = visibleHistoricalValue.indexOf(this.signalIdOptionTwo);
-                        if (index2 > -1) {
-                            visibleHistoricalValue.splice(index2, 1);
-                        }
-                    }
-                });
-            });
-            observer.observe(trueWindElement);
-        } else {
-            console.error('Ref element is not available.');
+        if (!isNaN(this.value)) {
+            this.valueToShow = parseFloat(this.value).toFixed(this.decimals)
+        }
+        if (!isNaN(this.value2)) {
+            this.value2ToShow = parseFloat(this.value2).toFixed(this.decimals)
         }
 
     },
     updated(){
 
-        this.rewindCheck()
+        if (!isNaN(this.value)) {
+            this.valueToShow = parseFloat(this.value).toFixed(this.decimals)
+        }
+        if (!isNaN(this.value2)) {
+            this.value2ToShow = parseFloat(this.value2).toFixed(this.decimals)
+        }
   
     },
-    methods:{
-        rewindCheck(){
-            if (!this.rewindMode == true) {
-                if (!isNaN(this.value)) {
-                    this.valueToShow = parseFloat(this.value).toFixed(this.decimals)
-                }
-                if (!isNaN(this.value2)) {
-                    this.value2ToShow = parseFloat(this.value2).toFixed(this.decimals)
-                }
-            }
-            else{
 
-                if(visibleHistoricalValue.includes(this.signalIdOptionOne)){
-                setTimeout(() => {
-                    if (this.signalIdOptionOne in valueHistorical) {
-                        this.valueToShow = parseFloat(valueHistorical[this.signalIdOptionOne][0].Value).toFixed(this.decimals)
-                    } else {
-                        this.valueToShow = null
-                    }
-                }, 500);    
-                }else{
-                    return;
-                }
-
-                if(visibleHistoricalValue.includes(this.signalIdOptionTwo)){
-                    setTimeout(() => {
-                        if (this.signalIdOptionTwo in valueHistorical) {
-                            this.value2ToShow = parseFloat(valueHistorical[this.signalIdOptionTwo][0].Value).toFixed(this.decimals)
-                        } else {
-                            this.value2ToShow = null
-                        }
-                    }, 500);    
-                    }else{
-                        return;
-                    }
-            }
-        }
-    }
 
 };
 

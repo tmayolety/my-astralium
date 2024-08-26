@@ -2,7 +2,7 @@
 <html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml' data-scheme="scheme1" id="schemeSelector">
 <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 <head>
-	<title>MY Solution</title>
+	<title>MY Astralium</title>
 
     <link href="js/quasar/materials.css" rel="stylesheet" type="text/css">
     <link href="js/quasar/animate.css" rel="stylesheet" type="text/css">
@@ -47,8 +47,6 @@
     <script src="js/components/iconTriEstateOneSignalDigitalLine.js"></script>
     <script src="js/components/timelineComponent.js" ></script>
     <script src="js/components/reportLog.js" ></script>
-    <script src="js/components/slider.js"></script>
-    <script src="js/components/loader.js"></script>
     <!-- VUE COMPONENTS -->
 
 	<script src="js/jquery/jquery.js"></script>
@@ -272,13 +270,11 @@
 
 <!-- INIT STATUS CHECK -->
 <section class="init-status" id="statusTable" >
-    <initialize-render v-bind="{ projectTitle: 'My Solution', projectVersion: '1.1' }"></initialize-render>
+    <initialize-render v-bind="{ projectTitle: 'MY Astralium', projectVersion: '1.1' }"></initialize-render>
 </section>
 <!-- INIT STATUS CHECK -->
 <section id="absoluteRenderComponentApp">
   <timeline-render></timeline-render>
-  <slider-render></slider-render>
-  <loader-render></loader-render>
 </section>
 
 <script>
@@ -290,9 +286,8 @@
     const absoluteRenderComponentApp = Vue.createApp({})
     absoluteRenderComponentApp.config.compilerOptions.isCustomElement = tag => tag.startsWith('font')
     absoluteRenderComponentApp.component('timeline-render', components.timelineComponent)
-    absoluteRenderComponentApp.component('slider-render', components.slider)
-    absoluteRenderComponentApp.component('loader-render', components.loader)
     absoluteRenderComponentApp.mount('#absoluteRenderComponentApp')
+
 </script>
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

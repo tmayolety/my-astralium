@@ -88,30 +88,16 @@ components.gauge = {
             rawToShow: null,
             signalData: signalsData[this.signalId],
             deviceName: null,
-            rewindMode : rewindValuesMode,
-            globalRewind : globalRewindUpdate
         }
     },
-    created() {
-        eventBus.subscribe('rewindValuesModeChanged', (newVal) => {
-          this.rewindMode = newVal;
-        });
-        eventBus.subscribe('globalRewindUpdateChanged', (newVal) => {
-           this.globalRewind = newVal;
-        });
 
-      },
-    watch: {
-        rewindMode(newVal, oldVal) {
-            this.rewindCheck()
-        },
-        globalRewind(newVal, oldVal) {
-            this.rewindCheck()
-            },
-    },
     updated()
     {
-        this.rewindCheck()
+        if (!isNaN(this.value)) {
+            this.valueDisplay = parseFloat(this.value).toFixed(this.decimals)
+            this.rawToShow = this.raw
+            this.gaugeData.option('value', this.value);
+        }
 
         if (this.hasLimits) {
 
@@ -297,54 +283,11 @@ components.gauge = {
 
         this.valueDisplay = this.value;
 
-        // Observer for push id to global array
-        const gaugeElement = this.$refs.gaugeElement;
-    
-        if (gaugeElement) {
-            let observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (!visibleHistoricalValue.includes(this.signalId)) {
-                            visibleHistoricalValue.push(this.signalId);
-                        }
-                    } else {
-                        const index = visibleHistoricalValue.indexOf(this.signalId);
-                        if (index > -1) {
-                            visibleHistoricalValue.splice(index, 1);
-                        }
-                    }
-                });
-            });
-            observer.observe(gaugeElement);
-        } else {
-            console.error('Ref element is not available.');
-        }
+
 
 
     },
     methods: {
-        rewindCheck(){
-           if (!isNaN(this.value) && !this.rewindMode == true) {
-                this.valueDisplay = parseFloat(this.value).toFixed(this.decimals)
-                this.rawToShow = this.raw
-                this.gaugeData.option('value', this.value);
-            }
-            else{
-                if(visibleHistoricalValue.includes(this.signalId)){
-                setTimeout(() => {
-                    if (this.signalId in valueHistorical) {
-                        this.valueDisplay = parseFloat(valueHistorical[this.signalId][0].Value).toFixed(this.decimals)
-                        this.gaugeData.option('value', this.valueDisplay);
-                    
-                    } else {
-                        this.valueDisplay = 'N/A';
-                    }
-                }, 500);  
-            }else{
-                return;
-            }  
-            }
-        },
         callTimeline(signal, title, delay){
             window.signalGlobalTimelineVariable = signal;
             window.globalTimelineTitle = title;

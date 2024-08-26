@@ -305,17 +305,6 @@
 			$('.dev-menuNavigation-' + section).show();
             $('.' + section).addClass('active');
 
-           if(rewindValuesMode == true){
-            valueHistorical = {}
-            toogleFromMenu = true
-               rewindMode.toogleRewindMode()
-               setTimeout(() => {
-                   rewindMode.toogleRewindMode()
-                   toogleFromMenu = false
-               }, 200);
-
-            }
-
         }
 }
 

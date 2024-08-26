@@ -101,26 +101,7 @@ components.basicHorizontalBar = {
             rawToShow: null,
             signalData: signalsData[this.signalId],
             deviceName: null,
-            rewindMode : rewindValuesMode,
-            globalRewind : globalRewindUpdate
         }
-    },
-    created() {
-        eventBus.subscribe('rewindValuesModeChanged', (newVal) => {
-          this.rewindMode = newVal;
-        });
-        eventBus.subscribe('globalRewindUpdateChanged', (newVal) => {
-           this.globalRewind = newVal;
-        });
-
-      },
-    watch: {
-        rewindMode(newVal, oldVal) {
-            this.rewindCheck()
-        },
-        globalRewind(newVal, oldVal) {
-            this.rewindCheck()
-        },
     },
     mounted()
     {
@@ -170,31 +151,25 @@ components.basicHorizontalBar = {
             this.value = 'N/A'
         }
 
-        // Observer for push id to global array
-        const horizontalBarElement = this.$refs.horizontalBarElement;
-        if (horizontalBarElement) {
-            let observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (!visibleHistoricalValue.includes(this.signalId)) {
-                            visibleHistoricalValue.push(this.signalId);
-                        }
-                    } else {
-                        const index = visibleHistoricalValue.indexOf(this.signalId);
-                        if (index > -1) {
-                            visibleHistoricalValue.splice(index, 1);
-                        }
-                    }
-                });
-            });
-            observer.observe(horizontalBarElement);
-        } else {
-            console.error('Ref element is not available.');
-        }
+
 
     }, updated() {
 
-        this.rewindCheck()
+        if (!isNaN(this.value)) {
+            switch (this.valueMode) {
+                case "filtered":
+                    this.value = valueFiltered[this.signalId];
+                    break;
+                case "escalated":
+                    this.value = valueEscalated[this.signalId];
+                    break;
+                default:
+                case "raw":
+                    this.value = valueRaw[this.signalId];
+                    break;
+            }
+            this.rawToShow = this.raw
+        }
 
         if (!isNaN(this.value)) {
             this.rawToShow = this.raw
@@ -253,39 +228,7 @@ components.basicHorizontalBar = {
         }
 
     }, methods: {
-        rewindCheck(){
-            if (!isNaN(this.value) && !this.rewindMode == true) {
-                switch (this.valueMode) {
-                    case "filtered":
-                        this.value = valueFiltered[this.signalId];
-                        break;
-                    case "escalated":
-                        this.value = valueEscalated[this.signalId];
-                        break;
-                    default:
-                    case "raw":
-                        this.value = valueRaw[this.signalId];
-                        break;
-                }
-                this.rawToShow = this.raw
-            }
-            else{
-                if(visibleHistoricalValue.includes(this.signalId)){
-                    setTimeout(() => {
-                        if (this.signalId in valueHistorical) {
-                        
-                            this.value = parseFloat(valueHistorical[this.signalId][0].Value).toFixed(this.decimals)
-                            this.barStyles(this.value)
-                        
-                        } else {
-                            this.value = 'N/A';
-                        }
-                    }, 500); 
-                }else{
-                    return;
-                }
-            }
-        },
+
         callTimeline(signal, title, delay){
             window.signalGlobalTimelineVariable = signal;
             window.globalTimelineTitle = title;

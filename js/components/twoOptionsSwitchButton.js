@@ -12,8 +12,6 @@ components.twoOptionsSwitchButton = {
                 </button>
             <span style="display: none;">{{value}}</span> 
             <span style="display: none;">{{value2}}</span> 
-            <span style="display: none;">{{valueRewindMode1}}</span> 
-            <span style="display: none;">{{valueRewindMode2}}</span> 
         </div>`,
     data() {
         return {
@@ -33,29 +31,10 @@ components.twoOptionsSwitchButton = {
             btnPulsedRegular: '',
             btnPulsedRegular2: '',
             optionNulltext: '',
-            valueRewindMode1: null, 
-            valueRewindMode2: null, 
-            rewindMode : rewindValuesMode,
-            globalRewind : globalRewindUpdate
+
         }
     },
-    created() {
-        eventBus.subscribe('rewindValuesModeChanged', (newVal) => {
-          this.rewindMode = newVal;
-        });
-        eventBus.subscribe('globalRewindUpdateChanged', (newVal) => {
-           this.globalRewind = newVal;
-        });
 
-      },
-    watch: {
-        rewindMode(newVal, oldVal) {
-            this.rewindCheck()
-        },
-        globalRewind(newVal, oldVal) {
-            this.rewindCheck()
-        },
-    },
     mounted(){
 
         if (this.signalId == null && this.signalId2 == null){
@@ -81,39 +60,26 @@ components.twoOptionsSwitchButton = {
                 this.buttonTypeClass = 'regular';
         }
 
-        this.rewindCheck()
+        if(!isNaN(this.value)){
+            this.value = valueRaw[this.signalId]
+        }
+        if(!isNaN(this.value2)){
+            this.value2= valueRaw[this.signalId2]
+        }
+        
+        this.renderActiveButton(this.value, this.value2)
 
-         // Observer for push id to global array
-         const twoOptionsSwitchButtonElement = this.$refs.twoOptionsSwitchButtonElement;
-         if (twoOptionsSwitchButtonElement) {
-             let observer = new IntersectionObserver((entries) => {
-                 entries.forEach(entry => {
-                     if (entry.isIntersecting) {
-                         if (!visibleHistoricalValue.includes(this.signalId)) {
-                             visibleHistoricalValue.push(this.signalId);
-                         }
-                         if (!visibleHistoricalValue.includes(this.signalId2)) {
-                            visibleHistoricalValue.push(this.signalId);
-                        }
-                     } else {
-                         const index = visibleHistoricalValue.indexOf(this.signalId);
-                         if (index > -1) {
-                             visibleHistoricalValue.splice(index, 1);
-                         }
-                         const index2 = visibleHistoricalValue.indexOf(this.signalId2);
-                         if (index2 > -1) {
-                             visibleHistoricalValue.splice(index2, 1);
-                         }
-                     }
-                 });
-             });
-             observer.observe(twoOptionsSwitchButtonElement);
-         } else {
-             console.error('Ref element is not available.');
-         }
     },
     updated(){
-        this.rewindCheck()
+        if(!isNaN(this.value)){
+            this.value = valueRaw[this.signalId]
+        }
+        if(!isNaN(this.value2)){
+            this.value2= valueRaw[this.signalId2]
+        }
+        
+        this.renderActiveButton(this.value, this.value2)
+
     },
     methods: {
         renderActiveButton(value, value2) {
@@ -316,60 +282,6 @@ components.twoOptionsSwitchButton = {
                 }
             } else {
                 console.log('writeMode not defined. Write cancelled!');
-            }
-        },
-        rewindCheck(){
-            if(!this.rewindMode == true) {
-                if(!isNaN(this.value)){
-                    this.value = valueRaw[this.signalId]
-                }
-                if(!isNaN(this.value2)){
-                    this.value2= valueRaw[this.signalId2]
-                }
-                
-                this.renderActiveButton(this.value, this.value2)
-
-            }else{
-                if (this.signalMode == 0 ){
-                    return;
-                }
-                if (this.signalMode == 1 ){
-                    if(visibleHistoricalValue.includes(this.signalId)){
-                        setTimeout(() => {
-                            if ((this.signalId in valueHistorical)) {
-                                this.valueRewindMode1 = parseFloat(valueHistorical[this.signalId][0].Value).toFixed(this.decimals)
-                                this.renderActiveButton(this.valueRewindMode1, null)
-                                
-                            } else {
-                                this.valueRewindMode1 = null
-                                
-                            }
-            
-                        }, 500);    
-                    }else{
-                        return;
-                    }
-                }
-                if (this.signalMode == 2){
-                    if(visibleHistoricalValue.includes(this.signalId) && visibleHistoricalValue.includes(this.signalI2)){
-                        setTimeout(() => {
-                            if ((this.signalId in valueHistorical)) {
-                                this.valueRewindMode1 = parseFloat(valueHistorical[this.signalId][0].Value).toFixed(this.decimals)
-                                this.valueRewindMode2 = parseFloat(valueHistorical[this.signalId2][0].Value).toFixed(this.decimals)
-                                this.renderActiveButton(this.valueRewindMode1, this.valueRewindMode2)
-                            
-                            } else {
-                                this.valueRewindMode1 = null
-                                this.valueRewindMode2 = null
-                            }
-            
-                        }, 500);    
-                    }else{
-                        return;
-                    }
-
-                }
-        
             }
         },
 

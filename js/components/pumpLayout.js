@@ -30,8 +30,6 @@ components.pumpLayout = {
                 <span style="display: none;">{{valueOpenClose}}</span>
                 <span style="display: none;">{{valueOvertime}}</span>
 
-                <span style="display: none"> {{valueRewindModeOpenClose}} </span>
-                <span style="display: none"> {{valueRewindModeOvertime}} </span>
     </div>
 
 `,
@@ -55,28 +53,7 @@ components.pumpLayout = {
         },
         statusOpen: null,
         statusClose: null,
-        valueRewindModeOpenClose: null,
-        valueRewindModeOvertime: null,
-        rewindMode: rewindValuesMode,
-        globalRewind: globalRewindUpdate
         }
-    },
-    created() {
-        eventBus.subscribe('rewindValuesModeChanged', (newVal) => {
-            this.rewindMode = newVal;
-        });
-        eventBus.subscribe('globalRewindUpdateChanged', (newVal) => {
-            this.globalRewind = newVal;
-        });
-    },
-
-    watch: {
-        rewindMode(newVal, oldVal) {
-            this.rewindCheck();
-        },
-        globalRewind(newVal, oldVal) {
-            this.rewindCheck();
-        },
     },
     mounted(){
         if (this.valueOpenClose == null  || this.valueOvertime == null){
@@ -88,43 +65,35 @@ components.pumpLayout = {
         $( "#"+this.svgId).html(svgContent)
         this.iconSize = 'icon-size-' + this.size
 
-        this.rewindCheck()
 
-        // Observer for push id to global array
-        const pumpLayoutElement = this.$refs.pumpLayoutElement;
-        if (pumpLayoutElement) {
-            let observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (!visibleHistoricalValue.includes(this.signalId)) {
-                            visibleHistoricalValue.push(this.signalId);
-                        }
-                        if (this.signalIdTwo && !visibleHistoricalValue.includes(this.signalIdTwo)) {
-                            visibleHistoricalValue.push(this.signalIdTwo);
-                        }
-                    } else {
-                        const index = visibleHistoricalValue.indexOf(this.signalId);
-                        if (index > -1) {
-                            visibleHistoricalValue.splice(index, 1);
-                        }
-                        if (this.signalIdTwo) {
-                            const indexSignalIdTwo = visibleHistoricalValue.indexOf(this.signalIdTwo);
-                            if (indexSignalIdTwo > -1) {
-                                visibleHistoricalValue.splice(indexSignalIdTwo, 1);
-                            }
-                        }
-                    }
-                });
-            });
-            observer.observe(pumpLayoutElement);
-        } else {
-            console.error('Ref element is not available.');
-        }
+            if(!isNaN(this.valueOpenClose)){
+                this.valueOpenClose = valueRaw[this.runStopSignalId]
+                this.updateOpenCloseStatus(this.valueOpenClose)
+            }
+
+            if(!isNaN(this.valueOvertime)){
+                this.valueOvertime = valueRaw[this.faultSignalId]
+                this.updateOvertimeStatus(this.valueOvertime)
+            }
+
+
 
     },
     updated () {
 
-        this.rewindCheck()
+
+
+            if(!isNaN(this.valueOpenClose)){
+                this.valueOpenClose = valueRaw[this.runStopSignalId]
+                this.updateOpenCloseStatus(this.valueOpenClose)
+            }
+
+            if(!isNaN(this.valueOvertime)){
+                this.valueOvertime = valueRaw[this.faultSignalId]
+                this.updateOvertimeStatus(this.valueOvertime)
+            }
+
+        
   
       },
     methods: {
@@ -176,41 +145,6 @@ components.pumpLayout = {
                 } else {
                     helpers.privilegesPopUp();
                 }
-            }
-        },
-        rewindCheck() {
-            if (!this.rewindMode) {
-
-                if(!isNaN(this.valueOpenClose)){
-                    this.valueOpenClose = valueRaw[this.runStopSignalId]
-                    this.updateOpenCloseStatus(this.valueOpenClose)
-                }
-
-                if(!isNaN(this.valueOvertime)){
-                    this.valueOvertime = valueRaw[this.faultSignalId]
-                    this.updateOvertimeStatus(this.valueOvertime)
-                }
-
-            }else {
-                if(visibleHistoricalValue.includes(this.runStopSignalId) || visibleHistoricalValue.includes(this.faultSignalId) ){
-                setTimeout(() => {
-                    
-                    if (this.runStopSignalId in valueHistorical) {
-                        this.valueRewindModeOpenClose = parseFloat(valueHistorical[this.runStopSignalId][0].Value).toFixed(this.decimals);
-                        
-                        this.updateOpenCloseStatus(this.valueRewindModeOpenClose)
-                    }
-                    
-                    if (this.faultSignalId in valueHistorical) {
-                        this.valueRewindModeOvertime = parseFloat(valueHistorical[this.faultSignalId][0].Value).toFixed(this.decimals);
-                       
-                        this.updateOvertimeStatus(this.valueRewindModeOvertime)
-                    }
-                
-                }, 500);
-            }else{
-                return;
-            }
             }
         },
         updateOpenCloseStatus(valueOpenClose) {

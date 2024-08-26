@@ -19,8 +19,6 @@ components.sogCog = {
     </div>
     <span style="display: none;">{{value1}}</span>
     <span style="display: none;">{{value2}}</span>
-    <span style="display: none;">{{valueRewindMode}}</span>
-    <span style="display: none;">{{valueRewindMode2}}</span>
 </div>
 
     `,
@@ -32,28 +30,9 @@ components.sogCog = {
       value2Temp: null,
       valueToShow1: null,
       valueToShow2: null,
-      valueRewindMode: null,
-      valueRewindMode2: null,
-      rewindMode: rewindValuesMode,
-      globalRewind: globalRewindUpdate,
     };
   },
-  created() {
-    eventBus.subscribe("rewindValuesModeChanged", (newVal) => {
-      this.rewindMode = newVal;
-    });
-    eventBus.subscribe("globalRewindUpdateChanged", (newVal) => {
-      this.globalRewind = newVal;
-    });
-  },
-  watch: {
-    rewindMode(newVal, oldVal) {
-      this.rewindCheck();
-    },
-    globalRewind(newVal, oldVal) {
-      this.rewindCheck();
-    },
-  },
+
   mounted() {
     if (this.valueMode == "escalated") {
       this.value1Temp = valueEscalated[this.signalIdOptionOne];
@@ -79,78 +58,14 @@ components.sogCog = {
       this.value1 = 0;
     }
 
-    this.rewindCheck();
+    this.valueToShow1 = this.value1;
+    this.valueToShow2 = this.value2;
 
-    // Observer for push id to global array
-    const sogCogElement = this.$refs.sogCogElement;
-    if (sogCogElement) {
-      let observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            if (!visibleHistoricalValue.includes(this.signalIdOptionOne)) {
-              visibleHistoricalValue.push(this.signalIdOptionOne);
-            }
-            if (!visibleHistoricalValue.includes(this.signalIdOptionTwo)) {
-              visibleHistoricalValue.push(this.signalIdOptionTwo);
-            }
-          } else {
-            const index = visibleHistoricalValue.indexOf(
-              this.signalIdOptionOne
-            );
-            if (index > -1) {
-              visibleHistoricalValue.splice(index, 1);
-            }
-            const index2 = visibleHistoricalValue.indexOf(
-              this.signalIdOptionTwo
-            );
-            if (index2 > -1) {
-              visibleHistoricalValue.splice(index2, 1);
-            }
-          }
-        });
-      });
-      observer.observe(sogCogElement);
-    } else {
-      console.error("Ref element is not available.");
-    }
+
   },
   updated() {
-    this.rewindCheck();
+    this.valueToShow1 = this.value1;
+    this.valueToShow2 = this.value2;
   },
-  methods: {
-    rewindCheck() {
-      if (!this.rewindMode == true) {
-        this.valueToShow1 = this.value1;
-        this.valueToShow2 = this.value2;
-      } else {
-        if (visibleHistoricalValue.includes(this.signalIdOptionOne)) {
-          setTimeout(() => {
-            if (this.signalIdOptionOne in valueHistorical) {
-              this.valueToShow1 = parseFloat(
-                valueHistorical[this.signalIdOptionOne][0].Value
-              ).toFixed(this.decimals);
-            } else {
-              this.valueToShow1 = null;
-            }
-          }, 500);
-        } else {
-          return;
-        }
 
-        if (visibleHistoricalValue.includes(this.signalIdOptionTwo)) {
-          setTimeout(() => {
-            if (this.signalIdOptionTwo in valueHistorical) {
-              this.valueToShow2 = parseFloat(
-                valueHistorical[this.signalIdOptionTwo][0].Value
-              ).toFixed(this.decimals);
-            } else {
-              this.valueToShow2 = null;
-            }
-          }, 500);
-        } else {
-          return;
-        }
-      }
-    },
-  },
 };

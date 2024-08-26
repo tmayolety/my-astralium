@@ -9,7 +9,6 @@ components.iconTriEstateOneSignalDigitalLine = {
                 <div class="col-90-min"><span>{{title}}</span></div>
                 <div class="col-100 align-middle-center" :class= '[valueTextColor, valueCellColor]'><span class="font-bold glow" style="font-size: 110%!important">{{valueText}}</span></div>
                 <span style="display: none;">{{value}}</span> 
-                <span style="display: none;">{{valueRewindMode}}</span> 
               </li>
                
                
@@ -24,58 +23,24 @@ components.iconTriEstateOneSignalDigitalLine = {
             iconColor: null,
             valueTextColor: null,
             valueCellColor: null,
-            valueRewindMode: null, 
-            rewindMode : rewindValuesMode,
-            globalRewind : globalRewindUpdate
         }
     },
-    created() {
-        eventBus.subscribe('rewindValuesModeChanged', (newVal) => {
-          this.rewindMode = newVal;
-        });
-        eventBus.subscribe('globalRewindUpdateChanged', (newVal) => {
-           this.globalRewind = newVal;
-        });
 
-      },
-    watch: {
-        rewindMode(newVal, oldVal) {
-            this.rewindCheck()
-        },
-        globalRewind(newVal, oldVal) {
-            this.rewindCheck()
-        },
-    },
     mounted(){
         const svgContent = iconRegistry[this.icon]
         $( "#"+this.svgId).html(svgContent)
       
-        this.rewindCheck()
-
-        // Observer for push id to global array
-        const iconTriEstateOneSignalElement = this.$refs.iconTriEstateOneSignalElement;
-        if (iconTriEstateOneSignalElement) {
-            let observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (!visibleHistoricalValue.includes(this.signalId)) {
-                            visibleHistoricalValue.push(this.signalId);
-                        }
-                    } else {
-                        const index = visibleHistoricalValue.indexOf(this.signalId);
-                        if (index > -1) {
-                            visibleHistoricalValue.splice(index, 1);
-                        }
-                    }
-                });
-            });
-            observer.observe(iconTriEstateOneSignalElement);
-        } else {
-            console.error('Ref element is not available.');
+        if (!isNaN(this.value)) {
+            this.value = valueRaw[this.signalId]
+            this.evaluate(this.value)
         }
+        
     },
     updated(){
-        this.rewindCheck()
+        if (!isNaN(this.value)) {
+            this.value = valueRaw[this.signalId]
+            this.evaluate(this.value)
+        }
     },
     methods:{
 
@@ -100,30 +65,7 @@ components.iconTriEstateOneSignalDigitalLine = {
                 this.iconColor = null
                 this.valueTextColor = null
             }
-        },
-        rewindCheck(){
-            if (!isNaN(this.value) && !this.rewindMode == true) {
-                this.value = valueRaw[this.signalId]
-                this.evaluate(this.value)
-            }
-            else{
-                if(visibleHistoricalValue.includes(this.signalId)){
-                setTimeout(() => {
-                    if (this.signalId in valueHistorical) {
-                      
-                        this.valueRewindMode = parseInt(parseFloat(valueHistorical[this.signalId][0].Value).toFixed(this.decimals))
-                        this.evaluate(this.valueRewindMode)
-                    
-                    } else {
-                        this.valueRewindMode = null
-                    }
-    
-                }, 500);    
-            }else{
-                return;
-            }
-            }
-        },
+        }
     }
 };
 

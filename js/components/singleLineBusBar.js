@@ -79,13 +79,6 @@ components.singleLineBusBar = {
                     <span style="display: none;">{{shorePowerBreakerValue}}</span> 
                     <span style="display: none;">{{busTideBreakerValue}}</span> 
 
-                    <span style="display: none;">{{valueRewindModeGen1Breaker}}</span> 
-                    <span style="display: none;">{{valueRewindModeGen2Breaker}}</span> 
-                    <span style="display: none;">{{valueRewindModeGen3Breaker}}</span> 
-                    <span style="display: none;">{{valueRewindModeGen4Breaker}}</span> 
-                    <span style="display: none;">{{valueRewindModeShorePowerBreaker}}</span> 
-                    <span style="display: none;">{{valueRewindModeBusTideBreaker}}</span> 
-
                 </div>
 
 `,
@@ -106,72 +99,49 @@ components.singleLineBusBar = {
                 gen1Gen2Class: '',
                 shoreGen3Class: '',
                 gen3Gen4Class: '',
-
-                valueRewindModeGen1Breaker: null,
-                valueRewindModeGen2Breaker: null,
-                valueRewindModeGen3Breaker: null,
-                valueRewindModeGen4Breaker: null,
-                valueRewindModeShorePowerBreaker: null,
-                valueRewindModeBusTideBreaker: null,
-
-                rewindMode: rewindValuesMode,
-                globalRewind: globalRewindUpdate,
-
                }
     },
-    created() {
-        eventBus.subscribe('rewindValuesModeChanged', (newVal) => {
-            this.rewindMode = newVal;
-        });
-        eventBus.subscribe('globalRewindUpdateChanged', (newVal) => {
-            this.globalRewind = newVal;
-        });
-    },
-    watch: {
-        rewindMode(newVal, oldVal) {
-            this.rewindCheck();
-        },
-        globalRewind(newVal, oldVal) {
-            this.rewindCheck();
-        },
-    },
     mounted(){
-        this.rewindCheck()
-
-        // Observer for push id to global array
-        const singleLineBusBarElement = this.$refs.singleLineBusBarElement;
-        if (singleLineBusBarElement) {
-            let observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        let ids = [this.gen1BreakerSignalId, this.gen2BreakerSignalId, this.gen3BreakerSignalId, this.gen4BreakerSignalId, this.shorePowerBreakerSignalId, this.busTideBreakerSignalId];
-                    
-                        for(let id of ids) {
-                            if (!visibleHistoricalValue.includes(id)) {
-                                visibleHistoricalValue.push(id);
-                            }
-                        }
-                    } else {
-                        let ids = [this.gen1BreakerSignalId, this.gen2BreakerSignalId, this.gen3BreakerSignalId, this.gen4BreakerSignalId, this.shorePowerBreakerSignalId, this.busTideBreakerSignalId];
-                    
-                        for(let id of ids) {
-                            const index = visibleHistoricalValue.indexOf(id);
-                            if (index > -1) {
-                                visibleHistoricalValue.splice(index, 1);
-                            }
-                        }
-                    }
-                    
-                });
-            });
-            observer.observe(singleLineBusBarElement);
-        } else {
-            console.error('Ref element is not available.');
-        }
+       
+        
+            this.gen1BreakerValue = valueRaw[this.gen1BreakerSignalId];
+            this.gen2BreakerValue = valueRaw[this.gen2BreakerSignalId];
+            this.gen3BreakerValue = valueRaw[this.gen3BreakerSignalId];
+            this.gen4BreakerValue = valueRaw[this.gen4BreakerSignalId];
+            this.shorePowerBreakerValue = valueRaw[this.shorePowerBreakerSignalId];
+            this.busTideBreakerValue = valueRaw[this.busTideBreakerSignalId];
+    
+            this.renderBusbar(
+                this.gen1BreakerValue, 
+                this.gen2BreakerValue, 
+                this.gen3BreakerValue, 
+                this.gen4BreakerValue, 
+                this.shorePowerBreakerValue, 
+                this.busTideBreakerValue
+            );
+    
 
     },
     updated(){
-        this.rewindCheck()
+     
+        
+            this.gen1BreakerValue = valueRaw[this.gen1BreakerSignalId];
+            this.gen2BreakerValue = valueRaw[this.gen2BreakerSignalId];
+            this.gen3BreakerValue = valueRaw[this.gen3BreakerSignalId];
+            this.gen4BreakerValue = valueRaw[this.gen4BreakerSignalId];
+            this.shorePowerBreakerValue = valueRaw[this.shorePowerBreakerSignalId];
+            this.busTideBreakerValue = valueRaw[this.busTideBreakerSignalId];
+    
+            this.renderBusbar(
+                this.gen1BreakerValue, 
+                this.gen2BreakerValue, 
+                this.gen3BreakerValue, 
+                this.gen4BreakerValue, 
+                this.shorePowerBreakerValue, 
+                this.busTideBreakerValue
+            );
+    
+        
 
     },
     methods: {
@@ -188,67 +158,6 @@ components.singleLineBusBar = {
             this.shoreGen3Class = shorePowerBreakerValue == 1 || gen3BreakerValue == 1 || busTideBreakerValue == 1 ? 'active' : '' 
             this.gen3Gen4Class = gen3BreakerValue == 1 || gen4BreakerValue == 1 || busTideBreakerValue == 1 ? 'active' : '' 
 
-        },
-        rewindCheck() {
-            if (!this.rewindMode) {
-        
-                this.gen1BreakerValue = valueRaw[this.gen1BreakerSignalId];
-                this.gen2BreakerValue = valueRaw[this.gen2BreakerSignalId];
-                this.gen3BreakerValue = valueRaw[this.gen3BreakerSignalId];
-                this.gen4BreakerValue = valueRaw[this.gen4BreakerSignalId];
-                this.shorePowerBreakerValue = valueRaw[this.shorePowerBreakerSignalId];
-                this.busTideBreakerValue = valueRaw[this.busTideBreakerSignalId];
-        
-                this.renderBusbar(
-                    this.gen1BreakerValue, 
-                    this.gen2BreakerValue, 
-                    this.gen3BreakerValue, 
-                    this.gen4BreakerValue, 
-                    this.shorePowerBreakerValue, 
-                    this.busTideBreakerValue
-                );
-        
-            } else {
-                let ids = [
-                    this.gen1BreakerSignalId, 
-                    this.gen2BreakerSignalId, 
-                    this.gen3BreakerSignalId, 
-                    this.gen4BreakerSignalId, 
-                    this.shorePowerBreakerSignalId, 
-                    this.busTideBreakerSignalId
-                ];
-        
-                let someIdVisible = ids.some(id => visibleHistoricalValue.includes(id));
-        
-                if (someIdVisible) {
-                    setTimeout(() => {
-                        let values = {};
-                        for (let id of ids) {
-                            if (id in valueHistorical) {
-                                values[id] = parseFloat(valueHistorical[id][0].Value);
-                            }
-                        }
-        
-                        this.valueRewindModeGen1Breaker = values[this.gen1BreakerSignalId] || null;
-                        this.valueRewindModeGen2Breaker = values[this.gen2BreakerSignalId] || null;
-                        this.valueRewindModeGen3Breaker = values[this.gen3BreakerSignalId] || null;
-                        this.valueRewindModeGen4Breaker = values[this.gen4BreakerSignalId] || null;
-                        this.valueRewindModeShorePowerBreaker = values[this.shorePowerBreakerSignalId] || null;
-                        this.valueRewindModeBusTideBreaker = values[this.busTideBreakerSignalId] || null;
-        
-                        this.renderBusbar(
-                            this.valueRewindModeGen1Breaker, 
-                            this.valueRewindModeGen2Breaker, 
-                            this.valueRewindModeGen3Breaker, 
-                            this.valueRewindModeGen4Breaker, 
-                            this.valueRewindModeShorePowerBreaker, 
-                            this.valueRewindModeBusTideBreaker
-                        );
-                    }, 500);
-                } else {
-                    return;
-                }
-            }
         },
     }
 };

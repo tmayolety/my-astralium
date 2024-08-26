@@ -164,33 +164,15 @@ components.multiGauge = {
                 deviceNameCenter: null,
                 deviceNameLeft: null,
                 deviceNameRight: null,
-                rewindMode : rewindValuesMode,
-                globalRewind : globalRewindUpdate
-
                }
-    },
-    created() {
-        eventBus.subscribe('rewindValuesModeChanged', (newVal) => {
-          this.rewindMode = newVal;
-        });
-        eventBus.subscribe('globalRewindUpdateChanged', (newVal) => {
-           this.globalRewind = newVal;
-        });
-
-      },
-    watch: {
-        rewindMode(newVal, oldVal) {
-            this.rewindCheck()
-        },
-        globalRewind(newVal, oldVal) {
-            this.rewindCheck()
-            },
     },
     updated()
     {
-        this.rewindCheck()
-        
-
+        if (!isNaN(this.centerValue)) {
+            this.centerValueShow = parseFloat(this.centerValue).toFixed(this.centerDecimals)
+            this.rawToShowCenter = this.rawCenter
+            this.gaugeCenter.option('value', this.centerValueShow);
+        }
 
         if (this.CHasLimits) {
 
@@ -639,99 +621,11 @@ components.multiGauge = {
         this.gaugeRight.option('value', this.rightValueShow);
         this.DrawRangesMulti()
 
-                // Observer for push ids to global array
-        const multiGaugeElement = this.$refs.multiGaugeElement;
-    
-        if (multiGaugeElement) {
-            let observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (!visibleHistoricalValue.includes(this.signalIdCenter)) {
-                            visibleHistoricalValue.push(this.signalIdCenter);
-                        }
-                        if (!visibleHistoricalValue.includes(this.signalIdLeft)) {
-                            visibleHistoricalValue.push(this.signalIdLeft);
-                        }
-                        if (!visibleHistoricalValue.includes(this.signalIdRight)) {
-                            visibleHistoricalValue.push(this.signalIdRight);
-                        }
-                    } else {
-                        const indexCenter = visibleHistoricalValue.indexOf(this.signalIdCenter);
-                        if (indexCenter > -1) {
-                            visibleHistoricalValue.splice(indexCenter, 1);
-                        }
-                        const indexLeft = visibleHistoricalValue.indexOf(this.signalIdLeft);
-                        if (indexLeft > -1) {
-                            visibleHistoricalValue.splice(indexLeft, 1);
-                        }
-                        const indexRight = visibleHistoricalValue.indexOf(this.signalIdRight);
-                        if (indexRight > -1) {
-                            visibleHistoricalValue.splice(indexRight, 1);
-                        }
-                    }
-                });
-            });
-            observer.observe(multiGaugeElement);
-        } else {
-            console.error('Ref element is not available.');
-        }
+
 
     },
     methods: {
 
-        rewindCheck(){
-            //center
-            if (!isNaN(this.centerValue)  && !this.rewindMode == true) {
-                this.centerValueShow = parseFloat(this.centerValue).toFixed(this.centerDecimals)
-                this.rawToShowCenter = this.rawCenter
-                this.gaugeCenter.option('value', this.centerValueShow);
-            }else{
-                if(visibleHistoricalValue.includes(this.signalIdCenter)){
-             setTimeout(() => {
-                 if (this.signalIdCenter in valueHistorical) {
-                     this.centerValueShow = parseFloat(valueHistorical[this.signalIdCenter][0].Value).toFixed(this.centerDecimals)
-                     this.gaugeCenter.option('value', this.centerValueShow);
-                 
-                 } else {
-                     this.centerValueShow = 'N/A';
-                 }
-             }, 500);  }else{return;}
-            }
-             //left
-             if (!isNaN(this.leftValue)  && !this.rewindMode == true) {
-                this.leftValueShow = parseFloat(this.leftValue).toFixed(this.leftDecimals)
-                this.rawToShowLeft = this.rawLeft
-                this.gaugeLeft.option('value', this.leftValueShow);
-            }else{
-                if(visibleHistoricalValue.includes(this.signalIdLeft)){
-                setTimeout(() => {
-                    if (this.signalIdLeft in valueHistorical) {
-                        this.leftValueShow = parseFloat(valueHistorical[this.signalIdLeft][0].Value).toFixed(this.leftDecimals)
-                        this.gaugeLeft.option('value', this.leftValueShow);
-                    
-                    } else {
-                        this.leftValueShow = 'N/A';
-                    }
-                }, 500);   }else{return;}
-            }
-            //right
-            if (!isNaN(this.rightValue)  && !this.rewindMode == true) {
-                this.rightValueShow = parseFloat(this.rightValue).toFixed(this.rightDecimals)
-                this.rawToShowRight = this.rawRight
-                this.gaugeRight.option('value', this.rightValueShow);
-            }else{
-                if(visibleHistoricalValue.includes(this.signalIdRight)){
-                setTimeout(() => {
-                    if (this.signalIdRight in valueHistorical) {
-                        this.rightValueShow = parseFloat(valueHistorical[this.signalIdRight][0].Value).toFixed(this.rightDecimals)
-                        this.gaugeRight.option('value', this.rightValueShow);
-                    
-                    } else {
-                        this.rightValueShow = 'N/A';
-                    }
-                }, 500);    }else{return;}
-         }
-         },
         callTimeline(signal, title, delay){
             window.signalGlobalTimelineVariable = signal;
             window.globalTimelineTitle = title;

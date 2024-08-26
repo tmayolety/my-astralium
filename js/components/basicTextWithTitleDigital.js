@@ -19,7 +19,6 @@ components.basicTextWithTitleDigital = {
                 <div :class= '[titleStyle]' v-if="titleDisplay">{{ title }}</div>
                 <div :class= '[valueStyle, valueTextColor]'>{{valueText}}</div>
                 <span style="display: none;">{{value}}</span>
-                <span style="display: none;">{{valueRewindMode}}</span>
             </div>
         </div>`,
     data() {
@@ -32,59 +31,23 @@ components.basicTextWithTitleDigital = {
                 valueTextColor: null,
                 valueCellColor: null,
                 valueText: null,
-                valueRewindMode: null, 
-                rewindMode : rewindValuesMode,
-                globalRewind : globalRewindUpdate
-               
+            
             }
     },
-    created() {
-        eventBus.subscribe('rewindValuesModeChanged', (newVal) => {
-          this.rewindMode = newVal;
-        });
-        eventBus.subscribe('globalRewindUpdateChanged', (newVal) => {
-           this.globalRewind = newVal;
-        });
 
-      },
-    watch: {
-        rewindMode(newVal, oldVal) {
-            this.rewindCheck()
-        },
-        globalRewind(newVal, oldVal) {
-            this.rewindCheck()
-        },
-    },
     updated()
     {
-        this.rewindCheck()
+        if (!isNaN(this.value)) {
+            this.value = valueRaw[this.signalId]
+            this.evaluate(this.value)
+        }
     },
     mounted() {
 
         this.evaluate(this.value)
         if (this.title != null) { this.titleDisplay = true }
 
-         // Observer for push id to global array
-         const basicTextTitleDigitalElement = this.$refs.basicTextTitleDigitalElement;
-         if (basicTextTitleDigitalElement) {
-             let observer = new IntersectionObserver((entries) => {
-                 entries.forEach(entry => {
-                     if (entry.isIntersecting) {
-                         if (!visibleHistoricalValue.includes(this.signalId)) {
-                             visibleHistoricalValue.push(this.signalId);
-                         }
-                     } else {
-                         const index = visibleHistoricalValue.indexOf(this.signalId);
-                         if (index > -1) {
-                             visibleHistoricalValue.splice(index, 1);
-                         }
-                     }
-                 });
-             });
-             observer.observe(basicTextTitleDigitalElement);
-         } else {
-             console.error('Ref element is not available.');
-         }
+
 
     }, methods: {
         evaluate (value) {
@@ -110,30 +73,7 @@ components.basicTextWithTitleDigital = {
                 this.valueTextColor = null
                 this.valueCellColor = null
             }
-        },
-        rewindCheck(){
-            if (!isNaN(this.value) && !this.rewindMode == true) {
-                this.value = valueRaw[this.signalId]
-                this.evaluate(this.value)
-            }
-            else{
-                if(visibleHistoricalValue.includes(this.signalId)){
-                setTimeout(() => {
-                    if (this.signalId in valueHistorical) {
-                      
-                        this.valueRewindMode = parseFloat(valueHistorical[this.signalId][0].Value).toFixed(this.decimals)
-                        this.evaluate(this.valueRewindMode)
-                    
-                    } else {
-                        this.valueRewindMode = 'N/A';
-                    }
-    
-                }, 500);    
-            }else{
-                return;
-            }
-            }
-        },
+        }
     }
 
 };
