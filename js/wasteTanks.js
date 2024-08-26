@@ -133,7 +133,7 @@ if (WasteTotalRender == true) {
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": ACTIVE_SERVER + ":10001/totalsBySignalId",
+            "url": ACTIVE_SERVER + ":" + API.Port +"/totalsBySignalId",
             "method": "POST",
             "headers": {
                 "content-type": "application/json",

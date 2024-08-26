@@ -148,7 +148,7 @@ function buildTimeline() {
             var settings = {
                 "async": true,
                 "crossDomain": true,
-                "url": ACTIVE_SERVER + ":10001/valuesBySignalId",
+                "url": ACTIVE_SERVER + ":" + API.Port +"/valuesBySignalId",
                 "method": "POST",
                 "headers": {
                     "content-type": "application/json",
