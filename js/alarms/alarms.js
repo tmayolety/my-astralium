@@ -287,7 +287,7 @@ var alarms = {
     },
     activeAlarmRegister(json) {
 
-        Object.values(json).forEach(function(item) {
+        json.forEach(function(item) {
 
             if (item.alarmId == 0) { alarms.plcAlarm (item); }
 
