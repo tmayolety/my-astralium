@@ -51,11 +51,14 @@ components.signalListSystem = {
 `,
   data() {
     return {
+      
       signalListData: signalsData,
       filteredSignals: [],
       isLoading:false,
       myKeyboard: null,
       clickTimeout: null,
+      allFilteredSignals:[]
+
     };
   },
   updated() {},
@@ -80,6 +83,8 @@ components.signalListSystem = {
       return el != null;
     });
 
+    this.allFilteredSignals = this.filteredSignals
+
   },
   beforeDestroy() {
     document.removeEventListener('click', this.handleClickOutside);
@@ -94,16 +99,57 @@ components.signalListSystem = {
 
         this.clickTimeout = setTimeout(() => {
           this.searchSignals(input);
-          console.log(input)
-        }, 900);
+        }, 1200);
     },
 
-    searchSignals(searchText) {
-      searchText = searchText.toLowerCase();
-      this.filteredSignals = this.signalListData.filter(signal => signal.Title.toLowerCase().includes(searchText)||
-      signal.Id.toString().toLowerCase().includes(searchText));
+    async searchSignals(searchText) {
+      this.isLoading = true; 
+  
+      try {
+        const response = await fetch(ACTIVE_SERVER + ":" + API.Port +'/signal/search', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ Search: searchText }),
+        });
+  
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+  
+        const result = await response.json();
+        this.filteredSignals = result; 
+  
+      } catch (error) {
+        console.error('Error fetching signals:', error);
+        this.filteredSignals = [];
+      } finally {
+        this.isLoading = false;
+      }
     },
+  
+    clearSearch() {
 
+      console.log(this.allFilteredSignals)
+
+      this.isLoading = true;
+    
+      document.querySelector(".input").value = '';
+      this.hideKeyboard();
+      
+      if (this.myKeyboard) {
+        this.myKeyboard.clearInput();
+      }
+      
+      setTimeout(() => {
+        this.filteredSignals = [...this.allFilteredSignals];
+        this.isLoading = false; 
+      }, 300);
+
+
+    },
+    
     showKeyboard() {
 
       document.querySelector('#keyboard').style.display = 'block';
@@ -120,23 +166,6 @@ components.signalListSystem = {
           this.hideKeyboard();
         }
       },
-    clearSearch(){
-
-        this.isLoading = true;
-        document.querySelector(".input").value = '';
-        this.hideKeyboard();
-        
-        if (this.myKeyboard) {
-          this.myKeyboard.clearInput();
-        }
-
-        setTimeout(() => {
-            this.filteredSignals = this.signalListData.filter(function (el) {
-                return el != null;
-            });
-            this.isLoading = false; 
-        }, 200);
-    },
     typeValue(id) {
       if (id === 0) {
         return "ANALOGUE";
