@@ -1,224 +1,201 @@
 
-var DeepSecondTimeout;
 var DeepMinuteTimeout;
-var DeepTimelineInit = true
-var DeepTimeoutLessThanMinute = true
-
+//var DeepTimelineInit = true
 var DeepTotalRender = true;
-var DeepTotalRenderDiv = document.getElementById('deepGraph')
-if (!isNaN(parseInt(DeepTotalRenderDiv.getAttribute('width'))))
-{
+var DeepTotalRenderDiv = document.getElementById("deepGraph");
+
+if (!isNaN(parseInt(DeepTotalRenderDiv.getAttribute("width")))) {
   var DeepTotalRender = false;
 }
-var maxTimeNavigation;
-
-function updateMaxTime(newMaxTime){
-  maxTimeNavigation = newMaxTime
-}
+var DeepInterval;
 
 if (DeepTotalRender == true) {
+  const dataDeep = {
+    datasets: [
+      {
+        label: "Total Deep",
+        pointRadius: 0,
+        borderWidth: 1.3,
+        backgroundColor: "rgba(52, 152, 219, 0.2)",
+        borderColor: "rgba(52, 152, 219, 1)",
+        fill: true,
+        data: [],
+      },
+    ],
+  };
 
-  function addData(chart) {
-
-      const now = new Date();
-      var newValue;
-
-      if(typeof valueEscalated[12027]?.value != 'undefined'){
-        newValue = parseInt(valueEscalated[12027].value);
-      }
-       
-      const newData = {x: now, y: newValue}
-  
-      chart.data.datasets.forEach((dataset) => {
-          dataset.data.push(newData);
-      });
-  
-      const minTime = now - maxTimeNavigation; 
-      chart.options.scales.x.max = now;
-      chart.options.scales.x.min = minTime;
-      chart.options.scales.x.ticks.maxTicksLimit = 8; 
-      
-      chart.update('none');
-
-
-      if(DeepTimelineInit == true){
-        setTimeout(() => addData(chart), 1000)
-        DeepTimelineInit = false
-    }else{
-        if(DeepTimeoutLessThanMinute == true){
-            DeepSecondTimeout = setTimeout(() => addData(chart), 1000)
-        } else{
-            DeepMinuteTimeout = setTimeout(() => addData(chart), 60000)
-        }
-        
-    }
-
-      }
-  
-      const dataDeep = {
-          datasets: [
-              {
-                  label: 'Depth',
-                  pointRadius: 0,
-                  borderWidth: 1.3,
-                  backgroundColor: 'rgba(52, 152, 219, 0.2)',
-                  borderColor: 'rgba(52, 152, 219, 1)',
-                  fill: true,
-                  data: []
-              }
-          ]
-      };
-  
-      const totalDeep = new Chart(DeepTotalRenderDiv, {
-          type: 'line',
-          data: dataDeep,
-          options: {
-            plugins: {
-                legend: {
-                  display: false
-                }
-              },
-            animation:{
-                duration:0
+  const totalDeep = new Chart(DeepTotalRenderDiv, {
+    type: "line",
+    data: dataDeep,
+    options: {
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+      animation: {
+        duration: 0,
+      },
+      maintainAspectRatio: false,
+      scales: {
+        x: {
+          type: "time",
+          time: {
+            unit: "hour",
+            stepSize: 1,
+            tooltipFormat: "HH:mm",
+            displayFormats: {
+              second: "HH:mm:ss",
+              minute: "HH:mm",
+              hour: "HH:mm",
             },
-              maintainAspectRatio : false,
-              scales: {
-                  x: {
-                    type: "time",
-                    time: {
-                        unit: 'second',
-                        stepSize: 1, 
-                        tooltipFormat: 'HH:mm:ss',
-                        displayFormats: {
-                            second: 'HH:mm:ss',
-                            minute: 'HH:mm',
-                            hour: 'HH:mm'
-                        }
-                    },
-                    ticks: {
-                        major: {
-                           enabled: true,
-                        },
-                    }
-                  },
-                  y: {
-                      display: true,
-                      beginAtZero: true,
-                      min: 0,
-                      max: 500
-                  }
-              }
-          }
-      });
-      addData(totalDeep)
-      updateMaxTime(59 * 1000);
-      getTimelineData(totalDeep, "-1m", "1s");
+          },
+          ticks: {
+            major: {
+              enabled: true,
+            },
+            maxTicksLimit: 8,
+          },
+        },
+        y: {
+          display: true,
+          beginAtZero: true,
+          min:
+            parseInt(signalsData[453].SignalMin) +
+            parseInt(signalsData[454].SignalMin),
+          max: 85000,
+        },
+      },
+    },
+  });
 
-      document.getElementById('btn1DeepTanks').addEventListener('click', function () {
-          clearTimeout(DeepSecondTimeout)
-          DeepTimelineInit = true
-          DeepTimeoutLessThanMinute = true
-          clearTimeout(DeepMinuteTimeout)
-          addData(totalDeep)
+  getTimelineData(totalDeep, "-1m", "1s");
+  DeepInterval = setInterval(
+    () => getTimelineData(totalDeep, "-1m", "1s"),
+    300000
+  );
 
-          updateMaxTime(59 * 1000); // 1m
-          updateButtonClass(this);
-          getTimelineData(totalDeep, "-1m", "1s");
-      });
-
-      document.getElementById('btn2DeepTanks').addEventListener('click', function () {
-        clearTimeout(DeepSecondTimeout)
-        DeepTimelineInit = true
-        DeepTimeoutLessThanMinute = true
-        clearTimeout(DeepMinuteTimeout)
-        addData(totalDeep)
-
-          updateMaxTime(20 * 59 * 1000); // 20m
-          updateButtonClass(this);
-          getTimelineData(totalDeep, "-20m", "30s");
-      });
-
-      document.getElementById('btn3DeepTanks').addEventListener('click', function () {
-        clearTimeout(DeepSecondTimeout)
-        DeepTimelineInit = true
-        DeepTimeoutLessThanMinute = false
-        clearTimeout(DeepMinuteTimeout)
-        addData(totalDeep)
-
-        updateMaxTime(60 * 59 * 1000); // 1H
-        updateButtonClass(this);
-        getTimelineData(totalDeep, "-1h", "1m");
+  document
+    .getElementById("btn1DeepTanks")
+    .addEventListener("click", function () {
+      clearInterval(DeepInterval);
+      updateButtonClass(this);
+      getTimelineData(totalDeep, "-12h", "5m");
+      DeepInterval = setInterval(
+        () => getTimelineData(totalDeep, "-12h", "5m"),
+        300000
+      );
     });
 
-    document.getElementById('btn4DeepTanks').addEventListener('click', function () {
-        clearTimeout(DeepSecondTimeout)
-        DeepTimelineInit = true
-        DeepTimeoutLessThanMinute = false
-        clearTimeout(DeepMinuteTimeout)
-        addData(totalDeep)
-
-        updateMaxTime(8 * 59 * 60 * 1000); // 8H
-        updateButtonClass(this);
-        getTimelineData(totalDeep, "-8h", "5m");
+  document
+    .getElementById("btn2DeepTanks")
+    .addEventListener("click", function () {
+      clearInterval(DeepInterval);
+      updateButtonClass(this);
+      getTimelineData(totalDeep, "-24h", "10m");
+      DeepInterval = setInterval(
+        () => getTimelineData(totalDeep, "-24h", "10m"),
+        300000
+      );
     });
 
-      function updateButtonClass(clickedButton) {
+  document
+    .getElementById("btn3DeepTanks")
+    .addEventListener("click", function () {
+      clearInterval(DeepInterval);
+      updateButtonClass(this);
+      getTimelineData(totalDeep, "-2d", "20m");
+      DeepInterval = setInterval(
+        () => getTimelineData(totalDeep, "-2d", "20m"),
+        300000
+      );
+    });
 
-          const isActive = clickedButton.classList.contains('active');
-          if (isActive) {
-              clickedButton.disabled = true;
-              return;
-          }
-          document.querySelectorAll('.timeLineButtonDeepTanks').forEach(function (button) {
-              button.classList.remove('active');
-              button.disabled = false;
-          });
-          clickedButton.classList.add('active');
-      
-      }
+  document
+    .getElementById("btn4DeepTanks")
+    .addEventListener("click", function () {
+      clearInterval(DeepInterval);
+      updateButtonClass(this);
+      getTimelineData(totalDeep, "-3d", "30m");
+      DeepInterval = setInterval(
+        () => getTimelineData(totalDeep, "-3d", "30m"),
+        600000
+      );
+    });
 
-      function getTimelineData(chart, time, rate) {
-            
-        var data = JSON.stringify({
-            "SignalId": [12027],
-            "Time": time,
-            "Rate": rate
+  function updateButtonClass(clickedButton) {
+    const isActive = clickedButton.classList.contains("active");
+    if (isActive) {
+      clickedButton.disabled = true;
+      return;
+    }
+    document
+      .querySelectorAll(".timeLineButtonDeepTanks")
+      .forEach(function (button) {
+        button.classList.remove("active");
+        button.disabled = false;
+      });
+    clickedButton.classList.add("active");
+  }
+
+  function getTimelineData(chart, time, rate) {
+    var data = JSON.stringify({
+      SignalId: [453, 454],
+      Time: time,
+      Rate: rate,
+    });
+    var settings = {
+      async: true,
+      crossDomain: true,
+      url: ACTIVE_SERVER + ":" + API.Port + "/totalsBySignalId",
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      processData: false,
+      data: data,
+    };
+
+    $.ajax(settings)
+      .done((response) => {
+        chart.data.datasets.forEach((dataset) => {
+          dataset.data = [];
         });
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": ACTIVE_SERVER + ":" + API.Port +"/totalsBySignalId",
-            "method": "POST",
-            "headers": {
-                "content-type": "application/json",
-            },
-            "processData": false,
-            "data": data
+
+        if (response.length === 0) {
+          drawNoData(chart);
+        } else {
+          response.forEach(function (entry) {
+            var isoDate = entry.Name;
+            var date = new Date(isoDate);
+            var oldData = { x: date, y: Math.floor(entry.Value) };
+            chart.data.datasets.forEach((dataset) => {
+              dataset.data.push(oldData);
+            });
+          });
+          chart.update("quiet");
         }
-        
-        $.ajax(settings).done((response) => {
+      })
+      .fail((jqXHR, textStatus, errorThrown) => {
+        drawNoData(chart);
+        console.error("Request failed: " + textStatus + ", " + errorThrown);
+        console.log("Response status: " + jqXHR.status);
+        console.log("Response text: " + jqXHR.responseText);
+      });
+  }
 
-                chart.data.datasets.forEach((dataset) => {
-                    dataset.data = [];
-                });
-               
-                response.forEach(function(entry, index) {
-                    var isoDate = entry.Name;
-                    var date = new Date(isoDate);
-                    
-                    var oldData = { x: date, y: Math.floor(entry.Value) };
-
-                    chart.data.datasets.forEach((dataset) => {
-                        dataset.data.push(oldData);
-                    });
-                });
-              
-                chart.update('quiet');
-            
-        }).fail((jqXHR, textStatus, errorThrown)=>{
-            console.error("Request failed: " + textStatus + ", " + errorThrown);
-            console.log("Response status: " + jqXHR.status);
-            console.log("Response text: " + jqXHR.responseText);
-        })
-    }
+  function drawNoData(chart) {
+    setTimeout(() => {
+      const ctx = chart.ctx;
+      ctx.clearRect(0, 0, chart.width, chart.height);
+      ctx.save();
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillStyle = "rgb(255, 255, 255)";
+      ctx.font = "25px Lato, sans-serif";
+      ctx.fillText("NO DATA", chart.width / 2, chart.height / 2);
+      ctx.restore();
+    }, 100);
+  }
+  
 }

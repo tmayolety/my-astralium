@@ -1,6 +1,6 @@
-components.timelineComponent  = {
-    props: [],
-    template: /*html*/`
+components.timelineComponent = {
+  props: [],
+  template: /*html*/ `
         <div :class="[fullscreen]" class="ui modal size-xl">
             <div class="modal-container">
 
@@ -53,236 +53,264 @@ components.timelineComponent  = {
             </div>
         </div>
     `,
-    data() {
-        
-        return {
+  data() {
+    return {
+      timelineChart: null,
+      signalToBuild: signalGlobalTimelineVariable,
+      fullscreen: null,
+      singleRenderDiv: null,
+      myInterval: null,
+      titleTimeline: globalTimelineTitle,
+      timeDelay: globalTimelineDelay,
+      activeButton: null,
+      btn1Handler: null,
+      btn4Handler: null,
+      btn8Handler: null,
+      btn24Handler: null,
+    };
+  },
+  watch: {
+    signalToBuild: {
+      handler: "buildTimelineHome",
+      deep: true,
+    },
+  },
+  created() {
+    this.buildTimelineHome();
+  },
+  mounted() {
+    eventBus.subscribe("timeline-variable-updated", (signal) => {
+      if (signal != null) {
+        this.signalToBuild = signal;
+      }
+    });
+    eventBus.subscribe("timeline-variable-updated-title", (title) => {
+      this.titleTimeline = title;
+    });
+    eventBus.subscribe("timeline-variable-update-delay", (delay) => {
+      this.timeDelay = delay;
+    });
 
-         timelineChart: null,
-         signalToBuild: signalGlobalTimelineVariable,
-         fullscreen: null,
-         singleRenderDiv: null,
-         myInterval: null,
-         titleTimeline: globalTimelineTitle,
-         timeDelay: globalTimelineDelay,
-         activeButton: null,
-         btn1Handler: null,
-         btn4Handler: null,
-         btn8Handler: null,
-         btn24Handler: null,
-
+    this.activeButton = "btn1";
+  },
+  methods: {
+    buildTimelineHome() {
+      if (this.signalToBuild != null) {
+        if (this.timelineChart) {
+          this.destroyTimelineChart();
         }
+        this.buildTimeline(this.signalToBuild);
+        this.fullscreen = "open";
+      }
     },
-    watch:{
-        signalToBuild: {
-            handler: 'buildTimelineHome',
-            deep: true,
-         }
+    destroyTimelineChart() {
+      if (this.timelineChart) {
+        this.timelineChart.destroy();
+        this.timelineChart = null;
+      }
     },
-    created() {
-        this.buildTimelineHome();
+    closeTimeLineModal() {
+      window.signalGlobalTimelineVariable = null;
+      this.signalToBuild = null;
+      this.fullscreen = "";
+      clearInterval(this.myInterval);
+      this.destroyTimelineChart();
+      this.timelineChart = null;
+      this.activeButton = "btn1";
+      document
+        .getElementById("btn1HTimeline")
+        .removeEventListener("click", this.btn1Handler);
+      document
+        .getElementById("btn4HTimeline")
+        .removeEventListener("click", this.btn4Handler);
+      document
+        .getElementById("btn8HTimeline")
+        .removeEventListener("click", this.btn8Handler);
+      document
+        .getElementById("btn24HTimeline")
+        .removeEventListener("click", this.btn24Handler);
     },
-    mounted(){
-        
-        eventBus.subscribe('timeline-variable-updated', signal => {
-            if (signal != null) {
-                this.signalToBuild = signal;
-            }
-        });
-        eventBus.subscribe('timeline-variable-updated-title', title => {
-            
-          this.titleTimeline = title;
-            
-        });
-        eventBus.subscribe('timeline-variable-update-delay', delay => {
-            
-          this.timeDelay = delay;
-      
-        });
+    buildTimeline(signal) {
+      this.singleRenderDiv = document.getElementById("timeLineGraph");
 
-        this.activeButton = 'btn1';
+      const dataSingle = {
+        datasets: [
+          {
+            label: this.titleTimeline,
+            pointRadius: 0,
+            borderWidth: 1.3,
+            backgroundColor: "rgba(140, 152, 153,0.5)",
+            borderColor: "rgba(140, 152, 153,1)",
+            fill: false,
+            data: [],
+          },
+        ],
+      };
 
-    },
-    methods: {
-        
-        buildTimelineHome(){
-            
-            if (this.signalToBuild != null) {
-              
-                if (this.timelineChart) {
-                  
-                    this.destroyTimelineChart();
-                }
-                this.buildTimeline(this.signalToBuild);
-                this.fullscreen = "open"
-            }
-        },
-        destroyTimelineChart(){
-
-            if (this.timelineChart) {
-                this.timelineChart.destroy();
-                this.timelineChart = null;
-            }
-        },
-        closeTimeLineModal(){
-
-           window.signalGlobalTimelineVariable = null;
-           this.signalToBuild = null;
-           this.fullscreen = ""
-           clearInterval(this.myInterval);
-           this.destroyTimelineChart();
-           this.timelineChart = null;
-           this.activeButton = 'btn1';
-           document.getElementById('btn1HTimeline').removeEventListener('click', this.btn1Handler);
-           document.getElementById('btn4HTimeline').removeEventListener('click', this.btn4Handler);
-           document.getElementById('btn8HTimeline').removeEventListener('click', this.btn8Handler);
-           document.getElementById('btn24HTimeline').removeEventListener('click', this.btn24Handler);
-   
-        },
-        buildTimeline(signal){
-        
-          this.singleRenderDiv = document.getElementById("timeLineGraph")
-
-            const dataSingle = {
-              datasets: [
-                {
-                  label: this.titleTimeline,
-                  pointRadius: 0,
-                  borderWidth: 1.3,
-                  backgroundColor: "rgba(140, 152, 153,0.5)",
-                  borderColor: "rgba(140, 152, 153,1)",
-                  fill: false,
-                  data: [],
-                },
-              ],
-            };
-        
-            const totalSingle = new Chart(this.singleRenderDiv, {
-              type: "line",
-              data: dataSingle,
-              options: {
-                animation:{
-                  duration:0
-                },
-                maintainAspectRatio: false,
-                scales: {
-                  x: {
-                    type: "time",
-                    time: {
-                        unit: 'hour',
-                        stepSize: 1,
-                        tooltipFormat: 'HH:mm',
-                        displayFormats: {
-                          second: 'HH:mm:ss',
-                          minute: 'HH:mm',
-                          hour: 'HH:mm'
-                      }
-                    },
-                    ticks: {
-                        major: {
-                           enabled: true,
-                        },
-                        maxTicksLimit: 8
-                    }
-                  },
-                  y: {
-                    display: true,
-                    beginAtZero: true,
-                    min: parseInt(signalsData[signal].SignalMin),
-                    max: parseInt(signalsData[signal].SignalMax)
-                  },
+      const totalSingle = new Chart(this.singleRenderDiv, {
+        type: "line",
+        data: dataSingle,
+        options: {
+          animation: {
+            duration: 0,
+          },
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              type: "time",
+              time: {
+                unit: "hour",
+                stepSize: 1,
+                tooltipFormat: "HH:mm",
+                displayFormats: {
+                  second: "HH:mm:ss",
+                  minute: "HH:mm",
+                  hour: "HH:mm",
                 },
               },
-            });
-
-            this.getTimelineData(totalSingle, "-1h", "2m");
-            this.timelineChart = totalSingle;
-            this.myInterval = setInterval(()=> getTimelineData(totalSingle, "-1h", "2m"), 120000)
-            
-
-            this.btn1Handler = () => {
-              clearInterval(this.myInterval)
-              this.getTimelineData(totalSingle, "-1h", "2m");
-              this.myInterval = setInterval(()=> getTimelineData(totalSingle, "-1h", "2m"), 120000)
-            }
-            
-            this.btn4Handler = () => {
-              clearInterval(this.myInterval)
-              this.getTimelineData(totalSingle, "-4h", "5m");
-              this.myInterval = setInterval(()=> getTimelineData(totalSingle, "-4h", "5m"), 300000)
-            }
-            
-            this.btn8Handler = () => {
-              clearInterval(this.myInterval)
-              this.getTimelineData(totalSingle, "-8h", "5m");
-              this.myInterval = setInterval(()=> getTimelineData(totalSingle, "-8h", "5m"), 300000)
-            }
-            
-            this.btn24Handler = () => {
-              clearInterval(this.myInterval)
-              this.getTimelineData(totalSingle, "-24h", "10m");
-              this.myInterval = setInterval(()=> getTimelineData(totalSingle, "-24h", "10m"), 300000)
-            }
-
-            document.getElementById('btn1HTimeline').addEventListener('click', this.btn1Handler);
-            document.getElementById('btn4HTimeline').addEventListener('click', this.btn4Handler);
-            document.getElementById('btn8HTimeline').addEventListener('click', this.btn8Handler);
-            document.getElementById('btn24HTimeline').addEventListener('click', this.btn24Handler);
+              ticks: {
+                major: {
+                  enabled: true,
+                },
+                maxTicksLimit: 8,
+              },
+            },
+            y: {
+              display: true,
+              beginAtZero: true,
+              min: parseInt(signalsData[signal].SignalMin),
+              max: parseInt(signalsData[signal].SignalMax),
+            },
+          },
         },
-        btn1(){
-            this.activeButton = 'btn1';
-          },
-        btn2(){
-            this.activeButton = 'btn2';
-          },
-        btn3(){
-            this.activeButton = 'btn3';
-          },
-        btn4(){
-            this.activeButton = 'btn4';
-          },
-        getTimelineData(chart, time, rate) {
-            
-            var data = JSON.stringify({
-                "SignalId": [this.signalToBuild],
-                "Time": time,
-                "Rate": rate
+      });
+
+      this.getTimelineData(totalSingle, "-1h", "2m");
+      this.timelineChart = totalSingle;
+      this.myInterval = setInterval(
+        () => getTimelineData(totalSingle, "-1h", "2m"),
+        120000
+      );
+
+      this.btn1Handler = () => {
+        clearInterval(this.myInterval);
+        this.getTimelineData(totalSingle, "-1h", "2m");
+        this.myInterval = setInterval(
+          () => getTimelineData(totalSingle, "-1h", "2m"),
+          120000
+        );
+      };
+
+      this.btn4Handler = () => {
+        clearInterval(this.myInterval);
+        this.getTimelineData(totalSingle, "-4h", "5m");
+        this.myInterval = setInterval(
+          () => getTimelineData(totalSingle, "-4h", "5m"),
+          300000
+        );
+      };
+
+      this.btn8Handler = () => {
+        clearInterval(this.myInterval);
+        this.getTimelineData(totalSingle, "-8h", "5m");
+        this.myInterval = setInterval(
+          () => getTimelineData(totalSingle, "-8h", "5m"),
+          300000
+        );
+      };
+
+      this.btn24Handler = () => {
+        clearInterval(this.myInterval);
+        this.getTimelineData(totalSingle, "-24h", "10m");
+        this.myInterval = setInterval(
+          () => getTimelineData(totalSingle, "-24h", "10m"),
+          300000
+        );
+      };
+
+      document
+        .getElementById("btn1HTimeline")
+        .addEventListener("click", this.btn1Handler);
+      document
+        .getElementById("btn4HTimeline")
+        .addEventListener("click", this.btn4Handler);
+      document
+        .getElementById("btn8HTimeline")
+        .addEventListener("click", this.btn8Handler);
+      document
+        .getElementById("btn24HTimeline")
+        .addEventListener("click", this.btn24Handler);
+    },
+    btn1() {
+      this.activeButton = "btn1";
+    },
+    btn2() {
+      this.activeButton = "btn2";
+    },
+    btn3() {
+      this.activeButton = "btn3";
+    },
+    btn4() {
+      this.activeButton = "btn4";
+    },
+    getTimelineData(chart, time, rate) {
+      var data = JSON.stringify({
+        SignalId: [this.signalToBuild],
+        Time: time,
+        Rate: rate,
+      });
+      var settings = {
+        async: true,
+        crossDomain: true,
+        url: ACTIVE_SERVER + ":" + API.Port + "/totalsBySignalId",
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        processData: false,
+        data: data,
+      };
+
+      $.ajax(settings)
+        .done((response) => {
+          chart.data.datasets.forEach((dataset) => {
+            dataset.data = [];
+          });
+          if (response.length === 0) {
+            this.drawNoData(chart);
+          } else {
+            response.forEach(function (entry, index) {
+              var isoDate = entry.Name;
+              var date = new Date(isoDate);
+
+              var oldData = { x: date, y: Math.floor(entry.Value) };
+
+              chart.data.datasets.forEach((dataset) => {
+                dataset.data.push(oldData);
               });
-              var settings = {
-                  "async": true,
-                  "crossDomain": true,
-                  "url": ACTIVE_SERVER + ":" + API.Port +"/totalsBySignalId",
-                  "method": "POST",
-                  "headers": {
-                      "content-type": "application/json",
-                  },
-                  "processData": false,
-                  "data": data
-              }
-              
-              $.ajax(settings).done((response) => {
-                      chart.data.datasets.forEach((dataset) => {
-                          dataset.data = [];
-                      });
-                     
-                      response.forEach(function(entry, index) {
-                          var isoDate = entry.Name;
-                          var date = new Date(isoDate);
-                          
-                          var oldData = { x: date, y: Math.floor(entry.Value) };
-      
-                          chart.data.datasets.forEach((dataset) => {
-                              dataset.data.push(oldData);
-                          });
-                      });
-                      chart.update('quiet');
-                  
-              }).fail((jqXHR, textStatus, errorThrown)=>{
-                  console.error("Request failed: " + textStatus + ", " + errorThrown);
-                  console.log("Response status: " + jqXHR.status);
-                  console.log("Response text: " + jqXHR.responseText);
-              })
-        },
-
-        }
-    
+            });
+            chart.update("quiet");
+          }
+        })
+        .fail((jqXHR, textStatus, errorThrown) => {
+          this.drawNoData(chart);
+          console.error("Request failed: " + textStatus + ", " + errorThrown);
+          console.log("Response status: " + jqXHR.status);
+          console.log("Response text: " + jqXHR.responseText);
+        });
+    },
+    drawNoData(chart) {
+      setTimeout(() => {
+        const ctx = chart.ctx;
+        ctx.clearRect(0, 0, chart.width, chart.height);
+        ctx.save();
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillStyle = "rgb(255, 255, 255)";
+        ctx.font = "25px Lato, sans-serif";
+        ctx.fillText("NO DATA", chart.width / 2, chart.height / 2);
+        ctx.restore();
+      }, 100);
+    },
+  },
 };

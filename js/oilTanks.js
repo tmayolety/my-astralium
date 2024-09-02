@@ -149,25 +149,45 @@ if (OilTotalRender == true) {
                 chart.data.datasets.forEach((dataset) => {
                     dataset.data = [];
                 });
-               
-                response.forEach(function(entry, index) {
-                    var isoDate = entry.Name;
-                    var date = new Date(isoDate);
-                    
-                    var oldData = { x: date, y: Math.floor(entry.Value) };
 
-                    chart.data.datasets.forEach((dataset) => {
-                        dataset.data.push(oldData);
+                if(response.length === 0){
+                    drawNoData(chart);
+                }else{
+                    response.forEach(function(entry, index) {
+                        var isoDate = entry.Name;
+                        var date = new Date(isoDate);
+                        
+                        var oldData = { x: date, y: Math.floor(entry.Value) };
+    
+                        chart.data.datasets.forEach((dataset) => {
+                            dataset.data.push(oldData);
+                        });
                     });
-                });
-              
-                chart.update('quiet');
-          
+                  
+                    chart.update('quiet');
+                }
+                         
         }).fail((jqXHR, textStatus, errorThrown)=>{
+            drawNoData(chart);
             console.error("Request failed: " + textStatus + ", " + errorThrown);
             console.log("Response status: " + jqXHR.status);
             console.log("Response text: " + jqXHR.responseText);
         })
     }
+
+    function drawNoData(chart) {
+        setTimeout(() => {
+          const ctx = chart.ctx;
+          ctx.clearRect(0, 0, chart.width, chart.height);
+          ctx.save();
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.fillStyle = "rgb(255, 255, 255)";
+          ctx.font = "25px Lato, sans-serif";
+          ctx.fillText("NO DATA", chart.width / 2, chart.height / 2);
+          ctx.restore();
+        }, 100);
+      }
+      
 }
 
