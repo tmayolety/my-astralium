@@ -130,9 +130,7 @@ components.signalListSystem = {
     },
   
     clearSearch() {
-
-      console.log(this.allFilteredSignals)
-
+      
       this.isLoading = true;
     
       document.querySelector(".input").value = '';
