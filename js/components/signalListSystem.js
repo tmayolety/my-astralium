@@ -147,37 +147,42 @@ components.signalListSystem = {
     },
 
     async searchSignals(searchText) {
-      this.isLoading = true; 
+      
+      if (searchText.length > 2){
+        this.isLoading = true; 
+        try {
+          const response = await fetch(ACTIVE_SERVER + ":" + API.Port +'/signal/search', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ Search: searchText }),
+          });
   
-      try {
-        const response = await fetch(ACTIVE_SERVER + ":" + API.Port +'/signal/search', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ Search: searchText }),
-        });
-
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-  
-        const result = await response.json();
-
-        if (result == null) {
-          console.error('Search result is null');
-          this.filteredSignals = [];
-        } else {
-          this.filteredSignals = result;
-        }
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
     
-        this.itemsToShow = 20;
-        this.displayedSignals = this.filteredSignals.slice(0, this.itemsToShow);    
-
-      } catch (error) {
-        console.error('Error fetching signals:', error);
-      } finally {
-        this.isLoading = false;
+          const result = await response.json();
+  
+          if (result == null) {
+            console.error('Search result is null');
+            this.filteredSignals = [];
+          } else {
+            this.filteredSignals = result;
+          }
+          this.itemsToShow = 20;
+          this.displayedSignals = this.filteredSignals.slice(0, this.itemsToShow);    
+        } catch (error) {
+          console.error('Error fetching signals:', error);
+        } finally {
+          this.isLoading = false;
+        }
+      }else{
+        this.filteredSignals = this.signalListData.filter(function (el) {
+          return el != null;
+        });
+        this.displayedSignals = this.filteredByDevice.slice(0, this.itemsToShow);
       }
     },
   
