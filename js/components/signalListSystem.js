@@ -24,10 +24,14 @@ components.signalListSystem = {
             </div>
         </div>
     </div>
-<div class="col-content overflow" style="height: 628px;">
+
+
+<div class="col-content overflow" style="height: 628px;"  @scroll="loadMore()">
 <div class="col-content">
-<div v-for="(signal, index) in filteredSignals">
-    <ul class="ui table  size-sm resp dev-deviceListing" :class="'signalsDevice_'+ signal.Device" v-if="signal.TypeInOut == 'in'">          
+<div v-for="(signal, index) in filteredByDevice" :key="signal.Id">
+    <ul class="ui table  size-sm resp dev-deviceListing"
+    :style="{ display: displayedSignals.includes(signal) ? 'block' : 'none' }"
+    >       
         <li id="signalList_' + signal.Id + '">
             <div class="col-50 align-middle-center"  :style="index % 2 == 0 ? 'background: rgba(18,53,76,255); color: white' : ''"><span> {{signal.Id}} </span></div>
             <div class="col-760 align-middle-center"  :style="index % 2 == 0 ? 'background: rgba(18,53,76,255); color: white' : ''"><span>{{signal.Title}}</span></div>
@@ -47,19 +51,27 @@ components.signalListSystem = {
     </ul>
     </div>
 </div>
+<div style="display:none">{{activatedDevice}}</div>
 </div>
 `,
   data() {
     return {
-      
-      signalListData: signalsData,
+      activatedDevice: DeviceIdActivated,
+      signalListData: signalsData,   
       filteredSignals: [],
-      isLoading:false,
+      displayedSignals: [],     
+      isLoading: false,
       myKeyboard: null,
       clickTimeout: null,
-      allFilteredSignals:[]
-
+      itemsToShow: 20,         
+      increment: 5,
     };
+  },
+  watch: {
+    activatedDevice:{
+      handler: 'handleDeviceChange',
+      deep: true,
+    },
   },
   updated() {},
   mounted() {
@@ -71,8 +83,8 @@ components.signalListSystem = {
     });
 
     document.addEventListener('click', this.handleClickOutside);
-
     //mounted keyboard end
+
     setTimeout(function () {
       $(".dev-deviceListing")
         .not(".signalsDevice_" + deviceData[1].Id)
@@ -82,14 +94,39 @@ components.signalListSystem = {
     this.filteredSignals = this.signalListData.filter(function (el) {
       return el != null;
     });
+  
+    // Inicialmente mostramos solo un subconjunto
+    this.displayedSignals = this.filteredSignals.slice(0, this.itemsToShow);
 
-    this.allFilteredSignals = this.filteredSignals
-
+  },
+  computed: {
+    filteredByDevice() {
+      return (this.filteredSignals || []).filter(signal =>
+        signal != null &&
+        signal.TypeInOut === 'in' &&
+        signal.Device == this.activatedDevice
+      );
+    }
   },
   beforeDestroy() {
     document.removeEventListener('click', this.handleClickOutside);
   },
   methods: {
+
+    handleDeviceChange(){
+      this.filteredSignals = this.signalListData.filter(signal => 
+        signal.TypeInOut === 'in' && signal.Device == this.activatedDevice
+      );
+      this.displayedSignals = this.filteredSignals.slice(0, this.itemsToShow);
+    },
+  
+    loadMore() {
+      if (this.itemsToShow < this.filteredByDevice.length) {
+        this.itemsToShow += this.increment;
+        this.displayedSignals = this.filteredByDevice.slice(0, this.itemsToShow);
+      }
+    },
+
     handleInputChange(input) {
         document.querySelector(".input").value = input;
 
@@ -113,41 +150,51 @@ components.signalListSystem = {
           },
           body: JSON.stringify({ Search: searchText }),
         });
-  
+
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
   
         const result = await response.json();
-        this.filteredSignals = result; 
-  
+
+        if (result == null) {
+          console.error('Search result is null');
+          this.filteredSignals = [];
+        } else {
+          this.filteredSignals = result;
+        }
+    
+        this.itemsToShow = 20;
+        this.displayedSignals = this.filteredSignals.slice(0, this.itemsToShow);    
+
       } catch (error) {
         console.error('Error fetching signals:', error);
-        this.filteredSignals = [];
       } finally {
         this.isLoading = false;
       }
     },
   
     clearSearch() {
-      
+      this.filteredSignals = this.signalListData.filter(function (el) {
+        return el != null;
+      });
+
+      this.itemsToShow = 20;
       this.isLoading = true;
-    
       document.querySelector(".input").value = '';
       this.hideKeyboard();
-      
+  
       if (this.myKeyboard) {
         this.myKeyboard.clearInput();
       }
-      
+  
       setTimeout(() => {
-        this.filteredSignals = [...this.allFilteredSignals];
-        this.isLoading = false; 
+        this.displayedSignals = this.filteredByDevice.slice(0, this.itemsToShow);
+        this.isLoading = false;
       }, 300);
 
-
     },
-    
+
     showKeyboard() {
 
       document.querySelector('#keyboard').style.display = 'block';
