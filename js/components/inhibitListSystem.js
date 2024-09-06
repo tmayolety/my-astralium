@@ -20,13 +20,27 @@ components.inhibitListSystem = {
                 <div class="loaderSignals"></div>
             </div>
           
-            <span class="inhibitSearchIcon" style="width:22px; position: absolute; left:25vw; color: white;"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/></svg></span>
-
-            <div style="display: flex; margin-top:-.3em;">
-              <input id="keyboardInput"  style="height: 35px; width:27vw; font-size: 16px; background:#0e2a3d; color:white;" class="input reportLogHeaders" placeholder="Search" @focus="showKeyboard" @input="handleInputChange($event.target.value)" />
-              <button class="ui btn sm secondary active" @click="clearSearch">Clear</button>
+            <div style="display: flex; flex-direction: row; justify-content: left; align-items: center; gap: 4px; position: relative;">
+            <div style="position: relative; width: 27vw;">
+              <input id="keyboardInput" 
+                     style="height: 35px; width: 100%; font-size: 16px; border-radius: 6px; padding-right: 30px;" 
+                     class="input reportLogHeaders" 
+                     placeholder=" Search" 
+                     @focus="showKeyboard" 
+                     @input="handleInputChange($event.target.value)" />
+                
+              <span class="inhibitSearchIcon" 
+                    style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); width: 22px; color: white;">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                  <path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/>
+                </svg>
+              </span>
             </div>
 
+            <button class="ui btn sm secondary colored" style="color: white!important;" @click="clearSearch">Clear</button>
+          </div>
+          
             <div id="keyboardInhibits" style="width: 30vw; position: fixed; bottom: 95px; left: 50%; transform: translateX(-50%); z-index:99999; display: none;" class="simple-keyboard"></div>
           
 
