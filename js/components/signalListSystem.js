@@ -26,7 +26,7 @@ components.signalListSystem = {
     </div>
 
 
-<div class="col-content overflow" style="height: 628px;"  @scroll="loadMore()">
+<div class="col-content overflow" style="height: 628px;" ref="scrollContainer" @scroll="loadMore()">
 <div class="col-content">
 <div v-for="(signal, index) in filteredByDevice" :key="signal.Id">
     <ul class="ui table  size-sm resp dev-deviceListing"
@@ -118,6 +118,13 @@ components.signalListSystem = {
         signal.TypeInOut === 'in' && signal.Device == this.activatedDevice
       );
       this.displayedSignals = this.filteredSignals.slice(0, this.itemsToShow);
+      
+      this.$nextTick(() => {
+        const contentDiv = this.$refs.scrollContainer;
+        if (contentDiv) {
+          contentDiv.scrollTop = 0;
+        }
+      });
     },
   
     loadMore() {
