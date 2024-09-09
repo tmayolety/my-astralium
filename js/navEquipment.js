@@ -187,11 +187,19 @@ if (DeepTotalRender == true) {
   function drawNoData(chart) {
     setTimeout(() => {
       const ctx = chart.ctx;
+      const htmlElement = document.getElementById('schemeSelector');
+      const scheme = htmlElement.getAttribute('data-scheme');
+  
+      if (scheme === 'scheme1') {
+        ctx.fillStyle = "rgb(255, 255, 255)";
+      } else if (scheme === 'scheme2') {
+        ctx.fillStyle = "rgb(0, 0, 0)";
+      }
+  
       ctx.clearRect(0, 0, chart.width, chart.height);
       ctx.save();
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-      ctx.fillStyle = "rgb(255, 255, 255)";
       ctx.font = "25px Lato, sans-serif";
       ctx.fillText("NO DATA", chart.width / 2, chart.height / 2);
       ctx.restore();

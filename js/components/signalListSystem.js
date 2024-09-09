@@ -147,8 +147,8 @@ components.signalListSystem = {
     },
 
     async searchSignals(searchText) {
-      
-      if (searchText.length > 2){
+      const isNumber = !isNaN(searchText);
+      if (isNumber || searchText.length > 2){
         this.isLoading = true; 
         try {
           const response = await fetch(ACTIVE_SERVER + ":" + API.Port +'/signal/search', {
@@ -172,7 +172,7 @@ components.signalListSystem = {
             this.filteredSignals = result;
           }
           this.itemsToShow = 20;
-          this.displayedSignals = this.filteredSignals.slice(0, this.itemsToShow);    
+          this.displayedSignals = this.filteredSignals   
         } catch (error) {
           console.error('Error fetching signals:', error);
         } finally {
