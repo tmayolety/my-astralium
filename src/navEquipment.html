@@ -1,7 +1,7 @@
 
-<article class="section-navigation" >
+<article class="section-navigation paddingMini navSystemApp">
 
-    <div class="ui grid type1 cols-mini-1 pad-lg gap-xl hidden-phone" id="navSystemApp">
+    <div class="ui grid type1 cols-mini-1 pad-lg gap-xl hidden-mini">
 
         <div class="ui grid cols-mini-1 col mini-1 gap-sm pad-lg has-header">
 
@@ -214,5 +214,216 @@
 
     </div>
 
+    <div class="ui grid type1 cols-mini-1 gap-sm hidden-xl">
+
+        <div class="ui grid cols-mini-1 col mini-1 gap-sm has-header">
+
+            <header class="ui col">
+                <font>Navigation Equipment</font>
+                <span class="gradients">
+                    <span class="gradient-left"></span>
+                    <span class="gradient-right"></span>
+                </span>
+                
+                
+            </header>
+
+            <div class="ui col mini-1 gap-sm grid cols-mini-12" style="margin-top: -1em;">
+
+                <div class="ui col mini-1 grid pad-no gap-xl cols-mini-1 order-mini-1 col mini-3">
+
+                    <div class="ui col mini-1 h-mini-300 gap-no pad-no has-col-header-sm overflow-no radius shadow" style="overflow: hidden!important;">
+                        <header class="col-header text-size-8">True Wind</header>
+                        <div class="ui col type1 cols-mini-1 middle-center pad-mini" >
+                            <true-wind-system-render v-bind="{signalIdOptionOne:12021, signalIdOptionTwo:12023, valueMode:'escalated', valueDecimals: 1}" ></true-wind-system-render>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="ui col mini-6 grid cols-mini-2 pad-mini gap-no order-mini-2 radius shadow" >
+                    <wind-rose-system-render v-bind="{signalId:12019, valueMode:'escalated'}"></wind-rose-system-render>
+
+                    <div class="ui col mini-1 h-mini-80">
+                      
+                            <basic-text-with-title-render v-bind="{
+                        signalId: 30276,
+                        title: 'Latitude',
+                        unit: 'º',
+                        limitFlagSignalId: 11190,
+                        timeDelay: 3000,
+                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
+                        valueStyle: 'align-center text-size-11 font-bold',
+                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
+                        valueMode: 'escalated'}"></basic-text-with-title-render>
+                     
+                    </div>
+
+                    <div class="ui col mini-1 h-mini-80">
+                      
+                            <basic-text-with-title-render v-bind="{
+                        signalId: 30276,
+                        title: 'Longitude',
+                        unit: 'º',
+                        limitFlagSignalId: 11190,
+                        timeDelay: 3000,
+                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
+                        valueStyle: 'align-center text-size-11 font-bold',
+                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
+                        valueMode: 'escalated'}"></basic-text-with-title-render>
+                      
+                    </div>
+                </div>
+
+                <div class="ui col grid cols-mini-1 pad-no gap-xl order-mini-3 col mini-3">
+
+                    <div class="ui col mini-1 h-mini-300 pad-no has-col-header-sm radius shadow" style="overflow: hidden!important;">
+                        <header class="col-header text-size-8">SOG & COG</header>
+                        <div class="ui col type1 cols-mini-1 middle-center pad-mini">
+                            <sog-cog-system-render v-bind="{signalIdOptionOne:12017, signalIdOptionTwo: 12019, valueMode: 'escalated' }"></sog-cog-system-render>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="ui col mini-12 grid cols-mini-5 cols-xl-5 pad-no gap-sm order-mini-4 order-xl-4">
+
+                    <div class="ui grid cols-mini-2 gap-sm order-mini-1 order-xl-1 radius shadow col mini-1 xl-1">
+                        <div class="ui col mini-1 h-mini-90">
+                         
+                                <basic-text-with-title-render v-bind="{
+                        signalId: 30276,
+                        title: 'TWD',
+                        unit: 'º',
+                        limitFlagSignalId: 11190,
+                        timeDelay: 3000,
+                        titleStyle: 'text-size-8 align-center',
+                        valueStyle: 'text-size-15 align-center font-bold',
+                        valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
+                        valueMode: 'escalated'}"></basic-text-with-title-render>
+                        
+                        </div>
+                        <div class="ui col mini-1 h-mini-90">
+                         
+                                <basic-text-with-title-render v-bind="{
+                        signalId: 30276,
+                        title: 'TWS',
+                        unit: 'Kn',
+                        limitFlagSignalId: 11190,
+                        timeDelay: 3000,
+                        titleStyle: 'text-size-8 align-center',
+                        valueStyle: 'text-size-15 align-center font-bold',
+                        valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
+                        valueMode: 'escalated'}"></basic-text-with-title-render>
+                         
+                        </div>
+                        <div class="ui col mini-1 h-mini-90">
+                          
+                                <basic-text-with-title-render v-bind="{
+                        signalId: 30276,
+                        title: 'Heading',
+                        unit: 'º',
+                        limitFlagSignalId: 11190,
+                        timeDelay: 3000,
+                        titleStyle: 'text-size-8 align-center',
+                        valueStyle: 'text-size-15 align-center font-bold',
+                        valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
+                        valueMode: 'escalated'}"></basic-text-with-title-render>
+                          
+                        </div>
+                        <div class="ui col mini-1 h-mini-90">
+                         
+                                <basic-text-with-title-render v-bind="{
+                        signalId: 30276,
+                        title: 'Depth',
+                        unit: 'º',
+                        limitFlagSignalId: 11190,
+                        timeDelay: 3000,
+                        titleStyle: 'text-size-8 align-center',
+                        valueStyle: 'text-size-15 align-center font-bold',
+                        valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
+                        valueMode: 'escalated'}"></basic-text-with-title-render>
+                     
+                        </div>
+                    </div>
+                    <div class="ui col mini-3 middle-center order-mini-2 hidden-phone radius shadow">
+                              
+                        <canvas id="deepGraph" style="height: 160px!important; margin-top: 25px!important;"></canvas>
+
+                        <div style="display: flex; justify-content: center; padding: 0.1em; gap: 0.5em; position: absolute; top: 4px; right: 10px;">
+                            <button class="ui btn mini colored primary timeLineButtonDeepTanks active" id="btn1DeepTanks" style=" width: 35px;">1m</button>
+                            <button class="ui btn mini colored primary timeLineButtonDeepTanks" id="btn2DeepTanks" style=" width: 35px;">20m</button>
+                            <button class="ui btn mini colored primary timeLineButtonDeepTanks" id="btn3DeepTanks" style=" width: 35px;">1H</button>
+                            <button class="ui btn mini colored primary timeLineButtonDeepTanks" id="btn4DeepTanks" style=" width: 35px;">8H</button>
+                        </div>
+                           
+                    </div>
+
+                    <div class="ui col mini-1 xl-1 grid cols-mini-2 gap-sm order-mini-3 radius shadow">
+                        <div class="ui col mini-1 h-mini-90" >
+                            
+                                <basic-text-with-title-render v-bind="{
+                        signalId: 30276,
+                        title: 'SOG',
+                        unit: 'Kn',
+                        limitFlagSignalId: 11190,
+                        timeDelay: 3000,
+                        titleStyle: 'text-size-8 align-center',
+                        valueStyle: 'text-size-15 align-center font-bold',
+                        valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
+                        valueMode: 'escalated'}"></basic-text-with-title-render>
+                  
+                        </div>
+                        <div class="ui col mini-1 h-mini-90 ">
+                                <basic-text-with-title-render v-bind="{
+                        signalId: 30276,
+                        title: 'COG',
+                        unit: 'º',
+                        limitFlagSignalId: 11190,
+                        timeDelay: 3000,
+                        titleStyle: 'text-size-8 align-center',
+                        valueStyle: 'text-size-15 align-center font-bold',
+                        valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
+                        valueMode: 'escalated'}"></basic-text-with-title-render>
+                            
+                        </div>
+                        <div class="ui col mini-1 h-mini-90 ">
+                                <basic-text-with-title-render v-bind="{
+                        signalId: 30276,
+                        title: 'Water Temp',
+                        unit: 'ºC',
+                        limitFlagSignalId: 11190,
+                        timeDelay: 3000,
+                        titleStyle: 'text-size-8 align-center',
+                        valueStyle: 'text-size-15 align-center font-bold',
+                        valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
+                        valueMode: 'escalated'}"></basic-text-with-title-render>
+                         
+                        </div>
+                        <div class="ui col mini-1 h-mini-90 ">
+                          
+                                <basic-text-with-title-render v-bind="{
+                        signalId: 30276,
+                        title: 'Time',
+                        unit: '',
+                        limitFlagSignalId: 11190,
+                        timeDelay: 3000,
+                        titleStyle: 'text-size-8 align-center',
+                        valueStyle: 'text-size-15 align-center font-bold',
+                        valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
+                        valueMode: 'escalated'}"></basic-text-with-title-render>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
 
 </article>
+
+
+

@@ -198,7 +198,7 @@ nav.main-nav > ul > li { position: relative; cursor: pointer; box-sizing: border
 @media (min-width: 990px) { nav.main-nav > ul > li { width: 9.09091%; } }
 @media (min-width: 1080px) { nav.main-nav > ul > li { width: 8.33333%; } }
 @media (min-width: 1170px) { nav.main-nav > ul > li { width: 7.69231%; } }
-@media (min-width: 1260px) { nav.main-nav > ul > li { width: 7.14286%; } }
+@media (min-width: 1260px) { nav.main-nav > ul > li { width: 5.26086%; padding-bottom: 5px !important; } }
 @media (min-width: 1350px) { nav.main-nav > ul > li { width: 6.66667%; } }
 @media (min-width: 1440px) { nav.main-nav > ul > li { width: 6.25%; } }
 @media (min-width: 1530px) { nav.main-nav > ul > li { width: 5.88235%; } }
@@ -230,7 +230,9 @@ nav.main-nav > ul > li.active::after { background: transparent; }
 nav.main-nav > ul > li[data-alert] > svg { top: 5px; right: 5px; -moz-transform: translate(0, 0); -o-transform: translate(0, 0); -ms-transform: translate(0, 0); -webkit-transform: translate(0, 0); transform: translate(0, 0); }
 nav.main-nav > ul > li:not([data-alert=""]) > svg { display: block; }
 nav.main-nav > ul > li a { display: flex; text-decoration: none; text-align: center; flex-direction: column; align-items: center; font-size: 0.8rem !important; line-height: inherit !important; color: RGBA(var(--sch-clr-ui-text)/var(--sch-clr-ui-text-op)); -webkit-transition: color 0s 0s ease-in-out; -moz-transition: color 0s 0s ease-in-out; -ms-transition: color 0s 0s ease-in-out; -o-transition: color 0s 0s ease-in-out; transition: color 0s 0s ease-in-out; }
+
 nav.main-nav > ul > li a svg.ui.icon { width: 2.4rem !important; height: 2.4rem !important; margin-right: 0 !important; margin-bottom: 0.4rem !important; fill: RGBA(var(--sch-clr-ui-icon)/var(--sch-clr-ui-icon-op)); -webkit-transition: fill 0s 0s ease-in-out; -moz-transition: fill 0s 0s ease-in-out; -ms-transition: fill 0s 0s ease-in-out; -o-transition: fill 0s 0s ease-in-out; transition: fill 0s 0s ease-in-out; }
+
 nav.main-nav > ul > li[data-submenu="true"]::before { content: ''; display: block; top: 3px; right: auto; bottom: auto; left: 50%; position: absolute; -moz-transform: translate(-50%, 0); -o-transform: translate(-50%, 0); -ms-transform: translate(-50%, 0); -webkit-transform: translate(-50%, 0); transform: translate(-50%, 0); border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 5px solid RGBA(var(--sch-clr-primary)/100%); -webkit-transition: border 0s 0s ease-in-out; -moz-transition: border 0s 0s ease-in-out; -ms-transition: border 0s 0s ease-in-out; -o-transition: border 0s 0s ease-in-out; transition: border 0s 0s ease-in-out; width: 0; height: 0; border-bottom: 5px solid RGBA(var(--sch-clr-ui-icon)/var(--sch-clr-ui-icon-op)); }
 nav.main-nav > ul > li.active { z-index: 99; background: RGBA(var(--sch-clr-active)/var(--sch-clr-active-op)); border-color: RGBA(var(--sch-clr-active)/var(--sch-clr-active-op)); box-shadow: 0px 0px 6px 2px RGBA(var(--sch-clr-active-glow-out)/var(--sch-clr-active-glow-out-op)), inset 0px 0px 15px 0px RGBA(var(--sch-clr-active-glow-in)/var(--sch-clr-active-glow-in-op)); -webkit-transition: background 0s 0s ease-in-out, border 0s 0s ease-in-out, box-shadow 0s 0s ease-in-out; -moz-transition: background 0s 0s ease-in-out, border 0s 0s ease-in-out, box-shadow 0s 0s ease-in-out; -ms-transition: background 0s 0s ease-in-out, border 0s 0s ease-in-out, box-shadow 0s 0s ease-in-out; -o-transition: background 0s 0s ease-in-out, border 0s 0s ease-in-out, box-shadow 0s 0s ease-in-out; transition: background 0s 0s ease-in-out, border 0s 0s ease-in-out, box-shadow 0s 0s ease-in-out; }
 nav.main-nav > ul > li.active::after { border-color: RGBA(var(--sch-clr-active)/var(--sch-clr-active-op)); }
@@ -6652,16 +6654,93 @@ ion-icon {
 
  /*FIX SKIN 2*/
 
- html[data-scheme="scheme1"] .timelineBackground{background: rgb(10, 30, 42)!important;}
+html[data-scheme="scheme1"] .timelineBackground{background: rgb(10, 30, 42)!important;}
 
- html[data-scheme="scheme2"] .timelineBackground{background: rgb(255, 255, 255)!important;}
+html[data-scheme="scheme2"] .timelineBackground{background: rgb(255, 255, 255)!important;}
  
- html[data-scheme="scheme1"] .reportLogHeaders{ background: #12354c!important; color: white!important; }
+html[data-scheme="scheme1"] .reportLogHeaders{ background: #12354c!important; color: white!important; }
  
- html[data-scheme="scheme2"] .reportLogHeaders{ background: #ffffff!important; color: rgb(0, 0, 0)!important; }
+html[data-scheme="scheme2"] .reportLogHeaders{ background: #ffffff!important; color: rgb(0, 0, 0)!important; }
  
- html[data-scheme="scheme1"] .signalListRowEven{ background: rgba(18,53,76,255)!important; color: white;}
- html[data-scheme="scheme2"] .signalListRowEven{ background: rgb(255, 255, 255)!important; color: white;}
- html[data-scheme="scheme1"] .signalListRowOdd{ background: #0e2a3d!important; color: white;}
- html[data-scheme="scheme2"] .signalListRowOdd{ background: #cfd4d7!important; color: white;}
+html[data-scheme="scheme1"] .signalListRowEven{ background: rgba(18,53,76,255)!important; color: white;}
+html[data-scheme="scheme2"] .signalListRowEven{ background: rgb(255, 255, 255)!important; color: white;}
+html[data-scheme="scheme1"] .signalListRowOdd{ background: #0e2a3d!important; color: white;}
+html[data-scheme="scheme2"] .signalListRowOdd{ background: #cfd4d7!important; color: white;}
  
+ /* ASTRALIUM 1280x800 screen */
+
+@media (max-width: 1280px) {
+  nav.main-nav > ul > li a svg.ui.icon {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+  main > .ui.main-tabs{
+    padding: 0.2rem .1rem;
+  }
+  .ui.grid.gap-no.col.has-header > header{
+    height: 40px!important;
+  }
+  .flipButtonSize{
+    width: 110px;
+  }
+  .timelineComponenCloseButton{
+    right: 160px;
+  }
+  .paddingMini{
+    padding: .3em;
+  }
+  .marginTopMini{
+    margin-top: -1em;
+  }
+  .marginTopMiniReportLog{
+    margin-top: -.7em;
+  }
+  .ui.grid.gap-med.col.has-header > header{
+    height: 40px!important;
+  }
+  .ui.grid.gap-sm.col.has-header > header{
+    height: 40px!important;
+  }
+  .ui.grid.gap-mini.col.has-header > header{
+    height: 40px!important;
+  }
+  .alarmLogMarginTop{
+    margin-top:-4em;
+  }
+  .displayNone{
+    display: none!important;
+  }
+  .inputReportLog{
+    margin-bottom: .3em!important;
+  }
+}
+
+@media (min-width: 1281px) {
+  .flipButtonSize{
+    width: 100%;
+  }
+  .timelineComponenCloseButton{
+    right: -20px;
+  }
+  .alarmLogMarginTop{
+    margin-top:-2em;
+  }
+  .inputReportLog{
+    margin-bottom: 1em!important;
+  }
+}
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+

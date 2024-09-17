@@ -20,7 +20,7 @@ components.inhibitListSystem = {
                 <div class="loaderSignals"></div>
             </div>
           
-            <div style="display: flex; flex-direction: row; justify-content: left; align-items: center; gap: 4px; position: relative;">
+            <div class="marginTopMini" style="display: flex; flex-direction: row; justify-content: left; align-items: center; gap: 4px; position: relative;">
             <div style="position: relative; width: 27vw;">
               <input id="keyboardInput" 
                      style="height: 35px; width: 100%; font-size: 16px; border-radius: 6px; padding-right: 30px;" 
@@ -48,7 +48,7 @@ components.inhibitListSystem = {
 
                 <div class="hidden-phone" v-if="!isPhone">
                     <input type="hidden" :id="group.Name.replace(/\\s/g, '') + '_groupOverallCount'">
-                    <div class="ui grid type1 cols-mini-1 cols-xl-3 pad-mini gap-med groupColumn" :class="'groupColumn_' + group.Id">
+                    <div class="ui grid type1 cols-mini-2 cols-xl-3 pad-mini gap-med groupColumn" :class="'groupColumn_' + group.Id">
                         <div class="ui col mini-1 has-col-header-xl radius shadow ">
                             <header class="text-size-8 font-bold"><h5 class="ui h4 " :class="'dev-inhibitCount-' + group.Name.replace(/\\s/g, '')">{{group.Name}}
                              (<span :class="group.Name.replace(/\\s/g, '') + '_overallCount'" ></span> inhibited )

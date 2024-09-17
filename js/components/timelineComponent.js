@@ -10,7 +10,7 @@ components.timelineComponent = {
 
                     <div class="ui col sm-1 pad-no">
                         <div class="col-content overflow modal-content">
-                            <button class="ui btn sm icon primary colored icon-only active" @click="closeTimeLineModal()" style="position: absolute; z-index: 9999; right: -20px; top: -230px">
+                            <button class="ui btn sm icon primary colored icon-only active timelineComponenCloseButton" @click="closeTimeLineModal()" style="position: absolute; z-index: 9999; top: -230px">
                               <svg class="ui icon" id="close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M98.74,81.26q2.52,2.14,0,4.47l-13,13q-2.33,2.33-4.47,0L50,67.67,18.74,98.74q-2.14,2.52-4.47,0l-13-13q-2.33-2.33,0-4.47L32.33,50,1.26,18.93q-2.33-2.33,0-4.47l13-13.2q2.32-2.33,4.47,0L50,32.33,81.26,1.26c1.56-1.68,3-1.68,4.47,0l13,13q2.33,2.32,0,4.47L67.67,50Z"></path></svg>
                             </button>
                             <div class="ui col mini-2 pad-sm align-middle-center h-mini-570 hidden-mini hidden-phone fullscreen-med scheme3BackgroundModal">

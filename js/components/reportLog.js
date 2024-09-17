@@ -1,10 +1,10 @@
 components.reportLog = {
   props: [],
   template: /*html*/ `
-        <div id="keyboardAnalysisLog" style="width: 30vw; position: fixed; bottom: 95px; left: 50%; transform: translateX(-50%); z-index:99999; display: none;" class="keyboardAnalysisLog"></div>
-        <div class="ui grid cols-mini-6 gap-med">
-          <div class=" col mini-2">
+        <div id="keyboardAnalysisLog" style="width: 40vw; position: fixed; bottom: 95px; left: 50%; transform: translateX(-50%); z-index:99999; display: none;" class="keyboardAnalysisLog"></div>
+        <div class="ui grid cols-mini-6 gap-med marginTopMiniReportLog">
           
+          <div class=" col xl-2 hidden-mini">
                 <ul class="ui table size-mini" style="height: 225px">
                   <li class="thead" style="height: 42px;">
                       <div class="col-200 align-middle-center reportLogHeaders"><span class="text-size-8">LOG NAME</span></div>
@@ -23,10 +23,30 @@ components.reportLog = {
                 <div class="btn-group" style="text-align: center; margin-top: 5em; ">
                     <button v-if="!upToThreeLogs" @click="addNewLog()" class="ui btn primary med reportLogHeaders"><ion-icon name="add-outline" style="font-size: 22px; margin-right: .5em"></ion-icon>ADD NEW LOG</button>
                 </div>
+          </div>
 
+          <div class=" col mini-1 hidden-xl">
+                <ul class="ui table size-mini">
+                  <li class="thead" style="height: 42px;">
+                      <div class="col-100 align-middle-center reportLogHeaders"><span class="text-size-8">LOG NAME</span></div>
+                      <div class="col-100 align-middle-center reportLogHeaders"><span class="text-size-8">FREQUENCY</span></div>
+                      <div class="col-100 align-middle-center reportLogHeaders"><span class="text-size-8">LAST</span></div>
+                  </li>
+                  <li  v-for="log in lastThreeLogs" :key="log.name" style="height: 75px" @click="editLog(log.id)">
+                  <button class="ui btn mini" :class="{ 'active primary': log.id === idLogUpdate, 'colored primary': log.id !== idLogUpdate }" style="width: 300px; margin-top: 1em;">
+                        <div class="col-100 align-middle-center"><span style="font-size: 12px">{{ log.name }}</span></div>
+                        <div class="col-100 align-middle-center"><span style="font-size: 12px">{{ log.frequency }}</span></div>
+                        <div class="col-100 align-middle-center"><span style="font-size: 12px">{{ log.last }}</span></div>
+                  </button>
+                  </li>
+                </ul>
+
+                <div class="btn-group" style="text-align: center; margin-top: 5em; ">
+                    <button v-if="!upToThreeLogs" @click="addNewLog()" class="ui btn primary med reportLogHeaders"><ion-icon name="add-outline" style="font-size: 22px; margin-right: .5em"></ion-icon>ADD NEW LOG</button>
+                </div>
           </div>
   
-          <div class="ui col mini-4">
+          <div class="ui col mini-5 xl-4">
             <div class="ui grid type1 cols-mini-1 gap-med">
               <div class="ui col mini-1 has-col-header-med">
                 <header v-if="showAddSignals" class="text-size-14">EDIT {{currentInputTitle}} LOG</header>
@@ -40,18 +60,18 @@ components.reportLog = {
                       </div>
                                       
                       <form @submit.prevent="validateAndLog(idLogUpdate)" id="logForm">
-    
-                        <div class="ui mini-2 btn med primary colored" style="margin-bottom: 1em; display: block!important;">
+
+                        <div class="ui mini-2 btn med primary colored inputReportLog" style=" display: block!important;">
                             <input class="input textColorTheme" type="text" @focus="setActiveInput('title')" id="title" name="title" v-model="currentInputTitle" placeholder="Name" style="width: 24em; background: none; border: none; font-size: large; height: 1em;">
                             <p v-if="errors.title" style="color:red; font-weight: 800; margin-bottom: -1em;">{{ errors.title }}</p>
                         </div>
                                 
-                        <div class="ui mini-2 btn med primary colored" style="margin-bottom: 1em; display: block!important;">
+                        <div class="ui mini-2 btn med primary colored inputReportLog" style="display: block!important;">
                             <input  class="input textColorTheme" type="email" @focus="setActiveInput('email')" id="email" name="email" v-model="currentInputEmail" placeholder="Output Email" style="width: 24em; background: none; border: none; font-size: large; height: 1em; ">
                             <p v-if="errors.email" style="color:red; font-weight: 800; margin-bottom: -1em;">{{ errors.email }}</p>
                         </div>
 
-                        <div class="ui mini-2" style="margin-bottom: 1em; display: block!important; ">
+                        <div class="ui mini-2 inputReportLog" style="display: block!important; ">
                             <select v-model="frequencySelected" class="ui select  btn med primary colored textColorTheme" name="select" style="height: 38.5px; width: 484px; font-size: large; ">
                                 <option class="ui btn med primary colored" value="" disabled>Select Frequency</option>
                                 <option class="ui btn med primary active" v-for="frequency in frequencies" :value="frequency.id">{{frequency.name}}</option>
@@ -59,7 +79,7 @@ components.reportLog = {
                             <p v-if="errors.frequency" style="color:red; font-weight: 800; margin-bottom: -1em;">{{ errors.frequency }}</p>
                         </div>
 
-                        <div class="ui mini-2 " style="margin-bottom: 1em; display: block!important;">
+                        <div class="ui mini-2 inputReportLog" style="display: block!important;">
                             <select v-model="startTimeSelected" class="ui select btn med primary colored textColorTheme" name="select" style="height: 38.5px; width: 484px; font-size: large; ">
                                 <option class="ui btn med primary colored" value="" disabled>Start Time</option>
                                 <option class="ui btn med primary active" v-for="hour in hours" :value="hour">{{hour}}:00</option>
@@ -102,7 +122,7 @@ components.reportLog = {
                       </ul>
                     </div>
   
-                    <div>
+                    <div class="hidden-mini">
                         <ul class="ui table size-mini">
                             <li class="thead" >
                                 <div class="align-middle-center col-100-min" style="border-top-left-radius: 9px;"><span>ID</span></div>
@@ -113,7 +133,18 @@ components.reportLog = {
                         </ul>
                     </div>
 
-                    <div style="height:320px; overflow: auto;">
+                    <div class="hidden-xl">
+                    <ul class="ui table size-mini">
+                        <li class="thead" >
+                            <div class="align-middle-center col-50-min" style="border-top-left-radius: 9px;"><span>ID</span></div>
+                            <div class="align-middle-center col-500-min"><span>Signal Description</span></div>
+                            <div class="align-middle-center col-150-min"><span>Type</span></div>
+                            <div class="align-middle-center col-50-min" style="border-top-right-radius: 9px;"><span>Delete</span></div>
+                        </li>
+                    </ul>
+                </div>
+
+                    <div style="height:320px; overflow: auto;" class="hidden-mini">
                       <ul class="ui table size-mini" >
                         <li v-for="signalSelected in selectedSignals" style="border-bottom: 1px solid #103046;">
                           <div class="align-middle-center col-100-min" ><span>{{signalSelected.Id}}</span></div>
@@ -125,6 +156,23 @@ components.reportLog = {
                             </button>
                           </div>
                           <div class="align-middle-center col-100-min"><button @click="deleteSignal(signalSelected.idFromSignalLog)" class="textColorTheme" style=" border: none!important; background: none!important;"><ion-icon name="close-circle-outline" style="font-size: 16px; height: 20px; width: 20px;"></ion-icon></button></div>
+                        </li>
+                      </ul>
+                    </div>
+
+                    
+                    <div style="height:200px; overflow: auto;" class="hidden-xl">
+                      <ul class="ui table size-mini" >
+                        <li v-for="signalSelected in selectedSignals" style="border-bottom: 1px solid #103046;">
+                          <div class="align-middle-center col-50-min" ><span>{{signalSelected.Id}}</span></div>
+                          <div class="align-left col-500-min col-500" ><span>{{signalSelected.Title}}</span></div>
+                          <div class="align-middle-center col-150-min">
+                            <button @click="toggleSignalType(signalSelected)" class="ui btn switch mini w-100  switch-2clr" :class="{'active color-bg-type-secondary-light': signalSelected.typeFromSignalLog == 0, 'color-bg-type-secondary-dark': signalSelected.typeFromSignalLog == 1}">
+                              <div class="active" style="font-size:12px;">Absolute</div>
+                              <div class="inactive" style="font-size:12px">Timeline</div>
+                            </button>
+                          </div>
+                          <div class="align-middle-center col-50-min"><button @click="deleteSignal(signalSelected.idFromSignalLog)" class="textColorTheme" style=" border: none!important; background: none!important;"><ion-icon name="close-circle-outline" style="font-size: 14px; height: 15px; width: 15px;"></ion-icon></button></div>
                         </li>
                       </ul>
                     </div>

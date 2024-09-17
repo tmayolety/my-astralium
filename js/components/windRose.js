@@ -2,10 +2,10 @@
 components.windRose = {
     props: ['signalId', 'valueMode'],
     template:/*html*/ `
-    <div class="ui col mini-2" style="overflow:hidden" ref="windRoseElement">
-    <div class="col mini-6 " style="border:0;">
+<div class="ui col mini-2" style="overflow:hidden" ref="windRoseElement">
+<div class="col mini-6 " style="border:0;">
 <div class="rotate-anim" id="rotate_12019" :style="'transform:rotate(' + valueToShow + 'deg)'">
-<i class="ui icon-size-mini-400 icon-size-xl-440">
+<i class="ui icon-size-mini-330 icon-size-xl-440">
 <svg class="ui icon windrose" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
 <g id="windrose">
 <g id="circle-2" data-name="circle">
@@ -550,7 +550,7 @@ SSE
 </svg>
 </i>
 </div>
-<i class="ui color-fill-type-primary windrose-dir icon-size-mini-400 icon-size-xl-440"><svg class="ui icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path id="front" d="M50,11.52,43.07,50,50,88.48,56.93,50ZM45,50H55L50,77.78Z"></path><polygon id="back" points="44.67 49.56 50 78.22 55.33 49.56 44.67 49.56"></polygon></svg></i>
+<i class="ui color-fill-type-primary windrose-dir icon-size-mini-280 icon-size-xl-440"><svg class="ui icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path id="front" d="M50,11.52,43.07,50,50,88.48,56.93,50ZM45,50H55L50,77.78Z"></path><polygon id="back" points="44.67 49.56 50 78.22 55.33 49.56 44.67 49.56"></polygon></svg></i>
 </div>
 <span style="display:none;" > {{value}} </span>
 </div>

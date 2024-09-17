@@ -341,6 +341,13 @@ components.bar = {
                 classOutput = 'size-mini h-180 header-mini-x1 footer-mini-x1'
                 this.titleClassSize = 'h6'
                 this.valueFontClassVertical = 'h4'
+                this.valueFontClassHorizontal = 'h4'
+            }
+            if (this.size == 'extraSmall') {
+                classOutput = 'size-mini h-120 header-mini-x1 footer-mini-x1'
+                this.titleClassSize = 'h6'
+                this.valueFontClassVertical = 'h5'
+                this.valueFontClassHorizontal = 'h5'
             }
             if (this.size == 'medium') {
                 classOutput = 'size-mini h-mini-350 header-mini-x1 footer-mini-x1'

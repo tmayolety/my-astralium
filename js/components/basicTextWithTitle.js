@@ -31,33 +31,27 @@ components.basicTextWithTitle = {
         </div>
  
         <div v-else class="flip-col go-bt " :class="[flipClass]">
-        
-            <div class="flip-col--container">
-                                                    
+            <div class="flip-col--container">                  
                 <div class="ui col align-middle-center" style="font-size: 12px; display: flex; justify-content: center; text-align:left;" >
-                    <button class="ui btn mini colored secondary textColorTheme" @click="callTimeline(this.signalId, this.title, this.timeDelay)" style="width: 100%; height: 100%;">
+                    <button class="ui btn mini colored secondary textColorTheme flipButtonSize" @click="callTimeline(this.signalId, this.title, this.timeDelay)" style="height: 100%;">
                         Id: {{signalId}}<br>
                         {{deviceName}}<br>
                         RAW: {{rawToShow}}
-                    </button>                                                                             
-
+                    </button>
                 </div>                     
 
                 <div class="ui col align-middle-center"  v-on:click="flipComponent()">
-
                     <div :class= '[titleClass, titleStyle]'> {{ title }}</div>
                     <div :class= '[valueClass, valueStyle]'> {{ valueToShow }} <small :class= '[valueSmallStyle]'>{{ unit }}</small></div>
+                    
                     <div class="font-bold resp" :class= '[value2Style]' v-if="value2Display"> {{ value2 }} <small :class= '[value2SmallStyle]'>{{ unit2 }}</small></div>
                     <span style="display: none;">{{value}}</span>
                     <span style="display: none;">{{LL}}</span>
                     <span style="display: none;">{{L}}</span>
                     <span style="display: none;">{{HH}}</span>
                     <span style="display: none;">{{H}}</span>
-                
                 </div>
-
             </div>
-
         </div>
 
         `,

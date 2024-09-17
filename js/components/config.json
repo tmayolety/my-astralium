@@ -36,7 +36,7 @@
             "file": "windRose"
           }
         ],
-        "mount":"#navSystemApp",
+        "mount":".navSystemApp",
         "config": {
         "compilerOptions": {
           "isCustomElement": "tag => tag.startsWith('font')"

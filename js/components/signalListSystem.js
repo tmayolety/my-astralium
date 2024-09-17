@@ -11,20 +11,17 @@ components.signalListSystem = {
         <button class="ui btn sm secondary"  @click="clearSearch">Clear</button>
     </div>
 
-
-    <div id="keyboard" style="width: 30vw; position: fixed; bottom: 95px; left: 50%; transform: translateX(-50%); z-index:99999; display: none;" class="simple-keyboard"></div>
-
+    <div id="keyboard" style="width: 40vw; position: fixed; bottom: 95px; left: 50%; transform: translateX(-50%); z-index:99999; display: none;" class="simple-keyboard"></div>
 
     <div class="ui col sm-1 gap-no pad-no bg-no h-tv-ld-30 h-tv-pt-30">
         <div class="col-content">
             <div class="col-content overflow">
                     <ul class="ui table size-sm resp">
-                        <li class="thead"><div class="col-50 align-middle-center"><span>ID #</span></div><div class="col-760 align-middle-center"><span>Name</span></div><div class="col-90 align-middle-center"><span>Type</span></div><div class="col-90 align-middle-center"><span>Raw</span></div><div class="col-90 align-middle-center"><span>Escalated</span></div><div class="col-90 align-middle-center hidden-tv-pt"><span>Min</span></div><div class="col-90 align-middle-center hidden-tv-pt"><span>Max</span></div><div class="col-90 align-middle-center"><span>HH</span></div><div class="col-90 align-middle-center"><span>H</span></div><div class="col-90 align-middle-center"><span>L</span></div><div class="col-90 align-middle-center"><span>LL</span></div><div class="col-40 align-middle-center"><span></span></div></li>
+                        <li class="thead"><div class="col-50 align-middle-center"><span>ID #</span></div><div class="col-760 align-middle-center"><span>Name</span></div><div class="col-90 align-middle-center"><span>Type</span></div><div class="col-90 align-middle-center"><span>Raw</span></div><div class="col-90 align-middle-center"><span>Escalated</span></div><div class="col-90 align-middle-center hidden-mini"><span>Min</span></div><div class="col-90 align-middle-center hidden-mini"><span>Max</span></div><div class="col-90 align-middle-center"><span>HH</span></div><div class="col-90 align-middle-center"><span>H</span></div><div class="col-90 align-middle-center"><span>L</span></div><div class="col-90 align-middle-center"><span>LL</span></div><div class="col-40 align-middle-center"><span></span></div></li>
                     </ul>
             </div>
         </div>
     </div>
-
 
 <div class="col-content overflow" style="height: 628px;" ref="scrollContainer" @scroll="loadMore()">
 <div class="col-content">
@@ -38,8 +35,8 @@ components.signalListSystem = {
             <div class="col-90 align-middle-center"  :class="index % 2 == 0 ? 'signalListRowEven' : 'signalListRowOdd'"><span>{{typeValue(signal.Type)}}</span></div>
             <div class="col-90 align-middle-center"  :class="index % 2 == 0 ? 'signalListRowEven' : 'signalListRowOdd'"><span class="font-bold">{{vRawValue(signal.Id)}}</span></div>
             <div class="col-90 align-middle-center"  :class="index % 2 == 0 ? 'signalListRowEven' : 'signalListRowOdd'"><span class="font-bold"> {{vEscalatedValue(signal.Id)}} </span></div>
-            <div class="col-90 align-middle-center hidden-tv-pt" :class="index % 2 == 0 ? 'signalListRowEven' : 'signalListRowOdd'"><span v-if="signal.Type == 0"> {{signal.SignalMin}} </span></div>
-            <div class="col-90 align-middle-center hidden-tv-pt" :class="index % 2 == 0 ? 'signalListRowEven' : 'signalListRowOdd'"><span v-if="signal.Type == 0"> {{signal.SignalMax}} </span></div>
+            <div class="col-90 align-middle-center hidden-mini" :class="index % 2 == 0 ? 'signalListRowEven' : 'signalListRowOdd'"><span v-if="signal.Type == 0"> {{signal.SignalMin}} </span></div>
+            <div class="col-90 align-middle-center hidden-mini" :class="index % 2 == 0 ? 'signalListRowEven' : 'signalListRowOdd'"><span v-if="signal.Type == 0"> {{signal.SignalMax}} </span></div>
             <div class="col-90 align-middle-center"  :class="index % 2 == 0 ? 'signalListRowEven' : 'signalListRowOdd'"><span :id="'signalListHH_' + signal.Id" v-if="signal.Type == 0"> {{signal.SignalHH}} </span></div>
             <div class="col-90 align-middle-center"  :class="index % 2 == 0 ? 'signalListRowEven' : 'signalListRowOdd'"><span :id="'signalListH_' + signal.Id" v-if="signal.Type == 0"> {{signal.SignalH}}</span></div>
             <div class="col-90 align-middle-center"  :class="index % 2 == 0 ? 'signalListRowEven' : 'signalListRowOdd'"><span :id="'signalListL_' + signal.Id" v-if="signal.Type == 0"> {{signal.SignalL}}</span></div>
