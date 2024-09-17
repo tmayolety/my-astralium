@@ -6704,6 +6704,9 @@ html[data-scheme="scheme2"] .signalListRowOdd{ background: #cfd4d7!important; co
   .ui.grid.gap-mini.col.has-header > header{
     height: 40px!important;
   }
+  .ui.grid.gap-xl.col.has-header > header{
+    height: 40px!important;
+  }
   .alarmLogMarginTop{
     margin-top:-4em;
   }
