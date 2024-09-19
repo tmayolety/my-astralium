@@ -175,24 +175,13 @@
             {
               "label": "bar-render",
               "file": "bar"
+            },
+            {
+              "label": "bar-custom-render",
+              "file": "barCustom"
             }
           ],
           "mount": ".waterTanksApp",
-          "config": {
-            "compilerOptions": {
-              "isCustomElement": "tag => tag.startsWith('font')"
-            }
-          }
-      },
-      {
-          "name": "wasteTanksApp",
-          "component": [
-            {
-              "label": "bar-render",
-              "file": "bar"
-            }
-          ],
-          "mount": ".wasteTanksApp",
           "config": {
             "compilerOptions": {
               "isCustomElement": "tag => tag.startsWith('font')"
@@ -205,6 +194,10 @@
             {
               "label": "bar-render",
               "file": "bar"
+            },
+            {
+              "label": "bar-custom-render",
+              "file": "barCustom"
             }
           ],
           "mount": ".fuelTanksApp",
@@ -220,6 +213,10 @@
             {
               "label": "bar-render",
               "file": "bar"
+            },
+            {
+              "label": "bar-custom-render",
+              "file": "barCustom"
             }
           ],
           "mount": ".oilTanksApp",

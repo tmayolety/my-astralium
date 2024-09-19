@@ -198,7 +198,7 @@ nav.main-nav > ul > li { position: relative; cursor: pointer; box-sizing: border
 @media (min-width: 990px) { nav.main-nav > ul > li { width: 9.09091%; } }
 @media (min-width: 1080px) { nav.main-nav > ul > li { width: 8.33333%; } }
 @media (min-width: 1170px) { nav.main-nav > ul > li { width: 7.69231%; } }
-@media (min-width: 1260px) { nav.main-nav > ul > li { width: 5.26086%; padding-bottom: 5px !important; } }
+@media (min-width: 1260px) { nav.main-nav > ul > li { width: 6%; padding-bottom: 5px !important; } }
 @media (min-width: 1350px) { nav.main-nav > ul > li { width: 6.66667%; } }
 @media (min-width: 1440px) { nav.main-nav > ul > li { width: 6.25%; } }
 @media (min-width: 1530px) { nav.main-nav > ul > li { width: 5.88235%; } }
@@ -6695,7 +6695,7 @@ html[data-scheme="scheme2"] .signalListRowOdd{ background: #cfd4d7!important; co
   .marginTopMiniReportLog{
     margin-top: -.7em;
   }
-  .ui.grid.gap-med.col.has-header > header{
+  /*.ui.grid.gap-med.col.has-header > header{
     height: 40px!important;
   }
   .ui.grid.gap-sm.col.has-header > header{
@@ -6707,6 +6707,10 @@ html[data-scheme="scheme2"] .signalListRowOdd{ background: #cfd4d7!important; co
   .ui.grid.gap-xl.col.has-header > header{
     height: 40px!important;
   }
+  */
+  .buttonTools{
+    margin-top: 18em!important;
+  }  
   .alarmLogMarginTop{
     margin-top:-4em;
   }
@@ -6731,6 +6735,7 @@ html[data-scheme="scheme2"] .signalListRowOdd{ background: #cfd4d7!important; co
   .inputReportLog{
     margin-bottom: 1em!important;
   }
+
 }
 
 

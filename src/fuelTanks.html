@@ -1,8 +1,7 @@
 
-<article>
+<article class="paddingMini fuelTanksApp">
 
-
-    <div class="ui grid type1 cols-mini-1 cols-xl-2 gap-xl hidden-phone pad-lg fuelTanksApp">
+    <div class="ui grid type1 cols-mini-1 cols-xl-2 gap-xl pad-lg hidden-mini">
 
         <div class="ui col mini-1 xl-2 gap-sm pad-lg has-header
                     grid type1 cols-mini-1">
@@ -15,39 +14,36 @@
                 </span>
             </header>
 
-            <div class="ui col mini-1 gap-no pad-mini radius shadow grid type1 cols-mini-5 cols-xl-9" style="height: 390px;" id="fuelTank">
-
+            <div class="ui col mini-1 gap-no pad-mini radius shadow grid type1 cols-mini-9" style="height: 390px;" id="fuelTank">
                 <div class="ui col mini-1">
-                    <bar-render v-bind="{ signalId: 202, orientation: 'vertical', size: 'regular', unit: 'L', title:'Center Port', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 54800, scaleStep: 5480, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1, timeDelay: 1000 }"></bar-render>
+                    <bar-render v-bind="{ signalId: 202, orientation: 'vertical', size: 'regular', unit: 'L', title:'Fuel Tank 1', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 3360, scaleStep: 336, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1, timeDelay: 1000 }"></bar-render>
                 </div>
                 <div class="ui col mini-1">
-                    <bar-render v-bind="{ signalId: 91, orientation: 'vertical', size: 'regular', unit: 'L', title:'Port Wing', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 19100, scaleStep: 1910, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
+                    <bar-render v-bind="{ signalId: 91, orientation: 'vertical', size: 'regular', unit: 'L', title:'Fuel Tank 2', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 3070, scaleStep: 307, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
                 </div>
                 <div class="ui col mini-1">
-                    <bar-render v-bind="{ signalId: 90, orientation: 'vertical', size: 'regular', unit: 'L', title:'Center Stbd', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 54800, scaleStep: 5480, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
+                    <bar-render v-bind="{ signalId: 90, orientation: 'vertical', size: 'regular', unit: 'L', title:'Fuel Tank 3', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 1690, scaleStep: 169, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
                 </div>
                 <div class="ui col mini-1">
-                    <bar-render v-bind="{ signalId: 92, orientation: 'vertical', size: 'regular', unit: 'L', title:'Stbd Wing', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 19200, scaleStep: 1920, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
+                    <bar-render v-bind="{ signalId: 92, orientation: 'vertical', size: 'regular', unit: 'L', title:'Fuel Tank 4', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 4830, scaleStep: 483, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
                 </div>
                 <div class="ui col mini-1">
-                    <bar-render v-bind="{ signalId: 433, orientation: 'vertical', size: 'regular', unit: 'L', title:'Emerg. Gen.', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 760, scaleStep: 76, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
+                    <bar-render v-bind="{ signalId: 433, orientation: 'vertical', size: 'regular', unit: 'L', title:'Fuel Tank 5', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 4830, scaleStep: 483, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
                 </div>
                 <div class="ui col mini-1">
-                    <bar-render v-bind="{ signalId: 6023, orientation: 'vertical', size: 'regular', unit: 'L', title:'Day Tank Port', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 7300, scaleStep: 730, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
+                    <bar-render v-bind="{ signalId: 91, orientation: 'vertical', size: 'regular', unit: 'L', title:'Fuel Tank 6', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 5990, scaleStep: 599, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
                 </div>
                 <div class="ui col mini-1">
-                    <bar-render v-bind="{ signalId: 6111, orientation: 'vertical', size: 'regular', unit: 'L', title:'Day Tank Stbd', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 7300	, scaleStep: 730, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
+                    <bar-render v-bind="{ signalId: 6003, orientation: 'vertical', size: 'regular', unit: 'L', title:'Fuel Tank 7', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 3110	, scaleStep: 311, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1 }"></bar-render>
                 </div>
                 <div class="ui col mini-1">
-                    <bar-render v-bind="{ signalId: 524, orientation: 'vertical', size: 'regular', unit: 'L', title:'Overflow', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 1400, scaleStep: 140, scaleSegments: 10, showLimits: true, valueMode: 'filtered' }"></bar-render>
+                    <bar-render v-bind="{ signalId: 524, orientation: 'vertical', size: 'regular', unit: 'L', title:'Fuel Tank 8', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 3110, scaleStep: 311, scaleSegments: 10, showLimits: true, valueMode: 'filtered' }"></bar-render>
                 </div>
                 <div class="ui col mini-1">
-                    <bar-render v-bind="{ signalId: 311, orientation: 'vertical', size: 'regular', unit: 'L', title:'Total Fuel', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 1400, scaleStep: 140, scaleSegments: 10, showLimits: true, valueMode: 'filtered' }"></bar-render>
+                    <bar-custom-render v-bind="{ signalId: 202, signalId2: 91, signalId3: 90, signalId4: 92, signalId5: 433, signalId6: 91, signalId7:6003, signalId8:524, orientation: 'vertical', size: 'regular', unit: 'L', title:'Total Fuel', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 29990, scaleStep: 2999, scaleSegments: 10, showLimits: true, valueMode: 'filtered' }"></bar-custom-render>
                 </div>
-
             </div>
         </div>
-
 
         <div class="ui col mini-1 xl-1 gap-sm pad-lg has-header hidden-phone
                     grid type1 cols-mini-1">
@@ -87,6 +83,69 @@
             </div>
         </div>
 
+    </div>
+
+    <div class="ui grid type1 cols-mini-2 gap-sm hidden-xl">
+
+        <div class="ui col mini-2 gap-sm grid type1 cols-mini-1">
+
+            <div class="ui col mini-1 gap-no pad-mini radius shadow grid type1 cols-mini-9" id="fuelTankMini" style="height: 350px;">
+                <div class="ui col mini-1">
+                    <bar-render v-bind="{ signalId: 202, orientation: 'vertical', size: 'medium', unit: 'L', title:'Fuel Tank 1', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 3360, scaleStep: 336, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1, timeDelay: 1000, buttonTool: true }"></bar-render>
+                </div>
+                <div class="ui col mini-1">
+                    <bar-render v-bind="{ signalId: 91, orientation: 'vertical', size: 'medium', unit: 'L', title:'Fuel Tank 2', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 3070, scaleStep: 307, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1, buttonTool: true }"></bar-render>
+                </div>
+                <div class="ui col mini-1">
+                    <bar-render v-bind="{ signalId: 90, orientation: 'vertical', size: 'medium', unit: 'L', title:'Fuel Tank 3', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 1690, scaleStep: 169, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1, buttonTool: true }"></bar-render>
+                </div>
+                <div class="ui col mini-1">
+                    <bar-render v-bind="{ signalId: 92, orientation: 'vertical', size: 'medium', unit: 'L', title:'Fuel Tank 4', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 4830, scaleStep: 483, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1, buttonTool: true }"></bar-render>
+                </div>
+                <div class="ui col mini-1">
+                    <bar-render v-bind="{ signalId: 433, orientation: 'vertical', size: 'medium', unit: 'L', title:'Fuel Tank 5', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 4830, scaleStep: 483, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1, buttonTool: true }"></bar-render>
+                </div>
+                <div class="ui col mini-1">
+                    <bar-render v-bind="{ signalId: 91, orientation: 'vertical', size: 'medium', unit: 'L', title:'Fuel Tank 6', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 5990, scaleStep: 599, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1, buttonTool: true }"></bar-render>
+                </div>
+                <div class="ui col mini-1">
+                    <bar-render v-bind="{ signalId: 6003, orientation: 'vertical', size: 'medium', unit: 'L', title:'Fuel Tank 7', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 3110	, scaleStep: 311, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1, buttonTool: true }"></bar-render>
+                </div>
+                <div class="ui col mini-1">
+                    <bar-render v-bind="{ signalId: 524, orientation: 'vertical', size: 'medium', unit: 'L', title:'Fuel Tank 8', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 3110, scaleStep: 311, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1, buttonTool: true }"></bar-render>
+                </div>
+                <div class="ui col mini-1">
+                    <bar-custom-render v-bind="{ signalId: 202, signalId2: 91, signalId3: 90, signalId4: 92, signalId5: 433, signalId6: 91, signalId7:6003, signalId8:524, orientation: 'vertical', size: 'medium', unit: 'L', title:'Total Fuel', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 29990, scaleStep: 2999, scaleSegments: 10, showLimits: true, valueMode: 'filtered' }"></bar-custom-render>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui col mini-2 gap-sm grid type1 cols-mini-1" style="margin-top: .1em;">
+
+            <div class="ui col sm-1 gap-no h-mini-270 radius shadow type1 timelineBackground">
+                <canvas id="totalFuelMini" style="height: 260px!important; margin-top: 30px!important;"></canvas>
+            </div>
+
+            <div style="display: flex; justify-content: center; padding: 0.1em; gap: .5em; position: absolute; top: 10px; left: 50%; transform: translateX(-50%);">
+                <div><h2 style="font-size: 18px;">Total Fuel Tanks</h2></div>
+            </div>
+            
+            <div style="display: flex; justify-content: center; padding: 0.1em; gap: .5em; position: absolute; top:10px; right: 5px;">
+                <button class="ui btn mini colored primary timeLineButtonFuel" id="btn1FuelMini" style=" width: 50px;">12H</button>
+                <button class="ui btn mini colored primary timeLineButtonFuel" id="btn2FuelMini" style=" width: 50px;">24H</button>
+                <button class="ui btn mini colored primary timeLineButtonFuel active" id="btn3FuelMini" style=" width: 50px;">2D</button>
+                <button class="ui btn mini colored primary timeLineButtonFuel" id="btn4FuelMini" style=" width: 50px;">3D</button>
+            </div>
+            
+        </div>
+<!--
+        <div class="ui col mini-1 xl-1 gap-sm radius shadow grid type1 cols-mini-1" style="overflow: hidden!important;margin-top: .1em;">
+            <div class="ui col mini-1 middle-center h-mini-280 radius shadow">
+                <link href="src/ga/tanks/GO_tankLayout.css" rel="stylesheet">
+                <span id="FuelTanks_layout_Mini"></span>
+            </div>
+        </div>
+-->
     </div>
     
 </article>
