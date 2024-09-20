@@ -6692,6 +6692,9 @@ html[data-scheme="scheme2"] .signalListRowOdd{ background: #cfd4d7!important; co
   .marginTopMini{
     margin-top: -1em;
   }
+  .marginTopMiniDeviceList{
+    margin-top: -1.8em;
+  }
   .marginTopMiniReportLog{
     margin-top: -.7em;
   }
