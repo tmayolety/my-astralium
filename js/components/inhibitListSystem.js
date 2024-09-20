@@ -2,7 +2,7 @@
 components.inhibitListSystem = {
     props: [],
     template: /*html*/`
-            <header class="ui col">
+            <header class="ui col displayNone">
                 <span id="inhibitGeneralCount">
                 Inhibits ( 
                 <span id="inhibitOverallCount"> </span>
@@ -44,7 +44,7 @@ components.inhibitListSystem = {
             <div id="keyboardInhibits" style="width: 30vw; position: fixed; bottom: 95px; left: 50%; transform: translateX(-50%); z-index:99999; display: none;" class="simple-keyboard"></div>
           
 
-            <div v-for="(group, index) in nameGroup">
+            <div v-for="(group, index) in nameGroup" class="marginTopMini">
 
                 <div class="hidden-phone" v-if="!isPhone">
                     <input type="hidden" :id="group.Name.replace(/\\s/g, '') + '_groupOverallCount'">
