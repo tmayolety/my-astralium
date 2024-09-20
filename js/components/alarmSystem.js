@@ -20,7 +20,6 @@ components.alarmSystem = {
             <div class="col-110 align-middle-center hidden-phone">
             <span >Muted</span>
             </div></li>
-            
             <li v-for="(alarm, index) in alarms" :key="alarms.id">
             <div class="col-60 align-middle-center  glow pad-no hidden-phone">
             <button class="ui btn sm info radius-no resp" v-on:click="resetAlarm(index, alarm.Status)">Reset</button></div>

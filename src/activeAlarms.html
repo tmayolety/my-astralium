@@ -1,73 +1,82 @@
 <article class="paddingMini">
-    <div class="ui grid type1 cols-mini-1 pad-lg gap-mini">
-        <div class="ui grid cols-mini-1 col mini-1 gap-mini pad-no has-header">
-            <header class="ui col">
-                <font>Active Alarms</font>
-                <span class="gradients">
-		        <span class="gradient-left"></span>
-		        <span class="gradient-right"></span>
-	            </span>
-               
-            </header>
-            <div class="ui col mini-1 bg-no h-xl-290 h-mini-290 marginTopMini">
+    
+<div class="ui grid type1 cols-mini-2 pad-lg gap-xl displayNone">
+
+	<div class="ui col mini-2 grid cols-mini-2 gap-sm pad-lg has-header">
+
+		<header class="ui col">
+			<font>Active Alarms</font>
+			<span class="gradients">
+				<span class="gradient-left"></span>
+				<span class="gradient-right"></span>
+			</span>
+			
+			
+		</header>
+
+	</div>
+
+</div>
+
+  
+        <div class="ui grid cols-mini-5 gap-med">
+    
+            <div class="ui col mini-5 bg-no h-xl-370 h-mini-300">
                 <div class="col-content overflow">
                     <ul class="ui table size-sm resp" id="alarmSystemApp">
                         <alarm-system-render></alarm-system-render>
                     </ul>
                 </div>
             </div>
-        </div>
-    </div>
-</article>
-
-<article>
-    <div class="ui grid type1 cols-mini-5 cols-xl-9 gap-med align-top-left hidden-phone" style="margin-top: -1.1em; height: 50px;">
-        <div class="ui grid cols-mini-1 col mini-3 xl-7  gap-lg pad-lg has-header">
-        </div>
-        <div class="ui grid cols-mini-1 col mini-1 gap-lg pad-lg has-header">
-            <button class="ui btn med info icon active" onclick="alarms.allActiveAlarms(0, $(this));">
-                <svg class="ui icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50.24,99.84a49.19,49.19,0,0,1-28.84-8.7,52.15,52.15,0,0,1-7.23-6c-.72-.71-.71-1,0-1.77q5.72-5.73,11.45-11.44c.84-.85,1.1-.85,1.95,0a31.16,31.16,0,0,0,19.93,9.22A30.17,30.17,0,0,0,66.2,76.57C75,71.26,79.83,63.34,81,53.2c1.11-9.77-2-18.15-8.73-25.21a30.66,30.66,0,0,0-13.07-7.8,30.29,30.29,0,0,0-12-1.46,30.9,30.9,0,0,0-14,4.88c-1.21.77-2.37,1.63-3.53,2.48-.68.5-.69.73-.08,1.34,2.79,2.8,5.6,5.6,8.4,8.39.07.08.18.14.22.23s.28.49.23.7-.36.32-.57.36c-1.56.25-3.13.46-4.7.69L16.49,40.27,1.29,42.53C.14,42.7-.13,42.44.05,41.29.9,35.65,1.77,30,2.62,24.38c.73-4.88,1.44-9.76,2.16-14.63.22-1.53.43-3,.65-4.58a3.15,3.15,0,0,1,.09-.42c.16-.6.55-.72,1-.29.92.89,1.81,1.8,2.7,2.7,1.79,1.78,3.56,3.57,5.35,5.35.88.88,1.09.89,2,.06A49.87,49.87,0,0,1,40.94.72,54.55,54.55,0,0,1,50.41.09a47.46,47.46,0,0,1,29.82,10A48.87,48.87,0,0,1,98.54,37.9,48.42,48.42,0,0,1,100,51.14,49.11,49.11,0,0,1,84.06,86.56,49.81,49.81,0,0,1,58,99.38,31.88,31.88,0,0,1,50.24,99.84Z"></path><path d="M50.22,39.52c6.63.07,11.19,4.8,11.13,11.53-.06,5.64-5.22,10.44-11.17,10.37a11.07,11.07,0,0,1-10.82-11A10.92,10.92,0,0,1,50.22,39.52Z"></path></svg>
-                Reset All</button>
-        </div>
-        <div class="ui grid cols-mini-1 col mini-1 gap-lg pad-lg has-header">
-            <button class="ui btn med secondary icon active dev-mute-button" onclick="alarms.allActiveAlarms(2, $(this));">
-                <svg class="ui icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M32.34,25.79l.43-.41Q44,14.29,55.2,3.21A9.78,9.78,0,0,1,59.57.57a4.26,4.26,0,0,1,5.18,3.17A8.49,8.49,0,0,1,65,5.87q0,25.7,0,51.38a2.43,2.43,0,0,0,.79,1.9Q81.55,74.89,97.31,90.67a15.92,15.92,0,0,1,1.8,2,4.54,4.54,0,0,1,.32,4.9A4.27,4.27,0,0,1,95.79,100a4.91,4.91,0,0,1-4.13-1.6q-45-45-90-90c-2.41-2.41-1.9-6,0-7.32,2.3-1.56,4.5-1.5,7,.94,7.64,7.57,15.22,15.19,22.82,22.8C31.72,25.09,32,25.41,32.34,25.79Z"></path><path d="M5.79,50.14c0-4.42,0-8.83,0-13.24,0-2.27,1.07-4.35,3.39-4.71A39.45,39.45,0,0,1,15.26,32c.23,0,.47.34.69.55Q40.17,56.8,64.39,81A2.21,2.21,0,0,1,65,82.41c0,4,.12,8,0,12a7.67,7.67,0,0,1-1.23,3.88c-1.86,2.7-5.07,1.88-7,.1-2.27-2-4.44-4.21-6.62-6.36q-9.7-9.56-19.4-19.15c-1.39-1.36-2.8-2.7-4.26-4a2.15,2.15,0,0,0-1.3-.47c-4.8,0-9.6-.08-14.4,0A4.66,4.66,0,0,1,5.8,63.5C5.75,59,5.79,54.59,5.79,50.14Z"></path></svg>
-                Mute All</button>
-        </div>
-    </div>
-</article>
-
-<article class="paddingMini">
-    
-    <div class="ui grid type1 cols-mini-1 pad-lg gap-mini" style="margin-top: -2em;">
-        <div class="ui grid cols-1 col mini-1 gap-mini pad-no has-header">
-            <header class="ui col">
-                <font>Alarm Log</font>
-                <span class="gradients">
-		        <span class="gradient-left"></span>
-		        <span class="gradient-right"></span>
-	            </span>
-                
-            </header>
-
-
-            <div class="ui col sm-1 gap-no pad-no bg-no h-tv-ld-30 h-tv-pt-30 marginTopMini">
-                <div class="col-content">
-                    <div class="col-content overflow">
-                            <ul class="ui table size-sm resp">
-                                <li class="thead"><div class="col-80 align-middle-center hidden-phone"><span>LOG #</span></div><div class="col-170 align-middle-center"><span>Time (GMT)</span></div><div class="col-120 align-middle-center"><span>Action</span></div><div class="col-80 align-middle-center"><span>Alarm #</span></div><div class="col-270-min align-middle-center hidden-phone"><span>Alarm Description</span></div><div class="col-180 align-middle-center hidden-phone"><span>Source</span></div></li>
-                            </ul>
-                    </div>
-                </div>
+            <div class="ui col mini-1"></div>
+            <div class="ui col mini-1"></div>
+            <div class="ui col mini-1"></div>
+            <div class="ui col mini-1">
+                <button class="ui btn med info icon active" onclick="alarms.allActiveAlarms(0, $(this));">
+                    <svg class="ui icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                        <path
+                            d="M50.24,99.84a49.19,49.19,0,0,1-28.84-8.7,52.15,52.15,0,0,1-7.23-6c-.72-.71-.71-1,0-1.77q5.72-5.73,11.45-11.44c.84-.85,1.1-.85,1.95,0a31.16,31.16,0,0,0,19.93,9.22A30.17,30.17,0,0,0,66.2,76.57C75,71.26,79.83,63.34,81,53.2c1.11-9.77-2-18.15-8.73-25.21a30.66,30.66,0,0,0-13.07-7.8,30.29,30.29,0,0,0-12-1.46,30.9,30.9,0,0,0-14,4.88c-1.21.77-2.37,1.63-3.53,2.48-.68.5-.69.73-.08,1.34,2.79,2.8,5.6,5.6,8.4,8.39.07.08.18.14.22.23s.28.49.23.7-.36.32-.57.36c-1.56.25-3.13.46-4.7.69L16.49,40.27,1.29,42.53C.14,42.7-.13,42.44.05,41.29.9,35.65,1.77,30,2.62,24.38c.73-4.88,1.44-9.76,2.16-14.63.22-1.53.43-3,.65-4.58a3.15,3.15,0,0,1,.09-.42c.16-.6.55-.72,1-.29.92.89,1.81,1.8,2.7,2.7,1.79,1.78,3.56,3.57,5.35,5.35.88.88,1.09.89,2,.06A49.87,49.87,0,0,1,40.94.72,54.55,54.55,0,0,1,50.41.09a47.46,47.46,0,0,1,29.82,10A48.87,48.87,0,0,1,98.54,37.9,48.42,48.42,0,0,1,100,51.14,49.11,49.11,0,0,1,84.06,86.56,49.81,49.81,0,0,1,58,99.38,31.88,31.88,0,0,1,50.24,99.84Z">
+                        </path>
+                        <path
+                            d="M50.22,39.52c6.63.07,11.19,4.8,11.13,11.53-.06,5.64-5.22,10.44-11.17,10.37a11.07,11.07,0,0,1-10.82-11A10.92,10.92,0,0,1,50.22,39.52Z">
+                        </path>
+                    </svg>
+                    Reset All</button>
             </div>
- 
-            <div class="ui col mini-1 bg-no h-xl-376 h-mini-650">
+            <div class="ui col mini-1">
+                <button class="ui btn med secondary icon active dev-mute-button"
+                    onclick="alarms.allActiveAlarms(2, $(this));">
+                    <svg class="ui icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                        <path
+                            d="M32.34,25.79l.43-.41Q44,14.29,55.2,3.21A9.78,9.78,0,0,1,59.57.57a4.26,4.26,0,0,1,5.18,3.17A8.49,8.49,0,0,1,65,5.87q0,25.7,0,51.38a2.43,2.43,0,0,0,.79,1.9Q81.55,74.89,97.31,90.67a15.92,15.92,0,0,1,1.8,2,4.54,4.54,0,0,1,.32,4.9A4.27,4.27,0,0,1,95.79,100a4.91,4.91,0,0,1-4.13-1.6q-45-45-90-90c-2.41-2.41-1.9-6,0-7.32,2.3-1.56,4.5-1.5,7,.94,7.64,7.57,15.22,15.19,22.82,22.8C31.72,25.09,32,25.41,32.34,25.79Z">
+                        </path>
+                        <path
+                            d="M5.79,50.14c0-4.42,0-8.83,0-13.24,0-2.27,1.07-4.35,3.39-4.71A39.45,39.45,0,0,1,15.26,32c.23,0,.47.34.69.55Q40.17,56.8,64.39,81A2.21,2.21,0,0,1,65,82.41c0,4,.12,8,0,12a7.67,7.67,0,0,1-1.23,3.88c-1.86,2.7-5.07,1.88-7,.1-2.27-2-4.44-4.21-6.62-6.36q-9.7-9.56-19.4-19.15c-1.39-1.36-2.8-2.7-4.26-4a2.15,2.15,0,0,0-1.3-.47c-4.8,0-9.6-.08-14.4,0A4.66,4.66,0,0,1,5.8,63.5C5.75,59,5.79,54.59,5.79,50.14Z">
+                        </path>
+                    </svg>
+                    Mute All</button>
+            </div>
+
+            <div class="ui col mini-5 bg-no h-xl-376 h-mini-300">
+                <div class="col-content overflow">
+                    <ul class="ui table size-sm resp">
+                        <li class="thead">
+                            <div class="col-80 align-middle-center "><span>LOG #</span></div>
+                            <div class="col-170 align-middle-center"><span>Time (GMT)</span></div>
+                            <div class="col-120 align-middle-center"><span>Action</span></div>
+                            <div class="col-80 align-middle-center"><span>Alarm #</span></div>
+                            <div class="col-270-min align-middle-center "><span>Alarm Description</span></div>
+                            <div class="col-180 align-middle-center "><span>Source</span></div>
+                        </li>
+                    </ul>
+                </div>
                 <div class="col-content overflow">
                     <ul class="ui table size-sm resp" id="alarmLogList">
                     </ul>
                 </div>
             </div>
+
         </div>
-    </div>
+ 
 
 </article>

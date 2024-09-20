@@ -58,7 +58,7 @@ components.bar = {
                     </button>
                 </template>
             </div>
-            <div class="ui col tankClass " v-on:click="flipComponent()" ref="tankElement">
+            <div class="ui col tankClass" v-on:click="flipComponent()" ref="tankElement" style="overflow:hidden!important;">
                 <div class="ui grid type2 gap-lg pad-no" :class="[smContainer, pbarGrid]">
                     <div :class="[pbarTitle]" v-if="orientation == 'horizontal' || icon !== 'undefined'">
                         <i class="ui" :class='[iconSizeClass, iconColor]' :id="svgId"></i>

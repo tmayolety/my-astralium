@@ -1,6 +1,6 @@
-<article style="margin-top:-0.3em">
+<article class="paddingMini fireDoorsLayoutApp">
 
-    <div class="ui grid type1 cols-mini-1 pad-sm gap-sm fireDoorsLayoutApp">
+    <div class="ui grid type1 cols-mini-1 pad-sm gap-sm hidden-mini">
 
         <div class="ui grid cols-mini-1 gap-sm pad-sm has-header col mini-1">
 
@@ -15,7 +15,81 @@
 
             <div class="ui col mini-1 gap-lg pad-lg grid type1 cols-mini-6 cols-xl-6">
 
-            <div class= "ui grid type1 gap-lg pad-lg align-start col mini-6 xl-6 visible-xl hidden-sm">
+            <div class= "ui grid type1 gap-lg pad-lg align-start col mini-6 xl-6">
+
+                <div class="ui col mini-1 type1 gap-no pad-lg has-col-header-med radius shadow " style="overflow:hidden!important;" >
+
+                    <header class="col-header size-mini text-size-10">Bridge Deck</header>
+
+                        <div class="ui col mini-1 middle-center" style="justify-content: normal!important; ">
+                            <link href="src/ga/decks/GO_mainDeck.css" rel="stylesheet">
+                            <!--1 BD Lobby - Gym Area Sliding Fire Door Opened-->
+                            <door-render v-bind="{ signalId: 475, x: 29.5, y: 59, size: 15, height:15, width:5, zeroColor: 'danger', oneColor: 'success'}"></door-render>
+                            <!--2 W/H - W/H Corridor Sliding Fire Door Opened-->
+                            <door-render v-bind="{ signalId: 474, x: 32.8, y: 53, size: 15, height:5, width:15, zeroColor: 'danger', oneColor: 'success'}"></door-render>
+                            <!--3 W/H Corridor - Crew Staircase Sliding Fire Door Opened-->
+                            <door-render v-bind="{ signalId: 245, x: 41.2, y: 47, size: 10, height:5, width:15, zeroColor: 'danger', oneColor: 'success'}"></door-render>
+                            <!--4 W/H Corridor - Bridge Deck Lobby Slidinig Fire Door Opened-->
+                            <door-render v-bind="{ signalId: 242, x: 43, y: 50, size: 15, height:15, width:5, zeroColor: 'danger', oneColor: 'success'}"></door-render>
+                            <span id="FireDoorLayout_1"></span>
+                        </div>
+                </div>
+                <div class="ui col mini-1 type1 gap-no pad-lg has-col-header-med radius shadow " style="overflow: hidden!important;" >
+                    <header class="col-header size-mini text-size-10">Main Deck</header>
+                        <div class="ui col mini-1 middle-center" style="justify-content: normal!important;">
+                            <link href="src/ga/decks/GO_ownerDeck.css" rel="stylesheet">
+                            <!--5 OD Pantry - OD Saloon Sliding Fire Door Opened-->
+                            <door-render v-bind="{ signalId: 277, x: 32, y: 45, size: 15, height:15, width:5, zeroColor: 'danger', oneColor: 'success'}"></door-render>
+                            <!--6 OD Lobby - OD Saloon Sliding Fire Door Opened-->
+                            <door-render v-bind="{ signalId: 512, x: 32, y: 60.5, size: 15, height:15, width:5, zeroColor: 'danger', oneColor: 'success'}"></door-render>
+                            <!--7 OD Pantry - OD Crew Staircase Fire Door Opened-->
+                            <door-render v-bind="{ signalId: 59, x: 41, y: 45, size: 15, height:15, width:5, zeroColor: 'danger', oneColor: 'success'}"></door-render>
+                            <!--8 OD Corridor - OD Lobby Sliding Fire Door Opened-->
+                            <door-render v-bind="{ signalId: 501, x: 40.8, y: 51, size: 15, height:15, width:5, zeroColor: 'danger', oneColor: 'success'}"></door-render>
+                            <!--9 OD Corridor - Crew Staircase Sliding Fire Door Opened-->
+                            <door-render v-bind="{ signalId: 502, x: 41.6, y: 47, size: 15, height:5, width:15, zeroColor: 'danger', oneColor: 'success'}"></door-render>
+                            <span id="FireDoorLayout_2"></span>
+                        </div>
+                </div>
+                <div class="ui col mini-1 type1 gap-no pad-lg has-col-header-med radius shadow" style="overflow: hidden!important;" >
+                    <header class="col-header size-mini text-size-10">Lower Deck</header>
+                        <div class="ui col mini-1 middle-center" style="justify-content: normal!important; ">
+                            <link href="src/ga/decks/GO_mainDeck.css" rel="stylesheet">
+                            <!--10 MD Pantry - MD Saloon Sliding Fire Door Opened-->
+                            <door-render v-bind="{ signalId: 558, x: 36.5, y: 45, size: 15, height:20, width:5, zeroColor: 'danger', oneColor: 'success'}"></door-render>
+                            <!--11 MD Lobby - MD Saloon Sliding Fire Door Opened-->
+                            <door-render v-bind="{ signalId: 505, x: 36.5, y: 57, size: 15, height:20, width:5, zeroColor: 'danger', oneColor: 'success'}"></door-render>
+                            <!--12 MD Pantry - MD Crew Staircase Fire Door Opened-->
+                            <door-render v-bind="{ signalId: 504, x: 44.5, y: 43, size: 15, height:15, width:5, zeroColor: 'danger', oneColor: 'success'}"></door-render>
+                            <!--13 MD Guest Corridor - MD Crew Staircase Fire Door Opened-->
+                            <door-render v-bind="{ signalId: 503, x: 45, y: 46, size: 15, height:5, width:15, zeroColor: 'danger', oneColor: 'success'}"></door-render>
+                            <!--14 MD Guest Corridor - MD Lobby Slidinig Fire Door Opened-->
+                            <door-render v-bind="{ signalId: 243, x: 44.5, y: 52, size: 15, height:15, width:5, zeroColor: 'danger', oneColor: 'success'}"></door-render>
+                            <!--15 MD Guest Corridor Sliding Fire Door Opened-->
+                            <door-render v-bind="{ signalId: 242, x: 61, y: 52, size: 15, height:15, width:5, zeroColor: 'danger', oneColor: 'success'}"></door-render>
+                            <!--16 MD Emg. Generator Room - AC # 3 Room Fire Door Opened-->
+                            <door-render v-bind="{ signalId: 195, x: 77.5, y: 44, size: 15, height:5, width:15, zeroColor: 'danger', oneColor: 'success'}"></door-render>
+                            <!--17 MD Emg. Gen. Room Entrance Fire Door Opened-->
+                            <door-render v-bind="{ signalId: 47, x: 82, y: 45, size: 15, height:5, width:15, zeroColor: 'danger', oneColor: 'success'}"></door-render>
+                            <span id="FireDoorLayout_3"></span>
+                        </div>
+                </div>
+            </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="ui grid type1 cols-mini-1 gap-sm hidden-xl">
+
+        <div class="ui grid cols-mini-1 col mini-1">
+
+            <div class="ui col mini-1 grid type1 cols-mini-6 cols-xl-6">
+
+            <div class= "ui grid type1 gap-sm align-start col mini-6 xl-6">
 
                 <div class="ui col mini-1 type1 gap-no pad-lg has-col-header-med radius shadow " style="overflow:hidden!important;" >
 
