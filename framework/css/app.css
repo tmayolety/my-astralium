@@ -6720,6 +6720,9 @@ html[data-scheme="scheme2"] .signalListRowOdd{ background: #cfd4d7!important; co
   .displayNone{
     display: none!important;
   }
+  .visibilityHidden{
+    visibility: hidden!important;
+  }
   .inputReportLog{
     margin-bottom: .3em!important;
   }
