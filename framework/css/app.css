@@ -6726,6 +6726,16 @@ html[data-scheme="scheme2"] .signalListRowOdd{ background: #cfd4d7!important; co
   .inputReportLog{
     margin-bottom: .3em!important;
   }
+  html[data-scheme="scheme2"] nav.main-nav > ul{
+    padding: 0px!important;
+  }
+  html[data-scheme="scheme2"] nav.main-nav > ul > li a svg.ui.icon{
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+  html[data-scheme="scheme2"] main > .ui.main-tabs{
+    padding: 0.2rem .1rem;
+  }
 }
 
 @media (min-width: 1281px) {

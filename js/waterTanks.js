@@ -347,7 +347,7 @@ if (WaterTotalRenderMini == true) {
       method: "POST",
       headers: {
         "content-type": "application/json",
-         "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3MjY2NzY2NTEsInVzZXJfaWQiOjF9.SGIaq3kFqsFcoUbjP0vBInuHo260yQ3mYJF2FBMUvGA"
+         "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3MjcwODQ3MzIsInVzZXJfaWQiOjF9.h9lC1a21GpLX-fbGscTLpmVScqaCQaiY2IvcHj8Lt5Q"
       },
       processData: false,
       data: data,
