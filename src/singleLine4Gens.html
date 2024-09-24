@@ -7,7 +7,7 @@
 
 
     
-    <div class="ui grid type1 cols-mini-3 cols-phone-3 pad-no gap-xl mg-bottom-mini-0  singleLineHeader ">
+    <div class="ui grid type1 cols-mini-3 cols- pad-no gap-xl mg-bottom-mini-0  singleLineHeader ">
 
         <!-- GENERATOR 1 -->
         <div class="ui col mini-1 phone-1 gap-no pad-sm radius-top
@@ -29,12 +29,12 @@
     </div>
 
 
-    <div class="ui grid type1 cols-mini-3 cols-xl-3 pad-no gap-xl mg-top-mini-2-neg mg-top-xl-2-neg align-baseline singleLineApp ">
+    <div class="ui grid type1 cols-mini-3 cols-xl-3 pad-no gap-xl mg-top-mini-2-neg mg-top-xl-2-neg align-baseline singleLineApp">
         <!-- GENERATOR 1 -->
         <div class="ui col mini-1 gap-no pad-mini align-start radius-bottom shadow
                     grid type1 cols-mini-6 cols-phone-6">
 
-            <div class="ui col phone-3 h-mini-70 mini-3">
+            <div class="ui col h-xl-70 h-mini-55 mini-3">
                         <basic-text-with-title-render v-bind="{
                             signalId: 201,
                             title: 'Current',
@@ -49,7 +49,7 @@
                             
                         }"></basic-text-with-title-render>
             </div>
-            <div class="ui col phone-3 h-mini-70  mini-3">
+            <div class="ui col h-xl-70 h-mini-55 mini-3">
                     <basic-text-with-title-render v-bind="{
                         signalId: 202,
                         title: 'Reactive Power',
@@ -63,7 +63,7 @@
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
 
-            <div class="ui col mini-3 phone-3 h-mini-70">
+            <div class="ui col mini-3 h-xl-70 h-mini-55">
                     <basic-text-with-title-render v-bind="{
                         signalId: 453,
                         title: 'Voltage',
@@ -77,7 +77,7 @@
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
 
-            <div class="ui col mini-3 phone-3 h-mini-70">
+            <div class="ui col mini-3 h-xl-70 h-mini-55">
                     <basic-text-with-title-render v-bind="{
                         signalId: 454,
                         title: 'Apparent Power',
@@ -91,7 +91,7 @@
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
 
-            <div class="ui col mini-3 phone-3 h-mini-70">
+            <div class="ui col mini-3 h-xl-70 h-mini-55">
                     <basic-text-with-title-render v-bind="{
                         signalId: 405,
                         title: 'Frequency',
@@ -105,7 +105,7 @@
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
 
-            <div class="ui col mini-3 phone-3 h-mini-70">
+            <div class="ui col mini-3 h-xl-70 h-mini-55">
                     <basic-text-with-title-render v-bind="{
                         signalId: 406,
                         title: 'Active Power',
@@ -119,23 +119,23 @@
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
 
-            <div class="ui col mini-6 pad-mini h-mini-60">
+            <div class="ui col mini-6 pad-mini h-xl-60 h-mini-45">
                 <two-options-switch-button-render v-bind="{ signalId: 14033, optionOneText: 'START', optionTwoText: 'STOP', optionOneColorClass:'success', optionTwoColorClass:'danger', NC: 1 ,optionOneSignalIdToWrite: 31, optionTwoSignalIdToWrite: 31,optionOneValueToWrite: 256, optionTwoValueToWrite: 256, writeMode: 1, horizontalTime1: 3000, horizontalTime2: 3000   }"></two-options-switch-button-render>
             </div>
 
-            <div class="ui col mini-6 pad-mini h-mini-60">
+            <div class="ui col mini-6 pad-mini h-xl-60 h-mini-45">
                 <two-options-switch-button-render v-bind="{ signalId: 10024, optionOneText: 'BREAKER ON', optionTwoText: 'BREAKER OFF', optionOneColorClass:'success', optionTwoColorClass:'danger', NC: 1, optionOneSignalIdToWrite: 10515, optionTwoSignalIdToWrite: 10516,optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, horizontalTime1: 3000, horizontalTime2: 3000   }"></two-options-switch-button-render>
             </div>
 
-            <div class="ui col mini-6 pad-mini h-mini-60">
+            <div class="ui col mini-6 pad-mini h-xl-60 h-mini-45">
                 <two-options-switch-button-render v-bind="{ signalId: 2049, optionOneText: 'SYNC ON', optionTwoText: 'SYNC OFF', optionOneColorClass:'success', optionTwoColorClass:'danger', NC: 0, optionOneSignalIdToWrite: 24, optionTwoSignalIdToWrite: 25,optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, horizontalTime1: 3000, horizontalTime2: 3000   }"></two-options-switch-button-render>
             </div>
 
-            <div class="ui col mini-6 pad-mini h-mini-60">
+            <div class="ui col mini-6 pad-mini h-xl-60 h-mini-45">
                 <two-options-switch-button-render v-bind="{ signalId: 10025, optionOneText: 'STBY ON', optionTwoText: 'STBY OFF', optionOneColorClass:'success', optionTwoColorClass:'danger', NC: 1, optionOneSignalIdToWrite: 10519, optionTwoSignalIdToWrite: 10520,optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, horizontalTime1: 3000, horizontalTime2: 3000   }"></two-options-switch-button-render>
             </div>
 
-            <div class="ui col mini-2 phone-2 h-mini-70">
+            <div class="ui col mini-2 h-xl-70 h-mini-55">
                     <basic-text-with-title-render v-bind="{
                         signalId: 407,
                         title: 'L1',
@@ -149,7 +149,7 @@
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
 
-            <div class="ui col mini-2 phone-2 h-mini-70">
+            <div class="ui col mini-2 h-xl-70 h-mini-55">
                     <basic-text-with-title-render v-bind="{
                         signalId: 90,
                         title: 'L2',
@@ -163,7 +163,7 @@
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
 
-            <div class="ui col mini-2 phone-2 h-mini-70">
+            <div class="ui col mini-2 h-xl-70 h-mini-55">
                     <basic-text-with-title-render v-bind="{
                         signalId: 91,
                         title: 'L3',
@@ -179,7 +179,7 @@
 
             <basic-text-with-digital-line-render v-bind="{
                 signalId: 10036,
-                colStyle: 'mini-2 phone-2 h-mini-70',
+                colStyle: 'mini-2 h-xl-70 h-mini-70',
                 title: '1º Stby',
                 titleStyle: 'text-size-8 font-regular mg-bottom-5 align-center',
                 valueStyle: 'text-size-15 font-black align-center glow',
@@ -191,7 +191,7 @@
 
             <basic-text-with-digital-line-render v-bind="{
                 signalId: 10037,
-                colStyle: 'mini-2 phone-2 h-mini-70',
+                colStyle: 'mini-2 h-xl-70 h-mini-70',
                 title: '2º Stby',
                 titleStyle: 'text-size-8 font-regular mg-bottom-5 align-center',
                 valueStyle: 'text-size-15 font-black align-center glow',
@@ -203,7 +203,7 @@
 
             <basic-text-with-digital-line-render v-bind="{
                 signalId: 10038,
-                colStyle: 'mini-2 phone-2 h-mini-70',
+                colStyle: 'mini-2 h-xl-70 h-mini-70',
                 title: '3º Stby',
                 titleStyle: 'text-size-8 font-regular mg-bottom-5 align-center',
                 valueStyle: 'text-size-15 font-black align-center glow',
@@ -219,7 +219,7 @@
         <div class="ui col mini-1 gap-no pad-mini align-start radius-bottom shadow
                     grid type1 cols-mini-6 cols-phone-6">
 
-            <div class="ui col mini-3 phone-3 h-mini-70 ">
+            <div class="ui col mini-3 h-xl-70 h-mini-55">
                     <basic-text-with-title-render v-bind="{
                         signalId: 10507,
                         title: 'Current',
@@ -231,7 +231,7 @@
                         valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-            <div class="ui col mini-3 phone-3 h-mini-70 ">
+            <div class="ui col mini-3 h-xl-70 h-mini-55">
                     <basic-text-with-title-render v-bind="{
                         signalId: 10445,
                         title: 'Frequency',
@@ -243,7 +243,7 @@
                         valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-            <div class="ui col mini-3 phone-3 h-mini-70 ">
+            <div class="ui col mini-3 h-xl-70 h-mini-55">
                     <basic-text-with-title-render v-bind="{
                         signalId: 10459,
                         title: 'Voltage',
@@ -255,7 +255,7 @@
                         valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-            <div class="ui col mini-3 phone-3 h-mini-70 ">
+            <div class="ui col mini-3 h-xl-70 h-mini-55">
                     <basic-text-with-title-render v-bind="{
                         signalId: 10502,
                         title: 'Apparent Power',
@@ -267,7 +267,7 @@
                         valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-            <div class="ui col mini-3 phone-3 h-mini-70 ">
+            <div class="ui col mini-3 h-xl-70 h-mini-55">
                     <basic-text-with-title-render v-bind="{
                         signalId: 10445,
                         title: 'Frequency',
@@ -279,7 +279,7 @@
                         valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-            <div class="ui col mini-3 phone-3 h-mini-70 ">
+            <div class="ui col mini-3 h-xl-70 h-mini-55">
                     <basic-text-with-title-render v-bind="{
                         signalId: 10473,
                         title: 'Active Power',
@@ -336,7 +336,7 @@
         <div class="ui col mini-1 gap-no pad-mini align-start radius-bottom shadow
                     grid type1 cols-mini-6 cols-phone-6">
 
-            <div class="ui col mini-3 phone-3 h-mini-70 ">
+            <div class="ui col mini-3 h-xl-70 h-mini-55">
                     <basic-text-with-title-render v-bind="{
                         signalId: 10381,
                         title: 'Current',
@@ -348,7 +348,7 @@
                         valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-            <div class="ui col mini-3 phone-3 h-mini-70 ">
+            <div class="ui col mini-3 h-xl-70 h-mini-55">
                     <basic-text-with-title-render v-bind="{
                         signalId: 15944,
                         title: 'Reactive Power',
@@ -360,7 +360,7 @@
                         valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-            <div class="ui col mini-3 phone-3 h-mini-70 ">
+            <div class="ui col mini-3 h-xl-70 h-mini-55">
                     <basic-text-with-title-render v-bind="{
                         signalId: 15633,
                         title: 'Voltage',
@@ -372,7 +372,7 @@
                         valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-            <div class="ui col mini-3 phone-3 h-mini-70 ">
+            <div class="ui col mini-3 h-xl-70 h-mini-55">
                     <basic-text-with-title-render v-bind="{
                         signalId: 10376,
                         title: 'Apparent Power',
@@ -384,7 +384,7 @@
                         valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-            <div class="ui col mini-3 phone-3 h-mini-70 ">
+            <div class="ui col mini-3 h-xl-70 h-mini-55">
                     <basic-text-with-title-render v-bind="{
                         signalId: 10319,
                         title: 'Frequency',
@@ -396,7 +396,7 @@
                         valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-            <div class="ui col mini-3 phone-3 h-mini-70 ">
+            <div class="ui col mini-3 h-xl-70 h-mini-55">
                     <basic-text-with-title-render v-bind="{
                         signalId: 10347,
                         title: 'Active Power',
@@ -409,23 +409,23 @@
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
 
-            <div class="ui col mini-6 pad-mini h-mini-60">
+            <div class="ui col mini-6 pad-mini h-xl-60 h-mini-45">
                 <two-options-switch-button-render v-bind="{ signalId: 15690, optionOneText: 'START', optionTwoText: 'STOP', optionOneColorClass:'success', optionTwoColorClass:'danger', NC: 1 ,optionOneSignalIdToWrite: 10537, optionTwoSignalIdToWrite: 10538,optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, horizontalTime1: 3000, horizontalTime2: 3000   }"></two-options-switch-button-render>
             </div>
 
-            <div class="ui col mini-6 pad-mini h-mini-60">
+            <div class="ui col mini-6 pad-mini h-xl-60 h-mini-45">
                 <two-options-switch-button-render v-bind="{ signalId: 10105, optionOneText: 'BREAKER ON', optionTwoText: 'BREAKER OFF', optionOneColorClass:'success', optionTwoColorClass:'danger', NC: 1, optionOneSignalIdToWrite: 10539, optionTwoSignalIdToWrite: 10540,optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, horizontalTime1: 3000, horizontalTime2: 3000   }"></two-options-switch-button-render>
             </div>
 
-            <div class="ui col mini-6 pad-mini h-mini-60">
+            <div class="ui col mini-6 pad-mini h-xl-60 h-mini-45">
                 <two-options-switch-button-render v-bind="{ signalId: 10104, optionOneText: 'SYNC ON', optionTwoText: 'SYNC OFF', optionOneColorClass:'success', optionTwoColorClass:'danger', NC: 1,optionOneSignalIdToWrite: 10541, optionTwoSignalIdToWrite: 10542,optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, horizontalTime1: 3000, horizontalTime2: 3000   }"></two-options-switch-button-render>
             </div>
 
-            <div class="ui col mini-6 pad-mini h-mini-60">
+            <div class="ui col mini-6 pad-mini h-xl-60 h-mini-45">
                 <two-options-switch-button-render v-bind="{ signalId: 10106, optionOneText: 'STBY ON', optionTwoText: 'STBY OFF', optionOneColorClass:'success', optionTwoColorClass:'danger', NC: 1, optionOneSignalIdToWrite: 10543, optionTwoSignalIdToWrite: 10544,optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, horizontalTime1: 3000, horizontalTime2: 3000   }"></two-options-switch-button-render>
             </div>
 
-            <div class="ui col mini-2 phone-2 h-mini-70">
+            <div class="ui col mini-2 h-xl-70 h-mini-55">
                     <basic-text-with-title-render v-bind="{
                         signalId: 10378,
                         title: 'L1',
@@ -437,7 +437,7 @@
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
 
-            <div class="ui col mini-2 phone-2 h-mini-70">
+            <div class="ui col mini-2 h-xl-70 h-mini-55">
                     <basic-text-with-title-render v-bind="{
                         signalId: 10379,
                         title: 'L2',
@@ -449,7 +449,7 @@
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
 
-            <div class="ui col mini-2 phone-2 h-mini-70">
+            <div class="ui col mini-2 h-xl-70 h-mini-55">
                     <basic-text-with-title-render v-bind="{
                         signalId: 10380,
                         title: 'L3',
@@ -463,7 +463,7 @@
             
             <basic-text-with-digital-line-render v-bind="{
                 signalId: 10117,
-                colStyle: 'mini-2 phone-2 h-mini-70',
+                colStyle: 'mini-2 h-xl-70 h-mini-70',
                 title: '1º Stby',
                 titleStyle: 'text-size-8 font-regular mg-bottom-5 align-center',
                 valueStyle: 'text-size-15 font-black align-center glow',
@@ -475,7 +475,7 @@
             
             <basic-text-with-digital-line-render v-bind="{
                 signalId: 10117,
-                colStyle: 'mini-2 phone-2 h-mini-70',
+                colStyle: 'mini-2 h-xl-70 h-mini-70',
                 title: '2º Stby',
                 titleStyle: 'text-size-8 font-regular mg-bottom-5 align-center',
                 valueStyle: 'text-size-15 font-black align-center glow',
@@ -487,7 +487,7 @@
             
             <basic-text-with-digital-line-render v-bind="{
                 signalId: 10117,
-                colStyle: 'mini-2 phone-2 h-mini-70',
+                colStyle: 'mini-2 h-xl-70 h-mini-70',
                 title: '3º Stby',
                 titleStyle: 'text-size-8 font-regular mg-bottom-5 align-center',
                 valueStyle: 'text-size-15 font-black align-center glow',

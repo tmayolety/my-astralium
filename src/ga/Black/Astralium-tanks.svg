@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" id="TankObjects" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" width="620px" height="191px" viewBox="0 0 620.17 144.53" enable-background="new 0 0 620.17 144.53" xml:space="preserve">
+  <g id="LWPOLYLINE">
+    <line style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="90.91" y1="12.26" x2="90.91" y2="72.78"/>
+  </g>
+  <g id="LWPOLYLINE-2" data-name="LWPOLYLINE">
+    <path style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M140.34,7.6l.78,17.65h62.46l-.78-20.58c-20.83,.81-41.65,1.79-62.46,2.93Z"/>
+  </g>
+  <g id="LWPOLYLINE-3" data-name="LWPOLYLINE">
+    <rect style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x="163.01" y="58.72" width="40.53" height="13.55"/>
+  </g>
+  <g id="LWPOLYLINE-4" data-name="LWPOLYLINE">
+    <line style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="203.58" y1="25.25" x2="140.34" y2="7.6"/>
+  </g>
+  <g id="LWPOLYLINE-5" data-name="LWPOLYLINE">
+    <line style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="141.12" y1="25.25" x2="202.8" y2="4.67"/>
+  </g>
+  <g id="LWPOLYLINE-6" data-name="LWPOLYLINE">
+    <line style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="539.26" y1="24.71" x2="539.26" y2="72.78"/>
+  </g>
+  <g id="LWPOLYLINE-7" data-name="LWPOLYLINE">
+    <polyline style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="531.86 72.78 531.86 56.1 539.26 60.65"/>
+  </g>
+  <g id="LWPOLYLINE-8" data-name="LWPOLYLINE">
+    <path style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M253.68,59.46V19.77c-10.19,.4-20.39,.84-30.58,1.32"/>
+  </g>
+  <g id="LWPOLYLINE-9" data-name="LWPOLYLINE">
+    <path style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M263.9,72.27l.89-52.05c9.64,.56,19.28,1.16,28.92,1.81v50.24s-28.92-50.67-28.92-50.67c9.64,.56,19.28,1.16,28.92,1.81l-29.81,48.87Z"/>
+  </g>
+  <g id="LWPOLYLINE-10" data-name="LWPOLYLINE">
+    <path style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M305.22,121.33l-.96-49.06,.96-49.06c34.78,5.99,69.51,12.33,104.16,19.01v30.05l-85.2-44.39-19.96,44.39,19.96,44.39,85.2-44.39v30.05c-34.66,6.69-69.38,13.03-104.16,19.01Z"/>
+  </g>
+  <g id="LWPOLYLINE-11" data-name="LWPOLYLINE">
+    <polyline style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="59.02 72.78 59.02 42.95 90.91 42.95 74.97 72.78 59.02 42.95"/>
+  </g>
+  <g id="LWPOLYLINE-12" data-name="LWPOLYLINE">
+    <path style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M113.49,142.04c-18.03-1.33-35.86-4.6-53.19-9.73-10.69-3.17-20.83-8-30.03-14.3C14.04,107.92,3.09,91.18,.35,72.27,3.09,53.35,14.04,36.61,30.27,26.53c9.2-6.31,19.33-11.13,30.03-14.3C77.63,7.09,95.46,3.82,113.49,2.49"/>
+  </g>
+  <g id="LWPOLYLINE-13" data-name="LWPOLYLINE">
+    <path style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M400.47,1.33c55,.09,109.44,11.14,160.12,32.52,16.83,7.9,32.43,18.19,46.32,30.54,2.16,2.04,3.35,4.9,3.28,7.87,.07,2.97-1.12,5.83-3.28,7.87-13.89,12.35-29.49,22.64-46.32,30.54-50.68,21.38-105.11,32.43-160.12,32.52"/>
+  </g>
+  <g id="LWPOLYLINE-14" data-name="LWPOLYLINE">
+    <path style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M5.9,72.27c4.55-16.99,14.34-32.12,27.98-43.23,8.13-6.66,17.45-11.71,27.47-14.89,17-5.43,34.44-9.33,52.13-11.66C220.48-.18,327.52-.35,434.53,1.99c22.09,1.14,44.16,2.59,66.21,4.33,21.49,1.35,42.53,6.77,61.99,15.99,17.45,8.1,33.48,18.96,47.48,32.15,5.62,4.28,9.12,10.77,9.62,17.81-.5,7.04-4,13.53-9.62,17.81-14,13.19-30.03,24.05-47.48,32.15-19.46,9.21-40.5,14.64-61.99,15.99-22.05,1.74-44.12,3.18-66.21,4.33-107,2.34-214.05,2.17-321.04-.5-17.69-2.33-35.14-6.23-52.13-11.66-10.02-3.18-19.34-8.23-27.47-14.89-13.64-11.11-23.43-26.23-27.98-43.23Z"/>
+  </g>
+  <g id="LWPOLYLINE-15" data-name="LWPOLYLINE">
+    <line style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="90.91" y1="132.27" x2="90.91" y2="71.75"/>
+  </g>
+  <g id="LWPOLYLINE-16" data-name="LWPOLYLINE">
+    <polyline style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="223.1 142.51 223.1 72.27 223.1 2.03"/>
+  </g>
+  <g id="LWPOLYLINE-17" data-name="LWPOLYLINE">
+    <path style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M140.34,136.94l.78-17.65h62.46l-.78,20.58c-20.83-.81-41.65-1.79-62.46-2.93Z"/>
+  </g>
+  <g id="LWPOLYLINE-18" data-name="LWPOLYLINE">
+    <line style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="203.58" y1="119.29" x2="140.34" y2="136.94"/>
+  </g>
+  <g id="LWPOLYLINE-19" data-name="LWPOLYLINE">
+    <line style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="141.12" y1="119.29" x2="202.8" y2="139.86"/>
+  </g>
+  <g id="LWPOLYLINE-20" data-name="LWPOLYLINE">
+    <line style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="539.26" y1="119.82" x2="539.26" y2="71.75"/>
+  </g>
+  <g id="LWPOLYLINE-21" data-name="LWPOLYLINE">
+    <polyline style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="531.86 71.75 531.86 88.43 539.26 83.88"/>
+  </g>
+  <g id="LWPOLYLINE-22" data-name="LWPOLYLINE">
+    <path style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M418.9,33.42V111.11c15.77-3.99,31.43-8.42,46.96-13.28V46.7c-15.53-4.86-31.19-9.29-46.96-13.28Z"/>
+  </g>
+  <g id="LWPOLYLINE-23" data-name="LWPOLYLINE">
+    <polyline style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="223.1 85.07 253.68 85.07 253.68 72.27 253.68 59.46 223.1 59.46"/>
+  </g>
+  <g id="LWPOLYLINE-24" data-name="LWPOLYLINE">
+    <path style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M253.68,85.07v39.69c-10.19-.4-20.39-.84-30.58-1.32"/>
+  </g>
+  <g id="LWPOLYLINE-25" data-name="LWPOLYLINE">
+    <path style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M263.9,72.27l.89,52.05c9.64-.56,19.28-1.16,28.92-1.81v-50.24l-28.92,50.67c9.64-.56,19.28-1.16,28.92-1.81l-29.81-48.87Z"/>
+  </g>
+  <g id="LWPOLYLINE-26" data-name="LWPOLYLINE">
+    <path style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M324.19,116.65l-.03-44.39,85.22-28.67c-34.66-6.69-69.38-13.03-104.16-19.02l18.94,47.69,.03-44.39"/>
+  </g>
+  <g id="LWPOLYLINE-27" data-name="LWPOLYLINE">
+    <path style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M305.22,119.95c34.78-5.99,69.51-12.33,104.16-19.02l-85.22-28.67-18.94,47.69Z"/>
+  </g>
+  <g id="LWPOLYLINE-28" data-name="LWPOLYLINE">
+    <polyline style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="59.02 71.75 59.02 101.59 90.91 101.59 74.97 71.75 59.02 101.59"/>
+  </g>
+  <g id="LWPOLYLINE-29" data-name="LWPOLYLINE">
+    <path style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M418.9,34.82c15.77,4,31.43,8.43,46.96,13.3l-23.48,24.15-23.48-37.45Z"/>
+  </g>
+  <g id="LWPOLYLINE-30" data-name="LWPOLYLINE">
+    <path style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M418.9,109.71c15.77-4,31.43-8.43,46.96-13.3l-23.48-24.15s-23.48,37.45-23.48,37.45Z"/>
+  </g>
+  <g id="LWPOLYLINE-31" data-name="LWPOLYLINE">
+    <path style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M223.1,22.46l30.58,37-15.29,12.81-15.29-12.81,30.58-38.31c-10.19,.4-20.39,.84-30.58,1.32Z"/>
+  </g>
+  <g id="LWPOLYLINE-32" data-name="LWPOLYLINE">
+    <path style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M223.1,122.07l30.58-37-15.29-12.81-15.29,12.81,30.58,38.31c-10.19-.4-20.39-.84-30.58-1.32Z"/>
+  </g>
+  <g id="LWPOLYLINE-33" data-name="LWPOLYLINE">
+    <rect style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x="163.01" y="72.27" width="40.53" height="13.55"/>
+  </g>
+  <g id="LWPOLYLINE-34" data-name="LWPOLYLINE">
+    <polyline style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="203.54 85.81 163.01 72.27 203.54 58.72"/>
+  </g>
+  <g id="LWPOLYLINE-35" data-name="LWPOLYLINE">
+    <polyline style="fill:none;stroke:#555555;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="163.01 85.81 203.54 72.27 163.01 58.72"/>
+  </g>
+</svg>

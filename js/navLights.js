@@ -4,4 +4,4 @@ var screen = {
     }
 };
 
-$("#NavLightsLayout_1").load("src/ga/sideView/SideView.svg");
+$("#NavLightsLayout_1").load("src/ga/Black/Astralium-Section.svg");
