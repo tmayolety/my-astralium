@@ -76,9 +76,6 @@ const status = {
                 ACTIVE_SERVER = SERVER_1_IP;
                 STANDBY_SERVER = SERVER_2_IP;
                 SERVER_1_ACTIVE = true;
-                setTimeout(function() {
-                    status.initSocketConnections();
-                }, 4000);
                 resolve(true);
 
             });
@@ -116,9 +113,6 @@ const status = {
                     ACTIVE_SERVER = SERVER_2_IP;
                     STANDBY_SERVER = SERVER_1_IP;
                     SERVER_2_ACTIVE = true;
-                    setTimeout(function() {
-                        status.subscribeChannels();
-                    }, 4000);
                     resolve(true);
                 });
             });
@@ -137,7 +131,7 @@ const status = {
 
     },
     initSocketConnections: function () {
-
+        status.subscribeChannels();
         sock.on('disconnect', function(){
 
             socketConnected = setTimeout(function() {
