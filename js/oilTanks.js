@@ -1,6 +1,6 @@
 $.getScript("js/tanks.js");
 
-$("#WasteTanks_layout").load("src/ga/tanks/GO_wasteTanks.svg");
+$("#WasteTanks_layout").load("src/ga/Black/Astralium-tanks.svg");
 
 //var totalWasteId, WasteTotal
 var screen = {

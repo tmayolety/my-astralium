@@ -1,6 +1,6 @@
 $.getScript("js/tanks.js");
 
-$("#WaterTanks_layout").load("src/ga/tanks/GO_waterTanks.svg");
+$("#WaterTanks_layout").load("src/ga/Black/Astralium-FreshWaterTanks.svg");
 var screen = {
   renderData: function (msg) {
     var json = JSONH.parse(msg);

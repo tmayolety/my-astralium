@@ -1,5 +1,5 @@
 $.getScript( "js/tanks.js");
-$("#FuelTanks_layout").load("src/ga/tanks/GO_fuelTank.svg");
+$("#FuelTanks_layout").load("src/ga/Black/Astralium-tanks.svg");
 
 var screen = {
     renderData: function (msg) {
