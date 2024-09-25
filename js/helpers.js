@@ -278,9 +278,9 @@ const helpers = {
         } else {
             var displayTimezone = ' (GMT+' + timezone + ')';
         }
-    
-        var clockContent = '<span style="font-size: 19px; position: absolute; left: 0; top: 0;">' + hour + time + '</span><span style="font-size: 18px; position: absolute; right: 0; top: 0;">' + displayTimezone + '</span>';
-    
+
+        var clockContent = '<span style="font-size: 22px; position: absolute; left: 0; top: 0;">' + hour + time + '</span><span style="font-size: 14px; position: absolute; right: 2px; top: 4px;">' + displayTimezone + '</span>';
+
         document.getElementById("clock").innerHTML = clockContent;
         document.getElementById("date").innerHTML = date;
 
