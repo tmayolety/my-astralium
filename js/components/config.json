@@ -230,8 +230,8 @@
           "name": "bilgeApp",
           "component": [
             {
-              "label": "icon-text-value-digital-line-render",
-              "file": "iconTextValueDigitalLine"
+              "label": "basic-text-with-digital-line-render",
+              "file": "basicTextWithTitleDigital"
             },
             {
               "label": "icon-layout-render",
