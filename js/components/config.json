@@ -345,14 +345,18 @@
           }
       },
       {
-          "name": "fireDoorsLayoutApp",
+          "name": "doorsLayoutApp",
           "component": [
             {
               "label": "door-render",
               "file": "door"
+            },
+            {
+              "label": "icon-layout-render",
+              "file": "iconLayout"
             }
           ],
-          "mount": ".fireDoorsLayoutApp",
+          "mount": ".doorsLayoutApp",
           "config": {
             "compilerOptions": {
               "isCustomElement": "tag => tag.startsWith('font')"

@@ -19,15 +19,13 @@ components.door = {
             styleObject: {
                 position: 'absolute',
                 top: this.y + '%',
-                left: this.x + '%'
+                left: this.x + '%',
+                borderRadius: '50%'
             }
         }
     },
-
     mounted(){
-
         this.checkValueMode()
-
     },
     updated() {
         if (!isNaN(this.value)) {
@@ -49,7 +47,6 @@ components.door = {
                     this.value = valueRaw[this.signalId];
                     break;
             }
-    
             if (this.value == null){
                 this.value = 'N/A'
             }
