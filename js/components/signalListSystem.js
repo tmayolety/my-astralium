@@ -91,7 +91,6 @@ components.signalListSystem = {
     this.filteredSignals = this.signalListData.filter(function (el) {
       return el != null;
     });
-  
     // Inicialmente mostramos solo un subconjunto
     this.displayedSignals = this.filteredSignals.slice(0, this.itemsToShow);
 
