@@ -6736,6 +6736,9 @@ html[data-scheme="scheme2"] .signalListRowOdd{ background: #cfd4d7!important; co
   html[data-scheme="scheme2"] main > .ui.main-tabs{
     padding: 0.2rem .1rem;
   }
+  .signalListHeight{
+    height: 400px;
+  }
 }
 
 @media (min-width: 1281px) {
@@ -6750,6 +6753,9 @@ html[data-scheme="scheme2"] .signalListRowOdd{ background: #cfd4d7!important; co
   }
   .inputReportLog{
     margin-bottom: 1em!important;
+  }
+  .signalListHeight{
+    height: 628px;
   }
 
 }
