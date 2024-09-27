@@ -330,21 +330,6 @@
           }
       },
       {
-          "name": "watertightListApp",
-          "component": [
-            {
-              "label": "icon-text-value-digital-line-render",
-              "file": "iconTextValueDigitalLine"
-            }
-          ],
-          "mount": ".watertightListApp",
-          "config": {
-            "compilerOptions": {
-              "isCustomElement": "tag => tag.startsWith('font')"
-            }
-          }
-      },
-      {
           "name": "doorsLayoutApp",
           "component": [
             {
@@ -354,6 +339,11 @@
             {
               "label": "icon-layout-render",
               "file": "iconLayout"
+            },
+            {
+              "label": "icon-text-value-digital-line-render",
+              "file": "iconTextValueDigitalLine"
+
             }
           ],
           "mount": ".doorsLayoutApp",
