@@ -6666,9 +6666,14 @@ html[data-scheme="scheme1"] .signalListRowEven{ background: rgba(18,53,76,255)!i
 html[data-scheme="scheme2"] .signalListRowEven{ background: rgb(255, 255, 255)!important; color: white;}
 html[data-scheme="scheme1"] .signalListRowOdd{ background: #0e2a3d!important; color: white;}
 html[data-scheme="scheme2"] .signalListRowOdd{ background: #cfd4d7!important; color: white;}
- 
- /* ASTRALIUM 1280x800 screen */
 
+html[data-scheme="scheme1"] .tankDistributionColor{ fill: rgba(255, 255, 255, 0.1); }
+html[data-scheme="scheme2"] .tankDistributionColor{ fill: rgba(0, 0, 0, 0.1); }
+html[data-scheme="scheme1"] .tankDistributionColor2{ fill: rgba(255, 255, 255, 0.2); }
+html[data-scheme="scheme2"] .tankDistributionColor2{ fill: rgba(0, 0, 0, 0.2); }
+html[data-scheme="scheme2"] .color-fill-type-white.navLights > svg{fill: rgb(0, 183, 255)!important;}
+ 
+/* ASTRALIUM 1280x800 screen */
 @media (max-width: 1280px) {
   nav.main-nav > ul > li a svg.ui.icon {
     width: 2rem !important;
@@ -6698,19 +6703,6 @@ html[data-scheme="scheme2"] .signalListRowOdd{ background: #cfd4d7!important; co
   .marginTopMiniReportLog{
     margin-top: -.7em;
   }
-  /*.ui.grid.gap-med.col.has-header > header{
-    height: 40px!important;
-  }
-  .ui.grid.gap-sm.col.has-header > header{
-    height: 40px!important;
-  }
-  .ui.grid.gap-mini.col.has-header > header{
-    height: 40px!important;
-  }
-  .ui.grid.gap-xl.col.has-header > header{
-    height: 40px!important;
-  }
-  */
   .buttonTools{
     margin-top: 18em!important;
   }  
@@ -6757,7 +6749,6 @@ html[data-scheme="scheme2"] .signalListRowOdd{ background: #cfd4d7!important; co
   .signalListHeight{
     height: 628px;
   }
-
 }
 
 

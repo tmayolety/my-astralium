@@ -14,7 +14,7 @@
                 </span>
             </header>
 
-            <div class="ui col mini-1 gap-no pad-mini radius shadow grid type1 cols-mini-9" style="height: 390px;" id="fuelTank">
+            <div class="ui col mini-1 gap-no pad-mini radius shadow grid type1 cols-mini-9" style="height: 390px; overflow: hidden!important;" id="fuelTank">
                 <div class="ui col mini-1">
                     <bar-render v-bind="{ signalId: 202, orientation: 'vertical', size: 'regular', unit: 'L', title:'Fuel Tank 1', displayScale: true, displayCapacity: true, color: 'color-fl-brown', scaleBottom: 0, scaleTop: 3360, scaleStep: 336, scaleSegments: 10, showLimits: true, valueMode: 'filtered', scaleEditable: 44, limitsEditable: 1, timeDelay: 1000 }"></bar-render>
                 </div>

@@ -66,21 +66,21 @@
 	<path style="fill:none;stroke:#555555;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M690.4,698.64V579.7h94.78v123.02C753.59,701.48,721.99,700.12,690.4,698.64"/>
 </g>
 <g onclick="tanks.tankHighlight('#oilTanks', 0, $(this))" id="LWPOLYLINE_00000029741714746755260880000016820267304783722382_">
-	<rect x="504.15" y="498.02" style="fill:rgba(255, 255, 255, 0.1);stroke:#555555;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" width="125.62" height="41.98"/>
+	<rect x="504.15" y="498.02" class="tankDistributionColor" style="stroke:#555555;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" width="125.62" height="41.98"/>
 </g>
 <g onclick="tanks.tankHighlight('#oilTanks', 1, $(this))" id="LWPOLYLINE_00000127027303791137490210000016865146935335968416_">
-	<rect x="504.15" y="540" style="fill:rgba(255, 255, 255, 0.1);stroke:#555555;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" width="125.62" height="41.98"/>
+	<rect x="504.15" y="540" class="tankDistributionColor" style="stroke:#555555;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" width="125.62" height="41.98"/>
 </g>
 <g id="LWPOLYLINE_00000163765605952788898590000013289805808596025278_">
 	<path style="fill:none;stroke:#555555;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M1003.62,540h264.15v93.13c-87.89,16.96-175.91,33.19-264.07,48.7L1003.62,540z"/>
 </g>
 <g onclick="tanks.tankHighlight('#wasteTanks', 1, $(this))" id="LWPOLYLINE_00000054962805500464339260000008291235703486827670_">
-	<path style="fill:rgba(255, 255, 255, 0.1);stroke:#555555;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M941.95,539.9v152.58c20.59-3.54,41.18-7.12,61.76-10.74l-0.08-141.83H941.95z"/>
+	<path class="tankDistributionColor" style="stroke:#555555;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M941.95,539.9v152.58c20.59-3.54,41.18-7.12,61.76-10.74l-0.08-141.83H941.95z"/>
 </g>
 <g id="LWPOLYLINE_00000144313933576075809540000010356078307808114870_">
 	<path style="fill:none;stroke:#555555;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M1003.62,540h264.15v-93.13c-87.89-16.96-175.91-33.19-264.07-48.7L1003.62,540z"/>
 </g>
 <g  onclick="tanks.tankHighlight('#wasteTanks', 0, $(this))" id="LWPOLYLINE_00000118397383518949087860000015767441102336915892_">
-	<path style="fill:rgba(255, 255, 255, 0.1);stroke:#555555;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M941.95,540.1V387.53c20.59,3.54,41.18,7.12,61.76,10.74l-0.08,141.83H941.95z"/>
+	<path class="tankDistributionColor" style="stroke:#555555;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M941.95,540.1V387.53c20.59,3.54,41.18,7.12,61.76,10.74l-0.08,141.83H941.95z"/>
 </g>
 </svg>

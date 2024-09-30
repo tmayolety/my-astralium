@@ -54,10 +54,10 @@
 		C1394.69,445.71,1346.15,431.99,1297.26,419.6z"/>
 </g>
 <g onclick="tanks.tankHighlight('#waterTanks', 0, $(this))" id="LWPOLYLINE_00000175311297671359147640000000093949817597995916_">
-	<path style="fill: rgba(255, 255, 255, 0.1);stroke:#555555;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M816.85,378.51V540h92.41V384.27C878.46,382.22,847.66,380.31,816.85,378.51"/>
+	<path class="tankDistributionColor" style="stroke:#555555;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M816.85,378.51V540h92.41V384.27C878.46,382.22,847.66,380.31,816.85,378.51"/>
 </g>
 <g onclick="tanks.tankHighlight('#waterTanks', 1, $(this))" id="LWPOLYLINE_00000049935039068790040840000012437081543838208700_">
-	<path style="fill: rgba(255, 255, 255, 0.1);stroke:#555555;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M816.85,701.49V540h92.41v155.73C878.46,697.78,847.66,699.69,816.85,701.49"/>
+	<path class="tankDistributionColor" style="stroke:#555555;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="M816.85,701.49V540h92.41v155.73C878.46,697.78,847.66,699.69,816.85,701.49"/>
 </g>
 <g id="LWPOLYLINE_00000119802320432982154890000009532094958387839124_">
 	<rect x="690.4" y="500.3" style="fill:none;stroke:#555555;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" width="94.78" height="79.4"/>
