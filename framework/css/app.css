@@ -6737,6 +6737,9 @@ html[data-scheme="scheme2"] .color-fill-type-white.navLights > svg{fill: rgb(0, 
   .flipButtonSize{
     width: 100%;
   }
+  .flipButtonSizeBar{
+    width: 120px;
+  }  
   .timelineComponenCloseButton{
     right: -20px;
   }
@@ -6752,9 +6755,6 @@ html[data-scheme="scheme2"] .color-fill-type-white.navLights > svg{fill: rgb(0, 
 }
 
 
-
-
- 
 
 
 
