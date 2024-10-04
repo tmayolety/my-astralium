@@ -438,33 +438,6 @@
         }
       },
       {
-          "name": "BilgeFireApp",
-          "component": [
-            {
-              "label": "icon-layout-render",
-              "file": "iconLayout"
-            },
-            {
-              "label": "valve-layout-render",
-              "file": "valveLayout"
-            },
-            {
-              "label": "pump-layout-render",
-              "file": "pumpLayout"
-            },
-            {
-              "label": "icon-tri-estate-digital-line-render",
-              "file": "iconTriEstateDigitalLine"
-            }
-          ],
-          "mount": "#BilgeFireApp",
-          "config": {
-            "compilerOptions": {
-              "isCustomElement": "tag => tag.startsWith('font')"
-            }
-          }
-      },
-      {
           "name": "SettingsApp",
           "component": [
             {
