@@ -6398,28 +6398,53 @@ html[data-scheme="scheme4"]:root { --sch-clr-background: 0 0 0; --sch-clr-backgr
 
 @media (min-width: 400px) and (max-width: 1000px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) { .phone-ld-alert { display: block; } }
 
-.simple-keyboard{
+
+html[data-scheme="scheme1"] .simple-keyboard{
   background-color: #092232!important;
 }
-.simple-keyboard .hg-button {
+html[data-scheme="scheme1"] .simple-keyboard .hg-button {
   background-color: #233846!important;
   color: white!important;
 }
-.simple-keyboard .hg-button:active {
+html[data-scheme="scheme1"] .simple-keyboard .hg-button:active {
   background-color: #102e42!important;
   color: white!important;
 }
 
-.simple-keyboard-log{
+html[data-scheme="scheme1"] .simple-keyboard-log{
   background-color: #092232!important;
 }
-.simple-keyboard-log .hg-button {
+html[data-scheme="scheme1"] .simple-keyboard-log .hg-button {
   background-color: #233846!important;
   color: white!important;
 }
-.simple-keyboard-log .hg-button:active {
+html[data-scheme="scheme1"] .simple-keyboard-log .hg-button:active {
   background-color: #102e42!important;
   color: white!important;
+}
+
+html[data-scheme="scheme2"] .simple-keyboard{
+  background-color: #e5e5e5!important;
+}
+html[data-scheme="scheme2"] .simple-keyboard .hg-button {
+  background-color: #ffffff!important;
+  color: rgb(0, 0, 0)!important;
+}
+html[data-scheme="scheme2"] .simple-keyboard .hg-button:active {
+  background-color: #dbdbdb!important;
+  color: rgb(0, 0, 0)!important;
+}
+
+html[data-scheme="scheme2"] .simple-keyboard-log{
+  background-color: #e5e5e5!important;
+}
+html[data-scheme="scheme2"] .simple-keyboard-log .hg-button {
+  background-color: #ffffff!important;
+  color: rgb(0, 0, 0)!important;
+}
+html[data-scheme="scheme2"] .simple-keyboard-log .hg-button:active {
+  background-color: #dbdbdb!important;
+  color: rgb(0, 0, 0)!important;
 }
 
 input::-webkit-input-placeholder { 
