@@ -2,105 +2,105 @@
 <svg version="1.1" id="TankObjects" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="480px" viewBox="-80 60 780.89 144.71"  xml:space="preserve">
 
   <g id="LWPOLYLINE">
-    <polyline style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="356.27 98.87 419.12 99.5 427.62 104.88 423.14 104.88 441.57 123.46 441.57 146.2"/>
+    <polyline style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="356.27 98.87 419.12 99.5 427.62 104.88 423.14 104.88 441.57 123.46 441.57 146.2"/>
   </g>
   <g id="LWPOLYLINE-2" data-name="LWPOLYLINE">
-    <polyline style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="455.8 146.2 455.8 125.66 457.99 125.66 471.69 140.08 471.69 146.2 417.43 146.2 417.43 147.93 378.87 147.93 378.87 167.47"/>
+    <polyline style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="455.8 146.2 455.8 125.66 457.99 125.66 471.69 140.08 471.69 146.2 417.43 146.2 417.43 147.93 378.87 147.93 378.87 167.47"/>
   </g>
   <g id="LWPOLYLINE-3" data-name="LWPOLYLINE">
-    <polyline style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="407.83 167.47 129.94 162.19 129.94 159.71 4.98 156.13"/>
+    <polyline style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="407.83 167.47 129.94 162.19 129.94 159.71 4.98 156.13"/>
   </g>
   <g id="LWPOLYLINE-4" data-name="LWPOLYLINE">
-    <line style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" x1="129.94" y1="159.71" x2="129.25" y2="109.07"/>
+    <line style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" x1="129.94" y1="159.71" x2="129.25" y2="109.07"/>
   </g>
   <g id="LWPOLYLINE-5" data-name="LWPOLYLINE">
-    <polyline style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="471.69 146.2 471.69 150.45 608.06 142.24"/>
+    <polyline style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="471.69 146.2 471.69 150.45 608.06 142.24"/>
   </g>
   <g id="LWPOLYLINE-6" data-name="LWPOLYLINE">
-    <polyline style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="57.12 216.41 78.93 250.2 409.8 242.35"/>
+    <polyline style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="57.12 216.41 78.93 250.2 409.8 242.35"/>
   </g>
   <g id="LWPOLYLINE-7" data-name="LWPOLYLINE">
-    <rect style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" x="140.86" y="194.79" width="60.86" height="29.81"/>
+    <rect style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" x="140.86" y="194.79" width="60.86" height="29.81"/>
   </g>
   <g id="LWPOLYLINE-8" data-name="LWPOLYLINE">
-    <polyline style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="538 146.45 538 198.74 530.9 198.74 530.9 230.69"/>
+    <polyline style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="538 146.45 538 198.74 530.9 198.74 530.9 230.69"/>
   </g>
   <g id="CIRCLE">
-    <circle style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" cx="511.45" cy="224.43" r="5.88"/>
+    <circle style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" cx="511.45" cy="224.43" r="5.88"/>
   </g>
   <g id="LWPOLYLINE-9" data-name="LWPOLYLINE">
-    <polyline style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="409.65 242.36 409.65 225.02 324.41 225.02 324.41 242.53"/>
+    <polyline style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="409.65 242.36 409.65 225.02 324.41 225.02 324.41 242.53"/>
   </g>
   <g id="LWPOLYLINE-10" data-name="LWPOLYLINE">
-    <polyline style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="324.41 225.02 303.79 225.02 303.79 242.21"/>
+    <polyline style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="324.41 225.02 303.79 225.02 303.79 242.21"/>
   </g>
   <g id="LWPOLYLINE-11" data-name="LWPOLYLINE">
-    <line style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" x1="201.71" y1="194.79" x2="140.86" y2="224.6"/>
+    <line style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" x1="201.71" y1="194.79" x2="140.86" y2="224.6"/>
   </g>
   <g id="LWPOLYLINE-12" data-name="LWPOLYLINE">
-    <polyline style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="161.42 224.6 201.71 238.5 201.71 224.6 161.42 224.6 161.42 236.08 201.71 224.6 140.86 194.79"/>
+    <polyline style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="161.42 224.6 201.71 238.5 201.71 224.6 161.42 224.6 161.42 236.08 201.71 224.6 140.86 194.79"/>
   </g>
   <g id="LWPOLYLINE-13" data-name="LWPOLYLINE">
-    <polygon style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="57.12 216.41 57.12 200.38 88.8 200.38 57.12 216.41"/>
+    <polygon style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="57.12 216.41 57.12 200.38 88.8 200.38 57.12 216.41"/>
   </g>
   <g id="LWPOLYLINE-14" data-name="LWPOLYLINE">
-    <polyline style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="57.12 200.38 89.3 228.28 88.04 158.51"/>
+    <polyline style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="57.12 200.38 89.3 228.28 88.04 158.51"/>
   </g>
   <g id="LWPOLYLINE-15" data-name="LWPOLYLINE">
-    <polyline style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="254 222.7 221.24 239.48 221.24 163.93"/>
+    <polyline style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="254 222.7 221.24 239.48 221.24 163.93"/>
   </g>
   <g id="LWPOLYLINE-16" data-name="LWPOLYLINE">
-    <polygon style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="221.24 222.7 254 240.84 254 222.7 221.24 222.7"/>
+    <polygon style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="221.24 222.7 254 240.84 254 222.7 221.24 222.7"/>
   </g>
   <g id="LWPOLYLINE-17" data-name="LWPOLYLINE">
-    <line style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" x1="263.15" y1="240.84" x2="293.34" y2="224.15"/>
+    <line style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" x1="263.15" y1="240.84" x2="293.34" y2="224.15"/>
   </g>
   <g id="LWPOLYLINE-18" data-name="LWPOLYLINE">
-    <polyline style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="263.15 224.15 293.34 241.99 293.34 224.15 263.15 224.15 263.15 241.15"/>
+    <polyline style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="263.15 224.15 293.34 241.99 293.34 224.15 263.15 224.15 263.15 241.15"/>
   </g>
   <g id="LWPOLYLINE-19" data-name="LWPOLYLINE">
-    <polyline style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="303.79 225.02 324.41 242.53 409.65 225.02"/>
+    <polyline style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="303.79 225.02 324.41 242.53 409.65 225.02"/>
   </g>
   <g id="LWPOLYLINE-20" data-name="LWPOLYLINE">
-    <polyline style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="410.07 242.35 324.41 225.02 303.79 241.99"/>
+    <polyline style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="410.07 242.35 324.41 225.02 303.79 241.99"/>
   </g>
   <g id="LWPOLYLINE-21" data-name="LWPOLYLINE">
-    <polyline style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="466.32 218.97 418.35 242.2 418.35 218.97 466.32 218.97 466.32 240.89 418.35 218.97"/>
+    <polyline style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="466.32 218.97 418.35 242.2 418.35 218.97 466.32 218.97 466.32 240.89 418.35 218.97"/>
   </g>
   <g id="LWPOLYLINE-22" data-name="LWPOLYLINE">
-    <path style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" d="M617.77,133.51c-19.74,17.33-36.52,37.76-49.68,60.5-12.55,22.63-33.99,38.97-59.13,45.08-124.63,6.19-249.53,4.55-373.95-4.89-38.14,0-75.28-12.14-106.04-34.69C13.58,182.91,3.6,162.04,.35,139.65l95.6,6.08c1.12,.07,2.22-.34,3.02-1.13l21.75-21.48c1.55-1.53,1.56-4.02,.04-5.57-.69-.7-1.63-1.12-2.62-1.17l-100.56-4.76c1.96-5.12,6.63-8.71,12.08-9.29,108.61,9.24,217.65,12.3,326.6,9.16v-24.06l-15.46-43.8,5.63-5.63L330.73,1.03l-2.38-.68h5.44l45.55,94.75h5.15l3.45,3.76"/>
+    <path style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" d="M617.77,133.51c-19.74,17.33-36.52,37.76-49.68,60.5-12.55,22.63-33.99,38.97-59.13,45.08-124.63,6.19-249.53,4.55-373.95-4.89-38.14,0-75.28-12.14-106.04-34.69C13.58,182.91,3.6,162.04,.35,139.65l95.6,6.08c1.12,.07,2.22-.34,3.02-1.13l21.75-21.48c1.55-1.53,1.56-4.02,.04-5.57-.69-.7-1.63-1.12-2.62-1.17l-100.56-4.76c1.96-5.12,6.63-8.71,12.08-9.29,108.61,9.24,217.65,12.3,326.6,9.16v-24.06l-15.46-43.8,5.63-5.63L330.73,1.03l-2.38-.68h5.44l45.55,94.75h5.15l3.45,3.76"/>
   </g>
   <g id="LWPOLYLINE-23" data-name="LWPOLYLINE">
-    <polyline style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="50.64 104.05 59.63 94.32 162.34 97.98 162.7 106.07 170.97 110.87"/>
+    <polyline style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" points="50.64 104.05 59.63 94.32 162.34 97.98 162.7 106.07 170.97 110.87"/>
   </g>
   <g id="LWPOLYLINE-26" data-name="LWPOLYLINE">
-    <rect style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" x="154.9" y="124.45" width="23.95" height="19.35" rx=".98" ry=".98"/>
+    <rect style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" x="154.9" y="124.45" width="23.95" height="19.35" rx=".98" ry=".98"/>
   </g>
   <g id="LWPOLYLINE-27" data-name="LWPOLYLINE">
-    <rect style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" x="182.05" y="124.45" width="23.95" height="19.35" rx=".98" ry=".98"/>
+    <rect style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" x="182.05" y="124.45" width="23.95" height="19.35" rx=".98" ry=".98"/>
   </g>
   <g id="LWPOLYLINE-28" data-name="LWPOLYLINE">
-    <rect style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" x="227.28" y="126.74" width="23.95" height="19.35" rx=".98" ry=".98"/>
+    <rect style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" x="227.28" y="126.74" width="23.95" height="19.35" rx=".98" ry=".98"/>
   </g>
   <g id="LWPOLYLINE-29" data-name="LWPOLYLINE">
-    <rect style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" x="254.23" y="126.74" width="23.95" height="19.35" rx=".98" ry=".98"/>
+    <rect style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" x="254.23" y="126.74" width="23.95" height="19.35" rx=".98" ry=".98"/>
   </g>
   <g id="LWPOLYLINE-30" data-name="LWPOLYLINE">
-    <rect style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" x="323.84" y="125.31" width="19.99" height="14.38" rx=".98" ry=".98"/>
+    <rect style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" x="323.84" y="125.31" width="19.99" height="14.38" rx=".98" ry=".98"/>
   </g>
   <g id="CIRCLE-2" data-name="CIRCLE">
-    <circle style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" cx="305.94" cy="131.25" r="4.3"/>
+    <circle style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" cx="305.94" cy="131.25" r="4.3"/>
   </g>
   <g id="LWPOLYLINE-31" data-name="LWPOLYLINE">
-    <path style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" d="M380.81,109.77v11.65c0,.54-.44,.98-.98,.98h-18.65c-.17,0-.34-.05-.49-.13-.47-.27-.63-.87-.36-1.34l6.73-11.65c.18-.3,.5-.49,.85-.49h11.93c.54,0,.98,.44,.98,.98Z"/>
+    <path style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" d="M380.81,109.77v11.65c0,.54-.44,.98-.98,.98h-18.65c-.17,0-.34-.05-.49-.13-.47-.27-.63-.87-.36-1.34l6.73-11.65c.18-.3,.5-.49,.85-.49h11.93c.54,0,.98,.44,.98,.98Z"/>
   </g>
   <g id="LWPOLYLINE-32" data-name="LWPOLYLINE">
-    <rect style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" x="383.94" y="108.79" width="8.28" height="13.62" rx=".98" ry=".98"/>
+    <rect style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" x="383.94" y="108.79" width="8.28" height="13.62" rx=".98" ry=".98"/>
   </g>
   <g id="LWPOLYLINE-33" data-name="LWPOLYLINE">
-    <path style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" d="M395.34,109.77v11.65c0,.54,.44,.98,.98,.98h23.64c.54,0,.98-.44,.98-.98,0-.26-.1-.51-.29-.69l-11.55-11.65c-.18-.19-.44-.29-.7-.29h-12.09c-.54,0-.98,.44-.98,.98Z"/>
+    <path style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" d="M395.34,109.77v11.65c0,.54,.44,.98,.98,.98h23.64c.54,0,.98-.44,.98-.98,0-.26-.1-.51-.29-.69l-11.55-11.65c-.18-.19-.44-.29-.7-.29h-12.09c-.54,0-.98,.44-.98,.98Z"/>
   </g>
   <g id="LWPOLYLINE-34" data-name="LWPOLYLINE">
-    <path style="fill: none; stroke: #555; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" d="M433.03,120.73l-13.78-13.9c-.27-.27-.67-.36-1.02-.24l-4.41,1.54c-.51,.18-.78,.74-.6,1.25,.05,.14,.13,.26,.23,.37l12.25,12.35c.18,.19,.44,.29,.7,.29h5.94c.54,0,.98-.44,.98-.98,0-.26-.1-.51-.29-.69Z"/>
+    <path style="fill: none; stroke: #6d92ab; stroke-linecap: round;stroke-linejoin: round; stroke-width: 1.5px" d="M433.03,120.73l-13.78-13.9c-.27-.27-.67-.36-1.02-.24l-4.41,1.54c-.51,.18-.78,.74-.6,1.25,.05,.14,.13,.26,.23,.37l12.25,12.35c.18,.19,.44,.29,.7,.29h5.94c.54,0,.98-.44,.98-.98,0-.26-.1-.51-.29-.69Z"/>
   </g>
 </svg>

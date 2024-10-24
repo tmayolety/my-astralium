@@ -49,8 +49,6 @@ components.alarmSystemHeader = {
      </li>
     `,
     data() {
-  
-
         return {
             alarms: ActiveAlarmList,
             alarmAlert: false,
@@ -72,10 +70,7 @@ components.alarmSystemHeader = {
         },
      },
 
-    updated() {
-       
-     
-    },
+    updated() {},
     mounted() {
         
       this.handleAlarmsChange()
@@ -88,8 +83,6 @@ components.alarmSystemHeader = {
                 clearInterval(this.swingInterval);
 
                 this.createInterval();
-            
-       
          },
 
         activeAlarmCount(){
