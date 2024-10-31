@@ -303,7 +303,7 @@ const status = {
                             progress: false,
                             color: notificationColor,
                             textColor: 'white',
-                            caption:  statusName + " by " + locationsData[parseInt(item.ScreenId)].Name ,
+                            caption:  statusName + " by " + locationName ,
                             message: '<h1 style="font-size: 1.2em!important"><strong>' + split[0] + ' - </strong> ' + alarmName + '</h1>'
                         })
 
