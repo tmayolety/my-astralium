@@ -1,5 +1,5 @@
 $.getScript( "js/tanks.js");
-$("#FuelTanks_layout").load("src/ga/Black/Astralium-tanks.svg");
+$("#FuelTanks_layout").load("src/ga/Black/fuelTanks.svg");
 
 var screen = {
     renderData: function (msg) {
@@ -194,8 +194,6 @@ if (FuelTotalRender == true) {
 }
 
 //1280*800 Resolution
-
-$("#FuelTanks_layout_Mini").load("src/ga/tanks/GO_waterTanksMini.svg");
 
 var FuelTotalRenderMini = true;
 var FuelTotalRenderDivMini = document.getElementById('totalFuelMini')

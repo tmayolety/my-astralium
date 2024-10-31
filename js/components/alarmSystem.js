@@ -57,19 +57,15 @@ components.alarmSystem = {
                 warningOn:"display:none",
                 warningOff:"display: unset"
             },
-
         }
     },
     updated () {
-
         clearTimeout(refreshAlarmLogTimeout);
         refreshAlarmLogTimeout = setTimeout(function () {
             alarms.updateAlarmLog();
         }, 1500 + (Math.floor(Math.random() * 2000) + 100));
-
     },
-    mounted()
-    {
+    mounted(){
         alarms.activeAlarmShow();
     },
     methods:{
@@ -186,8 +182,7 @@ components.alarmSystem = {
 
             var sendRequest = true;
 
-            if ( isNaN(alarmId) )
-            {
+            if(isNaN(alarmId)){
                 sendRequest = false;
             }
 
@@ -195,7 +190,6 @@ components.alarmSystem = {
             if (!helpers.profileCheck()) {
                 helpers.privilegesPopUp();
                 sendRequest = false;
-
             }
 
             //UNNATENDED ACK CHECK

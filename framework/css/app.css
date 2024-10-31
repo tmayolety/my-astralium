@@ -6398,28 +6398,53 @@ html[data-scheme="scheme4"]:root { --sch-clr-background: 0 0 0; --sch-clr-backgr
 
 @media (min-width: 400px) and (max-width: 1000px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) { .phone-ld-alert { display: block; } }
 
-.simple-keyboard{
+
+html[data-scheme="scheme1"] .simple-keyboard{
   background-color: #092232!important;
 }
-.simple-keyboard .hg-button {
+html[data-scheme="scheme1"] .simple-keyboard .hg-button {
   background-color: #233846!important;
   color: white!important;
 }
-.simple-keyboard .hg-button:active {
+html[data-scheme="scheme1"] .simple-keyboard .hg-button:active {
   background-color: #102e42!important;
   color: white!important;
 }
 
-.simple-keyboard-log{
+html[data-scheme="scheme1"] .simple-keyboard-log{
   background-color: #092232!important;
 }
-.simple-keyboard-log .hg-button {
+html[data-scheme="scheme1"] .simple-keyboard-log .hg-button {
   background-color: #233846!important;
   color: white!important;
 }
-.simple-keyboard-log .hg-button:active {
+html[data-scheme="scheme1"] .simple-keyboard-log .hg-button:active {
   background-color: #102e42!important;
   color: white!important;
+}
+
+html[data-scheme="scheme2"] .simple-keyboard{
+  background-color: #e5e5e5!important;
+}
+html[data-scheme="scheme2"] .simple-keyboard .hg-button {
+  background-color: #ffffff!important;
+  color: rgb(0, 0, 0)!important;
+}
+html[data-scheme="scheme2"] .simple-keyboard .hg-button:active {
+  background-color: #dbdbdb!important;
+  color: rgb(0, 0, 0)!important;
+}
+
+html[data-scheme="scheme2"] .simple-keyboard-log{
+  background-color: #e5e5e5!important;
+}
+html[data-scheme="scheme2"] .simple-keyboard-log .hg-button {
+  background-color: #ffffff!important;
+  color: rgb(0, 0, 0)!important;
+}
+html[data-scheme="scheme2"] .simple-keyboard-log .hg-button:active {
+  background-color: #dbdbdb!important;
+  color: rgb(0, 0, 0)!important;
 }
 
 input::-webkit-input-placeholder { 
@@ -6666,9 +6691,14 @@ html[data-scheme="scheme1"] .signalListRowEven{ background: rgba(18,53,76,255)!i
 html[data-scheme="scheme2"] .signalListRowEven{ background: rgb(255, 255, 255)!important; color: white;}
 html[data-scheme="scheme1"] .signalListRowOdd{ background: #0e2a3d!important; color: white;}
 html[data-scheme="scheme2"] .signalListRowOdd{ background: #cfd4d7!important; color: white;}
- 
- /* ASTRALIUM 1280x800 screen */
 
+html[data-scheme="scheme1"] .tankDistributionColor{ fill: rgba(255, 255, 255, 0.1); }
+html[data-scheme="scheme2"] .tankDistributionColor{ fill: rgba(0, 0, 0, 0.1); }
+html[data-scheme="scheme1"] .tankDistributionColor2{ fill: rgba(255, 255, 255, 0.2); }
+html[data-scheme="scheme2"] .tankDistributionColor2{ fill: rgba(0, 0, 0, 0.2); }
+html[data-scheme="scheme2"] .color-fill-type-white.navLights > svg{fill: rgb(0, 183, 255)!important;}
+ 
+/* ASTRALIUM 1280x800 screen */
 @media (max-width: 1280px) {
   nav.main-nav > ul > li a svg.ui.icon {
     width: 2rem !important;
@@ -6698,19 +6728,6 @@ html[data-scheme="scheme2"] .signalListRowOdd{ background: #cfd4d7!important; co
   .marginTopMiniReportLog{
     margin-top: -.7em;
   }
-  /*.ui.grid.gap-med.col.has-header > header{
-    height: 40px!important;
-  }
-  .ui.grid.gap-sm.col.has-header > header{
-    height: 40px!important;
-  }
-  .ui.grid.gap-mini.col.has-header > header{
-    height: 40px!important;
-  }
-  .ui.grid.gap-xl.col.has-header > header{
-    height: 40px!important;
-  }
-  */
   .buttonTools{
     margin-top: 18em!important;
   }  
@@ -6736,12 +6753,18 @@ html[data-scheme="scheme2"] .signalListRowOdd{ background: #cfd4d7!important; co
   html[data-scheme="scheme2"] main > .ui.main-tabs{
     padding: 0.2rem .1rem;
   }
+  .signalListHeight{
+    height: 400px;
+  }
 }
 
 @media (min-width: 1281px) {
   .flipButtonSize{
     width: 100%;
   }
+  .flipButtonSizeBar{
+    width: 120px;
+  }  
   .timelineComponenCloseButton{
     right: -20px;
   }
@@ -6751,13 +6774,12 @@ html[data-scheme="scheme2"] .signalListRowOdd{ background: #cfd4d7!important; co
   .inputReportLog{
     margin-bottom: 1em!important;
   }
-
+  .signalListHeight{
+    height: 628px;
+  }
 }
 
 
-
-
- 
 
 
 

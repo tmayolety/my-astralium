@@ -2,8 +2,7 @@
 
     <div class="ui grid type1 cols-mini-1 cols-xl-2 gap-xl hidden-mini pad-lg">
 
-        <div class="ui col mini-1 gap-sm pad-lg has-header
-                        grid type1 cols-mini-1">
+        <div class="ui col mini-1 gap-sm pad-lg has-header grid type1 cols-mini-1">
 
             <header class="ui col">
                 <font>Oil Tanks</font>
@@ -11,12 +10,10 @@
                     <span class="gradient-left"></span>
                     <span class="gradient-right"></span>
                 </span>
-
-
             </header>
 
             <div class="ui col mini-1 gap-no pad-mini radius shadow
-                            grid type1 cols-mini-2" style="height: 390px;" id="oilTanks">
+                            grid type1 cols-mini-2" style="height: 390px; overflow: hidden!important;" id="oilTanks">
                 <div class="ui col mini-1">
                     <bar-render
                         v-bind="{ signalId: 202, orientation: 'vertical', size: 'regular', unit: 'L', title:'Dirty Oil', displayScale: true, displayCapacity: true, color: 'color-fl-yellow', scaleBottom: 0, scaleTop: 870, scaleStep: 87, scaleSegments: 10,  showLimits: true, valueMode: 'filtered' }"></bar-render>
@@ -37,12 +34,10 @@
                     <span class="gradient-left"></span>
                     <span class="gradient-right"></span>
                 </span>
-
-
             </header>
 
             <div class="ui col mini-1 gap-no pad-mini radius shadow
-                grid type1 cols-mini-2" style="height: 390px;" id="oilTanks">
+                grid type1 cols-mini-2" style="height: 390px; overflow: hidden!important;" id="wasteTanks">
                 <div class="ui col mini-1">
                     <bar-render
                         v-bind="{ signalId: 90, orientation: 'vertical', size: 'regular', unit: 'L', title:'Black Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-dark', scaleBottom: 0, scaleTop: 1400, scaleStep: 140, scaleSegments: 10, showLimits: true, valueMode: 'filtered' }"></bar-render>
@@ -54,8 +49,8 @@
             </div>
         </div>
 
-        <div class="ui col mini-1 xl-1 gap-sm pad-lg has-header hidden-phone
-                        grid type1 cols-mini-1">
+        <div class="ui col mini-1 xl-1 gap-sm pad-lg has-header hidden-phone grid type1 cols-mini-1">
+
             <header class="ui col">
                 <font>Total Waste</font>
                 <span class="gradients">
@@ -63,25 +58,21 @@
                     <span class="gradient-right"></span>
                 </span>
             </header>
+
             <div class="ui col sm-1 gap-no pad-lg h-mini-300 radius shadow type1 timelineBackground">
                 <canvas id="totalWaste" style="height: 270px!important; margin-top: 29px!important;"></canvas>
             </div>
 
-            <div
-                style="display: flex; justify-content: center; padding: 0.1em; gap: .5em; position: absolute; top: 63px; right: 5px;">
-                <button class="ui btn mini colored primary timeLineButtonWasteTanks" id="btn1WasteTanks"
-                    style=" width: 50px;">12H</button>
-                <button class="ui btn mini colored primary timeLineButtonWasteTanks" id="btn2WasteTanks"
-                    style=" width: 50px;">24H</button>
-                <button class="ui btn mini colored primary timeLineButtonWasteTanks active" id="btn3WasteTanks"
-                    style=" width: 50px;">2D</button>
-                <button class="ui btn mini colored primary timeLineButtonWasteTanks" id="btn4WasteTanks"
-                    style=" width: 50px;">3D</button>
+            <div style="display: flex; justify-content: center; padding: 0.1em; gap: .5em; position: absolute; top: 63px; right: 5px;">
+                <button class="ui btn mini colored primary timeLineButtonWasteTanks" id="btn1WasteTanks" style=" width: 50px;">12H</button>
+                <button class="ui btn mini colored primary timeLineButtonWasteTanks" id="btn2WasteTanks" style=" width: 50px;">24H</button>
+                <button class="ui btn mini colored primary timeLineButtonWasteTanks active" id="btn3WasteTanks" style=" width: 50px;">2D</button>
+                <button class="ui btn mini colored primary timeLineButtonWasteTanks" id="btn4WasteTanks" style=" width: 50px;">3D</button>
             </div>
+
         </div>
 
-        <div class="ui col mini-1 xl-1 gap-sm pad-lg has-header hidden-phone
-                        grid type1 cols-mini-1">
+        <div class="ui col mini-1 xl-1 gap-sm pad-lg has-header hidden-phone grid type1 cols-mini-1">
             <header class="ui col">
                 <font>Tank Distribution</font>
                 <span class="gradients">
@@ -90,40 +81,34 @@
                 </span>
             </header>
             <div class="ui col mini-1 middle-center h-mini-300 radius shadow">
-               
                 <span id="WasteTanks_layout"></span>
             </div>
         </div>
     </div>
 
-
     <div class="ui grid type1 cols-mini-2 gap-sm hidden-xl">
 
         <div class="ui col mini-1 gap-sm grid type1 cols-mini-1">
 
-            <div class="ui col mini-1 gap-no pad-mini radius shadow grid type1 cols-mini-2" style="height: 350px;"
+            <div class="ui col mini-1 gap-no pad-mini radius shadow grid type1 cols-mini-2" style="height: 350px; overflow: hidden!important;"
                 id="oilTanksMini">
                 <div class="ui col mini-1">
-                    <bar-render
-                        v-bind="{ signalId: 202, orientation: 'vertical', size: 'medium', unit: 'L', title:'Dirty Oil', displayScale: true, displayCapacity: true, color: 'color-fl-yellow', scaleBottom: 0, scaleTop: 870, scaleStep: 87, scaleSegments: 10,  showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1, buttonTool: true }"></bar-render>
+                    <bar-render v-bind="{ signalId: 202, orientation: 'vertical', size: 'medium', unit: 'L', title:'Dirty Oil', displayScale: true, displayCapacity: true, color: 'color-fl-yellow', scaleBottom: 0, scaleTop: 870, scaleStep: 87, scaleSegments: 10,  showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1, buttonTool: true }"></bar-render>
                 </div>
                 <div class="ui col mini-1">
-                    <bar-render
-                        v-bind="{ signalId: 91, orientation: 'vertical', size: 'medium', unit: 'L', title:'Lub. Oil', displayScale: true, displayCapacity: true, color: 'color-fl-yellow', scaleBottom: 0, scaleTop: 870, scaleStep: 87, scaleSegments: 10,  showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1, buttonTool: true }"></bar-render>
+                    <bar-render v-bind="{ signalId: 91, orientation: 'vertical', size: 'medium', unit: 'L', title:'Lub. Oil', displayScale: true, displayCapacity: true, color: 'color-fl-yellow', scaleBottom: 0, scaleTop: 870, scaleStep: 87, scaleSegments: 10,  showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1, buttonTool: true }"></bar-render>
                 </div>
             </div>
         </div>
 
         <div class="ui col mini-1 gap-sm grid type1 cols-mini-1">
-            <div class="ui col mini-1 gap-no pad-mini radius shadow grid type1 cols-mini-2" style="height: 350px;"
+            <div class="ui col mini-1 gap-no pad-mini radius shadow grid type1 cols-mini-2" style="height: 350px; overflow: hidden!important;"
                 id="wasteTanksMini">
                 <div class="ui col mini-1">
-                    <bar-render
-                        v-bind="{ signalId: 90, orientation: 'vertical', size: 'medium', unit: 'L', title:'Black Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-dark', scaleBottom: 0, scaleTop: 1400, scaleStep: 140, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1, buttonTool: true }"></bar-render>
+                    <bar-render v-bind="{ signalId: 90, orientation: 'vertical', size: 'medium', unit: 'L', title:'Black Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-dark', scaleBottom: 0, scaleTop: 1400, scaleStep: 140, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1, buttonTool: true }"></bar-render>
                 </div>
                 <div class="ui col mini-1">
-                    <bar-render
-                        v-bind="{ signalId: 91, orientation: 'vertical', size: 'medium', unit: 'L', title:'Grey Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-dark', scaleBottom: 0, scaleTop: 1400, scaleStep: 140, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1, buttonTool: true }"></bar-render>
+                    <bar-render v-bind="{ signalId: 91, orientation: 'vertical', size: 'medium', unit: 'L', title:'Grey Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-dark', scaleBottom: 0, scaleTop: 1400, scaleStep: 140, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1, buttonTool: true }"></bar-render>
                 </div>
             </div>
         </div>
@@ -153,4 +138,5 @@
             </div>
         </div>
     </div>
+
 </article>

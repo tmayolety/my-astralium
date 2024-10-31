@@ -1,16 +1,17 @@
 components.singleLineBusBar = {
     props: ['gen1BreakerSignalId', 'gen2BreakerSignalId',   'shorePowerBreakerSignalId'],
     template:/*html*/ `
-                <div class="singleline-tree2" data-cables="3" style="margin-top:-.7em">
+                <div class="singleline-tree2" data-cables="3" style="">
 
                     <div class="horz">
 
-                        <div class="item" :class= '[gen1Gen2Class]' data-link="">
+                        <div class="item" :class= '[gen1Gen2Class]' data-link="true">
                             <div class="cable">
                                 <div class="link"></div>
                             </div>
                         </div>
-                        <div class="item" :class= '[gen1Gen2Class]'  data-link="true">
+                        
+                        <div class="item" :class= '[gen1Gen2Class]'  data-link="">
                             <div class="cable">
                                 <div class=""></div>
                             </div>

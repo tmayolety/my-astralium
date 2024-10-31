@@ -2,8 +2,7 @@
 
         <div class="ui grid type1 cols-mini-1 cols-xl-2 gap-xl hidden-phone pad-lg hidden-mini">
 
-            <div class="ui col mini-1 xl-2 gap-sm pad-lg has-header
-                        grid type1 cols-mini-1">
+            <div class="ui col mini-1 xl-2 gap-sm pad-lg has-header grid type1 cols-mini-1">
 
                 <header class="ui col">
                     <font>Fresh Water Tanks</font>
@@ -11,26 +10,23 @@
                         <span class="gradient-left"></span>
                         <span class="gradient-right"></span>
                     </span>
-                    
-                    
                 </header>
 
-                <div class="ui col mini-1 gap-no pad-mini radius shadow grid type1 cols-mini-3" style="height:390px;" id="waterTanks">
+                <div class="ui col mini-1 gap-no pad-mini radius shadow grid type1 cols-mini-3" style="height:390px; overflow: hidden!important;" id="waterTanks">
                     <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 90, orientation: 'vertical', size: 'regular', unit: 'L', title:'Water Tank 9', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 2320, scaleStep: 232, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
+                        <bar-render v-bind="{ signalId: 90, orientation: 'vertical', size: 'regular', unit: 'L', title:'Port Fresh Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 2320, scaleStep: 232, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
                     </div>
                     <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 91, orientation: 'vertical', size: 'regular', unit: 'L', title:'Fresh Water Tank Stbd', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 2320,scaleStep: 232, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
+                        <bar-render v-bind="{ signalId: 91, orientation: 'vertical', size: 'regular', unit: 'L', title:'Stbd Fresh Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 2320,scaleStep: 232, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
                     </div>
                    <div class="ui col mini-1">
                         <bar-custom-render v-bind="{ signalId: 90, signalId2: 91, orientation: 'vertical', size: 'regular', unit: 'L', title:'Total Fresh Water', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 4640, scaleStep: 464, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-custom-render>
                     </div>
                 </div>
+                
             </div>
 
-
-            <div class="ui col mini-1 xl-1 gap-sm pad-lg has-header hidden-phone
-                        grid type1 cols-mini-1">
+            <div class="ui col mini-1 xl-1 gap-sm pad-lg has-header hidden-phone grid type1 cols-mini-1">
                 <header class="ui col">
                     <font>Total Fresh Water</font>
                     <span class="gradients">
@@ -52,20 +48,19 @@
 
             </div>
 
-            <div class="ui col mini-1 xl-1 gap-sm pad-lg has-header hidden-phone radius shadow
-                        grid type1 cols-mini-1" style="overflow: hidden!important;">
+            <div class="ui col mini-1 xl-1 gap-sm pad-lg has-header hidden-phone radius shadow grid type1 cols-mini-1" style="overflow: hidden!important;">
                 <header class="ui col">
                     <font>Tank Distribution</font>
                     <span class="gradients">
                         <span class="gradient-left"></span>
                         <span class="gradient-right"></span>
                     </span>
-                    
-                    
                 </header>
+
                 <div class="ui col mini-1 middle-center h-mini-300 radius shadow">
                     <span id="WaterTanks_layout"></span>
                 </div>
+            
             </div>
         </div>
 

@@ -41,9 +41,8 @@ components.inhibitListSystem = {
             <button class="ui btn sm secondary colored" style="color: white!important;" @click="clearSearch">Clear</button>
           </div>
           
-            <div id="keyboardInhibits" style="width: 30vw; position: fixed; bottom: 95px; left: 50%; transform: translateX(-50%); z-index:99999; display: none;" class="simple-keyboard"></div>
+            <div id="keyboardInhibits" style="width: 40vw; position: fixed; bottom: 95px; left: 50%; transform: translateX(-50%); z-index:99999; display: none;" class="simple-keyboard"></div>
           
-
             <div v-for="(group, index) in nameGroup" class="marginTopMini">
 
                 <div class="hidden-phone" v-if="!isPhone">
@@ -76,8 +75,6 @@ components.inhibitListSystem = {
                 </div>
 
             </div>
-
-   
 
 `,
     data() {

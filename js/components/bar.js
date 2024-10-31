@@ -51,7 +51,7 @@ components.bar = {
                     </button>
                 </template>
                 <template v-else>
-                    <button class="ui btn mini colored secondary textColorTheme" @click="callTimeline(this.signalId, this.title, this.timeDelay)" style="width: 100%;">
+                    <button class="ui btn mini colored secondary textColorTheme flipButtonSizeBar" @click="callTimeline(this.signalId, this.title, this.timeDelay)" >
                         Id: {{signalId}}<br/><br/>
                          {{deviceName}}<br/><br/>
                         RAW: {{rawToShow}}

@@ -65,7 +65,6 @@ components.iconTwoOptionsDigitalLine = {
             rawToShowTwo: null,
             signalDataTwo: signalsData[this.signalIdOptionTwo],
             deviceNameTwo: null,
-            sizeWidth: null,
             isFlipped: false,
 
         }

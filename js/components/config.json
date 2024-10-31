@@ -230,8 +230,8 @@
           "name": "bilgeApp",
           "component": [
             {
-              "label": "icon-text-value-digital-line-render",
-              "file": "iconTextValueDigitalLine"
+              "label": "basic-text-with-digital-line-render",
+              "file": "basicTextWithTitleDigital"
             },
             {
               "label": "icon-layout-render",
@@ -330,29 +330,23 @@
           }
       },
       {
-          "name": "watertightListApp",
-          "component": [
-            {
-              "label": "icon-text-value-digital-line-render",
-              "file": "iconTextValueDigitalLine"
-            }
-          ],
-          "mount": ".watertightListApp",
-          "config": {
-            "compilerOptions": {
-              "isCustomElement": "tag => tag.startsWith('font')"
-            }
-          }
-      },
-      {
-          "name": "fireDoorsLayoutApp",
+          "name": "doorsLayoutApp",
           "component": [
             {
               "label": "door-render",
               "file": "door"
+            },
+            {
+              "label": "icon-layout-render",
+              "file": "iconLayout"
+            },
+            {
+              "label": "icon-text-value-digital-line-render",
+              "file": "iconTextValueDigitalLine"
+
             }
           ],
-          "mount": ".fireDoorsLayoutApp",
+          "mount": ".doorsLayoutApp",
           "config": {
             "compilerOptions": {
               "isCustomElement": "tag => tag.startsWith('font')"
@@ -442,33 +436,6 @@
             "isCustomElement": "tag => tag.startsWith('font')"
           }
         }
-      },
-      {
-          "name": "BilgeFireApp",
-          "component": [
-            {
-              "label": "icon-layout-render",
-              "file": "iconLayout"
-            },
-            {
-              "label": "valve-layout-render",
-              "file": "valveLayout"
-            },
-            {
-              "label": "pump-layout-render",
-              "file": "pumpLayout"
-            },
-            {
-              "label": "icon-tri-estate-digital-line-render",
-              "file": "iconTriEstateDigitalLine"
-            }
-          ],
-          "mount": "#BilgeFireApp",
-          "config": {
-            "compilerOptions": {
-              "isCustomElement": "tag => tag.startsWith('font')"
-            }
-          }
       },
       {
           "name": "SettingsApp",
