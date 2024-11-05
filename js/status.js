@@ -256,7 +256,6 @@ const status = {
                 }
                 lastNotificationTime = currentTime; //Update lastNotificationTime
         
-
                 const message = item.Message;
                 const split = message.match(/\d+/g);
 
@@ -304,7 +303,7 @@ const status = {
 
                         }
                         if (item.Name == "UpdateAlarmStatus" && split[1] == 0) { statusName = "Desinhibited"; }
-                        console.log('-----ON QUASAR NOTIFICATION-----')
+                       
                        Quasar.Notify.create({
                            html: true,
                            group: split[0],
