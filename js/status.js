@@ -2,7 +2,7 @@ let socketStatus = null;
 let APIStatus = null;
 let loadingStatus = null;
 let socketConnected = false;
-
+let lastNotificationTime = 0;
 let socketConnectionEstablished = Vue.ref(false);
 let APIConnectionEstablished = Vue.ref(false);
 let componentLoadingText = Vue.ref('');
@@ -241,12 +241,21 @@ const status = {
                 document.getElementById('deviceTotal_' + item.deviceId).innerHTML = item.total.toFixed(1);
             }
         });
-
+     
         sock.on( "logChannel", function(msg) {
+          
 
             var item = JSON.parse(msg);
             if (FLOATING_NOTIFICATIONS && typeof item.Target !== 'undefined' && item.Target == "FRONTEND")
             {
+                const currentTime = Date.now();
+        
+                //Only execute the code if at least 200 ms have elapsed since the last notification.
+                if (currentTime - lastNotificationTime < 200) {
+                    return; 
+                }
+                lastNotificationTime = currentTime; //Update lastNotificationTime
+        
 
                 const message = item.Message;
                 const split = message.match(/\d+/g);
@@ -295,17 +304,17 @@ const status = {
 
                         }
                         if (item.Name == "UpdateAlarmStatus" && split[1] == 0) { statusName = "Desinhibited"; }
-
-                        Quasar.Notify.create({
-                            html: true,
-                            group: split[0],
-                            icon: notificationIcon,
-                            progress: false,
-                            color: notificationColor,
-                            textColor: 'white',
-                            caption:  statusName + " by " + locationName ,
-                            message: '<h1 style="font-size: 1.2em!important"><strong>' + split[0] + ' - </strong> ' + alarmName + '</h1>'
-                        })
+                        console.log('-----ON QUASAR NOTIFICATION-----')
+                       Quasar.Notify.create({
+                           html: true,
+                           group: split[0],
+                           icon: notificationIcon,
+                           progress: false,
+                           color: notificationColor,
+                           textColor: 'white',
+                           caption:  statusName + " by " + locationName ,
+                           message: '<h1 style="font-size: 1.2em!important"><strong>' + split[0] + ' - </strong> ' + alarmName + '</h1>'
+                       })
 
                         break;
 

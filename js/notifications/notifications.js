@@ -1,6 +1,6 @@
 var notifications = {
     pupUpNotification(item) {
-
+        
         //NOTIFICATION ONLY IF TRIGGERED AND ACTIVE
         if (FLOATING_NOTIFICATIONS && ((item.alarmTriggered == 1 && item.Status == 9) || (item.alarmTriggered == 1 && item.Status == 2 && alarmData[parseInt(item.alarmId)].alarmType == 1))) {
 
