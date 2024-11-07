@@ -28,7 +28,7 @@ components.alarmSystem = {
             <div class="col-170 glow align-middle-center" :class="colorStatus(alarm.alarmType, alarm.alarmTriggered)"><span>{{getGroupName(alarm.Group)}}</span></div>
             <div class="col-300-min align-middle-center glow" :class="colorStatus(alarm.alarmType, alarm.alarmTriggered)"><span>{{getAlarmName(alarm.alarmId)}}</span></div>
             <div class="col-110 align-middle-center dev-statusChange glow pad-no hidden-phone">
-            <button :class=[colorAck(alarm.Status)]  v-on:click="statusModify(index, alarm.Status, 3)">Acknowledge</button></div>
+            <button :class=[colorAck(alarm.Status)] v-on:click="statusModify(index, alarm.Status, 3)">Acknowledge</button></div>
             <div class="col-110 align-middle-center dev-statusChange glow pad-no hidden-phone" >
             <button :class=[colorMute(alarm.Status)] :style="[statusWarning(index)]" v-on:click="statusModify(index, alarm.Status, 2)">Mute</button></div>
             </li>

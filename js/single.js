@@ -207,3 +207,13 @@ function closeSingleModal() {
     $( '#fullscreenSingleline' ).removeClass( 'fullscreen-med' )
     clearInterval(SingleInterval);
 }
+
+
+
+
+
+
+
+
+
+
