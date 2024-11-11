@@ -225,12 +225,12 @@
         } else {
 
             FLOATING_NOTIFICATIONS = ENABLE_FLOATING_NOTIFICATIONS;
-            status.subscribeChannels();
             $('#loadingResult').parent().addClass('color-bg-type-success glow');
             $('#loadingResult').html('OK');
                 $("body").fadeOut(400, function(){
                     $('#statusTable').hide();
-                    $("body").fadeIn(400);
+                    $("body").fadeIn(400, function() {
+                    });
                     $('#mainContent').show();
                 });
 
