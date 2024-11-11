@@ -267,8 +267,7 @@ components.inhibitListSystem = {
                     return this.typePreClassText
 
                 }
-               
-
+            
         },
         idTypeClass(alarmIndex) {
 

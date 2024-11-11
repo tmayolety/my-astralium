@@ -1,6 +1,6 @@
 components.alarmSystem = {
     props: [],
-    template:/*html*/ `
+    template:/*html*/`
      <div class="ui col mini-1 bg-no h-xl-290 h-mini-650">
         <div class="col-content overflow">
             <ul class="ui table size-sm resp">
@@ -34,8 +34,7 @@ components.alarmSystem = {
             </li>
             </ul>
         </div>
-     </div>
-    `,
+     </div>`,
     data() {
         return {
             alarms: ActiveAlarmList,
@@ -146,6 +145,7 @@ components.alarmSystem = {
                     $.ajax(settings).done(function (response) {
                         console.log(response);
                     });
+
                 }
 
         },

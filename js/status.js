@@ -214,7 +214,6 @@ const status = {
     },
     subscribeChannels: function () {
 
-
         //SIGNAL DEVICES TO DISPLAY CHANNELS SUBSCRIBE
         $.each( deviceData, function( key, value ) {
             if (value.IP != '0') {
@@ -244,7 +243,6 @@ const status = {
      
         sock.on( "logChannel", function(msg) {
           
-
             var item = JSON.parse(msg);
             if (FLOATING_NOTIFICATIONS && typeof item.Target !== 'undefined' && item.Target == "FRONTEND")
             {
@@ -343,13 +341,10 @@ const status = {
                         })
 
                         break;
-
                 }
             }
         });
-
         alarms.activeAlarmSubscribe();
-
     }
 }
 

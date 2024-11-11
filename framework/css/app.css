@@ -716,10 +716,6 @@ header.color-bg-type-white { border-left-color: RGBA(var(--clr-scheme-neg)/100%)
 .ui.btn.secondary.colored > svg { fill: RGBA(var(--clr-type-secondary)/100%); }
 .ui.btn.secondary.active, .ui.btn.secondary.active-provisional, .ui.btn.secondary:active { color: RGBA(255 255 255/100%); background-color: RGBA(var(--clr-type-secondary)/100%); border-color: RGBA(var(--clr-type-secondary-light)/100%); box-shadow: 0px 0px 6px 2px RGBA(var(--clr-type-secondary)/80%), inset 0px 0px 10px 0 RGBA(var(--clr-type-secondary-light)/70%); }
 
-/*PROVISIONAL CLASS FOR ACTTIVE ALARMS
-.ui.btn.primary.active-provisional
-.ui.btn.secondary.active-provisional
-PROVISIONAL CLASS FOR ACTTIVE ALARMS*/
 
 .ui.btn.success.colored { color: RGBA(var(--clr-type-success)/100%); background-color: RGBA(var(--clr-type-success)/20%); border-color: RGBA(var(--clr-type-success-light)/100%); box-shadow: 0px 0px 6px 2px RGBA(var(--clr-type-success)/40%), inset 0px 0px 10px 0 RGBA(var(--clr-type-success-light)/70%); }
 .ui.btn.success.colored > svg { fill: RGBA(var(--clr-type-success)/100%); }
