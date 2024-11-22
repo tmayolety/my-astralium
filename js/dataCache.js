@@ -7,7 +7,7 @@ let limits =  [];
 let valueRaw = [];
 let valueEscalated = [];
 let valueFiltered = [];
-let updateComponent = [];
+let updateComponent = Vue.reactive([]);
 let groupList;
 
 window.signalGlobalTimelineVariable = null;
@@ -126,7 +126,7 @@ const dataCache = {
                     dataCache.buildSignalSourceLayer(item);
 
                     if (typeof updateComponent[parseInt(item.Id)] === 'undefined'){
-                        updateComponent[parseInt(item.Id)] = false;
+                        updateComponent[parseInt(item.Id)] =  Vue.ref(false);
                     }
                 });
                 resolve(true);

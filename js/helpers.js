@@ -318,7 +318,7 @@ const helpers = {
         limits[parseInt(id)].H.value = parseFloat(H);
         limits[parseInt(id)].L.value = parseFloat(L);
         limits[parseInt(id)].LL.value = parseFloat(LL);
-        updateComponent[parseInt(id)] = true;
+        updateComponent[parseInt(id)] = Vue.ref(true);
     },
     passwordValidate: function (password) {
 

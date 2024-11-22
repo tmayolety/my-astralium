@@ -187,7 +187,7 @@ components.initializeApp = {
                     dataCache.buildSignalSourceLayer(item);
 
                     if (typeof updateComponent[parseInt(item.Id)] === 'undefined') {
-                        updateComponent[parseInt(item.Id)] = false;
+                        updateComponent[parseInt(item.Id)] = Vue.ref(false);
                     }
                 });
 
