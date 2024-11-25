@@ -96,7 +96,7 @@ components.gauge = {
             this.reDrawRanges();
             setTimeout(() => {
               updateComponent[this.signalId].value = false;
-            }, 200);
+            }, 1000);
           }
         },
       },
@@ -304,8 +304,13 @@ components.gauge = {
     methods: {
         initializeComponent() {
             if (this.reactiveUpdate) {
-              updateComponent[this.signalId].value = false;
-              this.reDrawRanges();
+                this.reDrawRanges();
+
+                setTimeout(() => {
+                    updateComponent[this.signalId].value = false;
+                }, 1000);
+             
+             
             }
           },
         callTimeline(signal, title, delay){

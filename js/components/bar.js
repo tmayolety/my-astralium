@@ -257,7 +257,7 @@ components.bar = {
         this.drawLimits();
         setTimeout(() => {
           updateComponent[this.signalId].value = false;
-        }, 200);
+        }, 1000);
       }
     },
   },
@@ -447,7 +447,7 @@ components.bar = {
 
         setTimeout(() => {
             updateComponent[this.signalId].value = false;
-        }, 200);
+        }, 1000);
        
       }
     },

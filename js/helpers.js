@@ -319,6 +319,7 @@ const helpers = {
         limits[parseInt(id)].L.value = parseFloat(L);
         limits[parseInt(id)].LL.value = parseFloat(LL);
         updateComponent[parseInt(id)] = Vue.ref(true);
+        
     },
     passwordValidate: function (password) {
 
@@ -802,7 +803,7 @@ var signalList = {
                 helpers.bringCollector($('#editSignalDeviceName').val());
                 $('#editSignalButton').addClass('content-disabled');
 
-                updateComponent[parseInt(alarmId)] = true;
+                updateComponent[parseInt(alarmId)] = Vue.ref(true);
 
             } else {
                 document.getElementById('editSignalButton').innerHTML = 'Limit change failed!';
