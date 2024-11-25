@@ -295,9 +295,6 @@ components.gauge = {
         this.gaugeData.option('value', this.value);
         this.reDrawRanges()
 
-        this.valueDisplay = this.value;
-
-
         this.initializeComponent();
 
     },
