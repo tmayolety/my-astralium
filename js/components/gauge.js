@@ -90,7 +90,21 @@ components.gauge = {
             deviceName: null,
         }
     },
-
+    watch: {
+        reactiveUpdate(newValue) {
+          if (newValue) {
+            this.reDrawRanges();
+            setTimeout(() => {
+              updateComponent[this.signalId].value = false;
+            }, 200);
+          }
+        },
+      },
+    computed: {
+        reactiveUpdate() {
+          return updateComponent[this.signalId]?.value || false;
+        },
+    },
     updated()
     {
         if (!isNaN(this.value)) {
@@ -284,10 +298,16 @@ components.gauge = {
         this.valueDisplay = this.value;
 
 
-
+        this.initializeComponent();
 
     },
     methods: {
+        initializeComponent() {
+            if (this.reactiveUpdate) {
+              updateComponent[this.signalId].value = false;
+              this.reDrawRanges();
+            }
+          },
         callTimeline(signal, title, delay){
             window.signalGlobalTimelineVariable = signal;
             window.globalTimelineTitle = title;
