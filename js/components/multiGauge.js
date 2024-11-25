@@ -371,7 +371,6 @@ components.multiGauge = {
       eventBus.emit("timeline-variable-update-delay", delay);
     },
     DrawRangesMulti() {
-        console.log('entra en DrawRangesMulti')
       if (
         this.CLL == null &&
         this.CL == null &&
@@ -1747,28 +1746,6 @@ components.multiGauge = {
         });
       }
     },
-   //reDrawRanges(gauge, signalData) {
-   //  if (isNaN(signalData.L.value)) {
-   //    L = null;
-   //  } else {
-   //    L = signalData.L.value;
-   //  }
-   //  if (isNaN(signalData.LL.value)) {
-   //    LL = null;
-   //  } else {
-   //    LL = signalData.LL.value;
-   //  }
-   //  if (isNaN(signalData.H.value)) {
-   //    H = null;
-   //  } else {
-   //    H = signalData.H.value;
-   //  }
-   //  if (isNaN(signalData.HH.value)) {
-   //    HH = null;
-   //  } else {
-   //    HH = signalData.HH.value;
-   //  }
-   //},
     flipComponent() {
       this.flipClass = "";
       setTimeout(this.unFlipComponent, 6000);
