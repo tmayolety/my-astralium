@@ -90,7 +90,21 @@ components.gauge = {
             deviceName: null,
         }
     },
-
+    watch: {
+        reactiveUpdate(newValue) {
+          if (newValue) {
+            this.reDrawRanges();
+            setTimeout(() => {
+              updateComponent[this.signalId].value = false;
+            }, 1000);
+          }
+        },
+      },
+    computed: {
+        reactiveUpdate() {
+          return updateComponent[this.signalId]?.value || false;
+        },
+    },
     updated()
     {
         if (!isNaN(this.value)) {
@@ -284,10 +298,21 @@ components.gauge = {
         this.valueDisplay = this.value;
 
 
-
+        this.initializeComponent();
 
     },
     methods: {
+        initializeComponent() {
+            if (this.reactiveUpdate) {
+                this.reDrawRanges();
+
+                setTimeout(() => {
+                    updateComponent[this.signalId].value = false;
+                }, 1000);
+             
+             
+            }
+          },
         callTimeline(signal, title, delay){
             window.signalGlobalTimelineVariable = signal;
             window.globalTimelineTitle = title;
@@ -304,6 +329,15 @@ components.gauge = {
 
         },
         reDrawRanges () {
+
+            if (typeof limits[this.signalId] !== 'undefined') {
+                if (typeof limits[this.signalId].L !== 'undefined') {  if (limits[this.signalId].L.value != '-'){  this.L = limits[this.signalId].L } else {  this.L = null;  } }
+                if (typeof limits[this.signalId].LL !== 'undefined') { if (limits[this.signalId].LL.value != '-'){  this.LL = limits[this.signalId].LL } else {  this.LL = null;  }  }
+                if (typeof limits[this.signalId].H !== 'undefined') { if (limits[this.signalId].H.value != '-'){  this.H = limits[this.signalId].H } else {  this.H = null;  }  }
+                if (typeof limits[this.signalId].HH !== 'undefined') { if (limits[this.signalId].HH.value != '-'){  this.HH = limits[this.signalId].HH } else {  this.HH = null;  }  }
+            } else {
+                this.hasLimits = false
+            }
 
             if (this.LL == null && this.L == null && this.HH == null && this.H == null) {
                 this.gaugeData.option('rangeContainer', { ranges: [
