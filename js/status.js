@@ -164,6 +164,7 @@ const status = {
         sock.on('limits', function(msg) {
 
             var json = JSON.parse(msg);
+
             if (typeof json.HH !== 'undefined')
             {
                 helpers.limitChange(json.alarmId, json.HH, json.H, json.L, json.LL);

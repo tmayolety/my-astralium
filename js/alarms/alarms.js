@@ -79,15 +79,13 @@ var alarms = {
 
         }
 
-        if (status != 2 && sendRequest || $('#presetUMS').val() == 0 && sendRequest  || $('#ScreenLocationId').val() == 5 && $('#presetUMS').val() != 0 && sendRequest)
-        {
             setTimeout(function() {
                 button.addClass('active');
                 button.removeClass('innactive');
                 $('.dev-mute-button').removeClass('innactive');
                 $('.dev-mute-button').addClass('active');
             } , 1400);
-        }
+
     },
 
     typeModifyRequest: function (type, alarmId, device) {
