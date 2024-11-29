@@ -19,18 +19,6 @@ var notifications = {
                 var notificationGroup= "alarms";
                 var notificationMessage= "New Pre-Alarm";
             }
-
-            Quasar.Notify.create({
-                html: true,
-                icon: notificationIcon,
-                progress: false,
-                group: item.alarmId,
-                color: notificationColor,
-                textColor: 'white',
-                caption:  notificationMessage,
-                message: '<h1 style="font-size: 1.2em!important"><strong>' + item.alarmId + ' - </strong> ' + alarmName + '</h1>'
-            })
-
         }
 
     }
