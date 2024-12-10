@@ -11,6 +11,7 @@ if (typeof generators12Mounted == 'undefined') {
     generatorsApp12.component('basic-text-with-title-render', components.basicTextWithTitle)
     generatorsApp12.component('icon-text-value-digital-line-render', components.iconTextValueDigitalLine)
     generatorsApp12.component('multi-gauge-render', components.multiGauge)
+    generatorsApp12.component('gauge-render', components.gauge)
     generatorsApp12.component('bar-render', components.bar)
     generatorsApp12.mount('.generators12App')
     generators12Mounted = true;

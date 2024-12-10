@@ -6,12 +6,12 @@ var screen = {
 
 if (typeof generators4Mounted == 'undefined') {
 
-    const generatorsApp4 = Vue.createApp({})
-    generatorsApp4.config.compilerOptions.isCustomElement = tag => tag.startsWith('font')
-    generatorsApp4.component('basic-text-with-title-render', components.basicTextWithTitle)
-    generatorsApp4.component('multi-gauge-render', components.multiGauge)
-    generatorsApp4.component('bar-render', components.bar)
-    generatorsApp4.mount('.generators4App')
+    const generators4App = Vue.createApp({})
+    generators4App.config.compilerOptions.isCustomElement = tag => tag.startsWith('font')
+    generators4App.component('basic-text-with-title-render', components.basicTextWithTitle)
+    generators4App.component('multi-gauge-render', components.multiGauge)
+    generators4App.component('bar-render', components.bar)
+    generators4App.mount('.generators4App')
     generators4Mounted = true;
 
 }

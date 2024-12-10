@@ -33,7 +33,7 @@ components.gauge = {
             <div class="flip-col--container">                       
             <div class="ui col align-middle-center"
             style="font-size: 12px; display: flex; justify-content: center; text-align: left;">  
-                <button class="ui btn mini colored secondary textColorTheme" @click="callTimeline(this.signalId, this.title, this.timeDelay)" style="width: 100%;">
+                <button class="ui btn mini colored secondary textColorTheme" @click="callTimeline(this.signalId, this.title, this.timeDelay)" style="width: 50%;">
                     Id: {{signalId}} <br/>
                     {{deviceName}} <br/>                                                
                     RAW: {{rawToShow}} 
@@ -44,7 +44,7 @@ components.gauge = {
                 <header class="col-header ">{{title}}</header>
                 <div class="ui grid type1 cols-mini-1" :class= '[heightClass, widthClass]'>
     
-                    <div class="ui col mini-1 circularGauge-wrapper status-type-success" :class= '[valueClass]' style="padding: 10px 0 0 0;">
+                    <div class="ui col mini-1 circularGauge-wrapper status-type-success" :class= '[valueClass]' style="padding: 2px 0 0 0;">
                         <div v-bind="{ id: rndID}"  class="circularGauge"></div>
 
 

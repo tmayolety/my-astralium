@@ -315,13 +315,6 @@
 
         </div>
 
-
-
-
-
-
-
-
         <!-- GENERATOR 2 -->
         <div class="ui col mini-1 gap-lg pad-no has-header
                     grid type1 cols-mini-2">
@@ -638,7 +631,7 @@
 
         <!-- GENERATOR 1 -->
         <div class="ui col mini-1 gap-sm grid type1 cols-mini-2">
-
+            
             <div class="ui col mini-1 gap-no pad-no bg-no order-mini-1 order-xl-1 radius shadow">
                 <ul class="ui table size-mini resp">
                     <icon-text-value-digital-line-render v-bind="{ signalId: 11191, title: 'Remote Mode', icon: 'settings', size: '20', zeroText: 'LOCAL', zeroColor: 'danger', oneText: 'REMOTE', oneColor: 'primary', sizeWidthTitle: 'med'}"></icon-text-value-digital-line-render>
@@ -663,56 +656,31 @@
             </div>
 
             <div class="ui grid mini-1 gap-no pad-no order-mini-2 order-xl-2 radius shadow cols-mini-3" style="overflow: hidden!important;">
-
-                <div style="display: flex; justify-content: center; padding: 0.1em; gap: .5em; position: absolute; top: 10px; left: 76%; transform: translateX(-50%); z-index: 11;">
-                    <div><h2 style="font-size: 18px;">Port Generator</h2></div>
+                
+                <div class="ui col mini-3 h-mini-200">
+                    <gauge-render v-bind="{
+                        title: 'KW Port Generator',
+                        signalId: 90,
+                        unit: 'KW',
+                        icon: 'shore',
+                        iconClass: 'icon-size-mini-30 mg-bottom-mini-8',
+                        text1: 'text-size-8 color-text-type-secondary-dark',
+                        text2: 'text-size-14 font-bold',
+                        height: 'h-mini-180',
+                        width: 0,
+                        scaleVisible: true,
+                        type: 1,
+                        scaleInterval: 40,
+                        valueMode: 'raw',
+                        textSize: 20,
+                        unitTextSize: 10,
+                        marginTopValue: 'mg-top-mini-35',
+                        valueDecimals: 0,
+                        limitsEditable: 0,
+                        timeDelay: 3000,
+                    }"></gauge-render>
                 </div>
-    
-
-                <div class="ui col mini-3 h-mini-270 pad-no">
-                        <multi-gauge-render v-bind="{
-                            signalIdCenter: 10156,
-                            signalIdLeft: 11151,
-                            signalIdRight: 11153,
-
-                            gaugeCenterSize: 'w-mini-220 h-mini-220 mg-top-mini-10-neg',
-                            gaugeCenterinfo: 'mg-top-mini-50 visible',
-                            gaugeCenterPos: 'pos-top-mini-10 pad-left-mini-170',
-                            gaugeCenterIcon: 'icon-size-25 glow mg-bottom-10 visible',
-                            gaugeCenterValue1:'font-regular mg-bottom-5 text-size-8 clr-subvalue-ui',
-                            gaugeCenterValue2:'font-bold text-size-20',
-                            gaugeCenterValue3:'',
-                            gaugeCenterValue4:'',
-
-                            gaugeLeftSize: 'h-mini-160 w-mini-160 pad-right-mini-120 mg-top-mini-15-neg',
-                            gaugeLeftInfo: 'w-mini-250 h-mini-200 visible',
-                            gaugeLeftIcon: 'icon-size-25 glow mg-bottom-mini-180 visible',
-                            gaugeLeftValue1: 'text-size-10 font-bold',
-                            gaugeLeftValue2: 'text-size-6 font-semibold',  
-
-                            gaugeRightSize: 'h-mini-160 w-mini-160 pad-left-mini-120 mg-top-mini-15-neg',
-                            gaugeRightInfo: 'w-mini-250 h-mini-200 visible',
-                            gaugeRightIcon: 'icon-size-25 glow mg-bottom-mini-180 visible',
-                            gaugeRightValue1: 'text-size-10 font-bold',
-                            gaugeRightValue2: 'text-size-6 font-semibold',                             
-
-                            centerUnit: 'KW',
-                            leftUnit: 'C',
-                            rightUnit: 'C',
-                            centerIcon: 'engines',
-                            leftIcon: 'temperature',
-                            rightIcon: 'temperature',
-                            centerTitle: '',
-                            leftTitle: 'SCR Intake Temp',
-                            rightTitle: 'SCR Outlet Temp.',
-                            valueMode: 'filtered',
-                            centerScaleInterval: 100,
-                            rightScaleInterval: 10,
-                            leftScaleInterval: 10,
-                            timeDelay: 3000,
-                        }"></multi-gauge-render>
-                </div>
-
+                
                 <div class="ui col mini-3 pad-sm">
                     <div class="ui col-content w-resp">
                         <div>
@@ -746,6 +714,40 @@
                             </div>
                         </div>
                      </div>
+                </div>
+
+                <div class="ui col mini-1  h-mini-80">
+                    <basic-text-with-title-render v-bind="{
+                        signalId: 11165,
+                        unit: 'C',
+                        title: 'SCR Intake Temp.',
+                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
+                        valueStyle: 'align-center text-size-11 font-bold',
+                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
+                        value2Style: 'align-center resp text-size-13',
+                        value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
+                        valueMode: 'filtered',
+                        valueDecimals: 1,
+                        limitFlagSignalId: 11190,
+                        timeDelay: 4000,
+                    }"></basic-text-with-title-render>
+                </div>
+
+                <div class="ui col mini-1  h-mini-80">
+                    <basic-text-with-title-render v-bind="{
+                        signalId: 11165,
+                        unit: 'C',
+                        title: 'SCR Outlet Temp.',
+                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
+                        valueStyle: 'align-center text-size-11 font-bold',
+                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
+                        value2Style: 'align-center resp text-size-13',
+                        value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
+                        valueMode: 'filtered',
+                        valueDecimals: 1,
+                        limitFlagSignalId: 11190,
+                        timeDelay: 4000,
+                    }"></basic-text-with-title-render>
                 </div>
 
                 <div class="ui col mini-1  h-mini-80">
@@ -902,36 +904,7 @@
                             timeDelay: 6000,
                             limitFlagSignalId: 11190 }"></basic-text-with-title-render>
                 </div>
-                <div class="ui col mini-1 h-mini-80">
-                        <basic-text-with-title-render v-bind="{
-                            signalId: 11147,
-                            unit: 'C',
-                            title: 'Winding Temp. Phase 3',
-                            titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                            valueStyle: 'align-center text-size-11 font-bold',
-                            valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                            value2Style: 'align-center resp text-size-13',
-                            value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                            valueMode: 'filtered',
-                            valueDecimals: 1,
-                            timeDelay: 6000,
-                            limitFlagSignalId: 11190 }"></basic-text-with-title-render>
-                </div>
-                <div class="ui col mini-1 h-mini-80">
-                        <basic-text-with-title-render v-bind="{
-                            signalId: 11149,
-                            unit: 'C',
-                            title: 'Ambient Temp.',
-                            titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                            valueStyle: 'align-center text-size-11 font-bold',
-                            valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                            value2Style: 'align-center resp text-size-13',
-                            value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                            valueMode: 'filtered',
-                            valueDecimals: 1,
-                            timeDelay: 6000,
-                            limitFlagSignalId: 11190 }"></basic-text-with-title-render>
-                </div>
+                
 
             </div>
 
@@ -939,7 +912,7 @@
 
         <!-- GENERATOR 2 -->
         <div class="ui col mini-1 gap-sm grid type1 cols-mini-2">
-
+           
             <div class="ui col mini-1 gap-no pad-no bg-no order-mini-2 order-xl-2 radius shadow">
                 <ul class="ui table size-mini resp">
                    <icon-text-value-digital-line-render v-bind="{ signalId: 12691, title: 'Remote Mode', icon: 'settings', size: '20', zeroText: 'LOCAL', zeroColor: 'danger', oneText: 'REMOTE', oneColor: 'primary', sizeWidthTitle: 'med' }"></icon-text-value-digital-line-render>
@@ -965,52 +938,28 @@
 
             <div class="ui grid mini-1 gap-no pad-no order-mini-1 order-xl-1 radius shadow cols-mini-3" style="overflow: hidden!important;">
 
-                <div style="display: flex; justify-content: center; padding: 0.1em; gap: .5em; position: absolute; top: 10px; right: 54%; transform: translateX(-50%); z-index: 11;">
-                    <div><h2 style="font-size: 18px;">Stbd Generator</h2></div>
-                </div>    
-
-                <div class="ui col mini-3 h-mini-270 pad-no" style="height: 40px;">
-                        <multi-gauge-render v-bind="{
-                            signalIdCenter: 10219,
-                            signalIdLeft: 12651,
-                            signalIdRight: 12653,
-
-                            gaugeCenterSize: 'w-mini-220 h-mini-220 mg-top-mini-10-neg',
-                            gaugeCenterinfo: 'mg-top-mini-50 visible',
-                            gaugeCenterPos: 'pos-top-mini-10 pad-left-mini-170',
-                            gaugeCenterIcon: 'icon-size-25 glow mg-bottom-10 visible',
-                            gaugeCenterValue1:'font-regular mg-bottom-5 text-size-8 clr-subvalue-ui',
-                            gaugeCenterValue2:'font-bold text-size-20',
-                            gaugeCenterValue3:'',
-                            gaugeCenterValue4:'',
-
-                            gaugeLeftSize: 'h-mini-160 w-mini-160 pad-right-mini-120 mg-top-mini-15-neg',
-                            gaugeLeftInfo: 'w-mini-250 h-mini-200 visible',
-                            gaugeLeftIcon: 'icon-size-25 glow mg-bottom-mini-180 visible',
-                            gaugeLeftValue1: 'text-size-10 font-bold',
-                            gaugeLeftValue2: 'text-size-6 font-semibold',  
-
-                            gaugeRightSize: 'h-mini-160 w-mini-160 pad-left-mini-120 mg-top-mini-15-neg',
-                            gaugeRightInfo: 'w-mini-250 h-mini-200 visible',
-                            gaugeRightIcon: 'icon-size-25 glow mg-bottom-mini-180 visible',
-                            gaugeRightValue1: 'text-size-10 font-bold',
-                            gaugeRightValue2: 'text-size-6 font-semibold',                             
-
-                            centerUnit: 'KW',
-                            leftUnit: 'C',
-                            rightUnit: 'C',
-                            centerIcon: 'engines',
-                            leftIcon: 'temperature',
-                            rightIcon: 'temperature',
-                            centerTitle: '',
-                            leftTitle: 'SCR Intake Temp',
-                            rightTitle: 'SCR Outlet Temp.',
-                            valueMode: 'filtered',
-                            centerScaleInterval: 100,
-                            rightScaleInterval: 10,
-                            leftScaleInterval: 10,
-                            timeDelay:3000,
-                        }"></multi-gauge-render>
+                <div class="ui col mini-3 h-mini-200">
+                    <gauge-render v-bind="{
+                        title: 'KW Stbd Gen',
+                        signalId: 90,
+                        unit: 'KW',
+                        icon: 'shore',
+                        iconClass: 'icon-size-mini-30 mg-bottom-mini-8',
+                        text1: 'text-size-8 color-text-type-secondary-dark',
+                        text2: 'text-size-14 font-bold',
+                        height: 'h-mini-180',
+                        width: 0,
+                        scaleVisible: true,
+                        type: 1,
+                        scaleInterval: 40,
+                        valueMode: 'raw',
+                        textSize: 20,
+                        unitTextSize: 10,
+                        marginTopValue: 'mg-top-mini-35',
+                        valueDecimals: 0,
+                        limitsEditable: 0,
+                        timeDelay: 3000,
+                    }"></gauge-render>
                 </div>
 
                 <div class="ui col mini-3 pad-sm">
@@ -1049,6 +998,39 @@
                      </div>
                 </div>
 
+                <div class="ui col mini-1  h-mini-80">
+                    <basic-text-with-title-render v-bind="{
+                        signalId: 11165,
+                        unit: 'C',
+                        title: 'SCR Intake Temp.',
+                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
+                        valueStyle: 'align-center text-size-11 font-bold',
+                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
+                        value2Style: 'align-center resp text-size-13',
+                        value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
+                        valueMode: 'filtered',
+                        valueDecimals: 1,
+                        limitFlagSignalId: 11190,
+                        timeDelay: 4000,
+                    }"></basic-text-with-title-render>
+                </div>
+
+                <div class="ui col mini-1  h-mini-80">
+                    <basic-text-with-title-render v-bind="{
+                        signalId: 11165,
+                        unit: 'C',
+                        title: 'SCR Outlet Temp.',
+                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
+                        valueStyle: 'align-center text-size-11 font-bold',
+                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
+                        value2Style: 'align-center resp text-size-13',
+                        value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
+                        valueMode: 'filtered',
+                        valueDecimals: 1,
+                        limitFlagSignalId: 11190,
+                        timeDelay: 4000,
+                    }"></basic-text-with-title-render>
+                </div>
                 <div class="ui col mini-1 h-mini-80">
                         <basic-text-with-title-render v-bind="{
                             signalId: 12665,
@@ -1199,36 +1181,7 @@
                             timeDelay: 3000,
                             limitFlagSignalId: 12690 }"></basic-text-with-title-render>
                 </div>
-                <div class="ui col mini-1 h-mini-80">
-                        <basic-text-with-title-render v-bind="{
-                            signalId: 12647,
-                            unit: 'C',
-                            title: 'Winding Temp. Phase 3',
-                            titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                            valueStyle: 'align-center text-size-11 font-bold',
-                            valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                            value2Style: 'align-center resp text-size-13',
-                            value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                            valueMode: 'filtered',
-                            valueDecimals: 1,
-                            timeDelay: 3000,
-                            limitFlagSignalId: 12690 }"></basic-text-with-title-render>
-                </div>
-                <div class="ui col mini-1 h-mini-80">
-                        <basic-text-with-title-render v-bind="{
-                            signalId: 12649,
-                            unit: 'C',
-                            title: 'Ambient Temp.',
-                            titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                            valueStyle: 'align-center text-size-11 font-bold',
-                            valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                            value2Style: 'align-center resp text-size-13',
-                            value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                            valueMode: 'filtered',
-                            valueDecimals: 1,
-                            timeDelay: 3000,
-                            limitFlagSignalId: 12690 }"></basic-text-with-title-render>
-                </div>
+               
 
             </div>
 
