@@ -164,6 +164,7 @@ const status = {
         sock.on('limits', function(msg) {
 
             var json = JSON.parse(msg);
+
             if (typeof json.HH !== 'undefined')
             {
                 helpers.limitChange(json.alarmId, json.HH, json.H, json.L, json.LL);
@@ -244,110 +245,7 @@ const status = {
                 document.getElementById('deviceTotal_' + item.deviceId).innerHTML = item.total.toFixed(1);
             }
         });
-     
-        sock.on( "logChannel", function(msg) {
-          
-            var item = JSON.parse(msg);
-            if (FLOATING_NOTIFICATIONS && typeof item.Target !== 'undefined' && item.Target == "FRONTEND")
-            {
-                const currentTime = Date.now();
-        
-                //Only execute the code if at least 200 ms have elapsed since the last notification.
-                if (currentTime - lastNotificationTime < 200) {
-                    return; 
-                }
-                lastNotificationTime = currentTime; //Update lastNotificationTime
-        
-                const message = item.Message;
-                const split = message.match(/\d+/g);
 
-                let locationName = "Unknown Location"
-                if (item.ScreenId > 0) {
-                    locationName = locationsData[parseInt(item.ScreenId)].Name;
-                }
-
-                switch(item.Name) {
-
-                    case "UpdateAlarmStatus":
-                    case "UpdateAlarmDelay":
-                    case "UpdateAlarmType":
-                    case "UpdateAlarmLimits":
-                    case "ResetActiveAlarm":
-
-
-                        var alarmName = alarmData[parseInt(split[0])].alarmDescription;
-                        if (item.Name == "UpdateAlarmLimits") { var alarmName = signalsData[parseInt(split[0])].Title; }
-
-                        let statusName = statusData[parseInt(split[1])];
-                        var notificationType;
-
-                        if (item.Name == "UpdateAlarmDelay") { statusName = "Time delay updated to " + parseInt(split[1])/1000 + " seconds"; notificationType = "default"; }
-                        if (item.Name == "UpdateAlarmType") {
-                            if (parseInt(split[1]) == 0) { statusName = "Type update to Alarm"; notificationType = "default";} else { statusName = "Type updated to Pre-alarm"; notificationType = "default";}
-                        }
-
-                        if (item.Name == "UpdateAlarmStatus") {
-                            if (split[1] == 2) {
-                                var notificationIcon = "volume_off"
-                                var notificationColor = "grey-5"
-                            }
-                            if (split[1] == 3) {
-                                var notificationIcon = "check_box"
-                                var notificationColor = "primary"
-                                 }
-                        }
-                        if (item.Name == "UpdateAlarmLimits") { statusName = "Limits updated "; notificationType = "default";}
-                        if (item.Name == "ResetActiveAlarm") {
-                            var notificationIcon = "restart_alt"
-                            var notificationColor = "purple-5"
-
-                            statusName = "Reseted "; notificationType = "reset";
-
-                        }
-                        if (item.Name == "UpdateAlarmStatus" && split[1] == 0) { statusName = "Desinhibited"; }
-                       
-                       Quasar.Notify.create({
-                           html: true,
-                           group: split[0],
-                           icon: notificationIcon,
-                           progress: false,
-                           color: notificationColor,
-                           textColor: 'white',
-                           caption:  statusName + " by " + locationName ,
-                           message: '<h1 style="font-size: 1.2em!important"><strong>' + split[0] + ' - </strong> ' + alarmName + '</h1>'
-                       })
-
-                        break;
-
-                    case "ResetAllActiveAlarms":
-                    case "MuteAllActiveAlarms":
-                        var notificationType;
-
-                        if (item.Name == "ResetAllActiveAlarms") {
-                            var notificationMessage = "Reset All";
-                            var notificationIcon = "restart_alt"
-                            var notificationColor = "purple-5"
-                        } else {
-                            var notificationMessage = "Mute All";
-                            var notificationIcon = "volume_off"
-                            var notificationColor = "grey-5"
-                        }
-
-                        Quasar.Notify.create({
-                            html: true,
-                            icon: notificationIcon,
-                            progress: false,
-                            group: false,
-                            color: notificationColor,
-                            textColor: 'white',
-                            caption:  split[0] + ' alarms by ' + locationName ,
-                            message: notificationMessage
-                        })
-
-                        break;
-                }
-            }
-        });
         alarms.activeAlarmSubscribe();
     }
 }
