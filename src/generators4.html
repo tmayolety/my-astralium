@@ -69,7 +69,7 @@
                                 <div>
                                     <h4 class="ui h5 mg-sm align-center color-text-type-light">Engine speed</h4>
                                 </div>
-                                    <bar-render v-bind="{
+                                <bar-render v-bind="{
                                         signalId: 6003,
                                         orientation: 'horizontal',
                                         size: 'small',
@@ -94,261 +94,83 @@
                                         iconMarginLeft: 0,
                                         valueMode: 'escalated' }"></bar-render>
                             </div>
-                         </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="ui col mini-1 gap-no pad-mini
-                            grid type1 cols-mini-3">
+                            grid type1 cols-mini-2">
+                            <div class="ui col mini-1 h-mini-80">
 
-                    <div class="ui col mini-1 h-mini-80">
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11125,
-                                unit: 'bar',
-                                title: 'Sea Water Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }"></basic-text-with-title-render>
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11033,
-                                unit: 'bar',
-                                title: 'Fuel Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11009,
-                                unit: 'bar',
-                                title: 'Boost Pressure',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11027,
-                                unit: 'bar',
-                                title: 'Oil Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11013,
-                                unit: 'bar',
-                                title: 'Coolant Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11017,
-                                unit: 'bar',
-                                title: 'Crankcase Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11005,
-                                unit: 'bar',
-                                title: 'Air Inlet Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11157,
-                                unit: 'bar',
-                                title: 'SCR Intake P.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11121,
-                                unit: 'bar',
-                                title: 'Inj. Met. Rail Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11015,
-                                unit: 'C',
-                                title: 'Coolant Temp.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 665,
-                                unit: 'C',
-                                title: 'Wet Exhaust.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11031,
-                                unit: 'C',
-                                title: 'Exhaust Temp.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11061,
-                                unit: 'C',
-                                title: 'Oil Temp.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11041,
-                                unit: 'C',
-                                title: 'Intake Mnf. Temp.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11123,
-                                unit: 'C',
-                                title: 'Air Inlet Temp.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-                    </div>
+                                <basic-text-with-title-render v-bind="{
+                                        signalId: 11027,
+                                        unit: 'bar',
+                                        title: 'Oil Pres.',
+                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
+                                        valueStyle: 'align-center text-size-11 font-bold',
+                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
+                                        value2Style: 'align-center resp text-size-13',
+                                        value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
+                                        valueMode: 'escalated',
+                                        valueDecimals: 1,
+                                        limitFlagSignalId: 11190,
+                                        timeDelay: 10000, }">
+        
+                            </div>
+                            <div class="ui col mini-1 h-mini-80">
+        
+                                <basic-text-with-title-render v-bind="{
+                                        signalId: 11013,
+                                        unit: 'bar',
+                                        title: 'Coolant Pres.',
+                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
+                                        valueStyle: 'align-center text-size-11 font-bold',
+                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
+                                        value2Style: 'align-center resp text-size-13',
+                                        value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
+                                        valueMode: 'escalated',
+                                        valueDecimals: 1,
+                                        limitFlagSignalId: 11190,
+                                        timeDelay: 10000, }">
+        
+                            </div>
+        
+        
+                            <div class="ui col mini-1 h-mini-80">
+        
+                                <basic-text-with-title-render v-bind="{
+                                        signalId: 11015,
+                                        unit: 'C',
+                                        title: 'Coolant Temp.',
+                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
+                                        valueStyle: 'align-center text-size-11 font-bold',
+                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
+                                        value2Style: 'align-center resp text-size-13',
+                                        value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
+                                        valueMode: 'escalated',
+                                        valueDecimals: 1,
+                                        limitFlagSignalId: 11190,
+                                        timeDelay: 10000, }">
+        
+                            </div>
+        
+                            <div class="ui col mini-1 h-mini-80">
+        
+                                <basic-text-with-title-render v-bind="{
+                                        signalId: 11061,
+                                        unit: 'C',
+                                        title: 'Oil Temp.',
+                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
+                                        valueStyle: 'align-center text-size-11 font-bold',
+                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
+                                        value2Style: 'align-center resp text-size-13',
+                                        value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
+                                        valueMode: 'escalated',
+                                        valueDecimals: 1,
+                                        limitFlagSignalId: 11190,
+                                        timeDelay: 10000, }">
+        
+                            </div>
                 </div>
 
             </div>
@@ -449,269 +271,91 @@
                                         valueMode: 'escalated' }"></bar-render>
                                 </div>
                             </div>
-                         </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="ui col mini-1 gap-no pad-mini
-                            grid type1 cols-mini-3">
+                            grid type1 cols-mini-2">
+                            <div class="ui col mini-1 h-mini-80">
 
-                    <div class="ui col mini-1 h-mini-80">
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11125,
-                                unit: 'bar',
-                                title: 'Sea Water Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }"></basic-text-with-title-render>
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
+                                <basic-text-with-title-render v-bind="{
+                                        signalId: 11027,
+                                        unit: 'bar',
+                                        title: 'Oil Pres.',
+                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
+                                        valueStyle: 'align-center text-size-11 font-bold',
+                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
+                                        value2Style: 'align-center resp text-size-13',
+                                        value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
+                                        valueMode: 'escalated',
+                                        valueDecimals: 1,
+                                        limitFlagSignalId: 11190,
+                                        timeDelay: 10000, }">
+        
+                            </div>
+                            <div class="ui col mini-1 h-mini-80">
+        
+                                <basic-text-with-title-render v-bind="{
+                                        signalId: 11013,
+                                        unit: 'bar',
+                                        title: 'Coolant Pres.',
+                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
+                                        valueStyle: 'align-center text-size-11 font-bold',
+                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
+                                        value2Style: 'align-center resp text-size-13',
+                                        value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
+                                        valueMode: 'escalated',
+                                        valueDecimals: 1,
+                                        limitFlagSignalId: 11190,
+                                        timeDelay: 10000, }">
+        
+                            </div>
+        
+        
+                            <div class="ui col mini-1 h-mini-80">
+        
+                                <basic-text-with-title-render v-bind="{
+                                        signalId: 11015,
+                                        unit: 'C',
+                                        title: 'Coolant Temp.',
+                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
+                                        valueStyle: 'align-center text-size-11 font-bold',
+                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
+                                        value2Style: 'align-center resp text-size-13',
+                                        value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
+                                        valueMode: 'escalated',
+                                        valueDecimals: 1,
+                                        limitFlagSignalId: 11190,
+                                        timeDelay: 10000, }">
+        
+                            </div>
+        
+                            <div class="ui col mini-1 h-mini-80">
+        
+                                <basic-text-with-title-render v-bind="{
+                                        signalId: 11061,
+                                        unit: 'C',
+                                        title: 'Oil Temp.',
+                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
+                                        valueStyle: 'align-center text-size-11 font-bold',
+                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
+                                        value2Style: 'align-center resp text-size-13',
+                                        value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
+                                        valueMode: 'escalated',
+                                        valueDecimals: 1,
+                                        limitFlagSignalId: 11190,
+                                        timeDelay: 10000, }">
+        
+                            </div>
 
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11033,
-                                unit: 'bar',
-                                title: 'Fuel Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11009,
-                                unit: 'bar',
-                                title: 'Boost Pressure',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11027,
-                                unit: 'bar',
-                                title: 'Oil Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11013,
-                                unit: 'bar',
-                                title: 'Coolant Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11017,
-                                unit: 'bar',
-                                title: 'Crankcase Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11005,
-                                unit: 'bar',
-                                title: 'Air Inlet Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11157,
-                                unit: 'bar',
-                                title: 'SCR Intake P.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11121,
-                                unit: 'bar',
-                                title: 'Inj. Met. Rail Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11015,
-                                unit: 'C',
-                                title: 'Coolant Temp.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 665,
-                                unit: 'C',
-                                title: 'Wet Exhaust.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11031,
-                                unit: 'C',
-                                title: 'Exhaust Temp.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11061,
-                                unit: 'C',
-                                title: 'Oil Temp.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11041,
-                                unit: 'C',
-                                title: 'Intake Mnf. Temp.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11123,
-                                unit: 'C',
-                                title: 'Air Inlet Temp.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-                    </div>
-                   
                 </div>
             </div>
         </div>
 
     </div>
 
-    
+
     <div class="ui grid type1 cols-mini-2  gap-sm hidden-xl">
         <!-- GENERATOR 1 -->
         <div class="ui col mini-1 gap-no pad-no grid cols-mini-1">
@@ -720,12 +364,15 @@
 
                 <div class="ui col mini-1 gap-no pad-mini grid type1 cols-mini-3">
 
-                    <div style="display: flex; justify-content: center; padding: 0.1em; gap: .5em; position: absolute; top: 10px; left: 50%; transform: translateX(-50%); z-index: 11;">
-                        <div><h2 style="font-size: 18px;">Port Generator</h2></div>
+                    <div
+                        style="display: flex; justify-content: center; padding: 0.1em; gap: .5em; position: absolute; top: 10px; left: 50%; transform: translateX(-50%); z-index: 11;">
+                        <div>
+                            <h2 style="font-size: 18px;">Port Generator</h2>
+                        </div>
                     </div>
 
                     <div class="ui col mini-3 h-mini-330 pad-no">
-        
+
                         <multi-gauge-render v-bind="{
                             signalIdCenter: 4011,
                             signalIdLeft: 6001,
@@ -775,7 +422,7 @@
                                 <div>
                                     <h4 class="ui h5 mg-sm align-center color-text-type-light">Engine speed</h4>
                                 </div>
-                                    <bar-render v-bind="{
+                                <bar-render v-bind="{
                                         signalId: 6003,
                                         orientation: 'horizontal',
                                         size: 'small',
@@ -801,64 +448,16 @@
                                         iconMarginLeft: 0,
                                         valueMode: 'escalated' }"></bar-render>
                             </div>
-                         </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="ui col mini-1 gap-no pad-mini grid type1 cols-mini-5">
+                <div class="ui col mini-1 gap-no pad-mini grid type1 cols-mini-2">
+
 
                     <div class="ui col mini-1 h-mini-80">
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11125,
-                                unit: 'bar',
-                                title: 'Sea Water Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }"></basic-text-with-title-render>
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
 
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11033,
-                                unit: 'bar',
-                                title: 'Fuel Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11009,
-                                unit: 'bar',
-                                title: 'Boost Pressure',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
+                        <basic-text-with-title-render v-bind="{
                                 signalId: 11027,
                                 unit: 'bar',
                                 title: 'Oil Pres.',
@@ -875,7 +474,7 @@
                     </div>
                     <div class="ui col mini-1 h-mini-80">
 
-                            <basic-text-with-title-render v-bind="{
+                        <basic-text-with-title-render v-bind="{
                                 signalId: 11013,
                                 unit: 'bar',
                                 title: 'Coolant Pres.',
@@ -890,74 +489,11 @@
                                 timeDelay: 10000, }">
 
                     </div>
+
+
                     <div class="ui col mini-1 h-mini-80">
 
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11017,
-                                unit: 'bar',
-                                title: 'Crankcase Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11005,
-                                unit: 'bar',
-                                title: 'Air Inlet Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11157,
-                                unit: 'bar',
-                                title: 'SCR Intake P.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11121,
-                                unit: 'bar',
-                                title: 'Inj. Met. Rail Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
+                        <basic-text-with-title-render v-bind="{
                                 signalId: 11015,
                                 unit: 'C',
                                 title: 'Coolant Temp.',
@@ -972,43 +508,10 @@
                                 timeDelay: 10000, }">
 
                     </div>
+
                     <div class="ui col mini-1 h-mini-80">
 
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 665,
-                                unit: 'C',
-                                title: 'Wet Exhaust.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11031,
-                                unit: 'C',
-                                title: 'Exhaust Temp.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
+                        <basic-text-with-title-render v-bind="{
                                 signalId: 11061,
                                 unit: 'C',
                                 title: 'Oil Temp.',
@@ -1023,38 +526,7 @@
                                 timeDelay: 10000, }">
 
                     </div>
-                    <div class="ui col mini-1 h-mini-80">
 
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11041,
-                                unit: 'C',
-                                title: 'Intake Mnf. Temp.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11123,
-                                unit: 'C',
-                                title: 'Air Inlet Temp.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-                    </div>
                 </div>
 
             </div>
@@ -1067,8 +539,11 @@
 
                 <div class="ui col mini-1 gap-no pad-mini grid type1 cols-mini-3">
 
-                    <div style="display: flex; justify-content: center; padding: 0.1em; gap: .5em; position: absolute; top: 10px; left: 50%; transform: translateX(-50%); z-index: 11;">
-                        <div><h2 style="font-size: 18px;">Stbd Generator</h2></div>
+                    <div
+                        style="display: flex; justify-content: center; padding: 0.1em; gap: .5em; position: absolute; top: 10px; left: 50%; transform: translateX(-50%); z-index: 11;">
+                        <div>
+                            <h2 style="font-size: 18px;">Stbd Generator</h2>
+                        </div>
                     </div>
 
                     <div class="ui col mini-3 h-mini-330 pad-no">
@@ -1149,265 +624,88 @@
                                         valueMode: 'escalated' }"></bar-render>
                                 </div>
                             </div>
-                         </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="ui col mini-1 gap-no pad-mini grid type1 cols-mini-5">
+                <div class="ui col mini-1 gap-no pad-mini grid type1 cols-mini-2">
 
                     <div class="ui col mini-1 h-mini-80">
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11125,
-                                unit: 'bar',
-                                title: 'Sea Water Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }"></basic-text-with-title-render>
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
 
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11033,
-                                unit: 'bar',
-                                title: 'Fuel Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
+                        <basic-text-with-title-render v-bind="{
+                            signalId: 11027,
+                            unit: 'bar',
+                            title: 'Oil Pres.',
+                            titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
+                            valueStyle: 'align-center text-size-11 font-bold',
+                            valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
+                            value2Style: 'align-center resp text-size-13',
+                            value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
+                            valueMode: 'escalated',
+                            valueDecimals: 1,
+                            limitFlagSignalId: 11190,
+                            timeDelay: 10000, }">
 
                     </div>
                     <div class="ui col mini-1 h-mini-80">
 
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11009,
-                                unit: 'bar',
-                                title: 'Boost Pressure',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
+                        <basic-text-with-title-render v-bind="{
+                            signalId: 11013,
+                            unit: 'bar',
+                            title: 'Coolant Pres.',
+                            titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
+                            valueStyle: 'align-center text-size-11 font-bold',
+                            valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
+                            value2Style: 'align-center resp text-size-13',
+                            value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
+                            valueMode: 'escalated',
+                            valueDecimals: 1,
+                            limitFlagSignalId: 11190,
+                            timeDelay: 10000, }">
 
                     </div>
+
+
                     <div class="ui col mini-1 h-mini-80">
 
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11027,
-                                unit: 'bar',
-                                title: 'Oil Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
+                        <basic-text-with-title-render v-bind="{
+                            signalId: 11015,
+                            unit: 'C',
+                            title: 'Coolant Temp.',
+                            titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
+                            valueStyle: 'align-center text-size-11 font-bold',
+                            valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
+                            value2Style: 'align-center resp text-size-13',
+                            value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
+                            valueMode: 'escalated',
+                            valueDecimals: 1,
+                            limitFlagSignalId: 11190,
+                            timeDelay: 10000, }">
 
                     </div>
+
                     <div class="ui col mini-1 h-mini-80">
 
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11013,
-                                unit: 'bar',
-                                title: 'Coolant Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
+                        <basic-text-with-title-render v-bind="{
+                            signalId: 11061,
+                            unit: 'C',
+                            title: 'Oil Temp.',
+                            titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
+                            valueStyle: 'align-center text-size-11 font-bold',
+                            valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
+                            value2Style: 'align-center resp text-size-13',
+                            value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
+                            valueMode: 'escalated',
+                            valueDecimals: 1,
+                            limitFlagSignalId: 11190,
+                            timeDelay: 10000, }">
 
                     </div>
-                    <div class="ui col mini-1 h-mini-80">
 
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11017,
-                                unit: 'bar',
-                                title: 'Crankcase Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
 
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11005,
-                                unit: 'bar',
-                                title: 'Air Inlet Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11157,
-                                unit: 'bar',
-                                title: 'SCR Intake P.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11121,
-                                unit: 'bar',
-                                title: 'Inj. Met. Rail Pres.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11015,
-                                unit: 'C',
-                                title: 'Coolant Temp.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 665,
-                                unit: 'C',
-                                title: 'Wet Exhaust.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11031,
-                                unit: 'C',
-                                title: 'Exhaust Temp.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11061,
-                                unit: 'C',
-                                title: 'Oil Temp.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11041,
-                                unit: 'C',
-                                title: 'Intake Mnf. Temp.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-                    </div>
-                    <div class="ui col mini-1 h-mini-80">
-
-                            <basic-text-with-title-render v-bind="{
-                                signalId: 11123,
-                                unit: 'C',
-                                title: 'Air Inlet Temp.',
-                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                valueStyle: 'align-center text-size-11 font-bold',
-                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                value2Style: 'align-center resp text-size-13',
-                                value2SmallStyle: 'font-regular text-size-7 color-text-type-secondary-dark mg-bottom-mini-5',
-                                valueMode: 'escalated',
-                                valueDecimals: 1,
-                                limitFlagSignalId: 11190,
-                                timeDelay: 10000, }">
-                    </div>
-                   
                 </div>
             </div>
         </div>
 
     </div>
 </article>
-

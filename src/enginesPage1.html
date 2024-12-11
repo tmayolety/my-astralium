@@ -100,15 +100,13 @@
 
 
                     <div class="ui col mini-1 gap-no pad-med
-                                grid type1 cols-mini-1 cols-xl-4">
+                                grid type1 cols-mini-2">
 
                         <div class="ui col mini-1 h-mini-80">
-                       
-                                <!--GEN_1_Aftertreatment_1_Diesel_Exhaust_Fluid_Pump_Drive_Percentage_A-->
                                 <basic-text-with-title-render v-bind="{
                                     signalId: 202,
-                                    unit: 'bar',
-                                    title: 'Boost Pressure',
+                                    unit: 'ºC',
+                                    title: 'Oil Temp.',
                                     titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
                                     valueStyle: 'align-center text-size-11 font-bold',
                                     valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
@@ -121,14 +119,30 @@
                                 }"></basic-text-with-title-render>
                         
                         </div>
+                        <div class="ui col mini-1 h-mini-80">
+                            <basic-text-with-title-render v-bind="{
+                                signalId: 202,
+                                unit: 'bar',
+                                title: 'Oil Pressure',
+                                titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
+                                valueStyle: 'align-center text-size-11 font-bold',
+                                valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
+                                value2Style: 'align-center resp text-size-13',
+                                value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
+                                valueMode: 'escalated',
+                                valueDecimals: 1,
+                                limitFlagSignalId: 635,
+                                timeDelay: 10000,
+                            }"></basic-text-with-title-render>
+                    
+                    </div>
 
                         <div class="ui col mini-1 h-mini-80">
                           
-                                <!--GEN_1_Aftertreatment_1_Total_Diesel_Exhaust_Fluid_Used_A-->
                                 <basic-text-with-title-render v-bind="{
                                     signalId: 4523,
-                                    unit: 'C',
-                                    title: 'Intercool Temp',
+                                    unit: 'ºC',
+                                    title: 'Gearbox Lube Oil Temp',
                                     titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
                                     valueStyle: 'align-center text-size-11 font-bold',
                                     valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
@@ -142,11 +156,11 @@
                          
                         </div>
                         <div class="ui col mini-1 h-mini-80">
-                                <!--GEN_1_Aftertreatment_1_SCR_Catalyst_Reagent_Tank_2_Temperature_A-->
+
                                 <basic-text-with-title-render v-bind="{
                                     signalId: 4535,
                                     unit: 'bar',
-                                    title: 'Fuel Delivery Pressure',
+                                    title: 'Gearbox Lube Oil Pressure',
                                     titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
                                     valueStyle: 'align-center text-size-11 font-bold',
                                     valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
@@ -159,148 +173,6 @@
                                 }"></basic-text-with-title-render>
                      
                         </div>
-                        <div class="ui col mini-1 h-mini-80">
-                       
-                                <!--GEN_1_Aftertreatment_1_SCR_Catalyst_Reagent_Tank_2_Level_A-->
-                                <basic-text-with-title-render v-bind="{
-                                    signalId: 4537,
-                                    unit: 'bar',
-                                    title: 'Fuel Filter Diff Pressure',
-                                    titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                    valueStyle: 'align-center text-size-11 font-bold',
-                                    valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                    value2Style: 'align-center resp text-size-13',
-                                    value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                    valueMode: 'escalated',
-                                    valueDecimals: 1,
-                                    limitFlagSignalId: 635,
-                                    timeDelay: 10000, }"></basic-text-with-title-render>
-                         
-                        </div>
-                        <div class="ui col mini-1 h-mini-80">
-                          
-                                <!--GEN_1_Total_Aftertreatment_Operating_Hours-->
-                                <basic-text-with-title-render v-bind="{
-                                    signalId: 4539,
-                                    unit: 'l/h',
-                                    title: 'Fuel Rate',
-                                    titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                    valueStyle: 'align-center text-size-11 font-bold',
-                                    valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                    value2Style: 'align-center resp text-size-13',
-                                    value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                    valueMode: 'escalated',
-                                    valueDecimals: 1,
-                                    limitFlagSignalId: 635,
-                                    timeDelay: 10000, }"></basic-text-with-title-render>
-                      
-                        </div>
-                        <div class="ui col mini-1 h-mini-80">
-                           
-                                <!--GEN_1_Aftertreatment_1_Diesel_Exhaust_Fluid_Tank_Fill_Valve_Command_A-->
-                                <basic-text-with-title-render v-bind="{
-                                    signalId: 4547,
-                                    unit: 'bar',
-                                    title: 'Oil Filter Diff Pressure',
-                                    titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                    valueStyle: 'align-center text-size-11 font-bold',
-                                    valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                    value2Style: 'align-center resp text-size-13',
-                                    value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                    valueMode: 'escalated',
-                                    valueDecimals: 1,
-                                    limitFlagSignalId: 635,
-                                    timeDelay: 10000, }"></basic-text-with-title-render>
-                         
-                        </div>
-                        <div class="ui col mini-1 h-mini-80">
-                          
-                                <basic-text-with-title-render v-bind="{
-                                    signalId: 4549,
-                                    unit: 'bar',
-                                    title: 'Prefilter Fuel Pressure',
-                                    titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                    valueStyle: 'align-center text-size-11 font-bold',
-                                    valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                    value2Style: 'align-center resp text-size-13',
-                                    value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                    valueMode: 'escalated',
-                                    valueDecimals: 1,
-                                    limitFlagSignalId: 635,
-                                    timeDelay: 10000, }"></basic-text-with-title-render>
-                         
-                        </div>
-
-
-                        <div class="ui col mini-1 h-mini-80">
-                            
-                                <basic-text-with-title-render v-bind="{
-                                    signalId: 643,
-                                    unit: 'bar',
-                                    title: 'GB Oil Pressure',
-                                    titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                    valueStyle: 'align-center text-size-11 font-bold',
-                                    valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                    value2Style: 'align-center resp text-size-13',
-                                    value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                    valueMode: 'escalated',
-                                    valueDecimals: 1,
-                                    limitFlagSignalId: 635,
-                                    timeDelay: 10000, }"></basic-text-with-title-render>
-                        
-                        </div>
-                        <div class="ui col mini-1 h-mini-80">
-                           
-                                <basic-text-with-title-render v-bind="{
-                                    signalId: 645,
-                                    unit: 'C',
-                                    title: 'GB Oil Temp',
-                                    titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                    valueStyle: 'align-center text-size-11 font-bold',
-                                    valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                    value2Style: 'align-center resp text-size-13',
-                                    value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                    valueMode: 'escalated',
-                                    valueDecimals: 1,
-                                    limitFlagSignalId: 635,
-                                    timeDelay: 10000, }"></basic-text-with-title-render>
-                            
-                        </div>
-                        <div class="ui col mini-1 h-mini-80">
-                            
-                                <basic-text-with-title-render v-bind="{
-                                    signalId: 641,
-                                    unit: 'C',
-                                    title: 'Wet Exhaust Tem',
-                                    titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                    valueStyle: 'align-center text-size-11 font-bold',
-                                    valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                    value2Style: 'align-center resp text-size-13',
-                                    value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                    valueMode: 'escalated',
-                                    valueDecimals: 1,
-                                    limitFlagSignalId: 635,
-                                    timeDelay: 10000, }"></basic-text-with-title-render>
-                       
-                        </div>
-                        <div class="ui col mini-1 h-mini-80">
-                      
-                                <basic-text-with-title-render v-bind="{
-                                    signalId: 527,
-                                    unit: 'L/m',
-                                    title: 'Sterntube Flow',
-                                    titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                    valueStyle: 'align-center text-size-11 font-bold',
-                                    valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                    value2Style: 'align-center resp text-size-13',
-                                    value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                    valueMode: 'escalated',
-                                    valueDecimals: 1,
-                                    limitFlagSignalId: 635,
-                                    timeDelay: 10000, }"></basic-text-with-title-render>
-                          
-                        </div>
-                        <div class="ui col mini-1 top-center"></div>
                     </div>
                 </div>
 
@@ -373,92 +245,45 @@
                          <div class="col-content">
                              <ul class="ui table size-mini resp in-column">
                                  <li>
-                                     <!--ME_PS_Oil_High_Temperature-->
                                     <icon-text-digital-line-render v-bind="{ signalId: 90, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>High Oil Temp.</span></div>
+                                    <div class="align-middle-center"><span>Jacket Water Expansion Tank Level Low</span></div>
                                     <icon-text-digital-line-render v-bind="{ signalId: 6146, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
                                 </li>
                                 <li>
-                                    <!--ME_PS_JW_Cooltant_High_Temperature_-->
                                     <icon-text-digital-line-render v-bind="{ signalId: 4654, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>High Coolant Temp.</span></div>
+                                    <div class="align-middle-center"><span>Low Gearbox Oil Pressure Switch</span></div>
                                     <icon-text-digital-line-render v-bind="{ signalId: 6154, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
                                 </li>
                                 <li>
-                                    <!--ME_PS_J1939_Engine_Air_Inlet_Temperature-->
                                     <icon-text-digital-line-render v-bind="{ signalId: 4837, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>High Inlet Air Temp.</span></div>
+                                    <div class="align-middle-center"><span>Clogged Filter Gearbox</span></div>
                                     <icon-text-digital-line-render v-bind="{ signalId: 6337, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
                                 </li>
                                 <li>
-                                    <!--ME_PS_J1939_Transmission_Oil_Temperature-->
                                     <icon-text-digital-line-render v-bind="{ signalId: 4686, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>Gear Box High Oil Temp.</span></div>
+                                    <div class="align-middle-center"><span>Jacket Water Level Low 2</span></div>
                                     <icon-text-digital-line-render v-bind="{ signalId: 6186, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
                                 </li>
                                 <li>
-                                    <!--ME_PS_Oil_Pressure_Low-->
                                     <icon-text-digital-line-render v-bind="{ signalId: 4642, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>Low Oil Press.</span></div>
+                                    <div class="align-middle-center"><span>Local Emergency Stop</span></div>
                                     <icon-text-digital-line-render v-bind="{ signalId: 6142, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
                                 </li>
                                 <li>
-                                    <!--ME_PS_Fuel_Pressure_Low-->
                                     <icon-text-digital-line-render v-bind="{ signalId: 4644, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>Low Fuel Press.</span></div>
+                                    <div class="align-middle-center"><span>Remote Emergency Stop</span></div>
                                     <icon-text-digital-line-render v-bind="{ signalId: 6144, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
                                 </li>
                                 <li>
-                                    <!--ME_PS_J1939_Transmission_Oil_Pressure-->
                                     <icon-text-digital-line-render v-bind="{ signalId: 20061, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>Gearbox Low Oil Press.</span></div>
+                                    <div class="align-middle-center"><span>Low Oil Pressure Shutdown</span></div>
                                     <icon-text-digital-line-render v-bind="{ signalId: 20068, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
                                 </li>
                                 <li>
-                                    <!--ME_PS_Engine_Fuel_Leakage_1-->
-                                    <!--ME_PS_Engine_Fuel_Leakage_2-->
-                                    <icon-text-digital-line-render v-bind="{ signalId: 20060, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>Fuel Leak</span></div>
-                                    <icon-text-digital-line-render v-bind="{ signalId: 20067, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                </li>
-                                <li>
-                                    <!--ME_PS_JW_Coolant_Pressure_Low_-->
                                     <icon-text-digital-line-render v-bind="{ signalId: 20062, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>Cooling Water Low</span></div>
+                                    <div class="align-middle-center"><span>Gearbox Oil Pressure Too Low Shutdown</span></div>
                                     <icon-text-digital-line-render v-bind="{ signalId: 20069, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
                                 </li>
-                                <li>
-                                    <!--ME_PS_J1939_Water_in_Fuel_Indicator-->
-                                    <!--ME_PS_J1939_Water_in_Fuel_Indicator_2-->
-                                    <icon-text-digital-line-render v-bind="{ signalId: 20063, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>Water In Fuel</span></div>
-                                    <icon-text-digital-line-render v-bind="{ signalId: 20070, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                </li>
-                                <li>
-
-                                    <icon-text-digital-line-render v-bind="{ signalId: 20074, icon: 'circle', size: '20', zeroColor: 'danger', oneColor: 'success' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>Gearbox Control Volts OK</span></div>
-                                    <icon-text-digital-line-render v-bind="{ signalId: 20077, icon: 'circle', size: '20', zeroColor: 'danger', oneColor: 'success' }"></icon-text-digital-line-render>
-                                </li>
-                                <li>
-
-                                    <icon-text-digital-line-render v-bind="{ signalId: 20075, icon: 'circle', size: '20', zeroColor: 'danger', oneColor: 'success' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>Gearbox Filter OK</span></div>
-                                    <icon-text-digital-line-render v-bind="{ signalId: 20078, icon: 'circle', size: '20', zeroColor: 'danger', oneColor: 'success' }"></icon-text-digital-line-render>
-                                </li>
-                                <li>
-
-                                    <icon-text-digital-line-render v-bind="{ signalId: 20076, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>Common Control Panel Alarm</span></div>
-                                    <icon-text-digital-line-render v-bind="{ signalId: 20079, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                </li>
-                                <li>
-
-                                    <icon-text-digital-line-render v-bind="{ signalId: 313, icon: 'circle', size: '20', zeroColor: 'danger', oneColor: 'success' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>Gearbox Oil Level</span></div>
-                                    <icon-text-digital-line-render v-bind="{ signalId: 365, icon: 'circle', size: '20', zeroColor: 'danger', oneColor: 'success' }"></icon-text-digital-line-render>
-                                </li>
-               
                             </ul>
                         </div>
                     </div>
@@ -567,15 +392,13 @@
 
 
                     <div class="ui col mini-1 gap-no pad-med
-                                grid type1 cols-mini-1 cols-xl-4">
+                                grid type1 cols-mini-1 cols-xl-2">
 
                                 <div class="ui col mini-1 h-mini-80">
-                       
-                                    <!--GEN_1_Aftertreatment_1_Diesel_Exhaust_Fluid_Pump_Drive_Percentage_A-->
                                     <basic-text-with-title-render v-bind="{
-                                        signalId: 4511,
-                                        unit: 'bar',
-                                        title: 'Boost Pressure',
+                                        signalId: 202,
+                                        unit: 'ºC',
+                                        title: 'Oil Temp.',
                                         titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
                                         valueStyle: 'align-center text-size-11 font-bold',
                                         valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
@@ -584,17 +407,34 @@
                                         valueMode: 'escalated',
                                         valueDecimals: 1,
                                         limitFlagSignalId: 635,
-                                        timeDelay: 10000, }"></basic-text-with-title-render>
+                                        timeDelay: 10000,
+                                    }"></basic-text-with-title-render>
                             
                             </div>
     
                             <div class="ui col mini-1 h-mini-80">
+                                <basic-text-with-title-render v-bind="{
+                                    signalId: 202,
+                                    unit: 'bar',
+                                    title: 'Oil Pressure',
+                                    titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
+                                    valueStyle: 'align-center text-size-11 font-bold',
+                                    valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
+                                    value2Style: 'align-center resp text-size-13',
+                                    value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
+                                    valueMode: 'escalated',
+                                    valueDecimals: 1,
+                                    limitFlagSignalId: 635,
+                                    timeDelay: 10000,
+                                }"></basic-text-with-title-render>
+                        
+                        </div>
+                            <div class="ui col mini-1 h-mini-80">
                               
-                                    <!--GEN_1_Aftertreatment_1_Total_Diesel_Exhaust_Fluid_Used_A-->
                                     <basic-text-with-title-render v-bind="{
                                         signalId: 4523,
-                                        unit: 'C',
-                                        title: 'Intercool Temp',
+                                        unit: 'ºC',
+                                        title: 'Gearbox Lube Oil Temp',
                                         titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
                                         valueStyle: 'align-center text-size-11 font-bold',
                                         valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
@@ -603,15 +443,16 @@
                                         valueMode: 'escalated',
                                         valueDecimals: 1,
                                         limitFlagSignalId: 635,
-                                        timeDelay: 10000, }"></basic-text-with-title-render>
+                                        timeDelay: 10000,
+                                    }"></basic-text-with-title-render>
                              
                             </div>
                             <div class="ui col mini-1 h-mini-80">
-                                    <!--GEN_1_Aftertreatment_1_SCR_Catalyst_Reagent_Tank_2_Temperature_A-->
+    
                                     <basic-text-with-title-render v-bind="{
                                         signalId: 4535,
                                         unit: 'bar',
-                                        title: 'Fuel Delivery Pressure',
+                                        title: 'Gearbox Lube Oil Pressure',
                                         titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
                                         valueStyle: 'align-center text-size-11 font-bold',
                                         valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
@@ -620,151 +461,10 @@
                                         valueMode: 'escalated',
                                         valueDecimals: 1,
                                         limitFlagSignalId: 635,
-                                        timeDelay: 10000, }"></basic-text-with-title-render>
+                                        timeDelay: 10000,
+                                    }"></basic-text-with-title-render>
                          
                             </div>
-                            <div class="ui col mini-1 h-mini-80">
-                           
-                                    <!--GEN_1_Aftertreatment_1_SCR_Catalyst_Reagent_Tank_2_Level_A-->
-                                    <basic-text-with-title-render v-bind="{
-                                        signalId: 4537,
-                                        unit: 'bar',
-                                        title: 'Fuel Filter Diff Pressure',
-                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                        valueStyle: 'align-center text-size-11 font-bold',
-                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                        value2Style: 'align-center resp text-size-13',
-                                        value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                        valueMode: 'escalated',
-                                        valueDecimals: 1,
-                                        limitFlagSignalId: 635,
-                                        timeDelay: 10000, }"></basic-text-with-title-render>
-                             
-                            </div>
-                            <div class="ui col mini-1 h-mini-80">
-                              
-                                    <!--GEN_1_Total_Aftertreatment_Operating_Hours-->
-                                    <basic-text-with-title-render v-bind="{
-                                        signalId: 4539,
-                                        unit: 'l/h',
-                                        title: 'Fuel Rate',
-                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                        valueStyle: 'align-center text-size-11 font-bold',
-                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                        value2Style: 'align-center resp text-size-13',
-                                        value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                        valueMode: 'escalated',
-                                        valueDecimals: 1,
-                                        limitFlagSignalId: 635,
-                                        timeDelay: 10000, }"></basic-text-with-title-render>
-                          
-                            </div>
-                            <div class="ui col mini-1 h-mini-80">
-                               
-                                    <!--GEN_1_Aftertreatment_1_Diesel_Exhaust_Fluid_Tank_Fill_Valve_Command_A-->
-                                    <basic-text-with-title-render v-bind="{
-                                        signalId: 4547,
-                                        unit: 'bar',
-                                        title: 'Oil Filter Diff Pressure',
-                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                        valueStyle: 'align-center text-size-11 font-bold',
-                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                        value2Style: 'align-center resp text-size-13',
-                                        value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                        valueMode: 'escalated',
-                                        valueDecimals: 1,
-                                        limitFlagSignalId: 635,
-                                        timeDelay: 10000, }"></basic-text-with-title-render>
-                             
-                            </div>
-                            <div class="ui col mini-1 h-mini-80">
-                              
-                                    <basic-text-with-title-render v-bind="{
-                                        signalId: 4549,
-                                        unit: 'bar',
-                                        title: 'Prefilter Fuel Pressure',
-                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                        valueStyle: 'align-center text-size-11 font-bold',
-                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                        value2Style: 'align-center resp text-size-13',
-                                        value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                        valueMode: 'escalated',
-                                        valueDecimals: 1,
-                                        limitFlagSignalId: 635,
-                                        timeDelay: 10000, }"></basic-text-with-title-render>
-                             
-                            </div>
-    
-    
-                            <div class="ui col mini-1 h-mini-80">
-                                
-                                    <basic-text-with-title-render v-bind="{
-                                        signalId: 643,
-                                        unit: 'bar',
-                                        title: 'GB Oil Pressure',
-                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                        valueStyle: 'align-center text-size-11 font-bold',
-                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                        value2Style: 'align-center resp text-size-13',
-                                        value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                        valueMode: 'escalated',
-                                        valueDecimals: 1,
-                                        limitFlagSignalId: 635,
-                                        timeDelay: 10000, }"></basic-text-with-title-render>
-                            
-                            </div>
-                            <div class="ui col mini-1 h-mini-80">
-                               
-                                    <basic-text-with-title-render v-bind="{
-                                        signalId: 645,
-                                        unit: 'C',
-                                        title: 'GB Oil Temp',
-                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                        valueStyle: 'align-center text-size-11 font-bold',
-                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                        value2Style: 'align-center resp text-size-13',
-                                        value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                        valueMode: 'escalated',
-                                        valueDecimals: 1,
-                                        limitFlagSignalId: 635,
-                                        timeDelay: 10000, }"></basic-text-with-title-render>
-                                
-                            </div>
-                            <div class="ui col mini-1 h-mini-80">
-                                
-                                    <basic-text-with-title-render v-bind="{
-                                        signalId: 641,
-                                        unit: 'C',
-                                        title: 'Wet Exhaust Tem',
-                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                        valueStyle: 'align-center text-size-11 font-bold',
-                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                        value2Style: 'align-center resp text-size-13',
-                                        value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                        valueMode: 'escalated',
-                                        valueDecimals: 1,
-                                        limitFlagSignalId: 635,
-                                        timeDelay: 10000, }"></basic-text-with-title-render>
-                           
-                            </div>
-                            <div class="ui col mini-1 h-mini-80">
-                          
-                                    <basic-text-with-title-render v-bind="{
-                                        signalId: 527,
-                                        unit: 'L/m',
-                                        title: 'Sterntube Flow',
-                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                        valueStyle: 'align-center text-size-11 font-bold',
-                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                        value2Style: 'align-center resp text-size-13',
-                                        value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                        valueMode: 'escalated',
-                                        valueDecimals: 1,
-                                        limitFlagSignalId: 635,
-                                        timeDelay: 10000, }"></basic-text-with-title-render>
-                              
-                            </div>
-                        <div class="ui col mini-1 top-center"></div>
                     </div>
                 </div>
 
@@ -873,15 +573,31 @@
 
 
                     <div class="ui col mini-1 gap-no pad-no
-                                grid type1 cols-mini-4 cols-xl-4">
+                                grid type1 cols-mini-2">
 
-                        <div class="ui col mini-1 h-mini-80">
-                       
-                                <!--GEN_1_Aftertreatment_1_Diesel_Exhaust_Fluid_Pump_Drive_Percentage_A-->
+                                <div class="ui col mini-1 h-mini-80">
+                                    <basic-text-with-title-render v-bind="{
+                                        signalId: 202,
+                                        unit: 'ºC',
+                                        title: 'Oil Temp.',
+                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
+                                        valueStyle: 'align-center text-size-11 font-bold',
+                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
+                                        value2Style: 'align-center resp text-size-13',
+                                        value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
+                                        valueMode: 'escalated',
+                                        valueDecimals: 1,
+                                        limitFlagSignalId: 635,
+                                        timeDelay: 10000,
+                                    }"></basic-text-with-title-render>
+                            
+                            </div>
+
+                            <div class="ui col mini-1 h-mini-80">
                                 <basic-text-with-title-render v-bind="{
                                     signalId: 202,
                                     unit: 'bar',
-                                    title: 'Boost Pressure',
+                                    title: 'Oil Pressure',
                                     titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
                                     valueStyle: 'align-center text-size-11 font-bold',
                                     valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
@@ -894,186 +610,43 @@
                                 }"></basic-text-with-title-render>
                         
                         </div>
-
-                        <div class="ui col mini-1 h-mini-80">
-                          
-                                <!--GEN_1_Aftertreatment_1_Total_Diesel_Exhaust_Fluid_Used_A-->
-                                <basic-text-with-title-render v-bind="{
-                                    signalId: 4523,
-                                    unit: 'C',
-                                    title: 'Intercool Temp',
-                                    titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                    valueStyle: 'align-center text-size-11 font-bold',
-                                    valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                    value2Style: 'align-center resp text-size-13',
-                                    value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                    valueMode: 'escalated',
-                                    valueDecimals: 1,
-                                    limitFlagSignalId: 635,
-                                    timeDelay: 10000,
-                                }"></basic-text-with-title-render>
+    
+                            <div class="ui col mini-1 h-mini-80">
+                              
+                                    <basic-text-with-title-render v-bind="{
+                                        signalId: 4523,
+                                        unit: 'ºC',
+                                        title: 'Gearbox Lube Oil Temp',
+                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
+                                        valueStyle: 'align-center text-size-11 font-bold',
+                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
+                                        value2Style: 'align-center resp text-size-13',
+                                        value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
+                                        valueMode: 'escalated',
+                                        valueDecimals: 1,
+                                        limitFlagSignalId: 635,
+                                        timeDelay: 10000,
+                                    }"></basic-text-with-title-render>
+                             
+                            </div>
+                            <div class="ui col mini-1 h-mini-80">
+    
+                                    <basic-text-with-title-render v-bind="{
+                                        signalId: 4535,
+                                        unit: 'bar',
+                                        title: 'Gearbox Lube Oil Pressure',
+                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
+                                        valueStyle: 'align-center text-size-11 font-bold',
+                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
+                                        value2Style: 'align-center resp text-size-13',
+                                        value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
+                                        valueMode: 'escalated',
+                                        valueDecimals: 1,
+                                        limitFlagSignalId: 635,
+                                        timeDelay: 10000,
+                                    }"></basic-text-with-title-render>
                          
-                        </div>
-                        <div class="ui col mini-1 h-mini-80">
-                                <!--GEN_1_Aftertreatment_1_SCR_Catalyst_Reagent_Tank_2_Temperature_A-->
-                                <basic-text-with-title-render v-bind="{
-                                    signalId: 4535,
-                                    unit: 'bar',
-                                    title: 'Fuel Delivery Pressure',
-                                    titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                    valueStyle: 'align-center text-size-11 font-bold',
-                                    valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                    value2Style: 'align-center resp text-size-13',
-                                    value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                    valueMode: 'escalated',
-                                    valueDecimals: 1,
-                                    limitFlagSignalId: 635,
-                                    timeDelay: 10000,
-                                }"></basic-text-with-title-render>
-                     
-                        </div>
-                        <div class="ui col mini-1 h-mini-80">
-                       
-                                <!--GEN_1_Aftertreatment_1_SCR_Catalyst_Reagent_Tank_2_Level_A-->
-                                <basic-text-with-title-render v-bind="{
-                                    signalId: 4537,
-                                    unit: 'bar',
-                                    title: 'Fuel Filter Diff Pressure',
-                                    titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                    valueStyle: 'align-center text-size-11 font-bold',
-                                    valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                    value2Style: 'align-center resp text-size-13',
-                                    value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                    valueMode: 'escalated',
-                                    valueDecimals: 1,
-                                    limitFlagSignalId: 635,
-                                    timeDelay: 10000, }"></basic-text-with-title-render>
-                         
-                        </div>
-                        <div class="ui col mini-1 h-mini-80">
-                          
-                                <!--GEN_1_Total_Aftertreatment_Operating_Hours-->
-                                <basic-text-with-title-render v-bind="{
-                                    signalId: 4539,
-                                    unit: 'l/h',
-                                    title: 'Fuel Rate',
-                                    titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                    valueStyle: 'align-center text-size-11 font-bold',
-                                    valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                    value2Style: 'align-center resp text-size-13',
-                                    value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                    valueMode: 'escalated',
-                                    valueDecimals: 1,
-                                    limitFlagSignalId: 635,
-                                    timeDelay: 10000, }"></basic-text-with-title-render>
-                      
-                        </div>
-                        <div class="ui col mini-1 h-mini-80">
-                           
-                                <!--GEN_1_Aftertreatment_1_Diesel_Exhaust_Fluid_Tank_Fill_Valve_Command_A-->
-                                <basic-text-with-title-render v-bind="{
-                                    signalId: 4547,
-                                    unit: 'bar',
-                                    title: 'Oil Filter Diff Pressure',
-                                    titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                    valueStyle: 'align-center text-size-11 font-bold',
-                                    valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                    value2Style: 'align-center resp text-size-13',
-                                    value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                    valueMode: 'escalated',
-                                    valueDecimals: 1,
-                                    limitFlagSignalId: 635,
-                                    timeDelay: 10000, }"></basic-text-with-title-render>
-                         
-                        </div>
-                        <div class="ui col mini-1 h-mini-80">
-                          
-                                <basic-text-with-title-render v-bind="{
-                                    signalId: 4549,
-                                    unit: 'bar',
-                                    title: 'Prefilter Fuel Pressure',
-                                    titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                    valueStyle: 'align-center text-size-11 font-bold',
-                                    valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                    value2Style: 'align-center resp text-size-13',
-                                    value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                    valueMode: 'escalated',
-                                    valueDecimals: 1,
-                                    limitFlagSignalId: 635,
-                                    timeDelay: 10000, }"></basic-text-with-title-render>
-                         
-                        </div>
-
-
-                        <div class="ui col mini-1 h-mini-80">
-                            
-                                <basic-text-with-title-render v-bind="{
-                                    signalId: 643,
-                                    unit: 'bar',
-                                    title: 'GB Oil Pressure',
-                                    titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                    valueStyle: 'align-center text-size-11 font-bold',
-                                    valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                    value2Style: 'align-center resp text-size-13',
-                                    value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                    valueMode: 'escalated',
-                                    valueDecimals: 1,
-                                    limitFlagSignalId: 635,
-                                    timeDelay: 10000, }"></basic-text-with-title-render>
-                        
-                        </div>
-                        <div class="ui col mini-1 h-mini-80">
-                           
-                                <basic-text-with-title-render v-bind="{
-                                    signalId: 645,
-                                    unit: 'C',
-                                    title: 'GB Oil Temp',
-                                    titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                    valueStyle: 'align-center text-size-11 font-bold',
-                                    valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                    value2Style: 'align-center resp text-size-13',
-                                    value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                    valueMode: 'escalated',
-                                    valueDecimals: 1,
-                                    limitFlagSignalId: 635,
-                                    timeDelay: 10000, }"></basic-text-with-title-render>
-                            
-                        </div>
-                        <div class="ui col mini-1 h-mini-80">
-                            
-                                <basic-text-with-title-render v-bind="{
-                                    signalId: 641,
-                                    unit: 'C',
-                                    title: 'Wet Exhaust Tem',
-                                    titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                    valueStyle: 'align-center text-size-11 font-bold',
-                                    valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                    value2Style: 'align-center resp text-size-13',
-                                    value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                    valueMode: 'escalated',
-                                    valueDecimals: 1,
-                                    limitFlagSignalId: 635,
-                                    timeDelay: 10000, }"></basic-text-with-title-render>
-                       
-                        </div>
-                        <div class="ui col mini-1 h-mini-80">
-                      
-                                <basic-text-with-title-render v-bind="{
-                                    signalId: 527,
-                                    unit: 'L/m',
-                                    title: 'Sterntube Flow',
-                                    titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                    valueStyle: 'align-center text-size-11 font-bold',
-                                    valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                    value2Style: 'align-center resp text-size-13',
-                                    value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                    valueMode: 'escalated',
-                                    valueDecimals: 1,
-                                    limitFlagSignalId: 635,
-                                    timeDelay: 10000, }"></basic-text-with-title-render>
-                          
-                        </div>
-                        <div class="ui col mini-1 top-center"></div>
+                            </div>
                     </div>
                 </div>
 
@@ -1085,9 +658,7 @@
                     <div class="ui col mini-1 radius shadow">
                         <div class="col-content">
                             <ul class="ui table size-sm resp in-column">
-                                <li class="thead">
-                                    <div class="col-1/1 align-center">Total Engine Hours</div>
-                                </li>
+                                
                                 <li>
                                     <div class="ui col-1/2 align-middle-center h-mini-50"><basic-text-render v-bind="{signalId: 1044, unit: 'h', valueMode: 'escalated'}"></basic-text-render></div>
                                     <div class="ui col-1/2 align-middle-center h-mini-50"><basic-text-render v-bind="{signalId: 1045, unit: 'h', valueMode: 'escalated'}"></basic-text-render></div>
@@ -1108,10 +679,10 @@
                                      <div class="col-1/2 align-middle-center"><basic-text-render v-bind="{signalId: 201, unit: 'Vdc', valueMode: 'escalated', valueDecimals: 1}"></div>
                                      <div class="col-1/2 align-middle-center"><basic-text-render v-bind="{signalId: 202, unit: 'Vdc', valueMode: 'escalated', valueDecimals: 1}"></div>
                                  </li>
-                                 <li>
+                                <!-- <li>
                                      <div class="col-1/2 align-middle-center"><icon-text-digital-line-render v-bind="{signalId: 20003, icon:'engines', title:'',size: '40', zeroColor: 'danger', oneColor: 'success'}"></icon-text-digital-line-render></div>
                                      <div class="col-1/2 align-middle-center"><icon-text-digital-line-render v-bind="{signalId: 20003, icon:'engines', title:'',size: '40', zeroColor: 'danger', oneColor: 'success'}"></icon-text-digital-line-render></div>
-                                 </li>
+                                 </li>-->
                              </ul>
                          </div>
                      </div>
@@ -1144,97 +715,50 @@
                      <div class="ui col mini-1 radius shadow">
                          <div class="col-content">
                              <ul class="ui table size-mini resp in-column">
-                                 <li>
-                                     <!--ME_PS_Oil_High_Temperature-->
+                                <li>
                                     <icon-text-digital-line-render v-bind="{ signalId: 90, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>High Oil Temp.</span></div>
+                                    <div class="align-middle-center"><span>Jacket Water Expansion Tank Level Low</span></div>
                                     <icon-text-digital-line-render v-bind="{ signalId: 6146, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
                                 </li>
                                 <li>
-                                    <!--ME_PS_JW_Cooltant_High_Temperature_-->
                                     <icon-text-digital-line-render v-bind="{ signalId: 4654, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>High Coolant Temp.</span></div>
+                                    <div class="align-middle-center"><span>Low Gearbox Oil Pressure Switch</span></div>
                                     <icon-text-digital-line-render v-bind="{ signalId: 6154, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
                                 </li>
                                 <li>
-                                    <!--ME_PS_J1939_Engine_Air_Inlet_Temperature-->
                                     <icon-text-digital-line-render v-bind="{ signalId: 4837, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>High Inlet Air Temp.</span></div>
+                                    <div class="align-middle-center"><span>Clogged Filter Gearbox</span></div>
                                     <icon-text-digital-line-render v-bind="{ signalId: 6337, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
                                 </li>
                                 <li>
-                                    <!--ME_PS_J1939_Transmission_Oil_Temperature-->
                                     <icon-text-digital-line-render v-bind="{ signalId: 4686, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>Gear Box High Oil Temp.</span></div>
+                                    <div class="align-middle-center"><span>Jacket Water Level Low 2</span></div>
                                     <icon-text-digital-line-render v-bind="{ signalId: 6186, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
                                 </li>
                                 <li>
-                                    <!--ME_PS_Oil_Pressure_Low-->
                                     <icon-text-digital-line-render v-bind="{ signalId: 4642, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>Low Oil Press.</span></div>
+                                    <div class="align-middle-center"><span>Local Emergency Stop</span></div>
                                     <icon-text-digital-line-render v-bind="{ signalId: 6142, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
                                 </li>
                                 <li>
-                                    <!--ME_PS_Fuel_Pressure_Low-->
                                     <icon-text-digital-line-render v-bind="{ signalId: 4644, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>Low Fuel Press.</span></div>
+                                    <div class="align-middle-center"><span>Remote Emergency Stop</span></div>
                                     <icon-text-digital-line-render v-bind="{ signalId: 6144, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
                                 </li>
                                 <li>
-                                    <!--ME_PS_J1939_Transmission_Oil_Pressure-->
                                     <icon-text-digital-line-render v-bind="{ signalId: 20061, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>Gearbox Low Oil Press.</span></div>
+                                    <div class="align-middle-center"><span>Low Oil Pressure Shutdown</span></div>
                                     <icon-text-digital-line-render v-bind="{ signalId: 20068, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
                                 </li>
                                 <li>
-                                    <!--ME_PS_Engine_Fuel_Leakage_1-->
-                                    <!--ME_PS_Engine_Fuel_Leakage_2-->
-                                    <icon-text-digital-line-render v-bind="{ signalId: 20060, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>Fuel Leak</span></div>
-                                    <icon-text-digital-line-render v-bind="{ signalId: 20067, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                </li>
-                                <li>
-                                    <!--ME_PS_JW_Coolant_Pressure_Low_-->
                                     <icon-text-digital-line-render v-bind="{ signalId: 20062, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>Cooling Water Low</span></div>
+                                    <div class="align-middle-center"><span>Gearbox Oil Pressure Too Low Shutdown</span></div>
                                     <icon-text-digital-line-render v-bind="{ signalId: 20069, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
                                 </li>
-                                <li>
-                                    <!--ME_PS_J1939_Water_in_Fuel_Indicator-->
-                                    <!--ME_PS_J1939_Water_in_Fuel_Indicator_2-->
-                                    <icon-text-digital-line-render v-bind="{ signalId: 20063, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>Water In Fuel</span></div>
-                                    <icon-text-digital-line-render v-bind="{ signalId: 20070, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                </li>
-                                <li>
-
-                                    <icon-text-digital-line-render v-bind="{ signalId: 20074, icon: 'circle', size: '20', zeroColor: 'danger', oneColor: 'success' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>Gearbox Control Volts OK</span></div>
-                                    <icon-text-digital-line-render v-bind="{ signalId: 20077, icon: 'circle', size: '20', zeroColor: 'danger', oneColor: 'success' }"></icon-text-digital-line-render>
-                                </li>
-                                <li>
-
-                                    <icon-text-digital-line-render v-bind="{ signalId: 20075, icon: 'circle', size: '20', zeroColor: 'danger', oneColor: 'success' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>Gearbox Filter OK</span></div>
-                                    <icon-text-digital-line-render v-bind="{ signalId: 20078, icon: 'circle', size: '20', zeroColor: 'danger', oneColor: 'success' }"></icon-text-digital-line-render>
-                                </li>
-                                <li>
-
-                                    <icon-text-digital-line-render v-bind="{ signalId: 20076, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>Common Control Panel Alarm</span></div>
-                                    <icon-text-digital-line-render v-bind="{ signalId: 20079, icon: 'circle', size: '20', zeroColor: 'success', oneColor: 'danger' }"></icon-text-digital-line-render>
-                                </li>
-                                <li>
-
-                                    <icon-text-digital-line-render v-bind="{ signalId: 313, icon: 'circle', size: '20', zeroColor: 'danger', oneColor: 'success' }"></icon-text-digital-line-render>
-                                    <div class="align-middle-center"><span>Gearbox Oil Level</span></div>
-                                    <icon-text-digital-line-render v-bind="{ signalId: 365, icon: 'circle', size: '20', zeroColor: 'danger', oneColor: 'success' }"></icon-text-digital-line-render>
-                                </li>
-               
                             </ul>
                         </div>
                     </div>
-
+               
                 </div>
             </div>
 
@@ -1331,15 +855,12 @@
 
 
                     <div class="ui col mini-1 gap-no pad-no
-                                grid type1 cols-mini-4 cols-xl-4">
-
+                                grid type1 cols-mini-2">
                                 <div class="ui col mini-1 h-mini-80">
-                       
-                                    <!--GEN_1_Aftertreatment_1_Diesel_Exhaust_Fluid_Pump_Drive_Percentage_A-->
                                     <basic-text-with-title-render v-bind="{
-                                        signalId: 4511,
-                                        unit: 'bar',
-                                        title: 'Boost Pressure',
+                                        signalId: 202,
+                                        unit: 'ºC',
+                                        title: 'Oil Temp.',
                                         titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
                                         valueStyle: 'align-center text-size-11 font-bold',
                                         valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
@@ -1348,17 +869,34 @@
                                         valueMode: 'escalated',
                                         valueDecimals: 1,
                                         limitFlagSignalId: 635,
-                                        timeDelay: 10000, }"></basic-text-with-title-render>
+                                        timeDelay: 10000,
+                                    }"></basic-text-with-title-render>
                             
                             </div>
+                            <div class="ui col mini-1 h-mini-80">
+                                <basic-text-with-title-render v-bind="{
+                                    signalId: 202,
+                                    unit: 'bar',
+                                    title: 'Oil Pressure',
+                                    titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
+                                    valueStyle: 'align-center text-size-11 font-bold',
+                                    valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
+                                    value2Style: 'align-center resp text-size-13',
+                                    value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
+                                    valueMode: 'escalated',
+                                    valueDecimals: 1,
+                                    limitFlagSignalId: 635,
+                                    timeDelay: 10000,
+                                }"></basic-text-with-title-render>
+                        
+                        </div>
     
                             <div class="ui col mini-1 h-mini-80">
                               
-                                    <!--GEN_1_Aftertreatment_1_Total_Diesel_Exhaust_Fluid_Used_A-->
                                     <basic-text-with-title-render v-bind="{
                                         signalId: 4523,
-                                        unit: 'C',
-                                        title: 'Intercool Temp',
+                                        unit: 'ºC',
+                                        title: 'Gearbox Lube Oil Temp',
                                         titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
                                         valueStyle: 'align-center text-size-11 font-bold',
                                         valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
@@ -1367,15 +905,16 @@
                                         valueMode: 'escalated',
                                         valueDecimals: 1,
                                         limitFlagSignalId: 635,
-                                        timeDelay: 10000, }"></basic-text-with-title-render>
+                                        timeDelay: 10000,
+                                    }"></basic-text-with-title-render>
                              
                             </div>
                             <div class="ui col mini-1 h-mini-80">
-                                    <!--GEN_1_Aftertreatment_1_SCR_Catalyst_Reagent_Tank_2_Temperature_A-->
+    
                                     <basic-text-with-title-render v-bind="{
                                         signalId: 4535,
                                         unit: 'bar',
-                                        title: 'Fuel Delivery Pressure',
+                                        title: 'Gearbox Lube Oil Pressure',
                                         titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
                                         valueStyle: 'align-center text-size-11 font-bold',
                                         valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
@@ -1384,151 +923,10 @@
                                         valueMode: 'escalated',
                                         valueDecimals: 1,
                                         limitFlagSignalId: 635,
-                                        timeDelay: 10000, }"></basic-text-with-title-render>
+                                        timeDelay: 10000,
+                                    }"></basic-text-with-title-render>
                          
                             </div>
-                            <div class="ui col mini-1 h-mini-80">
-                           
-                                    <!--GEN_1_Aftertreatment_1_SCR_Catalyst_Reagent_Tank_2_Level_A-->
-                                    <basic-text-with-title-render v-bind="{
-                                        signalId: 4537,
-                                        unit: 'bar',
-                                        title: 'Fuel Filter Diff Pressure',
-                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                        valueStyle: 'align-center text-size-11 font-bold',
-                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                        value2Style: 'align-center resp text-size-13',
-                                        value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                        valueMode: 'escalated',
-                                        valueDecimals: 1,
-                                        limitFlagSignalId: 635,
-                                        timeDelay: 10000, }"></basic-text-with-title-render>
-                             
-                            </div>
-                            <div class="ui col mini-1 h-mini-80">
-                              
-                                    <!--GEN_1_Total_Aftertreatment_Operating_Hours-->
-                                    <basic-text-with-title-render v-bind="{
-                                        signalId: 4539,
-                                        unit: 'l/h',
-                                        title: 'Fuel Rate',
-                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                        valueStyle: 'align-center text-size-11 font-bold',
-                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                        value2Style: 'align-center resp text-size-13',
-                                        value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                        valueMode: 'escalated',
-                                        valueDecimals: 1,
-                                        limitFlagSignalId: 635,
-                                        timeDelay: 10000, }"></basic-text-with-title-render>
-                          
-                            </div>
-                            <div class="ui col mini-1 h-mini-80">
-                               
-                                    <!--GEN_1_Aftertreatment_1_Diesel_Exhaust_Fluid_Tank_Fill_Valve_Command_A-->
-                                    <basic-text-with-title-render v-bind="{
-                                        signalId: 4547,
-                                        unit: 'bar',
-                                        title: 'Oil Filter Diff Pressure',
-                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                        valueStyle: 'align-center text-size-11 font-bold',
-                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                        value2Style: 'align-center resp text-size-13',
-                                        value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                        valueMode: 'escalated',
-                                        valueDecimals: 1,
-                                        limitFlagSignalId: 635,
-                                        timeDelay: 10000, }"></basic-text-with-title-render>
-                             
-                            </div>
-                            <div class="ui col mini-1 h-mini-80">
-                              
-                                    <basic-text-with-title-render v-bind="{
-                                        signalId: 4549,
-                                        unit: 'bar',
-                                        title: 'Prefilter Fuel Pressure',
-                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                        valueStyle: 'align-center text-size-11 font-bold',
-                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                        value2Style: 'align-center resp text-size-13',
-                                        value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                        valueMode: 'escalated',
-                                        valueDecimals: 1,
-                                        limitFlagSignalId: 635,
-                                        timeDelay: 10000, }"></basic-text-with-title-render>
-                             
-                            </div>
-    
-    
-                            <div class="ui col mini-1 h-mini-80">
-                                
-                                    <basic-text-with-title-render v-bind="{
-                                        signalId: 643,
-                                        unit: 'bar',
-                                        title: 'GB Oil Pressure',
-                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                        valueStyle: 'align-center text-size-11 font-bold',
-                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                        value2Style: 'align-center resp text-size-13',
-                                        value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                        valueMode: 'escalated',
-                                        valueDecimals: 1,
-                                        limitFlagSignalId: 635,
-                                        timeDelay: 10000, }"></basic-text-with-title-render>
-                            
-                            </div>
-                            <div class="ui col mini-1 h-mini-80">
-                               
-                                    <basic-text-with-title-render v-bind="{
-                                        signalId: 645,
-                                        unit: 'C',
-                                        title: 'GB Oil Temp',
-                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                        valueStyle: 'align-center text-size-11 font-bold',
-                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                        value2Style: 'align-center resp text-size-13',
-                                        value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                        valueMode: 'escalated',
-                                        valueDecimals: 1,
-                                        limitFlagSignalId: 635,
-                                        timeDelay: 10000, }"></basic-text-with-title-render>
-                                
-                            </div>
-                            <div class="ui col mini-1 h-mini-80">
-                                
-                                    <basic-text-with-title-render v-bind="{
-                                        signalId: 641,
-                                        unit: 'C',
-                                        title: 'Wet Exhaust Tem',
-                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                        valueStyle: 'align-center text-size-11 font-bold',
-                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                        value2Style: 'align-center resp text-size-13',
-                                        value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                        valueMode: 'escalated',
-                                        valueDecimals: 1,
-                                        limitFlagSignalId: 635,
-                                        timeDelay: 10000, }"></basic-text-with-title-render>
-                           
-                            </div>
-                            <div class="ui col mini-1 h-mini-80">
-                          
-                                    <basic-text-with-title-render v-bind="{
-                                        signalId: 527,
-                                        unit: 'L/m',
-                                        title: 'Sterntube Flow',
-                                        titleStyle: 'align-center text-size-7 mg-bottom-mini-2',
-                                        valueStyle: 'align-center text-size-11 font-bold',
-                                        valueSmallStyle: 'font-regular text-size-7 clr-subvalue-ui',
-                                        value2Style: 'align-center resp text-size-13',
-                                        value2SmallStyle: 'font-regular text-size-7 clr-subvalue-ui mg-bottom-mini-5',
-                                        valueMode: 'escalated',
-                                        valueDecimals: 1,
-                                        limitFlagSignalId: 635,
-                                        timeDelay: 10000, }"></basic-text-with-title-render>
-                              
-                            </div>
-                        <div class="ui col mini-1 top-center"></div>
                     </div>
                 </div>
 
