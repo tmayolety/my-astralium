@@ -68,8 +68,8 @@ if (WaterTotalRender == true) {
           display: true,
           beginAtZero: true,
           min:
-            parseInt(signalsData[90].SignalMin) +
-            parseInt(signalsData[91].SignalMin),
+            parseInt(signalsData[41].SignalMin) +
+            parseInt(signalsData[42].SignalMin),
           max: 85000,
         },
       },
@@ -137,7 +137,7 @@ if (WaterTotalRender == true) {
 
   function getTimelineData(chart, time, rate) {
     var data = JSON.stringify({
-      SignalId: [90, 91],
+      SignalId: [41, 42],
       Time: time,
       Rate: rate,
     });
@@ -267,8 +267,8 @@ if (WaterTotalRenderMini == true) {
           display: true,
           beginAtZero: true,
           min:
-            parseInt(signalsData[90].SignalMin) +
-            parseInt(signalsData[91].SignalMin),
+            parseInt(signalsData[41].SignalMin) +
+            parseInt(signalsData[42].SignalMin),
           max: 85000,
         },
       },
@@ -336,7 +336,7 @@ if (WaterTotalRenderMini == true) {
 
   function getTimelineData(chart, time, rate) {
     var data = JSON.stringify({
-      SignalId: [90, 91],
+      SignalId: [41, 42],
       Time: time,
       Rate: rate,
     });
