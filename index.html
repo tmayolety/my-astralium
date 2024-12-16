@@ -101,7 +101,6 @@
         $(function(){
 
             //LOAD SECTIONS & STRUCTURES
-
             $("#mainNav").load("structure/main-nav.html");
             $("#mainHeader").load("structure/header.html");
             $("#singleNav").load("src/singleLine4Gens.html");
@@ -130,7 +129,10 @@
             $("#SystemLayoutNav").load("src/systemLayOut.html");
             $("#UMSSettingsNav").load("src/umsSettings.html");
             $("#inhibitsGroup").load("src/groupInhibits.html");
-            $("#FireSystemNav").load("src/fire.html");
+            $("#FireSystemNav").load("src/fireSystem.html");
+            $("#FireUpperDeckNav").load("src/fireUpperDeck.html");
+            $("#FireMainDeckNav").load("src/fireMainDeck.html");
+            $("#FireLowerDeckNav").load("src/fireLowerDeck.html");
             $("#HomeSystem").load("src/home.html");
 
             $.ajax({ url:"structure/sub-nav.html",
@@ -183,7 +185,11 @@
     <section class="dev-sectionContent dev-menuNavigation-systemLayOut" style="display:none; overflow: hidden;" id="SystemLayoutNav"></section>
     <section class="dev-sectionContent dev-menuNavigation-ums" style="display:none;" id="UMSSettingsNav"></section>
     <section class="dev-sectionContent dev-menuNavigation-inhibitsGroup" style="display:none;" id="inhibitsGroup"></section>
-    <section class="dev-sectionContent dev-menuNavigation-fire" style="display:none; overflow: hidden;" id="FireSystemNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-fireSystem" style="display:none; overflow: hidden;" id="FireSystemNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-fireUpperDeck" style="display:none; overflow: hidden;" id="FireUpperDeckNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-fireMainDeck" style="display:none; overflow: hidden;" id="FireMainDeckNav"></section>
+    <section class="dev-sectionContent dev-menuNavigation-fireLowerDeck" style="display:none; overflow: hidden;" id="FireLowerDeckNav"></section>
+
     <section class="dev-sectionContent dev-menuNavigation-splash" id="HomeSystem">
        
 <script language="JavaScript">

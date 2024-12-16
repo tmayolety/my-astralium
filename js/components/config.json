@@ -372,6 +372,51 @@
       }
     }
   },
+  {
+    "name": "fireUpperDeckApp",
+    "component": [
+      {
+        "label": "icon-layout-render",
+        "file": "iconLayout"
+      }
+    ],
+    "mount": ".fireUpperDeckApp",
+    "config": {
+      "compilerOptions": {
+        "isCustomElement": "tag => tag.startsWith('font')"
+      }
+    }
+  },
+  {
+    "name": "fireMainDeckApp",
+    "component": [
+      {
+        "label": "icon-layout-render",
+        "file": "iconLayout"
+      }
+    ],
+    "mount": ".fireMainDeckApp",
+    "config": {
+      "compilerOptions": {
+        "isCustomElement": "tag => tag.startsWith('font')"
+      }
+    }
+  },
+  {
+    "name": "fireLowerDeckApp",
+    "component": [
+      {
+        "label": "icon-layout-render",
+        "file": "iconLayout"
+      }
+    ],
+    "mount": ".fireLowerDeckApp",
+    "config": {
+      "compilerOptions": {
+        "isCustomElement": "tag => tag.startsWith('font')"
+      }
+    }
+  },
       {
           "name": "pumpApp",
           "component": [

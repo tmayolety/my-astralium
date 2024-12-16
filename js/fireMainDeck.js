@@ -1,0 +1,1 @@
+$("#FireMainLayout").load("src/ga/decks/mainDeck.svg");
