@@ -649,7 +649,7 @@ components.bar = {
           API.Port +
           "/scaleTableIntervalsDelete/" +
           intervalId,
-        method: "POST",
+        method: "GET",
         headers: {
           "content-type": "application/json",
         },
