@@ -124,7 +124,7 @@ components.bar = {
                     <div class="ui col sm-1 pad-no">
                         <div class="col-content overflow modal-content">
                             <div class="ui col sm-1 pad-no gap-no bg-no">
-                                <div class="sm-1 col overflow" style="max-height: 500px; overflow-y: auto;>
+                                <div class="sm-1 col overflow" style="max-height: 500px; overflow-y: auto;">
                                     <ul class="ui table size-mini resp">
                                         <li class="thead">
                                             <div class="col-260" style="justify-content: center"><span>Interval</span></div>
