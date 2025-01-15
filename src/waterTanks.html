@@ -14,10 +14,10 @@
 
                 <div class="ui col mini-1 gap-no pad-mini radius shadow grid type1 cols-mini-3" style="height:390px; overflow: hidden!important;" id="waterTanks">
                     <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 41, orientation: 'vertical', size: 'regular', unit: 'L', title:'Port Fresh Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 2320, scaleStep: 232, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
+                        <bar-render v-bind="{ signalId: 41, orientation: 'vertical', size: 'regular', unit: 'L', title:'Port Fresh Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 2320, scaleStep: 232, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable: 22 }"></bar-render>
                     </div>
                     <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 42, orientation: 'vertical', size: 'regular', unit: 'L', title:'Stbd Fresh Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 2320,scaleStep: 232, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-render>
+                        <bar-render v-bind="{ signalId: 42, orientation: 'vertical', size: 'regular', unit: 'L', title:'Stbd Fresh Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 2320,scaleStep: 232, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable: 23 }"></bar-render>
                     </div>
                    <div class="ui col mini-1">
                         <bar-custom-render v-bind="{ signalId: 41, signalId2: 42, orientation: 'vertical', size: 'regular', unit: 'L', title:'Total Fresh Water', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 4640, scaleStep: 464, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-custom-render>
@@ -70,10 +70,10 @@
 
                 <div class="ui col mini-1 gap-no pad-mini radius shadow grid type1 cols-mini-3" id="waterTanksMini" style="height: 350px;">
                     <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 41, orientation: 'vertical', size: 'medium', unit: 'L', title:'Port Fresh Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 2320, scaleStep: 232, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1, buttonTool: true }"></bar-render>
+                        <bar-render v-bind="{ signalId: 41, orientation: 'vertical', size: 'medium', unit: 'L', title:'Port Fresh Water Tank', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 2320, scaleStep: 232, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:22, buttonTool: true }"></bar-render>
                     </div>
                     <div class="ui col mini-1">
-                        <bar-render v-bind="{ signalId: 42, orientation: 'vertical', size: 'medium', unit: 'L', title:'Fresh Water Tank Stbd', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 2320,scaleStep: 232, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1, buttonTool: true }"></bar-render>
+                        <bar-render v-bind="{ signalId: 42, orientation: 'vertical', size: 'medium', unit: 'L', title:'Fresh Water Tank Stbd', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 2320,scaleStep: 232, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:23, buttonTool: true }"></bar-render>
                     </div>
                    <div class="ui col mini-1">
                         <bar-custom-render v-bind="{ signalId: 41, signalId2: 42, orientation: 'vertical', size: 'medium', unit: 'L', title:'Total Fresh Water', displayScale: true, displayCapacity: true, color: 'color-fl-blue', scaleBottom: 0, scaleTop: 4640, scaleStep: 464, scaleSegments: 10, showLimits: true, valueMode: 'filtered', limitsEditable:1, scaleEditable:1 }"></bar-custom-render>
