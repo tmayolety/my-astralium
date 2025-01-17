@@ -639,7 +639,6 @@ components.bar = {
     },
     deleteInterval(event) {
       let intervalId = parseInt($(event.target).attr("data-interval"));
-
       var settings = {
         async: true,
         crossDomain: true,
