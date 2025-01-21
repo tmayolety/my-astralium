@@ -236,6 +236,22 @@ components.multiGauge = {
       this.gaugeCenter.option("value", this.centerValueShow);
     }
 
+    if (!isNaN(this.leftValue)) {
+      this.leftValueShow = parseFloat(this.leftValue).toFixed(
+        this.leftDecimals
+      );
+      this.rawToShowLeft = this.rawLeft;
+      this.gaugeLeft.option("value", this.leftValueShow);
+    }
+
+    if (!isNaN(this.rightValue)) {
+      this.rightValueShow = parseFloat(this.rightValue).toFixed(
+        this.rightDecimals
+      );
+      this.rawToShowRight = this.rawRight;
+      this.gaugeRight.option("value", this.rightValueShow);
+    }
+
     if (this.CHasLimits) {
       let result = {};
       result.CHH = false;
@@ -1808,6 +1824,7 @@ components.multiGauge = {
         this.rightValueShow = parseFloat(this.rightValue).toFixed(
           this.rightDecimals
         );
+        
       }
 
       if (typeof this.topOffset == "undefined") {
