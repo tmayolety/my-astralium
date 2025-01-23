@@ -70,7 +70,7 @@ if (WaterTotalRender == true) {
           min:
             parseInt(signalsData[41].SignalMin) +
             parseInt(signalsData[42].SignalMin),
-          max: 85000,
+          max: 4640,
         },
       },
     },
@@ -144,11 +144,10 @@ if (WaterTotalRender == true) {
     var settings = {
       async: true,
       crossDomain: true,
-      url:"https://etybluewave.com:3000/das/totalsBySignalId",
+      url: ACTIVE_SERVER + ":" + API.Port + "/totalsBySignalId",
       method: "POST",
       headers: {
         "content-type": "application/json",
-         "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3MjY2NjA1NzksInVzZXJfaWQiOjF9.hl_Z19t68DbMgaQBN9KU_C2Sb9WYHsB66ZTe_iihmtk"
       },
       processData: false,
       data: data,
@@ -269,7 +268,7 @@ if (WaterTotalRenderMini == true) {
           min:
             parseInt(signalsData[41].SignalMin) +
             parseInt(signalsData[42].SignalMin),
-          max: 85000,
+          max: 4640,
         },
       },
     },
@@ -343,11 +342,10 @@ if (WaterTotalRenderMini == true) {
     var settings = {
       async: true,
       crossDomain: true,
-      url:"https://etybluewave.com:3000/das/totalsBySignalId",
+      url: ACTIVE_SERVER + ":" + API.Port + "/totalsBySignalId",
       method: "POST",
       headers: {
         "content-type": "application/json",
-         "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3MjcwODQ3MzIsInVzZXJfaWQiOjF9.h9lC1a21GpLX-fbGscTLpmVScqaCQaiY2IvcHj8Lt5Q"
       },
       processData: false,
       data: data,

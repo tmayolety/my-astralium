@@ -69,8 +69,8 @@ if (WasteTotalRender == true) {
                   y: {
                       display: true,
                       beginAtZero: true,
-                      min: parseInt(signalsData[453].SignalMin) + parseInt(signalsData[454].SignalMin),
-                      max: 85000
+                      min: 0,
+                      max: 2800
                   }
               }
           }
@@ -126,7 +126,7 @@ if (WasteTotalRender == true) {
     function getTimelineData(chart, time, rate) {
             
         var data = JSON.stringify({
-            "SignalId": [453, 454],
+            "SignalId": [39, 40],
             "Time": time,
             "Rate": rate
         });
@@ -258,8 +258,8 @@ if (WasteTotalRenderMini == true) {
                   y: {
                       display: true,
                       beginAtZero: true,
-                      min: parseInt(signalsData[453].SignalMin) + parseInt(signalsData[454].SignalMin),
-                      max: 85000
+                      min: 0,
+                      max: 2800
                   }
               }
           }
@@ -315,7 +315,7 @@ if (WasteTotalRenderMini == true) {
     function getTimelineData(chart, time, rate) {
             
         var data = JSON.stringify({
-            "SignalId": [453, 454],
+            "SignalId": [39, 40],
             "Time": time,
             "Rate": rate
         });
