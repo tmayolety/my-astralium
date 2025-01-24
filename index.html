@@ -159,7 +159,7 @@
     </aside>
     <header id="mainHeader">
     </header>
-
+    
     <section class="dev-sectionContent dev-menuNavigation-single" style="display:none;" id="singleNav"></section>
     <section class="dev-sectionContent dev-menuNavigation-generators4" id="generators4Nav" style="display:none; overflow: hidden;"></section>
     <section class="dev-sectionContent dev-menuNavigation-generators12" id="generators12Nav" style="display:none;"></section>
@@ -207,6 +207,14 @@
         } else {
     document.body.classList.remove('no-overscroll');
     }
+
+    function reloadAndCleanCache() {
+        const url = window.location.href.split('?')[0];
+        const timestamp = new Date().getTime();
+        window.location.href = `${url}?cachebuster=${timestamp}`;
+    }
+
+
 
     function initComponents(){
 
