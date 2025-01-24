@@ -1,4 +1,5 @@
 <article class="paddingMini variousSystemsApp">
+
         <div class="ui grid type1 cols-mini-1 hidden-mini">
 
             <div class="ui grid cols-mini-1 col mini-1 gap-sm pad-no has-header ">
@@ -26,7 +27,21 @@
 
                                     <icon-text-value-digital-line-render v-bind="{  signalId: 25, title: 'Hydraulic System Pressure Low Alarm', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
 
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="ui col mini-1 has-col-header-med">
+                            <header class="col-header size-med">Water Maker</header>
+                            <div class="col-content overflow">
+                                <ul class="ui table size-mini resp">
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 97, title: 'Water Maker General Alarm NC', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 98, title: 'Water Maker LP Pump Status', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 99, title: 'Water Maker HP Pump Status', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
                              
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 100, title: 'Water Maker System Status (Start PB)', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
 
                                 </ul>
                             </div>
@@ -37,11 +52,20 @@
 
                     <div class="ui col mini-1 xl-1 grid cols-mini-1 mini-1 bg-no pad-no gap-sm align-start">
 
+                       
+
                         <div class="ui col mini-1 has-col-header-med radius shadow">
-                            <header class="col-header size-med">Bow Thruster</header>
+                            <header class="col-header size-med">Hamann System</header>
                             <div class="col-content overflow">
                                 <ul class="ui table size-mini resp">
-                                    <icon-text-value-digital-line-render v-bind="{  signalId: 26, title: 'Bow Thruster Lub Oil Level Low Alarm', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 101, title: 'Hamann Sewage System Main Switch On', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 102, title: 'Hamann Sewage System High Level Alarm', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 103, title: 'Hamann Sewage System High Level Alarm', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 104, title: 'Hamann Sewage System Fault Treatment Plant', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 105, title: 'Hamann Sewage System Fault Treatment Plant', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 106, title: 'Hamann Sewage System Fault Discharge Pump', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 107, title: 'Hamann Sewage System Fault Discharge Pump', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 108, title: 'Hamann Sewage System Release Transfer', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
                                 </ul>
                             </div>
                         </div>
@@ -55,19 +79,67 @@
                             <header class="col-header size-med">Various</header>
                             <div class="col-content overflow">
                                 <ul class="ui table size-mini resp">
+                                    
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 109, title: 'DAU 1 AMS Redundancy Power Supply Fail', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 110, title: 'DAU 1 AMS Redundancy Power Supply Load Share', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 109, title: 'DAU 3 AMS Redundancy Power Supply Fail', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 110, title: 'DAU 3 AMS Redundancy Power Supply Load Share', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
                                     <icon-text-value-digital-line-render v-bind="{  signalId: 27, title: 'High Level Fuel Filling Alarm', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
                                     <icon-text-value-digital-line-render v-bind="{  signalId: 28, title: 'High Level Fuel Ventilation', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
                                 </ul>
                             </div>
                         </div>
+
+                        <div class="ui col mini-1 has-col-header-med radius shadow">
+                            <header class="col-header size-med">Bow Thruster</header>
+                            <div class="col-content overflow">
+                                <ul class="ui table size-mini resp">
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 26, title: 'Bow Thruster Lub Oil Level Low Alarm', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                </ul>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
             </div>
         </div>
 
-        <div class="ui grid type1 cols-mini-1 hidden-xl">
-                <div class="ui grid cols-mini-2 bg-no pad-no gap-med">
+        <div class="ui grid type1 cols-mini-2 hidden-xl gap-med ">
+
+                <div class="ui grid cols-mini-1 bg-no pad-no gap-med mini-1">
+
+                        <div class="ui col mini-1 has-col-header-med radius shadow">
+                            <header class="col-header size-med">Various</header>
+                            <div class="col-content overflow">
+                                <ul class="ui table size-mini resp">
+
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 109, title: 'DAU 1 AMS Redundancy Power Supply Fail', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 110, title: 'DAU 1 AMS Redundancy Power Supply Load Share', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 109, title: 'DAU 3 AMS Redundancy Power Supply Fail', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 110, title: 'DAU 3 AMS Redundancy Power Supply Load Share', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 27, title: 'High Level Fuel Filling Alarm', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 28, title: 'High Level Fuel Ventilation', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="ui col mini-1 has-col-header-med radius shadow">
+                            <header class="col-header size-med">Bow Thruster</header>
+                            <div class="col-content overflow">
+                                <ul class="ui table size-mini resp">
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 26, title: 'Bow Thruster Lub Oil Level Low Alarm', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                       
+
                         <div class="ui col mini-1 has-col-header-med radius shadow">
                             <header class="col-header size-med">Hydraulics</header>
                             <div class="col-content overflow">
@@ -82,25 +154,47 @@
                             </div>
                         </div>
 
-                        <div class="ui col mini-1 has-col-header-med radius shadow">
-                            <header class="col-header size-med">Bow Thruster</header>
+                    </div>
+
+                    <div class="ui grid cols-mini-1 bg-no pad-no gap-med mini-1">
+
+                       
+                       
+
+                        <div class="ui col mini-1 has-col-header-med">
+                            <header class="col-header size-med">Water Maker</header>
                             <div class="col-content overflow">
                                 <ul class="ui table size-mini resp">
-                                    <icon-text-value-digital-line-render v-bind="{  signalId: 26, title: 'Bow Thruster Lub Oil Level Low Alarm', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 97, title: 'Water Maker General Alarm NC', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 98, title: 'Water Maker LP Pump Status', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 99, title: 'Water Maker HP Pump Status', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                             
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 100, title: 'Water Maker System Status (Start PB)', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
 
                                 </ul>
                             </div>
                         </div>
 
                         <div class="ui col mini-1 has-col-header-med radius shadow">
-                            <header class="col-header size-med">Various</header>
+                            <header class="col-header size-med">Hamann System</header>
                             <div class="col-content overflow">
                                 <ul class="ui table size-mini resp">
-                                    <icon-text-value-digital-line-render v-bind="{  signalId: 27, title: 'High Level Fuel Filling Alarm', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
-                                    <icon-text-value-digital-line-render v-bind="{  signalId: 28, title: 'High Level Fuel Ventilation', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 101, title: 'Hamann Sewage System Main Switch On', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 102, title: 'Hamann Sewage System High Level Alarm', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 103, title: 'Hamann Sewage System High Level Alarm', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 104, title: 'Hamann Sewage System Fault Treatment Plant', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 105, title: 'Hamann Sewage System Fault Treatment Plant', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 106, title: 'Hamann Sewage System Fault Discharge Pump', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 107, title: 'Hamann Sewage System Fault Discharge Pump', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                    <icon-text-value-digital-line-render v-bind="{  signalId: 108, title: 'Hamann Sewage System Release Transfer', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
                                 </ul>
                             </div>
                         </div>
+
+
+                    </div>
 
                 </div>
         </div>
