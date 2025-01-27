@@ -1,5 +1,5 @@
 components.singleLineHeader = {
-    props: [ 'signalIdOne', 'signalIdTwo','componentTitle', 'signalIdIcon', 'signalIdBox', 'NC', 'iconNC', 'icon','size', 'oneColor', 'zeroColor', 'headerSize', 'textHeaderSize', 'heightHeader', 'unitOne', 'unitTwo', 'valueMode', 'isAnalogue' ],
+    props: [ 'signalIdOne', 'signalIdTwo','componentTitle', 'signalIdIcon', 'signalIdBox', 'NC', 'iconNC', 'icon','size', 'oneColor', 'zeroColor', 'headerSize', 'textHeaderSize', 'heightHeader', 'unitOne', 'unitTwo', 'valueMode', 'isAnalogue', 'isShore', 'signalIdOneToCheckGen', 'signalIdTwoToCheckGen' ],
     template: /*html*/`
 
     <div class="ui col mini-1 has-col-header pad-xl gap-xl" :class='[containerColorClass, containerSize]' ref="singleLineHeaderElement">
@@ -41,10 +41,15 @@ components.singleLineHeader = {
 
                 <span style="display: none;">{{valueBox}}</span>
                 <span style="display: none;">{{valueIcon}}</span>
+
+                <span style="display: none;">{{valueToCheckGen1}}</span>
+                <span style="display: none;">{{valueToCheckGen2}}</span>
     `,
     data() {
         return {
             valueBox: valueRaw[this.signalIdBox],
+            valueToCheckGen1: valueRaw[this.signalIdOneToCheckGen],
+            valueToCheckGen2: valueRaw[this.signalIdTwoToCheckGen],
             valueIcon: null,
             valueOneAnalogue: null,
             valueTwoAnalogue: null,
@@ -171,46 +176,101 @@ components.singleLineHeader = {
     methods: {
         iconColor(value){
             if(this.isAnalogue){
-                if (value < 24 )  {
+                if (value < 0.3 )  {
                     this.iconColorClass = this.zeroColor
-                } else if (value >= 24 ){
+                } else if (value >= 0.3 ){
                     this.iconColorClass = this.oneColor
                 } else {
                     this.iconColorClass = this.zeroColor
                 }
             }else{
-                if(this.iconNC == 1){
-                    if(value == 1){
-                        this.iconColorClass = this.oneColor
+                if(this.isShore){
+
+                    if(this.valueToCheckGen1 < 1 && this.valueToCheckGen2 < 1 ){
+                        if(this.iconNC == 1){
+                            if(value >= 1){
+                                this.iconColorClass = this.oneColor
+                            }else{
+                                this.iconColorClass = this.zeroColor
+                            }
+                        }else{
+                            if(value < 1){
+                                this.iconColorClass = this.oneColor
+                            }else{
+                                this.iconColorClass = this.zeroColor
+                            }
+                    
+                        }
                     }else{
                         this.iconColorClass = this.zeroColor
                     }
                 }else{
-                    if(value == 0){
-                        this.iconColorClass = this.oneColor
+
+                    if(this.iconNC == 1){
+                        if(value == 1){
+                            this.iconColorClass = this.oneColor
+                        }else{
+                            this.iconColorClass = this.zeroColor
+                        }
                     }else{
-                        this.iconColorClass = this.zeroColor
+                        if(value == 0){
+                            this.iconColorClass = this.oneColor
+                        }else{
+                            this.iconColorClass = this.zeroColor
+                        }
                     }
                 }
+               
             }
         },
 
         containerColor(value){
-            if(this.NC == 1){
-                if(value == 1) {
-                    this.containerColorClass = this.colors.color1
-                   
+            if(this.isShore){
+                if(this.valueToCheckGen1 < 1 && this.valueToCheckGen2 < 1 ){
+                    if(this.NC == 1){
+                        if(value >= 1) {
+                            this.containerColorClass = this.colors.color1
+                           
+                        }else{
+                            this.containerColorClass = ''
+                        }
+                    } else if(this.NC == 0){
+                        if(value == 0) {
+                            this.containerColorClass = this.colors.color1
+                        }else{
+                            this.containerColorClass = ''
+                        }
+                    }
                 }else{
-                    this.containerColorClass = ''
+                     this.containerColorClass = ''
                 }
-            } else if(this.NC == 0){
-                if(value == 0) {
-                    this.containerColorClass = this.colors.color1
-                }else{
-                    this.containerColorClass = ''
+            }else{
+                if(this.NC == 1){
+                    if(value == 1) {
+                        this.containerColorClass = this.colors.color1
+                       
+                    }else{
+                        this.containerColorClass = ''
+                    }
+                } else if(this.NC == 0){
+                    if(value == 0) {
+                        this.containerColorClass = this.colors.color1
+                    }else{
+                        this.containerColorClass = ''
+                    }
                 }
             }
+
         },
+
+        checkShore(){
+            if(!isNaN(this.valueIcon)){
+                this.iconColor(this.valueIcon)
+            }
+            if(!isNaN(this.valueBox)){
+                this.containerColor(this.valueBox)
+            }
+        }
 
 
     }

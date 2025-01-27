@@ -2,7 +2,7 @@
 <article class="paddingMini">
 
     <render class="singleLineBusBarApp">
-        <single-line-bus-bar-render v-bind="{ gen1BreakerSignalId: 90, gen2BreakerSignalId: 201, shorePowerBreakerSignalId: 202 }"></single-line-bus-bar-render>
+        <single-line-bus-bar-render v-bind="{ gen1BreakerSignalId: 4019, gen2BreakerSignalId: 5019, shorePowerBreakerSignalId: 4024 }"></single-line-bus-bar-render>
     </render>
 
 
@@ -12,19 +12,20 @@
         <!-- GENERATOR 1 -->
         <div class="ui col mini-1 phone-1 gap-no pad-sm radius-top
                             grid cols-mini-1">
-                            <single-line-header-render v-bind="{componentTitle:'PORT GENERATOR 1', signalIdIcon:90, signalIdBox:90, NC:1, iconNC: 1, icon:'generators',size: '50', zeroColor:'color-fill-type-secondary-dark', oneColor:'color-fill-type-white'}" ></single-line-header-render>
+                            <single-line-header-render v-bind="{componentTitle:'PORT GENERATOR 1', signalIdIcon:4016, signalIdBox:4019, NC:1, icon:'generators',size: '50', zeroColor:'color-fill-type-secondary-dark', oneColor:'color-fill-type-white', isAnalogue: true}" ></single-line-header-render>
         </div>
 
         <!--SHORE -->
         <div class="ui col mini-1 phone-1 gap-no pad-sm radius-top
                             grid cols-mini-1">
-                            <single-line-header-render v-bind="{componentTitle:'SHORE', signalIdIcon:202, signalIdBox:202, NC:1, iconNC: 1, icon:'shore',size: '50', zeroColor:'color-fill-type-secondary-dark', oneColor:'color-fill-type-white'}" ></single-line-header-render>
+                            <single-line-header-render v-bind="{componentTitle:'SHORE', signalIdIcon:4024, signalIdBox:4024, NC:1, iconNC: 1, icon:'shore',size: '50', isShore: true, signalIdOneToCheckGen: 4019, signalIdTwoToCheckGen: 5019,
+                            zeroColor:'color-fill-type-secondary-dark', oneColor:'color-fill-type-white'}" ></single-line-header-render>
         </div>
 
         <!-- GENERATOR 2 -->
         <div class="ui col mini-1 phone-1 gap-no pad-sm radius-top
                             grid cols-mini-1">
-                            <single-line-header-render v-bind="{componentTitle:'STBD GENERATOR 2', signalIdIcon:201, signalIdBox:201, NC:1, iconNC: 1, icon:'generators',size: '50', zeroColor:'color-fill-type-secondary-dark', oneColor:'color-fill-type-white'}" ></single-line-header-render>
+                            <single-line-header-render v-bind="{componentTitle:'STBD GENERATOR 2', signalIdIcon:5016, signalIdBox:5019, NC:1, icon:'generators',size: '50', zeroColor:'color-fill-type-secondary-dark', oneColor:'color-fill-type-white', isAnalogue: true}" ></single-line-header-render>
         </div>
     </div>
 
