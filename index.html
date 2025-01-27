@@ -214,12 +214,9 @@
         window.location.href = `${url}?cachebuster=${timestamp}`;
     }
 
-
-
     function initComponents(){
 
         if (vueComponents.length > 0) {
-
 
             let removeFirst = vueComponents.shift()
 
@@ -235,7 +232,6 @@
             eval(code)
 
         } else {
-
             FLOATING_NOTIFICATIONS = ENABLE_FLOATING_NOTIFICATIONS;
             $('#loadingResult').parent().addClass('color-bg-type-success glow');
             $('#loadingResult').html('OK');
@@ -245,12 +241,13 @@
                     });
                     $('#mainContent').show();
                 });
-
         }
     }
+
     </script>
 
     </section>
+
 </main>
 
 <!-- INIT STATUS CHECK -->
