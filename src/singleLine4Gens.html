@@ -35,7 +35,7 @@
         <div class="ui col mini-1 gap-no pad-mini align-start radius-bottom shadow
                     grid type1 cols-mini-6 cols-phone-6">
 
-            <div class="ui col h-xl-70 h-mini-55 mini-3">
+            <div class="ui col h-xl-70 h-mini-65 mini-3">
                         <basic-text-with-title-render v-bind="{
                             signalId: 201,
                             title: 'Current',
@@ -50,7 +50,7 @@
                             
                         }"></basic-text-with-title-render>
             </div>
-            <div class="ui col h-xl-70 h-mini-55 mini-3">
+            <div class="ui col h-xl-70 h-mini-65 mini-3">
                     <basic-text-with-title-render v-bind="{
                         signalId: 202,
                         title: 'Reactive Power',
@@ -64,7 +64,7 @@
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
 
-            <div class="ui col mini-3 h-xl-70 h-mini-55">
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
                     <basic-text-with-title-render v-bind="{
                         signalId: 453,
                         title: 'Voltage',
@@ -78,7 +78,7 @@
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
 
-            <div class="ui col mini-3 h-xl-70 h-mini-55">
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
                     <basic-text-with-title-render v-bind="{
                         signalId: 454,
                         title: 'Apparent Power',
@@ -92,7 +92,7 @@
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
 
-            <div class="ui col mini-3 h-xl-70 h-mini-55">
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
                     <basic-text-with-title-render v-bind="{
                         signalId: 405,
                         title: 'Frequency',
@@ -106,7 +106,7 @@
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
 
-            <div class="ui col mini-3 h-xl-70 h-mini-55">
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
                     <basic-text-with-title-render v-bind="{
                         signalId: 406,
                         title: 'Active Power',
@@ -120,224 +120,229 @@
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
 
-            <div class="ui col mini-6 pad-mini h-xl-60 h-mini-45">
-                <two-options-switch-button-render v-bind="{ signalId: 14033, optionOneText: 'START', optionTwoText: 'STOP', optionOneColorClass:'success', optionTwoColorClass:'danger', NC: 1 ,optionOneSignalIdToWrite: 31, optionTwoSignalIdToWrite: 31,optionOneValueToWrite: 256, optionTwoValueToWrite: 256, writeMode: 1, horizontalTime1: 3000, horizontalTime2: 3000   }"></two-options-switch-button-render>
+           
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
+                            signalId: 4090,
+                            title: 'L1 - L2',
+                            unit: 'V',
+                            timeDelay: 3000,
+                            titleStyle: 'text-size-8 align-center',
+                            valueStyle: 'text-size-15 align-center font-bold',
+                            valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',                
+                            valueMode: 'escalated'}"></basic-text-with-title-render>
+            </div>
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
+                            signalId: 4091,
+                            title: 'L1 - N',
+                            unit: 'V',
+                            timeDelay: 3000,
+                            titleStyle: 'text-size-8 align-center',
+                            valueStyle: 'text-size-15 align-center font-bold',
+                            valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',                
+                            valueMode: 'escalated'}"></basic-text-with-title-render>
+            </div>
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
+                            signalId: 4092,
+                            title: 'L2 - L3',
+                            unit: 'V',
+                            timeDelay: 3000,
+                            titleStyle: 'text-size-8 align-center',
+                            valueStyle: 'text-size-15 align-center font-bold',
+                            valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',                
+                            valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
 
-            <div class="ui col mini-6 pad-mini h-xl-60 h-mini-45">
-                <two-options-switch-button-render v-bind="{ signalId: 10024, optionOneText: 'BREAKER ON', optionTwoText: 'BREAKER OFF', optionOneColorClass:'success', optionTwoColorClass:'danger', NC: 1, optionOneSignalIdToWrite: 10515, optionTwoSignalIdToWrite: 10516,optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, horizontalTime1: 3000, horizontalTime2: 3000   }"></two-options-switch-button-render>
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
+                            signalId: 4093,
+                            title: 'L2 - N',
+                            unit: 'V',
+                            timeDelay: 3000,
+                            titleStyle: 'text-size-8 align-center',
+                            valueStyle: 'text-size-15 align-center font-bold',
+                            valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',                
+                            valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-
-            <div class="ui col mini-6 pad-mini h-xl-60 h-mini-45">
-                <two-options-switch-button-render v-bind="{ signalId: 2049, optionOneText: 'SYNC ON', optionTwoText: 'SYNC OFF', optionOneColorClass:'success', optionTwoColorClass:'danger', NC: 0, optionOneSignalIdToWrite: 24, optionTwoSignalIdToWrite: 25,optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, horizontalTime1: 3000, horizontalTime2: 3000   }"></two-options-switch-button-render>
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
+                            signalId: 4094,
+                            title: 'L3 - L1',
+                            unit: 'V',
+                            timeDelay: 3000,
+                            titleStyle: 'text-size-8 align-center',
+                            valueStyle: 'text-size-15 align-center font-bold',
+                            valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',                
+                            valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-
-            <div class="ui col mini-6 pad-mini h-xl-60 h-mini-45">
-                <two-options-switch-button-render v-bind="{ signalId: 10025, optionOneText: 'STBY ON', optionTwoText: 'STBY OFF', optionOneColorClass:'success', optionTwoColorClass:'danger', NC: 1, optionOneSignalIdToWrite: 10519, optionTwoSignalIdToWrite: 10520,optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, horizontalTime1: 3000, horizontalTime2: 3000   }"></two-options-switch-button-render>
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
+                            signalId: 4095,
+                            title: 'L3 - N',
+                            unit: 'V',
+                            timeDelay: 3000,
+                            titleStyle: 'text-size-8 align-center',
+                            valueStyle: 'text-size-15 align-center font-bold',
+                            valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',                
+                            valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-
-            <div class="ui col mini-2 h-xl-70 h-mini-55">
-                    <basic-text-with-title-render v-bind="{
-                        signalId: 407,
-                        title: 'L1',
-                        unit: 'A',
-                        limitFlagSignalId: 11190,
-                        timeDelay: 3000,
-                        titleStyle: 'text-size-8 align-center',
-                        valueStyle: 'text-size-15 align-center font-bold',
-                        valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
-                        limitsEditable:0,
-                        valueMode: 'escalated'}"></basic-text-with-title-render>
-            </div>
-
-            <div class="ui col mini-2 h-xl-70 h-mini-55">
-                    <basic-text-with-title-render v-bind="{
-                        signalId: 90,
-                        title: 'L2',
-                        unit: 'A',
-                        limitFlagSignalId: 11190,
-                        timeDelay: 3000,
-                        titleStyle: 'text-size-8 align-center',
-                        valueStyle: 'text-size-15 align-center font-bold',
-                        valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
-                        limitsEditable:0,
-                        valueMode: 'escalated'}"></basic-text-with-title-render>
-            </div>
-
-            <div class="ui col mini-2 h-xl-70 h-mini-55">
-                    <basic-text-with-title-render v-bind="{
-                        signalId: 91,
-                        title: 'L3',
-                        unit: 'A',
-                        limitFlagSignalId: 11190,
-                        timeDelay: 3000,
-                        titleStyle: 'text-size-8 align-center',
-                        valueStyle: 'text-size-15 align-center font-bold',
-                        valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
-                        limitsEditable:0,
-                        valueMode: 'escalated'}"></basic-text-with-title-render>
-            </div>
-
-            <basic-text-with-digital-line-render v-bind="{
-                signalId: 10036,
-                colStyle: 'mini-2 h-xl-70 h-mini-70',
-                title: '1º Stby',
-                titleStyle: 'text-size-8 font-regular mg-bottom-5 align-center',
-                valueStyle: 'text-size-15 font-black align-center glow',
-                zeroText: 'NO',
-                zeroColor: 'primary',
-                oneText: 'OK',
-                oneColor: 'success',
-                valueTextColor: 'valueTextColor'}"></basic-text-with-digital-line-render>
-
-            <basic-text-with-digital-line-render v-bind="{
-                signalId: 10037,
-                colStyle: 'mini-2 h-xl-70 h-mini-70',
-                title: '2º Stby',
-                titleStyle: 'text-size-8 font-regular mg-bottom-5 align-center',
-                valueStyle: 'text-size-15 font-black align-center glow',
-                zeroText: 'NO',
-                zeroColor: 'primary',
-                oneText: 'OK',
-                oneColor: 'success',
-                valueTextColor: 'valueTextColor'}"></basic-text-with-digital-line-render>
-
-            <basic-text-with-digital-line-render v-bind="{
-                signalId: 10038,
-                colStyle: 'mini-2 h-xl-70 h-mini-70',
-                title: '3º Stby',
-                titleStyle: 'text-size-8 font-regular mg-bottom-5 align-center',
-                valueStyle: 'text-size-15 font-black align-center glow',
-                zeroText: 'NO',
-                zeroColor: 'primary',
-                oneText: 'OK',
-                oneColor: 'success',
-                valueTextColor: 'valueTextColor'}"></basic-text-with-digital-line-render>
 
         </div>
 
         <!-- SHORE -->
         <div class="ui col mini-1 gap-no pad-mini align-start radius-bottom shadow
-                    grid type1 cols-mini-6 cols-phone-6">
-
-            <div class="ui col mini-3 h-xl-70 h-mini-55">
-                    <basic-text-with-title-render v-bind="{
-                        signalId: 10507,
-                        title: 'Current',
-                        unit: 'A',
-                        limitFlagSignalId: 11190,
-                        timeDelay: 3000,
-                        titleStyle: 'text-size-8 align-center',
-                        valueStyle: 'text-size-15 align-center font-bold',
-                        valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
-                        valueMode: 'escalated'}"></basic-text-with-title-render>
+                            grid type1 cols-mini-6 cols-phone-6">
+        
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
+                                signalId: 4022,
+                                title: 'Current',
+                                unit: 'A',
+                                limitFlagSignalId: 11190,
+                                timeDelay: 3000,
+                                titleStyle: 'text-size-8 align-center',
+                                valueStyle: 'text-size-15 align-center font-bold',
+                                valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
+                                valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-            <div class="ui col mini-3 h-xl-70 h-mini-55">
-                    <basic-text-with-title-render v-bind="{
-                        signalId: 10445,
-                        title: 'Frequency',
-                        unit: 'Hz',
-                        limitFlagSignalId: 11190,
-                        timeDelay: 3000,
-                        titleStyle: 'text-size-8 align-center',
-                        valueStyle: 'text-size-15 align-center font-bold',
-                        valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
-                        valueMode: 'escalated'}"></basic-text-with-title-render>
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
+                                signalId: 4009,
+                                title: 'Frequency',
+                                unit: 'Hz',
+                                limitFlagSignalId: 11190,
+                                timeDelay: 3000,
+                                titleStyle: 'text-size-8 align-center',
+                                valueStyle: 'text-size-15 align-center font-bold',
+                                valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
+                                valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-            <div class="ui col mini-3 h-xl-70 h-mini-55">
-                    <basic-text-with-title-render v-bind="{
-                        signalId: 10459,
-                        title: 'Voltage',
-                        unit: 'V',
-                        limitFlagSignalId: 11190,
-                        timeDelay: 3000,
-                        titleStyle: 'text-size-8 align-center',
-                        valueStyle: 'text-size-15 align-center font-bold',
-                        valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
-                        valueMode: 'escalated'}"></basic-text-with-title-render>
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
+                                signalId: 4013,
+                                title: 'Av. Current',
+                                unit: 'A',
+                                limitFlagSignalId: 11190,
+                                timeDelay: 3000,
+                                titleStyle: 'text-size-8 align-center',
+                                valueStyle: 'text-size-15 align-center font-bold',
+                                valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
+                                valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-            <div class="ui col mini-3 h-xl-70 h-mini-55">
-                    <basic-text-with-title-render v-bind="{
-                        signalId: 10502,
-                        title: 'Apparent Power',
-                        unit: 'kVA',
-                        limitFlagSignalId: 11190,
-                        timeDelay: 3000,
-                        titleStyle: 'text-size-8 align-center',
-                        valueStyle: 'text-size-15 align-center font-bold',
-                        valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
-                        valueMode: 'escalated'}"></basic-text-with-title-render>
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
+                                signalId: 4007,
+                                title: 'Power Factor',
+                                unit: '',
+                                limitFlagSignalId: 11190,
+                                timeDelay: 3000,
+                                titleStyle: 'text-size-8 align-center',
+                                valueStyle: 'text-size-15 align-center font-bold',
+                                valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
+                                valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-            <div class="ui col mini-3 h-xl-70 h-mini-55">
-                    <basic-text-with-title-render v-bind="{
-                        signalId: 10445,
-                        title: 'Frequency',
-                        unit: 'Hz',
-                        limitFlagSignalId: 11190,
-                        timeDelay: 3000,
-                        titleStyle: 'text-size-8 align-center',
-                        valueStyle: 'text-size-15 align-center font-bold',
-                        valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
-                        valueMode: 'escalated'}"></basic-text-with-title-render>
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
+                                signalId: 4024,
+                                title: 'Power',
+                                unit: 'W',
+                                limitFlagSignalId: 11190,
+                                timeDelay: 3000,
+                                titleStyle: 'text-size-8 align-center',
+                                valueStyle: 'text-size-15 align-center font-bold',
+                                valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
+                                valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-            <div class="ui col mini-3 h-xl-70 h-mini-55">
-                    <basic-text-with-title-render v-bind="{
-                        signalId: 10473,
-                        title: 'Active Power',
-                        unit: 'kW',
-                        limitFlagSignalId: 11190,
-                        timeDelay: 3000,
-                        titleStyle: 'text-size-8 align-center',
-                        valueStyle: 'text-size-15 align-center font-bold',
-                        valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
-                        valueMode: 'escalated'}"></basic-text-with-title-render>
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
+                                signalId: 4026,
+                                title: 'Reactive Power',
+                                unit: 'KVAr',
+                                limitFlagSignalId: 11190,
+                                timeDelay: 3000,
+                                titleStyle: 'text-size-8 align-center',
+                                valueStyle: 'text-size-15 align-center font-bold',
+                                valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
+                                valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-
-            <div class="ui col mini-6 h-mini-60">
-                <button class="ui btn sm primary active" onClick="openSingleModal();">TREND PAGE</button>
+        
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
+                            signalId: 4090,
+                            title: 'L1 - L2',
+                            unit: 'V',
+                            timeDelay: 3000,
+                            titleStyle: 'text-size-8 align-center',
+                            valueStyle: 'text-size-15 align-center font-bold',
+                            valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',                
+                            valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-
-            <div class="ui col mini-6 pad-no">
-                <ul class="ui table size-sm resp in-column singleline">
-                    <li class="thead">
-                        <div class="align-top-center"><span>SHORE CONVERTER</span></div>
-                    </li>
-                    <li class="thead">
-                        <div class=""></div>
-                        <div class="col-90 align-middle-center"><span>L1-N</span></div>
-                        <div class="col-90 align-middle-center"><span>L2-N</span></div>
-                        <div class="col-90 align-middle-center"><span>L3-N</span></div>
-                    </li>
-                    <li>
-                        <div class="font-bold"><span>V</span></div>
-                        <div class="col-90 align-middle-center"><basic-text v-bind="{ signalId: 4012, unit: 'V', valueMode: 'escalated' }"></basic-text></div>
-                        <div class="col-90 align-middle-center"><basic-text v-bind="{ signalId: 4013, unit: 'V', valueMode: 'escalated' }"></basic-text></div>
-                        <div class="col-90 align-middle-center"><basic-text v-bind="{ signalId: 4014, unit: 'V', valueMode: 'escalated' }"></basic-text></div>
-                    </li>
-                    <li>
-                        <div class="font-bold"><span>I</span></div>
-                        <div class="col-90 align-middle-center"><basic-text v-bind="{ signalId: 4015, unit: 'A', valueMode: 'escalated' }"></basic-text></div>
-                        <div class="col-90 align-middle-center"><basic-text v-bind="{ signalId: 4016, unit: 'A', valueMode: 'escalated' }"></basic-text></div>
-                        <div class="col-90 align-middle-center"><basic-text v-bind="{ signalId: 4017, unit: 'A', valueMode: 'escalated' }"></basic-text></div>
-                    </li>
-                    <li>
-                        <div class="font-bold"><span>Shore Frequency</span></div>
-                        <div class="col-90 align-middle-center"><basic-text v-bind="{ signalId: 4024, unit: 'Hz', valueMode: 'escalated', valueDecimals: 1 }"></basic-text></div>
-                    </li>
-                    <li>
-                        <div class="font-bold"><span>Transformer Temp.</span></div>
-                        <div class="col-90 align-middle-center"><basic-text v-bind="{ signalId: 4035, unit: 'C', valueMode: 'escalated'  }"></basic-text></div>
-                    </li>
-                </ul>
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
+                            signalId: 4091,
+                            title: 'L1 - N',
+                            unit: 'V',
+                            timeDelay: 3000,
+                            titleStyle: 'text-size-8 align-center',
+                            valueStyle: 'text-size-15 align-center font-bold',
+                            valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',                
+                            valueMode: 'escalated'}"></basic-text-with-title-render>
+            </div>
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
+                            signalId: 4092,
+                            title: 'L2 - L3',
+                            unit: 'V',
+                            timeDelay: 3000,
+                            titleStyle: 'text-size-8 align-center',
+                            valueStyle: 'text-size-15 align-center font-bold',
+                            valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',                
+                            valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
 
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
+                            signalId: 4093,
+                            title: 'L2 - N',
+                            unit: 'V',
+                            timeDelay: 3000,
+                            titleStyle: 'text-size-8 align-center',
+                            valueStyle: 'text-size-15 align-center font-bold',
+                            valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',                
+                            valueMode: 'escalated'}"></basic-text-with-title-render>
+            </div>
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
+                            signalId: 4094,
+                            title: 'L3 - L1',
+                            unit: 'V',
+                            timeDelay: 3000,
+                            titleStyle: 'text-size-8 align-center',
+                            valueStyle: 'text-size-15 align-center font-bold',
+                            valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',                
+                            valueMode: 'escalated'}"></basic-text-with-title-render>
+            </div>
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
+                            signalId: 4095,
+                            title: 'L3 - N',
+                            unit: 'V',
+                            timeDelay: 3000,
+                            titleStyle: 'text-size-8 align-center',
+                            valueStyle: 'text-size-15 align-center font-bold',
+                            valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',                
+                            valueMode: 'escalated'}"></basic-text-with-title-render>
+            </div>
+        
         </div>
 
         <!-- GENERATOR 2 -->
         <div class="ui col mini-1 gap-no pad-mini align-start radius-bottom shadow
                     grid type1 cols-mini-6 cols-phone-6">
 
-            <div class="ui col mini-3 h-xl-70 h-mini-55">
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
                     <basic-text-with-title-render v-bind="{
                         signalId: 10381,
                         title: 'Current',
@@ -349,7 +354,7 @@
                         valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-            <div class="ui col mini-3 h-xl-70 h-mini-55">
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
                     <basic-text-with-title-render v-bind="{
                         signalId: 15944,
                         title: 'Reactive Power',
@@ -361,7 +366,7 @@
                         valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-            <div class="ui col mini-3 h-xl-70 h-mini-55">
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
                     <basic-text-with-title-render v-bind="{
                         signalId: 15633,
                         title: 'Voltage',
@@ -373,7 +378,7 @@
                         valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-            <div class="ui col mini-3 h-xl-70 h-mini-55">
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
                     <basic-text-with-title-render v-bind="{
                         signalId: 10376,
                         title: 'Apparent Power',
@@ -385,7 +390,7 @@
                         valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-            <div class="ui col mini-3 h-xl-70 h-mini-55">
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
                     <basic-text-with-title-render v-bind="{
                         signalId: 10319,
                         title: 'Frequency',
@@ -397,7 +402,7 @@
                         valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-            <div class="ui col mini-3 h-xl-70 h-mini-55">
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
                     <basic-text-with-title-render v-bind="{
                         signalId: 10347,
                         title: 'Active Power',
@@ -409,107 +414,79 @@
                         valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-
-            <div class="ui col mini-6 pad-mini h-xl-60 h-mini-45">
-                <two-options-switch-button-render v-bind="{ signalId: 15690, optionOneText: 'START', optionTwoText: 'STOP', optionOneColorClass:'success', optionTwoColorClass:'danger', NC: 1 ,optionOneSignalIdToWrite: 10537, optionTwoSignalIdToWrite: 10538,optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, horizontalTime1: 3000, horizontalTime2: 3000   }"></two-options-switch-button-render>
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
+                            signalId: 5090,
+                            title: 'L1 - L2',
+                            unit: 'V',
+                            timeDelay: 3000,
+                            titleStyle: 'text-size-8 align-center',
+                            valueStyle: 'text-size-15 align-center font-bold',
+                            valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',                
+                            valueMode: 'escalated'}"></basic-text-with-title-render>
+            </div>
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
+                            signalId: 5091,
+                            title: 'L1 - N',
+                            unit: 'V',
+                            timeDelay: 3000,
+                            titleStyle: 'text-size-8 align-center',
+                            valueStyle: 'text-size-15 align-center font-bold',
+                            valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',                
+                            valueMode: 'escalated'}"></basic-text-with-title-render>
+            </div>
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
+                            signalId: 5092,
+                            title: 'L2 - L3',
+                            unit: 'V',
+                            timeDelay: 3000,
+                            titleStyle: 'text-size-8 align-center',
+                            valueStyle: 'text-size-15 align-center font-bold',
+                            valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',                
+                            valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
 
-            <div class="ui col mini-6 pad-mini h-xl-60 h-mini-45">
-                <two-options-switch-button-render v-bind="{ signalId: 10105, optionOneText: 'BREAKER ON', optionTwoText: 'BREAKER OFF', optionOneColorClass:'success', optionTwoColorClass:'danger', NC: 1, optionOneSignalIdToWrite: 10539, optionTwoSignalIdToWrite: 10540,optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, horizontalTime1: 3000, horizontalTime2: 3000   }"></two-options-switch-button-render>
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
+                            signalId: 5093,
+                            title: 'L2 - N',
+                            unit: 'V',
+                            timeDelay: 3000,
+                            titleStyle: 'text-size-8 align-center',
+                            valueStyle: 'text-size-15 align-center font-bold',
+                            valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',                
+                            valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
+                            signalId: 5094,
+                            title: 'L3 - L1',
+                            unit: 'V',
+                            timeDelay: 3000,
+                            titleStyle: 'text-size-8 align-center',
+                            valueStyle: 'text-size-15 align-center font-bold',
+                            valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',                
+                            valueMode: 'escalated'}"></basic-text-with-title-render>
+            </div>
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
+                            signalId: 5095,
+                            title: 'L3 - N',
+                            unit: 'V',
+                            timeDelay: 3000,
+                            titleStyle: 'text-size-8 align-center',
+                            valueStyle: 'text-size-15 align-center font-bold',
+                            valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',                
+                            valueMode: 'escalated'}"></basic-text-with-title-render>
+            </div>
+    
 
-            <div class="ui col mini-6 pad-mini h-xl-60 h-mini-45">
-                <two-options-switch-button-render v-bind="{ signalId: 10104, optionOneText: 'SYNC ON', optionTwoText: 'SYNC OFF', optionOneColorClass:'success', optionTwoColorClass:'danger', NC: 1,optionOneSignalIdToWrite: 10541, optionTwoSignalIdToWrite: 10542,optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, horizontalTime1: 3000, horizontalTime2: 3000   }"></two-options-switch-button-render>
-            </div>
 
-            <div class="ui col mini-6 pad-mini h-xl-60 h-mini-45">
-                <two-options-switch-button-render v-bind="{ signalId: 10106, optionOneText: 'STBY ON', optionTwoText: 'STBY OFF', optionOneColorClass:'success', optionTwoColorClass:'danger', NC: 1, optionOneSignalIdToWrite: 10543, optionTwoSignalIdToWrite: 10544,optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, horizontalTime1: 3000, horizontalTime2: 3000   }"></two-options-switch-button-render>
-            </div>
-
-            <div class="ui col mini-2 h-xl-70 h-mini-55">
-                    <basic-text-with-title-render v-bind="{
-                        signalId: 10378,
-                        title: 'L1',
-                        unit: 'A',
-                        timeDelay: 3000,
-                        titleStyle: 'text-size-8 align-center',
-                        valueStyle: 'text-size-15 align-center font-bold',
-                        valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',                
-                        valueMode: 'escalated'}"></basic-text-with-title-render>
-            </div>
-
-            <div class="ui col mini-2 h-xl-70 h-mini-55">
-                    <basic-text-with-title-render v-bind="{
-                        signalId: 10379,
-                        title: 'L2',
-                        unit: 'A',
-                        timeDelay: 3000,
-                        titleStyle: 'text-size-8 align-center',
-                        valueStyle: 'text-size-15 align-center font-bold',
-                        valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',                
-                        valueMode: 'escalated'}"></basic-text-with-title-render>
-            </div>
-
-            <div class="ui col mini-2 h-xl-70 h-mini-55">
-                    <basic-text-with-title-render v-bind="{
-                        signalId: 10380,
-                        title: 'L3',
-                        unit: 'A',
-                        timeDelay: 3000,
-                        titleStyle: 'text-size-8 align-center',
-                        valueStyle: 'text-size-15 align-center font-bold',
-                        valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',                
-                        valueMode: 'escalated'}"></basic-text-with-title-render>
-            </div>
-            
-            <basic-text-with-digital-line-render v-bind="{
-                signalId: 10117,
-                colStyle: 'mini-2 h-xl-70 h-mini-70',
-                title: '1º Stby',
-                titleStyle: 'text-size-8 font-regular mg-bottom-5 align-center',
-                valueStyle: 'text-size-15 font-black align-center glow',
-                zeroText: 'NO',
-                zeroColor: 'primary',
-                oneText: 'OK',
-                oneColor: 'success',
-                valueTextColor: 'valueTextColor'}"></basic-text-with-digital-line-render>
-            
-            <basic-text-with-digital-line-render v-bind="{
-                signalId: 10117,
-                colStyle: 'mini-2 h-xl-70 h-mini-70',
-                title: '2º Stby',
-                titleStyle: 'text-size-8 font-regular mg-bottom-5 align-center',
-                valueStyle: 'text-size-15 font-black align-center glow',
-                zeroText: 'NO',
-                zeroColor: 'primary',
-                oneText: 'OK',
-                oneColor: 'success',
-                valueTextColor: 'valueTextColor'}"></basic-text-with-digital-line-render>
-            
-            <basic-text-with-digital-line-render v-bind="{
-                signalId: 10117,
-                colStyle: 'mini-2 h-xl-70 h-mini-70',
-                title: '3º Stby',
-                titleStyle: 'text-size-8 font-regular mg-bottom-5 align-center',
-                valueStyle: 'text-size-15 font-black align-center glow',
-                zeroText: 'NO',
-                zeroColor: 'primary',
-                oneText: 'OK',
-                oneColor: 'success',
-                valueTextColor: 'valueTextColor'}"></basic-text-with-digital-line-render>
 
         </div>
 
-        <div class="ui col mini-2 pad-sm align-middle-center h-mini-570 hidden-mini hidden-xl  scheme3BackgroundModal" id="fullscreenSingleline">
-            <i style="z-index: 10000!important;" class="ui icon-size-40 icon-close-fullscreen color-fill-type-dark glow" onClick="closeSingleModal()"><svg class="ui icon" id="close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M98.74,81.26q2.52,2.14,0,4.47l-13,13q-2.33,2.33-4.47,0L50,67.67,18.74,98.74q-2.14,2.52-4.47,0l-13-13q-2.33-2.33,0-4.47L32.33,50,1.26,18.93q-2.33-2.33,0-4.47l13-13.2q2.32-2.33,4.47,0L50,32.33,81.26,1.26c1.56-1.68,3-1.68,4.47,0l13,13q2.33,2.32,0,4.47L67.67,50Z"></path></svg></i>
-               <canvas class="scheme3BackgroundModal" id="singleLineGraph" style="height: 513px!important; margin-top: 49px!important;"></canvas>
-               <div style="display: flex; justify-content: center; padding: 0.1em; gap: 0.5em; position: absolute; top: 25px; right: 90px;">
-                   <button class="ui btn mini colored primary timeLineButtonSingle active" id="btn1SingleLine" style=" width: 50px;">1m</button>
-                   <button class="ui btn mini colored primary timeLineButtonSingle" id="btn2SingleLine" style=" width: 50px;">20m</button>
-                   <button class="ui btn mini colored primary timeLineButtonSingle" id="btn3SingleLine" style=" width: 50px;">1H</button>
-                   <button class="ui btn mini colored primary timeLineButtonSingle" id="btn4SingleLine" style=" width: 50px;">8H</button>
-               </div>
-        </div>
 
     </div>
 

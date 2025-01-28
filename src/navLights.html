@@ -3,7 +3,7 @@
 
     <div class="ui grid type1 cols-mini-1 gap-xl pad-sm hidden-mini ">
 
-        <div class="ui grid type1 cols-xl-7 col mini-1 gap-med pad-sm has-header">
+        <div class="ui grid type1 cols-xl-6 col mini-1 gap-med pad-sm has-header">
 
             <header class="ui col">
                 <font>Navigation Lights</font>
@@ -15,15 +15,19 @@
                 
             </header>
 
-            <div class= "ui col xl-7 grid type1 gap-no pad-no cols-mini-1 top-center radius shadow">
+            <div class= "ui col xl-6 grid type1 gap-no pad-no cols-mini-1 top-center radius shadow">
                 <div class="ui col mini-1">
-                    <!--stern-->
-                    <icon-layout-render v-bind="{ signalId: 57, size: 25, icon: 'circle', zeroColor: 'secondary', oneColor: 'white navLights', x: 11.2, y: 39 }"></icon-layout-render>
-                    <icon-layout-render v-bind="{ signalId: 58, size: 25, icon: 'circle', zeroColor: 'secondary', oneColor: 'white navLights', x: 51, y: 1 }"></icon-layout-render>
-                    <icon-layout-render v-bind="{ signalId: 61, size: 25, icon: 'circle', zeroColor: 'secondary', oneColor: 'white navLights', x: 57, y: 17 }"></icon-layout-render>
+                    <!--stern light-->
+                    <icon-layout-render v-bind="{ signalId: 61, size: 25, icon: 'circle', zeroColor: 'secondary', oneColor: 'white navLights', x: 11.2, y: 39 }"></icon-layout-render>
+                    <!--anchor light-->
+                    <icon-layout-render v-bind="{ signalId: 57, size: 25, icon: 'circle', zeroColor: 'secondary', oneColor: 'white navLights', x: 51, y: 1 }"></icon-layout-render>
+                    <!--Top light-->
+                    <icon-layout-render v-bind="{ signalId: 58, size: 25, icon: 'circle', zeroColor: 'secondary', oneColor: 'white navLights', x: 57, y: 17 }"></icon-layout-render>
+                    <!--Port light-->
                     <icon-layout-render v-bind="{ signalId: 62, size: 25, icon: 'circle', zeroColor: 'secondary', oneColor: 'danger-light', x: 60, y: 35 }"></icon-layout-render>
+                    <!--Stbd light-->
                     <icon-layout-render v-bind="{ signalId: 65, size: 25, icon: 'circle', zeroColor: 'secondary', oneColor: 'success-light', x: 62, y: 35 }"></icon-layout-render>
-                    <!--bow-->
+                    <!--bow light-->
                     <icon-layout-render v-bind="{ signalId: 66, size: 25, icon: 'circle', zeroColor: 'secondary', oneColor: 'white navLights', x: 87, y: 49 }"></icon-layout-render>
                     <span id="NavLightsLayout_1"></span>
                 </div>
@@ -33,9 +37,8 @@
                 <header class="col-header size-med">STBD LIGHT</header>
                 <div class="ui grid type1 cols-mini-1 gap-no pad-xl">
                     <div class="ui col mini-1 align-middle-center"> 
-                       <!-- <two-options-switch-button-render v-bind="{ signalId: 60, optionOneText: 'On', optionTwoText: 'Off', NC: 1 ,optionOneSignalIdToWrite: 91, optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, buttonType: 'toggle', horizontalTime1: 3000, horizontalTime2: 3000  }"></two-options-switch-button-render>
-                        <br>-->
-                        <basic-text-with-digital-line-render v-bind="{ signalId: 57,  zeroColor: 'success', oneColor: 'danger', oneText: 'Fault', zeroText: 'Ok', valueStyle: 'txt-align-center text-size-12 font-bold'}"></basic-text-with-digital-line-render>
+                      
+                        <basic-text-with-digital-line-render v-bind="{ signalId: 65,  zeroColor: 'success', oneColor: 'danger', oneText: 'Fault', zeroText: 'Ok', valueStyle: 'txt-align-center text-size-12 font-bold'}"></basic-text-with-digital-line-render>
                     </div>
                 </div>
             </div>
@@ -44,9 +47,8 @@
                 <header class="col-header size-med">PORT LIGHT</header>
                 <div class="ui grid type1 cols-mini-1 gap-no pad-xl">
                     <div class="ui col mini-1 align-middle-center">
-                       <!--   <two-options-switch-button-render v-bind="{ signalId: 59, optionOneText: 'On', optionTwoText: 'Off', NC: 1 ,optionOneSignalIdToWrite: 7564, optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, buttonType: 'toggle', horizontalTime1: 3000, horizontalTime2: 3000  }"></two-options-switch-button-render>
-                        <br>-->
-                        <basic-text-with-digital-line-render v-bind="{ signalId: 58,  zeroColor: 'success', oneColor: 'danger', oneText: 'Fault', zeroText: 'Ok', valueStyle: 'txt-align-center text-size-12 font-bold'}"></basic-text-with-digital-line-render>
+                       
+                        <basic-text-with-digital-line-render v-bind="{ signalId: 62,  zeroColor: 'success', oneColor: 'danger', oneText: 'Fault', zeroText: 'Ok', valueStyle: 'txt-align-center text-size-12 font-bold'}"></basic-text-with-digital-line-render>
                     </div>
                 </div>
             </div>
@@ -55,8 +57,7 @@
                 <header class="col-header size-med">STERN LIGHT</header>
                 <div class="ui grid type1 cols-mini-1 gap-no pad-xl">
                     <div class="ui col mini-1 align-middle-center">
-                        <!--  <two-options-switch-button-render v-bind="{ signalId: 56, optionOneText: 'On', optionTwoText: 'Off', NC: 1 ,optionOneSignalIdToWrite: 7567, optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, buttonType: 'toggle', horizontalTime1: 3000, horizontalTime2: 3000  }"></two-options-switch-button-render>
-                        <br>-->
+                       
                         <basic-text-with-digital-line-render v-bind="{ signalId: 61,  zeroColor: 'success', oneColor: 'danger', oneText: 'Fault', zeroText: 'Ok', valueStyle: 'txt-align-center text-size-12 font-bold'}"></basic-text-with-digital-line-render>
                     </div>
                 </div>
@@ -66,9 +67,8 @@
                 <header class="col-header size-med">TOP LIGHT</header>
                 <div class="ui grid type1 cols-mini-1 gap-no pad-xl">
                     <div class="ui col mini-1 align-middle-center">
-                        <!--  <two-options-switch-button-render v-bind="{ signalId: 63, optionOneText: 'On', optionTwoText: 'Off', NC: 1 ,optionOneSignalIdToWrite: 7565, optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, buttonType: 'toggle', horizontalTime1: 3000, horizontalTime2: 3000  }"></two-options-switch-button-render>
-                        <br> -->
-                        <basic-text-with-digital-line-render v-bind="{ signalId: 62,  zeroColor: 'success', oneColor: 'danger', oneText: 'Fault', zeroText: 'Ok', valueStyle: 'txt-align-center text-size-12 font-bold'}"></basic-text-with-digital-line-render>
+                       
+                        <basic-text-with-digital-line-render v-bind="{ signalId: 58,  zeroColor: 'success', oneColor: 'danger', oneText: 'Fault', zeroText: 'Ok', valueStyle: 'txt-align-center text-size-12 font-bold'}"></basic-text-with-digital-line-render>
                     </div>
                 </div>
             </div>
@@ -77,9 +77,8 @@
                 <header class="col-header size-med">ANCHOR LIGHT</header>
                 <div class="ui grid type1 cols-mini-1 gap-no pad-xl">
                     <div class="ui col mini-1 align-middle-center">
-                       <!-- <two-options-switch-button-render v-bind="{ signalId: 55, optionOneText: 'On', optionTwoText: 'Off', NC: 1 ,optionOneSignalIdToWrite: 7566, optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, buttonType: 'toggle', horizontalTime1: 3000, horizontalTime2: 3000  }"></two-options-switch-button-render>
-                        <br>-->
-                        <basic-text-with-digital-line-render v-bind="{ signalId: 65,  zeroColor: 'success', oneColor: 'danger', oneText: 'Fault', zeroText: 'Ok', valueStyle: 'txt-align-center text-size-12 font-bold'}"></basic-text-with-digital-line-render>
+                       
+                        <basic-text-with-digital-line-render v-bind="{ signalId: 57,  zeroColor: 'success', oneColor: 'danger', oneText: 'Fault', zeroText: 'Ok', valueStyle: 'txt-align-center text-size-12 font-bold'}"></basic-text-with-digital-line-render>
                     </div>
                 </div>
             </div>
@@ -88,41 +87,33 @@
                 <header class="col-header size-med">BOW LIGHT</header>
                 <div class="ui grid type1 cols-mini-1 gap-no pad-xl">
                     <div class="ui col mini-1 align-middle-center">
-                         <!--<two-options-switch-button-render v-bind="{ signalId: 64, optionOneText: 'On', optionTwoText: 'Off', NC: 1 ,optionOneSignalIdToWrite: 7572, optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, buttonType: 'toggle', horizontalTime1: 3000, horizontalTime2: 3000  }"></two-options-switch-button-render>
-                        <br>-->
+                         
                         <basic-text-with-digital-line-render v-bind="{ signalId: 66,  zeroColor: 'success', oneColor: 'danger', oneText: 'Fault', zeroText: 'Ok', valueStyle: 'txt-align-center text-size-12 font-bold'}"></basic-text-with-digital-line-render>
                     </div>
                 </div>
             </div>
             
-            <div class="ui col mini-1 pad-sm has-col-header-sm radius shadow">      
-                <header class="col-header size-med">NUC. LIGHT</header>
-                <div class="ui grid type1 cols-mini-1 gap-no pad-xl">
-                    <div class="ui col mini-1 align-middle-center">
-                       <!-- <two-options-switch-button-render v-bind="{ signalId: 7553, optionOneText: 'On', optionTwoText: 'Off', NC: 1 ,optionOneSignalIdToWrite: 7572, optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, buttonType: 'toggle', horizontalTime1: 3000, horizontalTime2: 3000  }"></two-options-switch-button-render>
-                        <br>-->
-                        <basic-text-with-digital-line-render v-bind="{ signalId: 7554,  zeroColor: 'success', oneColor: 'danger', oneText: 'Fault', zeroText: 'Ok', valueStyle: 'txt-align-center text-size-12 font-bold'}"></basic-text-with-digital-line-render>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 
     <div class="ui grid type1 cols-mini-1 gap-xl pad-sm hidden-xl">
 
-        <div class="ui grid type1 cols-mini-7 col mini-1 gap-sm">
+        <div class="ui grid type1 cols-mini-6 col mini-1 gap-sm">
             
-            <div class= "ui col mini-7 grid type1 gap-no pad-no cols-mini-1 top-center radius shadow">
+            <div class= "ui col mini-6 grid type1 gap-no pad-no cols-mini-1 top-center radius shadow">
                 <div class="ui col mini-1">
-                    <!--stern-->
-                    <icon-layout-render v-bind="{ signalId: 57, size: 25, icon: 'circle', zeroColor: 'secondary', oneColor: 'white navLights', x: 11.2, y: 39 }"></icon-layout-render>
-                    <icon-layout-render v-bind="{ signalId: 58, size: 25, icon: 'circle', zeroColor: 'secondary', oneColor: 'white navLights', x: 51, y: 1 }"></icon-layout-render>
-                    <icon-layout-render v-bind="{ signalId: 61, size: 25, icon: 'circle', zeroColor: 'secondary', oneColor: 'white navLights', x: 57, y: 17 }"></icon-layout-render>
-                    <icon-layout-render v-bind="{ signalId: 62, size: 25, icon: 'circle', zeroColor: 'secondary', oneColor: 'danger-light', x: 60, y: 35 }"></icon-layout-render>
-                    <icon-layout-render v-bind="{ signalId: 65, size: 25, icon: 'circle', zeroColor: 'secondary', oneColor: 'success-light', x: 62, y: 35 }"></icon-layout-render>
-                    <!--bow-->
-                    <icon-layout-render v-bind="{ signalId: 66, size: 25, icon: 'circle', zeroColor: 'secondary', oneColor: 'white navLights', x: 87, y: 49 }"></icon-layout-render>
+                      <!--stern light-->
+                      <icon-layout-render v-bind="{ signalId: 61, size: 25, icon: 'circle', zeroColor: 'secondary', oneColor: 'white navLights', x: 11.2, y: 39 }"></icon-layout-render>
+                      <!--anchor light-->
+                      <icon-layout-render v-bind="{ signalId: 57, size: 25, icon: 'circle', zeroColor: 'secondary', oneColor: 'white navLights', x: 51, y: 1 }"></icon-layout-render>
+                      <!--Top light-->
+                      <icon-layout-render v-bind="{ signalId: 58, size: 25, icon: 'circle', zeroColor: 'secondary', oneColor: 'white navLights', x: 57, y: 17 }"></icon-layout-render>
+                      <!--Port light-->
+                      <icon-layout-render v-bind="{ signalId: 62, size: 25, icon: 'circle', zeroColor: 'secondary', oneColor: 'danger-light', x: 60, y: 35 }"></icon-layout-render>
+                      <!--Stbd light-->
+                      <icon-layout-render v-bind="{ signalId: 65, size: 25, icon: 'circle', zeroColor: 'secondary', oneColor: 'success-light', x: 62, y: 35 }"></icon-layout-render>
+                      <!--bow light-->
+                      <icon-layout-render v-bind="{ signalId: 66, size: 25, icon: 'circle', zeroColor: 'secondary', oneColor: 'white navLights', x: 87, y: 49 }"></icon-layout-render>
                     <span id="NavLightsLayout_2"></span>
                 </div>
             </div>
@@ -131,9 +122,8 @@
                 <header class="col-header size-med">STBD LIGHT</header>
                 <div class="ui grid type1 cols-mini-1 gap-no pad-xl">
                     <div class="ui col mini-1 align-middle-center"> 
-                       <!-- <two-options-switch-button-render v-bind="{ signalId: 60, optionOneText: 'On', optionTwoText: 'Off', NC: 1 ,optionOneSignalIdToWrite: 91, optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, buttonType: 'toggle', horizontalTime1: 3000, horizontalTime2: 3000  }"></two-options-switch-button-render>
-                        <br>-->
-                        <basic-text-with-digital-line-render v-bind="{ signalId: 57,  zeroColor: 'success', oneColor: 'danger', oneText: 'Fault', zeroText: 'Ok', valueStyle: 'txt-align-center text-size-12 font-bold'}"></basic-text-with-digital-line-render>
+                      
+                        <basic-text-with-digital-line-render v-bind="{ signalId: 65,  zeroColor: 'success', oneColor: 'danger', oneText: 'Fault', zeroText: 'Ok', valueStyle: 'txt-align-center text-size-12 font-bold'}"></basic-text-with-digital-line-render>
                     </div>
                 </div>
             </div>
@@ -142,9 +132,8 @@
                 <header class="col-header size-med">PORT LIGHT</header>
                 <div class="ui grid type1 cols-mini-1 gap-no pad-xl">
                     <div class="ui col mini-1 align-middle-center">
-                       <!-- <two-options-switch-button-render v-bind="{ signalId: 59, optionOneText: 'On', optionTwoText: 'Off', NC: 1 ,optionOneSignalIdToWrite: 7564, optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, buttonType: 'toggle', horizontalTime1: 3000, horizontalTime2: 3000  }"></two-options-switch-button-render>
-                        <br>-->
-                        <basic-text-with-digital-line-render v-bind="{ signalId: 58,  zeroColor: 'success', oneColor: 'danger', oneText: 'Fault', zeroText: 'Ok', valueStyle: 'txt-align-center text-size-12 font-bold'}"></basic-text-with-digital-line-render>
+                    
+                        <basic-text-with-digital-line-render v-bind="{ signalId: 62,  zeroColor: 'success', oneColor: 'danger', oneText: 'Fault', zeroText: 'Ok', valueStyle: 'txt-align-center text-size-12 font-bold'}"></basic-text-with-digital-line-render>
                     </div>
                 </div>
             </div>
@@ -153,8 +142,7 @@
                 <header class="col-header size-med">STERN LIGHT</header>
                 <div class="ui grid type1 cols-mini-1 gap-no pad-xl">
                     <div class="ui col mini-1 align-middle-center">
-                        <!--<two-options-switch-button-render v-bind="{ signalId: 56, optionOneText: 'On', optionTwoText: 'Off', NC: 1 ,optionOneSignalIdToWrite: 7567, optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, buttonType: 'toggle', horizontalTime1: 3000, horizontalTime2: 3000  }"></two-options-switch-button-render>
-                        <br>-->
+                  
                         <basic-text-with-digital-line-render v-bind="{ signalId: 61,  zeroColor: 'success', oneColor: 'danger', oneText: 'Fault', zeroText: 'Ok', valueStyle: 'txt-align-center text-size-12 font-bold'}"></basic-text-with-digital-line-render>
                     </div>
                 </div>
@@ -164,9 +152,8 @@
                 <header class="col-header size-med">TOP LIGHT</header>
                 <div class="ui grid type1 cols-mini-1 gap-no pad-xl">
                     <div class="ui col mini-1 align-middle-center">
-                       <!-- <two-options-switch-button-render v-bind="{ signalId: 63, optionOneText: 'On', optionTwoText: 'Off', NC: 1 ,optionOneSignalIdToWrite: 7565, optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, buttonType: 'toggle', horizontalTime1: 3000, horizontalTime2: 3000  }"></two-options-switch-button-render>
-                        <br>-->
-                        <basic-text-with-digital-line-render v-bind="{ signalId: 62,  zeroColor: 'success', oneColor: 'danger', oneText: 'Fault', zeroText: 'Ok', valueStyle: 'txt-align-center text-size-12 font-bold'}"></basic-text-with-digital-line-render>
+                       
+                        <basic-text-with-digital-line-render v-bind="{ signalId: 58,  zeroColor: 'success', oneColor: 'danger', oneText: 'Fault', zeroText: 'Ok', valueStyle: 'txt-align-center text-size-12 font-bold'}"></basic-text-with-digital-line-render>
                     </div>
                 </div>
             </div>
@@ -175,9 +162,8 @@
                 <header class="col-header size-med">ANCHOR LIGHT</header>
                 <div class="ui grid type1 cols-mini-1 gap-no pad-xl">
                     <div class="ui col mini-1 align-middle-center">
-                        <!--<two-options-switch-button-render v-bind="{ signalId: 55, optionOneText: 'On', optionTwoText: 'Off', NC: 1 ,optionOneSignalIdToWrite: 7566, optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, buttonType: 'toggle', horizontalTime1: 3000, horizontalTime2: 3000  }"></two-options-switch-button-render>
-                        <br>-->
-                        <basic-text-with-digital-line-render v-bind="{ signalId: 65,  zeroColor: 'success', oneColor: 'danger', oneText: 'Fault', zeroText: 'Ok', valueStyle: 'txt-align-center text-size-12 font-bold'}"></basic-text-with-digital-line-render>
+                      
+                        <basic-text-with-digital-line-render v-bind="{ signalId: 57,  zeroColor: 'success', oneColor: 'danger', oneText: 'Fault', zeroText: 'Ok', valueStyle: 'txt-align-center text-size-12 font-bold'}"></basic-text-with-digital-line-render>
                     </div>
                 </div>
             </div>
@@ -186,20 +172,8 @@
                 <header class="col-header size-med">BOW LIGHT</header>
                 <div class="ui grid type1 cols-mini-1 gap-no pad-xl">
                     <div class="ui col mini-1 align-middle-center">
-                       <!-- <two-options-switch-button-render v-bind="{ signalId: 64, optionOneText: 'On', optionTwoText: 'Off', NC: 1 ,optionOneSignalIdToWrite: 7572, optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, buttonType: 'toggle', horizontalTime1: 3000, horizontalTime2: 3000  }"></two-options-switch-button-render>
-                        <br>-->
+                 
                         <basic-text-with-digital-line-render v-bind="{ signalId: 66,  zeroColor: 'success', oneColor: 'danger', oneText: 'Fault', zeroText: 'Ok', valueStyle: 'txt-align-center text-size-12 font-bold'}"></basic-text-with-digital-line-render>
-                    </div>
-                </div>
-            </div>
-
-            <div class="ui col mini-1 pad-sm has-col-header-sm radius shadow">
-                <header class="col-header size-med">NUC. LIGHT</header>
-                <div class="ui grid type1 cols-mini-1 gap-no pad-xl">
-                    <div class="ui col mini-1 align-middle-center">
-                       <!-- <two-options-switch-button-render v-bind="{ signalId: 7553, optionOneText: 'On', optionTwoText: 'Off', NC: 1 ,optionOneSignalIdToWrite: 7572, optionOneValueToWrite: 1, optionTwoValueToWrite: 1, writeMode: 2, buttonType: 'toggle', horizontalTime1: 3000, horizontalTime2: 3000  }"></two-options-switch-button-render>
-                        <br> -->
-                        <basic-text-with-digital-line-render v-bind="{ signalId: 7554,  zeroColor: 'success', oneColor: 'danger', oneText: 'Fault', zeroText: 'Ok', valueStyle: 'txt-align-center text-size-12 font-bold'}"></basic-text-with-digital-line-render>
                     </div>
                 </div>
             </div>
