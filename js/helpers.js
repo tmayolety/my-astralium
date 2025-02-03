@@ -12,6 +12,11 @@ var brightnessResponse = true
 let DeviceIdActivated = Vue.ref(1)
 
 const helpers = {
+    refresh: function () {
+        const url = new URL(window.location.href);
+        url.searchParams.set('nocache', Date.now());
+        window.location.href = url.toString();
+    },
 
     calculatePercentage: function (id, value) {
 

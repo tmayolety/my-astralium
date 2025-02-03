@@ -6757,6 +6757,9 @@ html[data-scheme="scheme2"] .color-fill-type-white.navLights > svg{fill: rgb(0, 
   .signalListHeight{
     height: 400px;
   }
+  .marginTopSingleMini{
+    top: -9px!important;
+  }
 }
 
 @media (min-width: 1281px) {

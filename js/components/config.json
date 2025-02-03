@@ -486,11 +486,11 @@
           "name": "SettingsApp",
           "component": [
             {
-              "label": "two-options-switch-button-render",
-              "file": "twoOptionsSwitchButton"
+              "label":"icon-text-digital-line-render",
+              "file":"iconTextDigitalLine"
             }
           ],
-          "mount": "#SettingsApp",
+          "mount": ".SettingsApp",
           "config": {
             "compilerOptions": {
               "isCustomElement": "tag => tag.startsWith('font')"

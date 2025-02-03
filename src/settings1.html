@@ -1,4 +1,4 @@
-<article class="section-settings paddingMini">
+<article class="section-settings paddingMini SettingsApp">
 
     <div class="ui grid type1 cols-xl-8 cols-mini-10 gap-med">
 
@@ -24,14 +24,14 @@
                             <div class="ui col mini-1 h-mini-150">
                                 <div class="col-content">
                                     <h5 class="ui h5 align-center mg-bottom-20">Sound Alarm</h5>
-                                    <i class="ui icon-size-50" id="SetIconAlarm_30051"><svg class="ui icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"></circle></svg></i>
+                                    <icon-text-digital-line-render v-bind="{ signalId: 99, icon: 'sound', size: '70', zeroColor: 'secondary', oneColor: 'danger', elementSize:'large' }"></icon-text-digital-line-render>
                                 </div>
                             </div>
 
                             <div class="ui col mini-1 h-mini-150">
                                 <div class="col-content">
                                     <h5 class="ui h5 align-center mg-bottom-20">Light Alarm</h5>
-                                    <i class="ui icon-size-50 " id="SetIconAlarm_30052" ><svg class="ui icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"></circle></svg></i>
+                                    <icon-text-digital-line-render v-bind="{ signalId: 99, icon: 'navLights', size: '70', zeroColor: 'secondary', oneColor: 'danger', elementSize:'large' }"></icon-text-digital-line-render>
                                 </div>
                             </div>
 
@@ -41,24 +41,29 @@
                 </div>
 
 
-                <div class="ui col mini-1 has-col-header-xl">
-                    <header class="col-header size-lg">Bridge Panel</header>
-                    <div class="ui grid type1 cols-mini-1 middle-center pad-mini">
-                        <div class="ui col mini-1 h-mini-150">
-                            <div class="col-content">
-                                <h5 class="ui h5 align-center mg-bottom-20">Sound Alarm</h5>
-                                <i class="ui icon-size-50" id="SetIconAlarm_30051"><svg class="ui icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"></circle></svg></i>
-                            </div>
-                        </div>
+                <div class="ui grid type1 cols-mini-1 radius shadow
+                            col mini-1 gap-no pad-med">
 
-                        <div class="ui col mini-1 h-mini-150">
-                            <div class="col-content">
-                                <h5 class="ui h5 align-center mg-bottom-20">Light Alarm</h5>
-                                <i class="ui icon-size-50 " id="SetIconAlarm_30052" ><svg class="ui icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50"></circle></svg></i>
+                    <div class="ui col mini-1 has-col-header-xl">
+                        <header class="col-header size-lg">Bridge Panel</header>
+                        <div class="ui grid type1 cols-mini-1 middle-center pad-mini">
+                            <div class="ui col mini-1 h-mini-150">
+                                <div class="col-content">
+                                    <h5 class="ui h5 align-center mg-bottom-20">Sound Alarm</h5>
+                                    <icon-text-digital-line-render v-bind="{ signalId: 99, icon: 'sound', size: '70', zeroColor: 'secondary', oneColor: 'danger', elementSize:'large' }"></icon-text-digital-line-render>
+                                </div>
                             </div>
-                        </div>
 
+                            <div class="ui col mini-1 h-mini-150">
+                                <div class="col-content">
+                                    <h5 class="ui h5 align-center mg-bottom-20">Light Alarm</h5>
+                                    <icon-text-digital-line-render v-bind="{ signalId: 99, icon: 'navLights', size: '70', zeroColor: 'secondary', oneColor: 'danger', elementSize:'large' }"></icon-text-digital-line-render>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
+
                 </div>
 
             </div>
@@ -149,23 +154,15 @@
 				</div>
 
                 <div class="ui col mini-1 has-col-header-sm radius shadow">
-                    <header class="col-header size-lg">Doors Mode</header>
+                    <header class="col-header size-lg">Refresh</header>
                     <div class="ui grid type1 cols-mini-1 middle-center pad-xl">
                         <div class="ui col mini-1">
-                            <div class="col-content" id="SettingsApp">
-                                <div class="ui sm-1 " >
-                                    <two-options-switch-button-render v-bind="{ signalId: 705, optionOneText: 'Sea Mode', optionTwoText: 'Harbour Mode', optionOneColorClass:'danger', optionTwoColorClass:'primary', NC: 1,
-                                    optionOneSignalIdToWrite: 686, optionTwoSignalIdToWrite: 686,optionOneValueToWrite: 1, optionTwoValueToWrite: 0, writeMode: 0, horizontalTime1: 3000, horizontalTime2: 3000   }"></two-options-switch-button-render>
-                                </div>
-                                <div class="ui sm-1" >
-                                    <two-options-switch-button-render v-bind="{ signalId: 707, optionOneText: 'Supervised WT Doors Mode ON', optionTwoText: 'Supervised WT Doors Mode OFF', optionOneColorClass:'danger', optionTwoColorClass:'primary', NC: 1,
-                                    optionOneSignalIdToWrite: 688, optionTwoSignalIdToWrite: 688,optionOneValueToWrite: 1, optionTwoValueToWrite: 0, writeMode: 0, horizontalTime1: 3000, horizontalTime2: 3000  }"></two-options-switch-button-render>
-                                </div>
-                               <!-- <button class="ui btn primary lg icon vertical" onclick="helpers.screenMode(this);"><?php echo file_get_contents(__DIR__.'/../framework/3-modules/icons/screen-mode.svg'); ?><span>Day Mode</span></button> -->
-                            </div>
+                            <div class="col-content">
+                                <button class="ui btn primary lg icon vertical" onclick="helpers.refresh();" style="width: 171.78px;"><svg class="ui icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50.24,99.84a49.19,49.19,0,0,1-28.84-8.7,52.15,52.15,0,0,1-7.23-6c-.72-.71-.71-1,0-1.77q5.72-5.73,11.45-11.44c.84-.85,1.1-.85,1.95,0a31.16,31.16,0,0,0,19.93,9.22A30.17,30.17,0,0,0,66.2,76.57C75,71.26,79.83,63.34,81,53.2c1.11-9.77-2-18.15-8.73-25.21a30.66,30.66,0,0,0-13.07-7.8,30.29,30.29,0,0,0-12-1.46,30.9,30.9,0,0,0-14,4.88c-1.21.77-2.37,1.63-3.53,2.48-.68.5-.69.73-.08,1.34,2.79,2.8,5.6,5.6,8.4,8.39.07.08.18.14.22.23s.28.49.23.7-.36.32-.57.36c-1.56.25-3.13.46-4.7.69L16.49,40.27,1.29,42.53C.14,42.7-.13,42.44.05,41.29.9,35.65,1.77,30,2.62,24.38c.73-4.88,1.44-9.76,2.16-14.63.22-1.53.43-3,.65-4.58a3.15,3.15,0,0,1,.09-.42c.16-.6.55-.72,1-.29.92.89,1.81,1.8,2.7,2.7,1.79,1.78,3.56,3.57,5.35,5.35.88.88,1.09.89,2,.06A49.87,49.87,0,0,1,40.94.72,54.55,54.55,0,0,1,50.41.09a47.46,47.46,0,0,1,29.82,10A48.87,48.87,0,0,1,98.54,37.9,48.42,48.42,0,0,1,100,51.14,49.11,49.11,0,0,1,84.06,86.56,49.81,49.81,0,0,1,58,99.38,31.88,31.88,0,0,1,50.24,99.84Z"></path><path d="M50.22,39.52c6.63.07,11.19,4.8,11.13,11.53-.06,5.64-5.22,10.44-11.17,10.37a11.07,11.07,0,0,1-10.82-11A10.92,10.92,0,0,1,50.22,39.52Z"></path></svg> Refresh</button>
+        					</div>
                         </div>
                     </div>
-                </div>
+				</div>
 
                 <div class="ui col mini-2 has-col-header-sm radius shadow">
                     <header class="col-header size-lg" >Templates</header>
