@@ -13,7 +13,9 @@ let DeviceIdActivated = Vue.ref(1)
 
 const helpers = {
     refresh: function () {
-        window.location.reload(true);
+        const url = new URL(window.location.href);
+        url.searchParams.set('nocache', Date.now());
+        window.location.href = url.toString();
     },
 
     calculatePercentage: function (id, value) {
