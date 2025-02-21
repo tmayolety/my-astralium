@@ -44,18 +44,18 @@ components.bar = {
             <div class="ui col align-middle-center"
              :style="{ fontSize: '12px', display: 'flex', justifyContent: 'center', textAlign: 'left', height: orientation === 'horizontal' ? '3.5em' : '' }">
                 <template v-if="orientation === 'horizontal'">
-                    <button class="ui btn mini colored secondary textColorTheme" @click="callTimeline(this.signalId, this.title, this.timeDelay)" style="width: 100%; height: 100%;">
+                <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
                         Id: {{signalId}}
                          {{deviceName}}
                         RAW: {{rawToShow}}
-                    </button>
+                    </div>
                 </template>
                 <template v-else>
-                    <button class="ui btn mini colored secondary textColorTheme flipButtonSizeBar" @click="callTimeline(this.signalId, this.title, this.timeDelay)" >
+                <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
                         Id: {{signalId}}<br/><br/>
                          {{deviceName}}<br/><br/>
                         RAW: {{rawToShow}}
-                    </button>
+                    </div>
                 </template>
             </div>
             <div class="ui col tankClass" v-on:click="flipComponent()" ref="tankElement" style="overflow:hidden!important;">

@@ -35,13 +35,15 @@ components.basicTextWithTitle = {
  
         <div v-else class="flip-col go-bt " :class="[flipClass]">
             <div class="flip-col--container">                  
-                <div class="ui col align-middle-center" style="font-size: 12px; display: flex; justify-content: center; text-align:left;" >
-                    <button class="ui btn mini colored secondary textColorTheme flipButtonSize" @click="callTimeline(this.signalId, this.title, this.timeDelay)" style="height: 100%;">
-                        Id: {{signalId}}<br>
-                        {{deviceName}}<br>
-                        RAW: {{rawToShow}}
-                    </button>
-                </div>                     
+            <div class="ui col align-middle-center"
+            style="font-size: 12px; display: flex; justify-content: center; align-items: center; text-align: center; height: 100%;">
+           <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+               Id: {{signalId}}<br>
+               {{deviceName}}<br>
+               RAW: {{rawToShow}}
+           </div>
+       </div>
+                           
 
                 <div class="ui col align-middle-center"  v-on:click="flipComponent()">
                     <div :class= '[titleClass, titleStyle]'> {{ title }}</div>
@@ -89,19 +91,18 @@ components.basicTextWithTitle = {
 
   updated() {
     if (!isNaN(this.value)) {
-        if (this.isShore) {
-            if (this.valueToCheckGen1 < 1 && this.valueToCheckGen2 < 1) {
-                this.valueToShow = parseFloat(this.value).toFixed(this.decimals);
-                this.rawToShow = this.raw;
-            }else{
-                this.valueToShow = 0;
-                this.rawToShow = 0;
-            }
-        }else{
-            this.valueToShow = parseFloat(this.value).toFixed(this.decimals);
-            this.rawToShow = this.raw;
+      if (this.isShore) {
+        if (this.valueToCheckGen1 < 1 && this.valueToCheckGen2 < 1) {
+          this.valueToShow = parseFloat(this.value).toFixed(this.decimals);
+          this.rawToShow = this.raw;
+        } else {
+          this.valueToShow = 0;
+          this.rawToShow = 0;
         }
-     
+      } else {
+        this.valueToShow = parseFloat(this.value).toFixed(this.decimals);
+        this.rawToShow = this.raw;
+      }
     }
 
     if (

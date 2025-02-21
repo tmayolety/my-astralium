@@ -26,11 +26,11 @@ components.basicHorizontalBar = {
         <div class="flip-col--container">
                                         
             <div class="ui col align-middle-center" style="font-size: 12px; display: flex; justify-content: center; text-align: left;">  
-                <button class="ui btn mini colored secondary textColorTheme" @click="callTimeline(this.signalId, this.title, this.timeDelay)" style="width: 100%;">
+            <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
                     Id: {{signalId}} <br/>
                     {{deviceName}} <br/>                                                
                     RAW: {{rawToShow}} 
-                </button>               
+                </div>               
             </div>                     
 
             <div class="ui col"  v-on:click="flipComponent()" ref="horizontalBarElement">

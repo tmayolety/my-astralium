@@ -57,24 +57,24 @@ components.multiGauge = {
         <div class="ui col align-middle-center" style="font-size: 16px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
             <div style="text-align: left;">
             <div>
-             <button class="ui btn mini colored secondary textColorTheme" @click="callTimeline(this.signalIdLeft, this.leftTitle, this.timeDelay)" style="width: 100%; height: 100%;">
+            <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
               Id:&nbsp; {{signalIdLeft}}<br/>
               &nbsp; {{deviceNameLeft}}<br/>
-              RAW:&nbsp; {{rawToShowLeft}}<br/></button>
+              RAW:&nbsp; {{rawToShowLeft}}<br/></div>
             </div>
             <br/><br/>
             <div>
-             <button class="ui btn mini colored secondary textColorTheme" @click="callTimeline(this.signalIdCenter, this.centerUnit, this.timeDelay)" style="width: 100%; height: 100%;">
+            <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
               Id:&nbsp; {{signalIdCenter}}<br/>
               &nbsp; {{deviceNameCenter}}<br/>
-              RAW:&nbsp; {{rawToShowCenter}}<br/></button>
+              RAW:&nbsp; {{rawToShowCenter}}<br/></div>
             </div>
             <br/><br/>
             <div>
-             <button class="ui btn mini colored secondary textColorTheme" @click="callTimeline(this.signalIdRight, this.rightTitle, this.timeDelay)" style="width: 100%; height: 100%;">
+            <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
               Id:&nbsp; {{signalIdRight}}<br/>
               &nbsp; {{deviceNameRight}}<br/>
-              RAW:&nbsp; {{rawToShowRight}}</button>
+              RAW:&nbsp; {{rawToShowRight}}</div>
             </div>
             </div>
         </div>
