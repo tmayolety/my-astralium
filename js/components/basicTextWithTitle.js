@@ -45,7 +45,7 @@ components.basicTextWithTitle = {
        </div>
                            
 
-                <div class="ui col align-middle-center"  v-on:click="flipComponent()">
+                <div class="ui col align-middle-center" style="overflow:hidden!important"  v-on:click="flipComponent()">
                     <div :class= '[titleClass, titleStyle]'> {{ title }}</div>
                     <div :class= '[valueClass, valueStyle]'> {{ valueToShow }} <small :class= '[valueSmallStyle]'>{{ unit }}</small></div>
                     
