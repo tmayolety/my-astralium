@@ -4,7 +4,7 @@ components.iconTextValueDigitalLine = {
                 <div class="col-40 align-middle-center">
                 <i class="ui" :class= '[iconSize, iconColor]' :id="svgId"></i>
                 </div>
-                <div class="col-150-min">
+                <div class="col-120-min">
 
                     <div class="flip-col go-bt " :class="[flipClass]">
 
@@ -27,7 +27,7 @@ components.iconTextValueDigitalLine = {
                 </div>
 
                 <div v-if="countingHours" className="col-100 align-middle-center "><span className="font-bold">{{countingHoursValue}}</span>&nbsp;<span>h</span></div>
-                <div class="col-80 align-middle-left " :class= '[valueTextColor, valueCellColor]'><span class="font-bold glow">{{valueText}}</span></div>
+                <div class="col-110 align-middle-left " :class= '[valueTextColor, valueCellColor]'><span class="font-bold glow">{{valueText}}</span></div>
                 
                 <span style="display: none;">{{value}}</span> 
                 </li>
