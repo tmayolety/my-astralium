@@ -33,9 +33,11 @@ var events = {
         });
     },
     printEventLog(json) {
+        console.log("EVENTS: ", json);
         if (json !== null) {
             json.forEach(function (item) {
                 if (typeof (item) !== 'undefined') {
+                    console.log("Procesando evento:", item);
                     if (!$("#eventLog_" + item.Id).length) {
                         if (item.ObjectId == null) {
                             item.ObjectId = item.alarmId;
@@ -49,6 +51,8 @@ var events = {
                     }
                 }
             });
+        }else{
+            console.log("No hay eventos");
         }
     },
     printHeaderEvents: function (json) {
