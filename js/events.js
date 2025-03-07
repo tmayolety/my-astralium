@@ -18,7 +18,6 @@ var events = {
             type: 'post',
             data: JSON.stringify(query)
         }).then(function(data) {
-
             $('#eventLogList').html('');
             var json = JSON.parse(data);
             events.printEventLog(json);
@@ -29,15 +28,13 @@ var events = {
                 '<div class="col-80 align-middle-center"><span>Event #</span></div>' +
                 '<div class="col-270-min align-middle-center"><span>Event Description</span></div>' +
                 '</li>');
-
         });
     },
     printEventLog(json) {
-        console.log("EVENTS: ", json);
         if (json !== null) {
             json.forEach(function (item) {
                 if (typeof (item) !== 'undefined') {
-                    console.log("Procesando evento:", item);
+                    
                     if (!$("#eventLog_" + item.Id).length) {
                         if (item.ObjectId == null) {
                             item.ObjectId = item.alarmId;
