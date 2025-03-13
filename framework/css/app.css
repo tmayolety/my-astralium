@@ -6700,6 +6700,20 @@ html[data-scheme="scheme2"] .tankDistributionColor2{ fill: rgba(0, 0, 0, 0.2); }
 html[data-scheme="scheme2"] .color-fill-type-white.navLights > svg{fill: rgb(0, 183, 255)!important;}
  
 /* ASTRALIUM 1280x800 screen */
+
+@media screen and (min-width:0px) and (max-width: 1280px) {
+  .hidden-mini {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width:1281px) and (max-width: 6000px) {
+  .hidden-xl {
+    display: none !important;
+  }
+}
+
+
 @media (max-width: 1280px) {
   nav.main-nav > ul > li a svg.ui.icon {
     width: 2rem !important;
