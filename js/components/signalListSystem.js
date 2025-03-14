@@ -1,19 +1,7 @@
 components.signalListSystem = {
   props: [],
   template: /*html*/`
-  <div v-if="isLoading" style="display: flex; justify-content: center; align-items: center; height: 100vh; width: 100vw; position: fixed; top: 0; left: 0; z-index: 9999; background-color: rgba(0, 0, 0, 0.5);">
-  <div class="loaderSignals"></div>
-</div>
 
-    <span style="width:22px; position: absolute; top: 0.3em; left:25vw; color: white;"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/></svg></span>
-    <!--
-    <div class="ui col sm-1">
-        <input  style="height: 35px; width:27vw; font-size: 16px;" class="input reportLogHeaders" placeholder="Search" @focus="showKeyboard" @input="handleInputChange($event.target.value)" />
-        <button class="ui btn sm secondary"  @click="clearSearch">Clear</button>
-    </div>
-
-    <div id="keyboard" style="width: 40vw; position: fixed; bottom: 95px; left: 50%; transform: translateX(-50%); z-index:99999; display: none;" class="simple-keyboard"></div>
--->
     <div class="ui col sm-1 gap-no pad-no bg-no h-tv-ld-30 h-tv-pt-30">
         <div class="col-content">
             <div class="col-content overflow">
@@ -24,11 +12,11 @@ components.signalListSystem = {
         </div>
     </div>
 
-<div class="col-content overflow signalListHeight" ref="scrollContainer" @scroll="loadMore()">
+<div class="col-content overflow signalListHeight">
 <div class="col-content">
 <div v-for="(signal, index) in filteredByDevice" :key="signal.Id">
     <ul class="ui table  size-sm resp dev-deviceListing"
-    :style="{ display: displayedSignals.includes(signal) ? 'block' : 'none' }"
+    :style="{ display: filteredSignals.includes(signal) ? 'block' : 'none' }"
     >       
         <li id="signalList_' + signal.Id + '">
             <div class="col-50 align-middle-center"  :class="index % 2 == 0 ? 'signalListRowEven' : 'signalListRowOdd'"><span> {{signal.Id}} </span></div>
@@ -57,12 +45,6 @@ components.signalListSystem = {
       activatedDevice: DeviceIdActivated,
       signalListData: signalsData,   
       filteredSignals: [],
-      displayedSignals: [],     
-      isLoading: false,
-      myKeyboard: null,
-      clickTimeout: null,
-      itemsToShow: 20,         
-      increment: 5,
     };
   },
   watch: {
@@ -73,15 +55,6 @@ components.signalListSystem = {
   },
   updated() {},
   mounted() {
-    //mounted keyboard start
-    const Keyboard = window.SimpleKeyboard.default;
-
-    this.myKeyboard = new Keyboard({
-      onChange: input => this.handleInputChange(input),
-    });
-
-    document.addEventListener('click', this.handleClickOutside);
-    //mounted keyboard end
 
     setTimeout(function () {
       $(".dev-deviceListing")
@@ -92,8 +65,6 @@ components.signalListSystem = {
     this.filteredSignals = this.signalListData.filter(function (el) {
       return el != null;
     });
-    // Inicialmente mostramos solo un subconjunto
-    this.displayedSignals = this.filteredSignals.slice(0, this.itemsToShow);
 
   },
   computed: {
@@ -105,121 +76,14 @@ components.signalListSystem = {
       );
     }
   },
-  beforeDestroy() {
-    document.removeEventListener('click', this.handleClickOutside);
-  },
+
   methods: {
 
     handleDeviceChange(){
       this.filteredSignals = this.signalListData.filter(signal => 
         signal.TypeInOut == 'in' && signal.Device == this.activatedDevice
       );
-      this.displayedSignals = this.filteredSignals.slice(0, this.itemsToShow);
-
-      this.$nextTick(() => {
-        const contentDiv = this.$refs.scrollContainer;
-        if (contentDiv) {
-          contentDiv.scrollTop = 0;
-        }
-      });
     },
-  
-    loadMore() {
-      if (this.itemsToShow < this.filteredByDevice.length) {
-        this.itemsToShow += this.increment;
-        this.displayedSignals = this.filteredByDevice.slice(0, this.itemsToShow);
-      }
-    },
-
-    handleInputChange(input) {
-        document.querySelector(".input").value = input;
-
-        if(this.clickTimeout){
-          clearTimeout(this.clickTimeout)
-        }
-
-        this.clickTimeout = setTimeout(() => {
-          this.searchSignals(input);
-        }, 1200);
-    },
-
-    async searchSignals(searchText) {
-      const isNumber = !isNaN(searchText);
-      if (isNumber || searchText.length > 2){
-        this.isLoading = true; 
-        try {
-          const response = await fetch(ACTIVE_SERVER + ":" + API.Port +'/signal/search', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ Search: searchText }),
-          });
-  
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-    
-          const result = await response.json();
-  
-          if (result == null) {
-            console.error('Search result is null');
-            this.filteredSignals = [];
-          } else {
-            this.filteredSignals = result;
-          }
-          this.itemsToShow = 20;
-          this.displayedSignals = this.filteredSignals   
-        } catch (error) {
-          console.error('Error fetching signals:', error);
-        } finally {
-          this.isLoading = false;
-        }
-      }else{
-        this.filteredSignals = this.signalListData.filter(function (el) {
-          return el != null;
-        });
-        this.displayedSignals = this.filteredByDevice.slice(0, this.itemsToShow);
-      }
-    },
-  
-    clearSearch() {
-      this.filteredSignals = this.signalListData.filter(function (el) {
-        return el != null;
-      });
-
-      this.itemsToShow = 20;
-      this.isLoading = true;
-      document.querySelector(".input").value = '';
-      this.hideKeyboard();
-  
-      if (this.myKeyboard) {
-        this.myKeyboard.clearInput();
-      }
-  
-      setTimeout(() => {
-        this.displayedSignals = this.filteredByDevice.slice(0, this.itemsToShow);
-        this.isLoading = false;
-      }, 300);
-
-    },
-
-    showKeyboard() {
-
-      document.querySelector('#keyboard').style.display = 'block';
-    },
-    hideKeyboard() {
-
-      document.querySelector('#keyboard').style.display = 'none';
-     
-    },
-    handleClickOutside(event) {
-        const keyboardElement = document.getElementById('keyboard');
-        const inputElement = document.querySelector('.input'); 
-        if (keyboardElement && !keyboardElement.contains(event.target) && !inputElement.contains(event.target)) {
-          this.hideKeyboard();
-        }
-      },
     typeValue(id) {
       if (id == 0) {
         return "ANALOGUE";
