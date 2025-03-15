@@ -20,7 +20,7 @@ components.inhibitListSystem = {
                 <div class="loaderSignals"></div>
             </div>
           
-            <div class="marginTopMini" style="display: flex; flex-direction: row; justify-content: left; align-items: center; gap: 4px; position: relative;">
+            <div class="marginTopMini" style="display: none; flex-direction: row; justify-content: left; align-items: center; gap: 4px; position: relative;">
             <div style="position: relative; width: 27vw;">
               <input id="keyboardInput" 
                      style="height: 35px; width: 100%; font-size: 16px; border-radius: 6px; padding-right: 30px;" 
