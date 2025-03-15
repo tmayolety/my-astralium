@@ -60,7 +60,7 @@ components.signalListSystem = {
       isLoading: false,
       myKeyboard: null,
       clickTimeout: null,
-      itemsToShow: 20,         
+      itemsToShow: 30,         
       increment: 5,
     };
   },
@@ -167,7 +167,7 @@ components.signalListSystem = {
           } else {
             this.filteredSignals = result;
           }
-          this.itemsToShow = 20;
+          this.itemsToShow = 30;
           this.displayedSignals = this.filteredSignals   
         } catch (error) {
           console.error('Error fetching signals:', error);
@@ -187,7 +187,7 @@ components.signalListSystem = {
         return el != null;
       });
 
-      this.itemsToShow = 20;
+      this.itemsToShow = 30;
       this.isLoading = true;
       document.querySelector(".input").value = '';
       this.hideKeyboard();
