@@ -20,7 +20,7 @@ components.inhibitListSystem = {
                 <div class="loaderSignals"></div>
             </div>
           
-            <div class="marginTopMini" style="display: none; flex-direction: row; justify-content: left; align-items: center; gap: 4px; position: relative;">
+            <div style="display: none; flex-direction: row; justify-content: left; align-items: center; gap: 4px; position: relative;">
             <div style="position: relative; width: 27vw;">
               <input id="keyboardInput" 
                      style="height: 35px; width: 100%; font-size: 16px; border-radius: 6px; padding-right: 30px;" 
@@ -43,7 +43,7 @@ components.inhibitListSystem = {
           
             <div id="keyboardInhibits" style="width: 40vw; position: fixed; bottom: 95px; left: 50%; transform: translateX(-50%); z-index:99999; display: none;" class="simple-keyboard"></div>
           
-            <div v-for="(group, index) in nameGroup" class="marginTopMini">
+            <div v-for="(group, index) in nameGroup">
 
                 <div class="hidden-phone" v-if="!isPhone">
                     <input type="hidden" :id="group.Name.replace(/\\s/g, '') + '_groupOverallCount'">
