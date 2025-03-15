@@ -50,7 +50,7 @@ const iconPaths = {
     settings: 'settings.svg',
     shore: 'shore.svg',
     signalList: 'signal-list.svg',
-    singleLine: 'singleLine.svg',
+    singleLine: 'single-line.svg',
     smoke: 'smoke.svg',
     smoke2: 'smoke2.svg',
     smoke3: 'smoke3.svg',
