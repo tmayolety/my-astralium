@@ -13,7 +13,7 @@ components.signalListSystem = {
       class="input reportLogHeaders" 
       placeholder="Search" 
       @focus="showKeyboard" 
-      @input="handleInputChange"
+      @input="handleInputChange($event.target.value)"
     />
         <button class="ui btn sm secondary"  @click="clearSearch">Clear</button>
     </div>
@@ -138,7 +138,10 @@ components.signalListSystem = {
       }
     },
 
-    handleInputChange() {
+    handleInputChange(input) {
+
+      this.searchText = input; 
+
       if (this.clickTimeout) {
         clearTimeout(this.clickTimeout);
       }
