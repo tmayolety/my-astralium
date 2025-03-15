@@ -139,15 +139,22 @@ components.signalListSystem = {
     },
 
     handleInputChange(input) {
-
-      this.searchText = input; 
-
+      const inputElement = document.querySelector(".input");
+      const cursorPosition = inputElement.selectionStart; // Captura la posición del cursor antes del cambio
+    
+      this.searchText = input; // Actualiza el texto en Vue
+    
+      this.$nextTick(() => {
+        inputElement.value = this.searchText; // Asegura que el input tenga el valor correcto
+        inputElement.setSelectionRange(cursorPosition + 1, cursorPosition + 1); // Restaura la posición del cursor
+      });
+    
       if (this.clickTimeout) {
         clearTimeout(this.clickTimeout);
       }
     
       this.clickTimeout = setTimeout(() => {
-        this.searchSignals(this.searchText); 
+        this.searchSignals(this.searchText);
       }, 1200);
     },
 
