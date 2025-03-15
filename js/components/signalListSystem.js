@@ -4,12 +4,12 @@ components.signalListSystem = {
   <div v-if="isLoading" style="display: flex; justify-content: center; align-items: center; height: 100vh; width: 100vw; position: fixed; top: 0; left: 0; z-index: 9999; background-color: rgba(0, 0, 0, 0.5);">
   <div class="loaderSignals"></div>
 </div>
-  <!--
+  
     <span style="width:22px; position: absolute; top: 0.3em; left:25vw; color: white;"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/></svg></span>
     <div class="ui col sm-1">
         <input  style="height: 35px; width:27vw; font-size: 16px;" class="input reportLogHeaders" placeholder="Search" @focus="showKeyboard" @input="handleInputChange($event.target.value)" />
         <button class="ui btn sm secondary"  @click="clearSearch">Clear</button>
-    </div>-->
+    </div>
 
     <div id="keyboard" style="width: 40vw; position: fixed; bottom: 95px; left: 50%; transform: translateX(-50%); z-index:99999; display: none;" class="simple-keyboard"></div>
 
