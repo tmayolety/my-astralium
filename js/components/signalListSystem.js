@@ -7,7 +7,14 @@ components.signalListSystem = {
   
     <span style="width:22px; position: absolute; top: 0.3em; left:25vw; color: white;"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/></svg></span>
     <div class="ui col sm-1">
-        <input  style="height: 35px; width:27vw; font-size: 16px;" class="input reportLogHeaders" placeholder="Search" @focus="showKeyboard" @input="handleInputChange($event.target.value)" />
+    <input 
+      v-model="searchText" 
+      style="height: 35px; width:27vw; font-size: 16px;" 
+      class="input reportLogHeaders" 
+      placeholder="Search" 
+      @focus="showKeyboard" 
+      @input="handleInputChange"
+    />
         <button class="ui btn sm secondary"  @click="clearSearch">Clear</button>
     </div>
 
@@ -54,23 +61,24 @@ components.signalListSystem = {
   data() {
     return {
       activatedDevice: DeviceIdActivated,
-      signalListData: signalsData,   
+      signalListData: signalsData,
       filteredSignals: [],
-      displayedSignals: [],     
+      displayedSignals: [],
       isLoading: false,
       myKeyboard: null,
       clickTimeout: null,
-      itemsToShow: 30,         
+      itemsToShow: 30,
       increment: 5,
+      searchText: "",
     };
   },
   watch: {
-    activatedDevice:{
+    activatedDevice: {
       handler: 'handleDeviceChange',
       deep: true,
     },
   },
-  updated() {},
+  updated() { },
   mounted() {
     //mounted keyboard start
     const Keyboard = window.SimpleKeyboard.default;
@@ -109,8 +117,8 @@ components.signalListSystem = {
   },
   methods: {
 
-    handleDeviceChange(){
-      this.filteredSignals = this.signalListData.filter(signal => 
+    handleDeviceChange() {
+      this.filteredSignals = this.signalListData.filter(signal =>
         signal.TypeInOut == 'in' && signal.Device == this.activatedDevice
       );
       this.displayedSignals = this.filteredSignals.slice(0, this.itemsToShow);
@@ -122,7 +130,7 @@ components.signalListSystem = {
         }
       });
     },
-  
+
     loadMore() {
       if (this.itemsToShow < this.filteredByDevice.length) {
         this.itemsToShow += this.increment;
@@ -130,37 +138,35 @@ components.signalListSystem = {
       }
     },
 
-    handleInputChange(input) {
-        document.querySelector(".input").value = input;
-
-        if(this.clickTimeout){
-          clearTimeout(this.clickTimeout)
-        }
-
-        this.clickTimeout = setTimeout(() => {
-          this.searchSignals(input);
-        }, 1200);
+    handleInputChange() {
+      if (this.clickTimeout) {
+        clearTimeout(this.clickTimeout);
+      }
+    
+      this.clickTimeout = setTimeout(() => {
+        this.searchSignals(this.searchText); 
+      }, 1200);
     },
 
     async searchSignals(searchText) {
       const isNumber = !isNaN(searchText);
-      if (isNumber || searchText.length > 2){
-        this.isLoading = true; 
+      if (isNumber || searchText.length > 2) {
+        this.isLoading = true;
         try {
-          const response = await fetch(ACTIVE_SERVER + ":" + API.Port +'/signal/search', {
+          const response = await fetch(ACTIVE_SERVER + ":" + API.Port + '/signal/search', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({ Search: searchText }),
           });
-  
+
           if (!response.ok) {
             throw new Error('Network response was not ok');
           }
-    
+
           const result = await response.json();
-  
+
           if (result == null) {
             console.error('Search result is null');
             this.filteredSignals = [];
@@ -168,20 +174,20 @@ components.signalListSystem = {
             this.filteredSignals = result;
           }
           this.itemsToShow = 30;
-          this.displayedSignals = this.filteredSignals   
+          this.displayedSignals = this.filteredSignals
         } catch (error) {
           console.error('Error fetching signals:', error);
         } finally {
           this.isLoading = false;
         }
-      }else{
+      } else {
         this.filteredSignals = this.signalListData.filter(function (el) {
           return el != null;
         });
         this.displayedSignals = this.filteredByDevice.slice(0, this.itemsToShow);
       }
     },
-  
+
     clearSearch() {
       this.filteredSignals = this.signalListData.filter(function (el) {
         return el != null;
@@ -191,11 +197,11 @@ components.signalListSystem = {
       this.isLoading = true;
       document.querySelector(".input").value = '';
       this.hideKeyboard();
-  
+
       if (this.myKeyboard) {
         this.myKeyboard.clearInput();
       }
-  
+
       setTimeout(() => {
         this.displayedSignals = this.filteredByDevice.slice(0, this.itemsToShow);
         this.isLoading = false;
@@ -210,15 +216,15 @@ components.signalListSystem = {
     hideKeyboard() {
 
       document.querySelector('#keyboard').style.display = 'none';
-     
+
     },
     handleClickOutside(event) {
-        const keyboardElement = document.getElementById('keyboard');
-        const inputElement = document.querySelector('.input'); 
-        if (keyboardElement && !keyboardElement.contains(event.target) && !inputElement.contains(event.target)) {
-          this.hideKeyboard();
-        }
-      },
+      const keyboardElement = document.getElementById('keyboard');
+      const inputElement = document.querySelector('.input');
+      if (keyboardElement && !keyboardElement.contains(event.target) && !inputElement.contains(event.target)) {
+        this.hideKeyboard();
+      }
+    },
     typeValue(id) {
       if (id == 0) {
         return "ANALOGUE";
