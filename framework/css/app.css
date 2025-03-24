@@ -6720,6 +6720,9 @@ html[data-scheme="scheme2"] .color-fill-type-white.navLights > svg{fill: rgb(0, 
   .paddingMini{
     padding: .3em;
   }
+  .modalHeight{
+    max-height: 320px;
+  }
   .marginTopMini{
     margin-top: -1em;
   }
@@ -6780,6 +6783,9 @@ html[data-scheme="scheme2"] .color-fill-type-white.navLights > svg{fill: rgb(0, 
   }
   .signalListHeight{
     height: 703px;
+  }
+  .modalHeight{
+    max-height: 500px;
   }
 }
 
