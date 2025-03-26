@@ -1,44 +1,48 @@
-
 <article class="paddingMini">
 
     <render class="singleLineBusBarApp">
-        <single-line-bus-bar-render v-bind="{ gen1BreakerSignalId: 4019, gen2BreakerSignalId: 5019, shorePowerBreakerSignalId: 4024 }"></single-line-bus-bar-render>
+        <single-line-bus-bar-render
+            v-bind="{ gen1BreakerSignalId: 4019, gen2BreakerSignalId: 5019, shorePowerBreakerSignalId: 4024 }"></single-line-bus-bar-render>
     </render>
 
 
-    
+
     <div class="ui grid type1 cols-mini-3 cols- pad-no gap-xl mg-bottom-mini-0  singleLineHeader ">
 
         <!-- GENERATOR 1 -->
         <div class="ui col mini-1 phone-1 gap-no pad-sm radius-top
                             grid cols-mini-1">
-                            <single-line-header-render v-bind="{componentTitle:'PORT GENERATOR', signalIdIcon:4016, signalIdBox:4019, NC:1, icon:'generators',size: '50', zeroColor:'color-fill-type-secondary-dark', oneColor:'color-fill-type-white', isAnalogue: true}" ></single-line-header-render>
+            <single-line-header-render
+                v-bind="{componentTitle:'PORT GENERATOR', signalIdIcon:4016, signalIdBox:4019, NC:1, icon:'generators',size: '50', zeroColor:'color-fill-type-secondary-dark', oneColor:'color-fill-type-white', isAnalogue: true}"></single-line-header-render>
         </div>
 
         <!--SHORE -->
         <div class="ui col mini-1 phone-1 gap-no pad-sm radius-top
                             grid cols-mini-1">
-                            <single-line-header-render v-bind="{componentTitle:'SHORE', signalIdIcon:4024, signalIdBox:4024, NC:1, iconNC: 1, icon:'shore',size: '50', isShore: true, signalIdOneToCheckGen: 4019, signalIdTwoToCheckGen: 5019,
-                            zeroColor:'color-fill-type-secondary-dark', oneColor:'color-fill-type-white'}" ></single-line-header-render>
+            <single-line-header-render
+                v-bind="{componentTitle:'SHORE', signalIdIcon:4024, signalIdBox:4024, NC:1, iconNC: 1, icon:'shore',size: '50', isShore: true, signalIdOneToCheckGen: 4019, signalIdTwoToCheckGen: 5019,
+                            zeroColor:'color-fill-type-secondary-dark', oneColor:'color-fill-type-white'}"></single-line-header-render>
         </div>
 
         <!-- GENERATOR 2 -->
         <div class="ui col mini-1 phone-1 gap-no pad-sm radius-top
                             grid cols-mini-1">
-                            <single-line-header-render v-bind="{componentTitle:'STBD GENERATOR', signalIdIcon:5016, signalIdBox:5019, NC:1, icon:'generators',size: '50', zeroColor:'color-fill-type-secondary-dark', oneColor:'color-fill-type-white', isAnalogue: true}" ></single-line-header-render>
+            <single-line-header-render
+                v-bind="{componentTitle:'STBD GENERATOR', signalIdIcon:5016, signalIdBox:5019, NC:1, icon:'generators',size: '50', zeroColor:'color-fill-type-secondary-dark', oneColor:'color-fill-type-white', isAnalogue: true}"></single-line-header-render>
         </div>
     </div>
 
 
-    <div class="ui grid type1 cols-mini-3 cols-xl-3 pad-no gap-xl mg-top-mini-2-neg mg-top-xl-2-neg align-baseline singleLineApp">
+    <div
+        class="ui grid type1 cols-mini-3 cols-xl-3 pad-no gap-xl mg-top-mini-2-neg mg-top-xl-2-neg align-baseline singleLineApp">
         <!--PORT GENERATOR -->
         <div class="ui col mini-1 gap-no pad-mini align-start radius-bottom shadow
                     grid type1 cols-mini-6 cols-phone-6 marginTopSingleMini">
 
             <div class="ui col h-xl-70 h-mini-65 mini-2">
-                        <basic-text-with-title-render v-bind="{
-                            signalId: 4015,
-                            title: 'Av. Gen Current',
+                <basic-text-with-title-render v-bind="{
+                            signalId: 4019,
+                            title: 'Current L1',
                             unit: 'A',
                             limitFlagSignalId: 11190,
                             timeDelay: 3000,
@@ -51,7 +55,38 @@
                         }"></basic-text-with-title-render>
             </div>
             <div class="ui col h-xl-70 h-mini-65 mini-2">
-                    <basic-text-with-title-render v-bind="{
+                <basic-text-with-title-render v-bind="{
+                    signalId: 4020,
+                    title: 'Current L2',
+                    unit: 'A',
+                    limitFlagSignalId: 11190,
+                    timeDelay: 3000,
+                    titleStyle: 'text-size-8 align-center',
+                    valueStyle: 'text-size-15 align-center font-bold',
+                    valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
+                    limitsEditable:0,
+                    valueMode: 'escalated',
+                    
+                }"></basic-text-with-title-render>
+            </div>
+            <div class="ui col h-xl-70 h-mini-65 mini-2">
+                <basic-text-with-title-render v-bind="{
+            signalId: 4021,
+            title: 'Current L3',
+            unit: 'A',
+            limitFlagSignalId: 11190,
+            timeDelay: 3000,
+            titleStyle: 'text-size-8 align-center',
+            valueStyle: 'text-size-15 align-center font-bold',
+            valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
+            limitsEditable:0,
+            valueMode: 'escalated',
+            
+        }"></basic-text-with-title-render>
+            </div>
+
+            <div class="ui col h-xl-70 h-mini-65 mini-3">
+                <basic-text-with-title-render v-bind="{
                         signalId: 4025,
                         title: 'Reactive Power',
                         unit: 'kVAr',
@@ -64,12 +99,12 @@
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
 
-            
 
-          
 
-            <div class="ui col mini-2 h-xl-70 h-mini-65">
-                    <basic-text-with-title-render v-bind="{
+
+
+            <div class="ui col mini-3 h-xl-70 h-mini-65">
+                <basic-text-with-title-render v-bind="{
                         signalId: 4009,
                         title: 'Frequency BB',
                         unit: 'Hz',
@@ -83,7 +118,7 @@
             </div>
 
             <div class="ui col mini-3 h-xl-70 h-mini-65">
-                    <basic-text-with-title-render v-bind="{
+                <basic-text-with-title-render v-bind="{
                         signalId: 4006,
                         title: 'Active Power',
                         unit: 'kW',
@@ -107,8 +142,8 @@
                     valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
                     limitsEditable:0,
                     valueMode: 'escalated'}"></basic-text-with-title-render>
-        </div>
-           
+            </div>
+
             <div class="ui col mini-3 h-xl-70 h-mini-65">
                 <basic-text-with-title-render v-bind="{
                             signalId: 4059,
@@ -182,7 +217,7 @@
         <!-- SHORE -->
         <div class="ui col mini-1 gap-no pad-mini align-start radius-bottom shadow
                             grid type1 cols-mini-6 cols-phone-6">
-        
+
             <div class="ui col mini-2 h-xl-70 h-mini-85">
                 <basic-text-with-title-render v-bind="{
                                 signalId: 4005,
@@ -374,7 +409,7 @@
                             signalIdOneToCheckGen: 4019,
                             signalIdTwoToCheckGen: 5019}"></basic-text-with-title-render>
             </div>
-        
+
         </div>
 
         <!-- GENERATOR 2 -->
@@ -383,8 +418,23 @@
 
                     <div class="ui col h-xl-70 h-mini-65 mini-2">
                         <basic-text-with-title-render v-bind="{
-                            signalId: 5015,
-                            title: 'Av. Gen Current',
+                                    signalId: 5019,
+                                    title: 'Current L1',
+                                    unit: 'A',
+                                    limitFlagSignalId: 11190,
+                                    timeDelay: 3000,
+                                    titleStyle: 'text-size-8 align-center',
+                                    valueStyle: 'text-size-15 align-center font-bold',
+                                    valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
+                                    limitsEditable:0,
+                                    valueMode: 'escalated',
+                                    
+                                }"></basic-text-with-title-render>
+                    </div>
+                    <div class="ui col h-xl-70 h-mini-65 mini-2">
+                        <basic-text-with-title-render v-bind="{
+                            signalId: 5020,
+                            title: 'Current L2',
                             unit: 'A',
                             limitFlagSignalId: 11190,
                             timeDelay: 3000,
@@ -395,9 +445,23 @@
                             valueMode: 'escalated',
                             
                         }"></basic-text-with-title-render>
-            </div>
-            <div class="ui col h-xl-70 h-mini-65 mini-2">
-                    <basic-text-with-title-render v-bind="{
+                    </div>
+                    <div class="ui col h-xl-70 h-mini-65 mini-3">
+                        <basic-text-with-title-render v-bind="{
+                    signalId: 5021,
+                    title: 'Current L3',
+                    unit: 'A',
+                    limitFlagSignalId: 11190,
+                    timeDelay: 3000,
+                    titleStyle: 'text-size-8 align-center',
+                    valueStyle: 'text-size-15 align-center font-bold',
+                    valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
+                    limitsEditable:0,
+                    valueMode: 'escalated',
+                    
+                }"></basic-text-with-title-render>
+            <div class="ui col h-xl-70 h-mini-65 mini-3">
+                <basic-text-with-title-render v-bind="{
                         signalId: 5025,
                         title: 'Reactive Power',
                         unit: 'kVAr',
@@ -410,12 +474,12 @@
                         valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
 
-            
 
-          
+
+
 
             <div class="ui col mini-2 h-xl-70 h-mini-65">
-                    <basic-text-with-title-render v-bind="{
+                <basic-text-with-title-render v-bind="{
                         signalId: 5009,
                         title: 'Frequency BB',
                         unit: 'Hz',
@@ -429,7 +493,7 @@
             </div>
 
             <div class="ui col mini-3 h-xl-70 h-mini-65">
-                    <basic-text-with-title-render v-bind="{
+                <basic-text-with-title-render v-bind="{
                         signalId: 5006,
                         title: 'Active Power',
                         unit: 'kW',
@@ -453,8 +517,8 @@
                     valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',
                     limitsEditable:0,
                     valueMode: 'escalated'}"></basic-text-with-title-render>
-        </div>
-           
+            </div>
+
             <div class="ui col mini-3 h-xl-70 h-mini-65">
                 <basic-text-with-title-render v-bind="{
                             signalId: 5059,
@@ -522,7 +586,7 @@
                             valueSmallStyle: 'text-size-10 font-regular clr-subvalue-ui',                
                             valueMode: 'escalated'}"></basic-text-with-title-render>
             </div>
-    
+
 
 
 
@@ -532,6 +596,3 @@
     </div>
 
 </article>
-
-
-
