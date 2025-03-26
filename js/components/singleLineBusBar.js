@@ -65,12 +65,12 @@ components.singleLineBusBar = {
     }, methods: {
         renderBusbar() {
 
-            this.gen1Class = this.gen1BreakerValue == 1 ? 'active' : '';
-            this.gen2Class = this.gen2BreakerValue == 1 ? 'active' : '';
-            this.shorePowerClass = (this.shorePowerBreakerValue > 1 && this.gen1BreakerValue < 1 && this.gen2BreakerValue < 1) ? 'active' : '';
+            this.gen1Class = this.gen1BreakerValue >= 1 ? 'active' : '';
+            this.gen2Class = this.gen2BreakerValue >= 1 ? 'active' : '';
+            this.shorePowerClass = (this.shorePowerBreakerValue >= 1 && this.gen1BreakerValue < 1 && this.gen2BreakerValue < 1) ? 'active' : '';
 
             
-            this.gen1Gen2Class = (this.gen1BreakerValue == 1 || this.gen2BreakerValue == 1 || this.shorePowerBreakerValue > 1) ? 'active' : '';
+            this.gen1Gen2Class = (this.gen1BreakerValue >= 1 || this.gen2BreakerValue >= 1 || this.shorePowerBreakerValue >= 1) ? 'active' : '';
 
         },
         reset() {
