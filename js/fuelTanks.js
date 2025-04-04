@@ -1,5 +1,43 @@
 $.getScript("js/tanks.js");
-$("#FuelTanks_layout").load("src/ga/Black/fuelTanks.svg");
+
+$("#FuelTanks_layout").load("src/ga/Black/fuelTanks.svg", function() {
+  const svg = document.querySelector("#FuelTanks_layout svg");
+  const ns = "http://www.w3.org/2000/svg";
+
+  const numbers = [
+    { x: 220, y: 550, text: "1", index: 0 },
+    { x: 725, y: 450, text: "2", index: 1 },
+    { x: 725, y: 560, text: "3", index: 2 },
+    { x: 1110, y: 500, text: "4", index: 3 },
+    { x: 1110, y: 610, text: "5", index: 4 },
+    { x: 1360, y: 550, text: "6", index: 5 },
+    { x: 520, y: 380, text: "7", index: 6 },
+    { x: 520, y: 730, text: "8", index: 7 },
+  ];
+
+  numbers.forEach(({ x, y, text, index }) => {
+    const el = document.createElementNS(ns, "text");
+    el.setAttribute("x", x);
+    el.setAttribute("y", y);
+    el.setAttribute("font-size", "48");
+    el.setAttribute("class", "tank-label");
+    el.setAttribute("font-family", "Arial");
+    el.setAttribute("font-weight", "bold");
+    el.setAttribute("style", "cursor: pointer;");
+    el.textContent = text;
+
+    // Añadir onclick que llama a tanks.tankHighlight
+    el.addEventListener("click", function () {
+      const tanksvg = $("#FuelTanks_layout svg");
+      const tank = tanksvg.find("g[onclick]").eq(index); // encuentra el <g> correcto
+      tanks.tankHighlight("#fuelTank", index, tank);
+    });
+
+    svg.appendChild(el);
+  });
+});
+
+
 
 var screen = {
   renderData: function (msg) {

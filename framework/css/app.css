@@ -6698,6 +6698,19 @@ html[data-scheme="scheme2"] .tankDistributionColor{ fill: rgba(0, 0, 0, 0.1); }
 html[data-scheme="scheme1"] .tankDistributionColor2{ fill: rgba(255, 255, 255, 0.2); }
 html[data-scheme="scheme2"] .tankDistributionColor2{ fill: rgba(0, 0, 0, 0.2); }
 html[data-scheme="scheme2"] .color-fill-type-white.navLights > svg{fill: rgb(0, 183, 255)!important;}
+
+html[data-scheme="scheme1"] .tank-label {
+  fill: white;
+  stroke: black;
+  stroke-width: 1px;
+}
+
+html[data-scheme="scheme2"] .tank-label {
+  fill: black;
+  stroke: white;
+  stroke-width: 1px;
+}
+
  
 /* ASTRALIUM 1280x800 screen */
 @media (max-width: 1280px) {
