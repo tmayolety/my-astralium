@@ -272,6 +272,10 @@
               "file": "iconTextValueDigitalLine"
             },
             {
+              "label": "icon-text-value-analogue-line-render",
+              "file": "iconTextValueAnalogueLine"
+            },
+            {
               "label": "icon-two-options-digital-line-render",
               "file": "iconTwoOptionsDigitalLine"
             }

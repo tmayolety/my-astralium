@@ -47,6 +47,19 @@
                             </div>
                         </div>
 
+                        <div class="ui col mini-1 has-col-header-med">
+                            <header class="col-header size-med">Shaft Temperatures</header>
+                            <div class="col-content ">
+                                <ul class="ui table size-mini resp">
+                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 2029, size: '20', unit: 'C', title: 'Port Shaft Temperature', icon: 'temps', timeDelay: 3000,}"></icon-text-value-analogue-line-render>
+                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 2029, size: '20', unit: 'C', title: 'Stbd Shaft Temperature', icon: 'temps', timeDelay: 3000,}"></icon-text-value-analogue-line-render>
+                                
+                                </ul>
+                            </div>
+                        </div>
+
+
+
                     </div>
 
 
@@ -114,7 +127,7 @@
             </div>
         </div>
 
-        <div class="ui grid type1 cols-mini-2 hidden-xl gap-med ">
+        <div class="ui grid type1 cols-mini-2 hidden-xl gap-med">
 
                 <div class="ui grid cols-mini-1 bg-no pad-no gap-med mini-1">
 
@@ -144,6 +157,17 @@
                                     <icon-text-value-digital-line-render v-bind="{  signalId: 101, title: 'Hamann Sewage System Fault Treatment Plant', icon: 'tripping', size: '20', zeroText: 'ALARM', zeroColor: 'danger', oneText: 'OK', oneColor: 'success', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
                                     <icon-text-value-digital-line-render v-bind="{  signalId: 102, title: 'Hamann Sewage System Fault Discharge Pump', icon: 'tripping', size: '20', zeroText: 'OK', zeroColor: 'success', oneText: 'ALARM', oneColor: 'danger', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
                                     <icon-text-value-digital-line-render v-bind="{  signalId: 103, title: 'Hamann Sewage System Release Transfer', icon: 'onOff', size: '20', zeroText: 'STOPPED', zeroColor: 'secondary', oneText: 'TRANSFERING', oneColor: 'primary', sizeWidthTitle: 'large' }"></icon-text-value-digital-line-render>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="ui col mini-1 has-col-header-med">
+                            <header class="col-header size-med">Shaft Temperatures</header>
+                            <div class="col-content ">
+                                <ul class="ui table size-mini resp">
+                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 121, size: '20', unit: 'C', title: 'Port Shaft Temperature', icon: 'temps', timeDelay: 3000,}"></icon-text-value-analogue-line-render>
+                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 122, size: '20', unit: 'C', title: 'Stbd Shaft Temperature', icon: 'temps', timeDelay: 3000,}"></icon-text-value-analogue-line-render>
+                                
                                 </ul>
                             </div>
                         </div>
