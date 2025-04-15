@@ -51,8 +51,8 @@
                             <header class="col-header size-med">Shaft Temperatures</header>
                             <div class="col-content ">
                                 <ul class="ui table size-mini resp">
-                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 2029, size: '20', unit: 'C', title: 'Port Shaft Temperature', icon: 'temps', timeDelay: 3000,}"></icon-text-value-analogue-line-render>
-                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 2029, size: '20', unit: 'C', title: 'Stbd Shaft Temperature', icon: 'temps', timeDelay: 3000,}"></icon-text-value-analogue-line-render>
+                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 121, size: '20', unit: 'C', title: 'Port Shaft Temperature', icon: 'temps', timeDelay: 3000, valueMode:'escalated'}"></icon-text-value-analogue-line-render>
+                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 122, size: '20', unit: 'C', title: 'Stbd Shaft Temperature', icon: 'temps', timeDelay: 3000, valueMode:'escalated'}"></icon-text-value-analogue-line-render>
                                 
                                 </ul>
                             </div>
@@ -165,14 +165,12 @@
                             <header class="col-header size-med">Shaft Temperatures</header>
                             <div class="col-content ">
                                 <ul class="ui table size-mini resp">
-                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 121, size: '20', unit: 'C', title: 'Port Shaft Temperature', icon: 'temps', timeDelay: 3000,}"></icon-text-value-analogue-line-render>
-                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 122, size: '20', unit: 'C', title: 'Stbd Shaft Temperature', icon: 'temps', timeDelay: 3000,}"></icon-text-value-analogue-line-render>
+                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 121, size: '20', unit: 'C', title: 'Port Shaft Temperature', icon: 'temps', timeDelay: 3000, valueMode:'escalated'}"></icon-text-value-analogue-line-render>
+                                    <icon-text-value-analogue-line-render v-bind="{ signalId: 122, size: '20', unit: 'C', title: 'Stbd Shaft Temperature', icon: 'temps', timeDelay: 3000, valueMode:'escalated'}"></icon-text-value-analogue-line-render>
                                 
                                 </ul>
                             </div>
                         </div>
-
-                        
 
                     </div>
 
