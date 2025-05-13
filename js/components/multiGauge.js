@@ -256,7 +256,7 @@ if (!isNaN(this.rawCenter) && !isNaN(this.rpmValue)) {
   if (!isNaN(this.rawLeft) && !isNaN(this.dbLeftValue)) {
     const msw = this.dbLeftValue;
     const lsw = this.rawLeft;
-    const combined = ((msw << 16) | lsw) / 1000;
+    const combined = ((msw << 16) | lsw) / 100;
 
     this.leftValue = combined;
     this.leftValueShow = combined.toFixed(this.leftValueDecimals);
