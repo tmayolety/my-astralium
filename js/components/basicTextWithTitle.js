@@ -3,6 +3,7 @@ components.basicTextWithTitle = {
   props: [
     "signalId",
     "signalId2",
+    "signalIdDB",
     "title",
     "titleStyle",
     "valueStyle",
@@ -86,6 +87,7 @@ components.basicTextWithTitle = {
       rawToShow: null,
       signalData: signalsData[this.signalId],
       deviceName: null,
+      dbValue: valueRaw[this.signalIdDB],
     };
   },
 
@@ -100,8 +102,20 @@ components.basicTextWithTitle = {
           this.rawToShow = 0;
         }
       } else {
-        this.valueToShow = parseFloat(this.value).toFixed(this.decimals);
-        this.rawToShow = this.raw;
+        // Si tiene signalIdDB definido y dbValue es un número
+        if (this.signalIdDB && !isNaN(this.dbValue) && !isNaN(this.raw)) {
+          const msw = this.dbValue;
+          const lsw = this.raw;
+          const combined = ((msw << 16) | lsw) / 100;
+
+          this.value = combined;
+          this.valueToShow = combined.toFixed(this.valueDecimals);
+          this.rawToShow = `MSW: ${msw}, LSW: ${lsw}`;
+        } else {
+          // Caso normal sin MSW/LSW
+          this.valueToShow = parseFloat(this.value).toFixed(this.valueDecimals);
+          this.rawToShow = this.raw;
+        }
       }
     }
 
