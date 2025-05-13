@@ -233,10 +233,10 @@ components.multiGauge = {
   updated() {
 
     if (!isNaN(this.rawCenter) && !isNaN(this.rpmValue)) {
-      const msw = this.rawCenter;
-      const lsw = this.rpmValue;
+      const msw = this.rpmValue;
+      const lsw = this.rawCenter;
       const combined = ((msw << 16) | lsw) / 1000;
-      this.centerValueShow = combined.toFixed(this.centerValueDecimals);
+      this.centerValueShow = combined
       this.centerValue = combined;
       this.gaugeCenter.option("value", this.centerValueShow);
     } else if (!isNaN(this.centerValue)) {
