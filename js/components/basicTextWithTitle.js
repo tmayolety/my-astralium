@@ -20,6 +20,8 @@ components.basicTextWithTitle = {
     "isShore",
     "signalIdOneToCheckGen",
     "signalIdTwoToCheckGen",
+    "scalingFactor",
+
   ],
   template: /*html*/ `
 
@@ -106,7 +108,8 @@ components.basicTextWithTitle = {
         if (this.signalIdDB && !isNaN(this.dbValue) && !isNaN(this.raw)) {
           const msw = this.dbValue;
           const lsw = this.raw;
-          const combined = ((msw << 16) | lsw) / 1000;
+          const scale = this.scalingFactor ?? 1000;
+          const combined = ((msw << 16) | lsw) / scale;
 
           this.value = combined;
           this.valueToShow = combined.toFixed(this.valueDecimals);
