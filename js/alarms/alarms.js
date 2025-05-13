@@ -248,9 +248,7 @@ var alarms = {
             json.forEach(function(item) {
                 alarms.printAlarmLog(item);
             });
-
-
-
+            
         });
     },
     updateAlarmLog() {

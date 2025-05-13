@@ -7,6 +7,7 @@ components.multiGauge = {
     "centerUnit",
     "leftUnit",
     "rightUnit",
+    "rpmId",
 
     "gaugeCenterSize",
     "gaugeCenterPos",
@@ -122,6 +123,7 @@ components.multiGauge = {
             <span style="display: none;">{{rightValue}}</span>
             <span style="display: none;">{{leftValue}}</span>
             <span style="display: none;">{{centerValue}}</span>
+            <span style="display: none;">{{rpmValue}}</span>
 `,
   data() {
     return {
@@ -177,6 +179,7 @@ components.multiGauge = {
       widthClass: "w-med-" + this.width,
       flipClass: "event-click",
       rawCenter: valueRaw[this.signalIdCenter],
+      rpmValue: valueRaw[this.rpmId],
       rawLeft: valueRaw[this.signalIdLeft],
       rawRight: valueRaw[this.signalIdRight],
       rawToShowCenter: null,
@@ -228,13 +231,29 @@ components.multiGauge = {
     },
   },
   updated() {
-    if (!isNaN(this.centerValue)) {
+
+    if (!isNaN(this.rawCenter) && !isNaN(this.rpmValue)) {
+      const msw = this.rawCenter;
+      const lsw = this.rpmValue;
+      const combined = ((msw << 16) | lsw) / 1000;
+      this.centerValueShow = combined.toFixed(this.centerValueDecimals);
+      this.centerValue = combined;
+      this.gaugeCenter.option("value", this.centerValueShow);
+    } else if (!isNaN(this.centerValue)) {
       this.centerValueShow = parseFloat(this.centerValue).toFixed(
         this.centerDecimals
       );
       this.rawToShowCenter = this.rawCenter;
       this.gaugeCenter.option("value", this.centerValueShow);
     }
+
+    //if (!isNaN(this.centerValue)) {
+    //  this.centerValueShow = parseFloat(this.centerValue).toFixed(
+    //    this.centerDecimals
+    //  );
+    //  this.rawToShowCenter = this.rawCenter;
+    //  this.gaugeCenter.option("value", this.centerValueShow);
+    //}
 
     if (!isNaN(this.leftValue)) {
       this.leftValueShow = parseFloat(this.leftValue).toFixed(
