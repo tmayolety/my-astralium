@@ -232,21 +232,20 @@ components.multiGauge = {
   },
   updated() {
 
-    if (!isNaN(this.rawCenter) && !isNaN(this.rpmValue)) {
-      const msw = this.rpmValue;
-      const lsw = this.rawCenter;
-      const combined = ((msw << 16) | lsw) / 1000;
-      this.centerValueShow = combined
-      this.centerValue = combined;
-      this.gaugeCenter.option("value", this.centerValueShow);
-    } else if (!isNaN(this.centerValue)) {
-      this.centerValueShow = parseFloat(this.centerValue).toFixed(
-        this.centerDecimals
-      );
-      this.rawToShowCenter = this.rawCenter;
-      this.gaugeCenter.option("value", this.centerValueShow);
-    }
+if (!isNaN(this.rawCenter) && !isNaN(this.rpmValue)) {
+  const msw = this.rpmValue; // valor alto
+  const lsw = this.rawCenter; // valor bajo
+  const combined = ((msw << 16) | lsw) / 1000;
 
+  this.centerValue = combined;
+  this.centerValueShow = combined.toFixed(this.centerValueDecimals);
+  this.rawToShowCenter = `MSW: ${msw}, LSW: ${lsw}`;
+  this.gaugeCenter.option("value", this.centerValueShow);
+} else if (!isNaN(this.centerValue)) {
+  this.centerValueShow = parseFloat(this.centerValue).toFixed(this.centerValueDecimals);
+  this.rawToShowCenter = this.rawCenter;
+  this.gaugeCenter.option("value", this.centerValueShow);
+}
     //if (!isNaN(this.centerValue)) {
     //  this.centerValueShow = parseFloat(this.centerValue).toFixed(
     //    this.centerDecimals
