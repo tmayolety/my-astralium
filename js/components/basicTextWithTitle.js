@@ -106,7 +106,7 @@ components.basicTextWithTitle = {
         if (this.signalIdDB && !isNaN(this.dbValue) && !isNaN(this.raw)) {
           const msw = this.dbValue;
           const lsw = this.raw;
-          const combined = ((msw << 16) | lsw) / 100;
+          const combined = ((msw << 16) | lsw) / 1000;
 
           this.value = combined;
           this.valueToShow = combined.toFixed(this.valueDecimals);
