@@ -8,6 +8,8 @@ components.multiGauge = {
     "leftUnit",
     "rightUnit",
     "rpmId",
+    "dbLeftId",
+    "dbRightId",
 
     "gaugeCenterSize",
     "gaugeCenterPos",
@@ -124,6 +126,8 @@ components.multiGauge = {
             <span style="display: none;">{{leftValue}}</span>
             <span style="display: none;">{{centerValue}}</span>
             <span style="display: none;">{{rpmValue}}</span>
+            <span style="display: none;">{{dbLeftValue}}</span>
+            <span style="display: none;">{{dbRightValue}}</span>
 `,
   data() {
     return {
@@ -180,6 +184,8 @@ components.multiGauge = {
       flipClass: "event-click",
       rawCenter: valueRaw[this.signalIdCenter],
       rpmValue: valueRaw[this.rpmId],
+      dbLeftValue: valueRaw[this.dbLeftId],
+      dbRightValue: valueRaw[this.dbRightId],
       rawLeft: valueRaw[this.signalIdLeft],
       rawRight: valueRaw[this.signalIdRight],
       rawToShowCenter: null,
@@ -246,29 +252,36 @@ if (!isNaN(this.rawCenter) && !isNaN(this.rpmValue)) {
   this.rawToShowCenter = this.rawCenter;
   this.gaugeCenter.option("value", this.centerValueShow);
 }
-    //if (!isNaN(this.centerValue)) {
-    //  this.centerValueShow = parseFloat(this.centerValue).toFixed(
-    //    this.centerDecimals
-    //  );
-    //  this.rawToShowCenter = this.rawCenter;
-    //  this.gaugeCenter.option("value", this.centerValueShow);
-    //}
 
-    if (!isNaN(this.leftValue)) {
-      this.leftValueShow = parseFloat(this.leftValue).toFixed(
-        this.leftDecimals
-      );
-      this.rawToShowLeft = this.rawLeft;
-      this.gaugeLeft.option("value", this.leftValueShow);
-    }
+  if (!isNaN(this.rawLeft) && !isNaN(this.dbLeftValue)) {
+    const msw = this.dbLeftValue;
+    const lsw = this.rawLeft;
+    const combined = ((msw << 16) | lsw) / 1000;
 
-    if (!isNaN(this.rightValue)) {
-      this.rightValueShow = parseFloat(this.rightValue).toFixed(
-        this.rightDecimals
-      );
-      this.rawToShowRight = this.rawRight;
-      this.gaugeRight.option("value", this.rightValueShow);
-    }
+    this.leftValue = combined;
+    this.leftValueShow = combined.toFixed(this.leftValueDecimals);
+    this.rawToShowLeft = `MSW: ${msw}, LSW: ${lsw}`;
+    this.gaugeLeft.option("value", this.leftValueShow);
+  } else if (!isNaN(this.leftValue)) {
+    this.leftValueShow = parseFloat(this.leftValue).toFixed(this.leftValueDecimals);
+    this.rawToShowLeft = this.rawLeft;
+    this.gaugeLeft.option("value", this.leftValueShow);
+  }
+
+  if (!isNaN(this.rawRight) && !isNaN(this.dbRightValue)) {
+    const msw = this.dbRightValue;
+    const lsw = this.rawRight;
+    const combined = ((msw << 16) | lsw) / 1000;
+
+    this.rightValue = combined;
+    this.rightValueShow = combined.toFixed(this.rightValueDecimals);
+    this.rawToShowRight = `MSW: ${msw}, LSW: ${lsw}`;
+    this.gaugeRight.option("value", this.rightValueShow);
+  } else if (!isNaN(this.rightValue)) {
+    this.rightValueShow = parseFloat(this.rightValue).toFixed(this.rightValueDecimals);
+    this.rawToShowRight = this.rawRight;
+    this.gaugeRight.option("value", this.rightValueShow);
+  }
 
     if (this.CHasLimits) {
       let result = {};
