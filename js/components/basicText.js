@@ -1,5 +1,5 @@
 components.basicText = {
-  props: ["signalId", "unit", "valueMode", "valueDecimals"],
+  props: ["signalId", "signalIdDB", "unit", "valueMode", "valueDecimals","scalingFactor"],
   template: /*html*/ `
     <h3 class="ui font-bold h3" ref="basicTextElement">{{ valueToShow }} 
     <small class="font-regular clr-subvalue-ui">{{ unit }}</small>
@@ -10,6 +10,7 @@ components.basicText = {
     return {
       value: null,
       valueToShow: null,
+      dbValue: valueRaw[this.signalIdDB],
     };
   },
 
@@ -39,7 +40,17 @@ components.basicText = {
 
   },
   updated() {
-    if (!isNaN(this.value)) {
+    if (this.signalIdDB && !isNaN(this.dbValue) && !isNaN(this.value)) {
+      const msw = this.dbValue;
+      const lsw = this.value;
+      const scale = this.scalingFactor ?? 1000;
+      const combined = ((msw << 16) | lsw) / scale;
+
+      this.value = combined;
+      this.valueToShow = combined.toFixed(this.decimals);
+    } 
+    // Caso estándar sin signalIdDB
+    else if (!isNaN(this.value)) {
       this.valueToShow = parseFloat(this.value).toFixed(this.decimals);
     }
   },
