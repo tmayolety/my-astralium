@@ -44,7 +44,7 @@ components.basicText = {
     if (this.signalIdDB && !isNaN(this.dbValue) && !isNaN(this.value)) {
       const msw = this.dbValue;
       const lsw = this.value;
-      const scale = this.scalingFactor ?? 1000;
+      const scale = this.scalingFactor ?? 100;
       const combined = ((msw << 16) | lsw) / scale;
 
       this.value = combined;
