@@ -15,13 +15,8 @@ components.basicText = {
       valueToShow: null,
       combined: null,
       decimals: typeof this.valueDecimals == "undefined" ? 0 : this.valueDecimals,
+      dbValue: valueRaw[this.signalIdDB],
     };
-  },
-
-  computed: {
-    dbValue() {
-      return valueRaw[this.signalIdDB]; // MSW dinámico
-    }
   },
 
   mounted() {
