@@ -4,6 +4,7 @@ components.basicText = {
     <h3 class="ui font-bold h3" ref="basicTextElement">{{ valueToShow }} 
     <small class="font-regular clr-subvalue-ui">{{ unit }}</small>
     <div style="display: none">{{ value }}</div>
+    <div style="display: none">{{ dbValue }}</div>
     </h3>`,
 
   data() {
