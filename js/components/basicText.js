@@ -11,10 +11,16 @@ components.basicText = {
     return {
       value: null,
       valueToShow: null,
-      dbValue: valueRaw[this.signalIdDB],
       combined: null,
+      decimals: typeof this.valueDecimals == "undefined" ? 0 : this.valueDecimals,
     };
   },
+    computed: {
+    dbValue() {
+      return valueRaw[this.signalIdDB]; // ← se evalúa dinámicamente por instancia
+    }
+  },
+
 
   mounted() {
     switch (this.valueMode) {
@@ -42,8 +48,10 @@ components.basicText = {
 
   },
   updated() {
-    if (this.signalIdDB && !isNaN(this.dbValue) && !isNaN(this.value)) {
-      const msw = this.dbValue;
+     const dbVal = valueRaw[this.signalIdDB]; // ← accede dinámicamente aquí también
+
+    if (this.signalIdDB && !isNaN(dbVal) && !isNaN(this.value)) {
+      const msw = dbVal;
       const lsw = this.value;
       const scale = this.scalingFactor ?? 100;
       this.combined = ((msw << 16) | lsw) / scale;
@@ -51,7 +59,6 @@ components.basicText = {
       this.value = this.combined;
       this.valueToShow = this.combined.toFixed(this.decimals);
     } 
-    // Caso estándar sin signalIdDB
     else if (!isNaN(this.value)) {
       this.valueToShow = parseFloat(this.value).toFixed(this.decimals);
     }
