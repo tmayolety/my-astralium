@@ -12,6 +12,7 @@ components.basicText = {
       value: null,
       valueToShow: null,
       dbValue: valueRaw[this.signalIdDB],
+      combined: null,
     };
   },
 
@@ -45,10 +46,10 @@ components.basicText = {
       const msw = this.dbValue;
       const lsw = this.value;
       const scale = this.scalingFactor ?? 100;
-      const combined = ((msw << 16) | lsw) / scale;
+      this.combined = ((msw << 16) | lsw) / scale;
 
-      this.value = combined;
-      this.valueToShow = combined.toFixed(this.decimals);
+      this.value = this.combined;
+      this.valueToShow = this.combined.toFixed(this.decimals);
     } 
     // Caso estándar sin signalIdDB
     else if (!isNaN(this.value)) {
