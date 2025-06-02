@@ -53,6 +53,8 @@ if (!isNaN(parseInt(FuelTotalRenderDiv.getAttribute("width")))) {
 }
 var FuelInterval;
 
+let isFetchingFuel = false;
+
 if (FuelTotalRender == true) {
   const dataFuel = {
     datasets: [
@@ -171,6 +173,10 @@ if (FuelTotalRender == true) {
   }
 
   function getTimelineData(chart, time, rate) {
+
+    if (isFetchingFuel) return; 
+    isFetchingFuel = true;
+
     var data = JSON.stringify({
       SignalId: [36, 34, 35, 31, 32, 33, 37, 38],
       Time: time,
@@ -216,6 +222,9 @@ if (FuelTotalRender == true) {
         console.error("Request failed: " + textStatus + ", " + errorThrown);
         console.log("Response status: " + jqXHR.status);
         console.log("Response text: " + jqXHR.responseText);
+      })
+      .always(() => {
+        isFetchingFuel = false; // Libera el lock
       });
   }
 
@@ -250,6 +259,7 @@ if (!isNaN(parseInt(FuelTotalRenderDivMini.getAttribute("width")))) {
   var FuelTotalRenderMini = false;
 }
 var FuelIntervalMini;
+let isFetchingFuelMini = false;
 
 if (FuelTotalRenderMini == true) {
   const dataFuel = {
@@ -378,6 +388,10 @@ if (FuelTotalRenderMini == true) {
   }
 
   function getTimelineData(chart, time, rate) {
+
+    if (isFetchingFuelMini) return; 
+    isFetchingFuelMini = true;
+
     var data = JSON.stringify({
       SignalId: [36, 34, 35, 31, 32, 33, 37, 38],
       Time: time,
@@ -423,6 +437,8 @@ if (FuelTotalRenderMini == true) {
         console.error("Request failed: " + textStatus + ", " + errorThrown);
         console.log("Response status: " + jqXHR.status);
         console.log("Response text: " + jqXHR.responseText);
+      }).always(() => {
+        isFetchingFuelMini = false; // Libera el lock
       });
   }
 
