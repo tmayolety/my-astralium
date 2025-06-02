@@ -52,7 +52,7 @@ if (!isNaN(parseInt(FuelTotalRenderDiv.getAttribute("width")))) {
   var FuelTotalRender = false;
 }
 var FuelInterval;
-
+{
 let isFetchingFuel = false;
 
 if (FuelTotalRender == true) {
@@ -251,6 +251,7 @@ if (FuelTotalRender == true) {
   }
 }
 
+}
 //1280*800 Resolution
 
 var FuelTotalRenderMini = true;
@@ -259,6 +260,8 @@ if (!isNaN(parseInt(FuelTotalRenderDivMini.getAttribute("width")))) {
   var FuelTotalRenderMini = false;
 }
 var FuelIntervalMini;
+
+{
 let isFetchingFuelMini = false;
 
 if (FuelTotalRenderMini == true) {
@@ -463,4 +466,6 @@ if (FuelTotalRenderMini == true) {
       ctx.restore();
     }, 100);
   }
+}
+
 }
