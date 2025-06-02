@@ -46,7 +46,6 @@
     <script src="js/components/eventSystemHeader.js"></script>
     <script src="js/components/cableSystemLayout.js"></script>
     <script src="js/components/iconTriEstateOneSignalDigitalLine.js"></script>
-    <script src="js/components/timelineComponent.js" ></script>
     <!-- VUE COMPONENTS -->
 
 	<script src="js/jquery/jquery.js"></script>
@@ -255,9 +254,7 @@
     <initialize-render v-bind="{ projectTitle: 'MY Astralium', projectVersion: '1.1' }"></initialize-render>
 </section>
 <!-- INIT STATUS CHECK -->
-<section id="absoluteRenderComponentApp">
-  <timeline-render></timeline-render>
-</section>
+
 
 <script>
     const InitializeApp = Vue.createApp({})
@@ -267,7 +264,6 @@
 
     const absoluteRenderComponentApp = Vue.createApp({})
     absoluteRenderComponentApp.config.compilerOptions.isCustomElement = tag => tag.startsWith('font')
-    absoluteRenderComponentApp.component('timeline-render', components.timelineComponent)
     absoluteRenderComponentApp.mount('#absoluteRenderComponentApp')
 
 </script>

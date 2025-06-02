@@ -141,10 +141,6 @@
             {
               "label": "basic-text-with-digital-line-render",
               "file": "basicTextWithTitleDigital"
-            },
-            {
-              "label": "timeline-render",
-              "file": "timelineComponent"
             }
           ],
           "mount": ".singleLineApp",
