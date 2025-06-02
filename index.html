@@ -262,10 +262,6 @@
     InitializeApp.component('initialize-render', components.initializeApp)
     InitializeApp.mount('#statusTable')
 
-    const absoluteRenderComponentApp = Vue.createApp({})
-    absoluteRenderComponentApp.config.compilerOptions.isCustomElement = tag => tag.startsWith('font')
-    absoluteRenderComponentApp.mount('#absoluteRenderComponentApp')
-
 </script>
 <!--
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
