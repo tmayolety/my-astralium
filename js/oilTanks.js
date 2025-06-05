@@ -17,6 +17,9 @@ if (!isNaN(parseInt(WasteTotalRenderDiv.getAttribute('width')))){
 
 var WasteInterval
 
+{
+let isFetchingWaste = false;
+
 if (WasteTotalRender == true) {
 
     const dataWaste = {
@@ -124,6 +127,9 @@ if (WasteTotalRender == true) {
     }
 
     function getTimelineData(chart, time, rate) {
+
+        if (isFetchingWaste) return; 
+        isFetchingWaste = true;
             
         var data = JSON.stringify({
             "SignalId": [39, 40],
@@ -169,6 +175,9 @@ if (WasteTotalRender == true) {
             console.log("Response status: " + jqXHR.status);
             console.log("Response text: " + jqXHR.responseText);
         })
+        .always(() => {
+        isFetchingWaste = false; // Libera el lock
+      });
     }
 
     function drawNoData(chart) {
@@ -194,7 +203,7 @@ if (WasteTotalRender == true) {
       }
 
 }
-
+}
 //1280x800 Resolution
 
 var WasteTotalRenderMini = true;
@@ -205,6 +214,10 @@ if (!isNaN(parseInt(WasteTotalRenderDivMini.getAttribute('width')))){
 }
 
 var WasteIntervalMini
+
+{
+let isFetchingWasteMini = false;
+
 
 if (WasteTotalRenderMini == true) {
 
@@ -313,6 +326,9 @@ if (WasteTotalRenderMini == true) {
     }
 
     function getTimelineData(chart, time, rate) {
+
+        if (isFetchingWasteMini) return; 
+        isFetchingWasteMini = true;
             
         var data = JSON.stringify({
             "SignalId": [39, 40],
@@ -358,6 +374,9 @@ if (WasteTotalRenderMini == true) {
             console.log("Response status: " + jqXHR.status);
             console.log("Response text: " + jqXHR.responseText);
         })
+        .always(() => {
+        isFetchingWasteMini = false; // Libera el lock
+      });
     }
 
     function drawNoData(chart) {
@@ -383,5 +402,5 @@ if (WasteTotalRenderMini == true) {
       }
 
 }
-
+}
 

@@ -16,6 +16,9 @@ if (!isNaN(parseInt(WaterTotalRenderDiv.getAttribute("width")))) {
 }
 var WaterInterval;
 
+{
+let isFetchingWater = false
+
 if (WaterTotalRender == true) {
   const dataWater = {
     datasets: [
@@ -136,6 +139,10 @@ if (WaterTotalRender == true) {
   }
 
   function getTimelineData(chart, time, rate) {
+
+    if (isFetchingWater) return;
+    isFetchingWater = true;
+
     var data = JSON.stringify({
       SignalId: [41, 42],
       Time: time,
@@ -178,7 +185,11 @@ if (WaterTotalRender == true) {
         console.error("Request failed: " + textStatus + ", " + errorThrown);
         console.log("Response status: " + jqXHR.status);
         console.log("Response text: " + jqXHR.responseText);
+      })
+      .always(() => {
+        isFetchingWater = false; // Libera el lock
       });
+      
   }
 
   function drawNoData(chart) {
@@ -203,7 +214,7 @@ if (WaterTotalRender == true) {
     }, 100);
   }
 }
-
+}
 //1280*800 Resolution
 
 var WaterTotalRenderMini = true;
@@ -213,6 +224,9 @@ if (!isNaN(parseInt(WaterTotalRenderDivMini.getAttribute("width")))) {
   var WaterTotalRenderMini = false;
 }
 var WaterIntervalMini;
+
+{
+let isFetchingWaterMini = false
 
 if (WaterTotalRenderMini == true) {
   const dataWater = {
@@ -334,6 +348,10 @@ if (WaterTotalRenderMini == true) {
   }
 
   function getTimelineData(chart, time, rate) {
+
+    if (isFetchingWaterMini) return; 
+    isFetchingWaterMini = true;
+
     var data = JSON.stringify({
       SignalId: [41, 42],
       Time: time,
@@ -376,6 +394,8 @@ if (WaterTotalRenderMini == true) {
         console.error("Request failed: " + textStatus + ", " + errorThrown);
         console.log("Response status: " + jqXHR.status);
         console.log("Response text: " + jqXHR.responseText);
+      }).always(() => {
+        isFetchingWaterMini = false; // Libera el lock
       });
   }
 
@@ -402,3 +422,4 @@ if (WaterTotalRenderMini == true) {
   }
 }
 
+}
