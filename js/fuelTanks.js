@@ -37,8 +37,6 @@ $("#FuelTanks_layout").load("src/ga/Black/fuelTanks.svg", function() {
   });
 });
 
-
-
 var screen = {
   renderData: function (msg) {
     var json = JSONH.parse(msg);
