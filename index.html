@@ -193,6 +193,28 @@
        
 <script language="JavaScript">
 
+    (function scheduleReloadAtTenThirty() {
+    const now = new Date();
+    const reloadTime = new Date();
+
+    reloadTime.setHours(10, 30, 0, 0); // 10:30:00.000
+
+    // Si ya han pasado las 10:30, no hacemos nada o programamos para mañana si quieres
+    if (now >= reloadTime) {
+        console.log("La hora de recarga ya ha pasado para hoy.");
+        return;
+    }
+
+    const msUntilReload = reloadTime.getTime() - now.getTime();
+
+    console.log(`Recargando en ${Math.round(msUntilReload / 1000)} segundos...`);
+
+    setTimeout(() => {
+        location.reload();
+    }, msUntilReload);
+})();
+
+
     let vueComponents;
     let ISPHONE = false;
 
