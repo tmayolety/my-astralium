@@ -197,11 +197,10 @@
     const now = new Date();
     const reloadTime = new Date();
 
-    reloadTime.setHours(2, 0, 0, 0); // 02:00:00.000 de hoy
+    reloadTime.setHours(4, 0, 0, 0); 
 
-    // Si ya pasaron las 2:00 AM de hoy, programamos para mañana
     if (now >= reloadTime) {
-        reloadTime.setDate(reloadTime.getDate() + 1); // Mañana a las 2:00
+        reloadTime.setDate(reloadTime.getDate() + 1); 
     }
 
     const msUntilReload = reloadTime.getTime() - now.getTime();
